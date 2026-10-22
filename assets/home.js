@@ -1,22 +1,42 @@
 // Moontasia — strona główna: gwiazdy, talia rozkładana przy przewijaniu, faza Księżyca
+
+// ---------- faza Księżyca (wspólna dla księżyca w hero i sekcji „Księżyc dziś”) ----------
+const MOON = (function () {
+  const SYN = 29.530588853;
+  const REF = Date.UTC(2000, 0, 6, 18, 14); // nów 6 stycznia 2000
+  const now = Date.now();
+  const age = (((now - REF) / 86400000) % SYN + SYN) % SYN;
+  const frac = age / SYN;
+  const illum = (1 - Math.cos(2 * Math.PI * frac)) / 2;
+  // ścieżka oświetlonej części tarczy o promieniu R (środek w 0,0)
+  function litPath(R) {
+    const waxing = frac < 0.5;
+    const rx = Math.abs(Math.cos(2 * Math.PI * frac)) * R;
+    const outer = waxing ? 1 : 0;                 // przy przybywaniu jasna jest prawa strona
+    const inner = (illum > 0.5) === waxing ? 1 : 0;
+    return `M0 ${-R} A${R} ${R} 0 0 ${outer} 0 ${R} A${rx} ${R} 0 0 ${inner} 0 ${-R}Z`;
+  }
+  return { SYN, age, frac, illum, now, litPath };
+})();
+document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litPath(80)));
+
+// ---------- hero ----------
 (function () {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hero = document.getElementById("hero");
   const stage = hero.querySelector(".stage");
-  const scene = hero.querySelector(".scene");
   const cards = [...hero.querySelectorAll(".tcard")];
-  const handsL = hero.querySelectorAll(".hand-l");
-  const handsR = hero.querySelectorAll(".hand-r");
   const caps = [...hero.querySelectorAll(".caption")];
   const zodiac = hero.querySelector(".zodiac");
   const moon = hero.querySelector(".moon");
   const N = cards.length, MID = (N - 1) / 2;
   const FLIP = [MID - 1, MID, MID + 1];
 
-  // ---------- gwiazdy ----------
+  // gwiazdy
   const canvas = hero.querySelector(".stars");
   const ctx = canvas.getContext("2d");
   let stars = [];
+  let fanDeg = 9;
   function makeStars() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = stage.clientWidth * dpr;
@@ -31,72 +51,72 @@
   function drawStars(t) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (const st of stars) {
-      const o = reduced ? 0.7 : 0.35 + 0.65 * Math.abs(Math.sin(st.a + t * 0.0006 * st.s));
-      ctx.globalAlpha = o;
+      ctx.globalAlpha = reduced ? 0.7 : 0.35 + 0.65 * Math.abs(Math.sin(st.a + t * 0.0006 * st.s));
       ctx.fillStyle = st.r > 1.2 ? "#f3dff3" : "#ffffff";
       ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2); ctx.fill();
     }
   }
 
-  // ---------- skalowanie sceny ----------
+  // układ: koło zodiaku w środku, napisy w górnej części koła, talia w dolnej
   function fit() {
-    const capH = Math.min(stage.clientHeight * 0.34, 260);
-    const s = Math.min(stage.clientWidth / (stage.clientWidth < 640 ? 600 : 760), (stage.clientHeight - capH) / 560, 1.25);
-    scene.style.setProperty("--s", s.toFixed(3));
+    const W = stage.clientWidth, H = stage.clientHeight;
+    const mobile = W < 640;
+    const D = Math.min(H * 0.94, 820, mobile ? Math.max(W * 1.15, H * 0.72) : W);
+    const cy = H * 0.5;
+    const s = Math.max(0.42, Math.min(D / 760, W / (mobile ? 720 : 620), 1.1));
+    fanDeg = mobile ? 7.5 : 9;
+    const st = stage.style;
+    st.setProperty("--d", `${D}px`);
+    st.setProperty("--cy", `${cy}px`);
+    st.setProperty("--cap-top", `${cy - D * (mobile ? 0.44 : 0.4)}px`);
+    st.setProperty("--cap-w", `${Math.max(D * 0.72, Math.min(W - 32, 360))}px`);
+    st.setProperty("--deck-y", `${cy + D * (mobile ? 0.17 : 0.13)}px`);
+    st.setProperty("--s", s.toFixed(3));
     makeStars();
   }
 
-  // ---------- animacja ----------
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-  const seg = (p, a, b) => ease(clamp((p - a) / (b - a)));
   const easeOut = t => 1 - Math.pow(1 - t, 2.2);
+  const seg = (p, a, b) => ease(clamp((p - a) / (b - a)));
   const segOut = (p, a, b) => easeOut(clamp((p - a) / (b - a)));
 
   let progress = 0, idle = 0;
   function render() {
     const p = progress;
-    const fan = segOut(p, 0.0, 0.5);        // rozkładanie wachlarza
-    const handsOut = segOut(p, 0.0, 0.42);    // dłonie odsuwają się
-    const lift = segOut(p, 0.0, 0.4);
-
-    handsL.forEach(h => {
-      h.style.transform = `translate(${-170 * handsOut}px, ${210 * handsOut}px) rotate(${-10 * handsOut}deg)`;
-      h.style.opacity = 1 - 0.85 * handsOut;
-    });
-    handsR.forEach(h => {
-      h.style.transform = `translate(${170 * handsOut}px, ${210 * handsOut}px) rotate(${10 * handsOut}deg)`;
-      h.style.opacity = 1 - 0.85 * handsOut;
-    });
-
+    const fan = segOut(p, 0, 0.45);
+    const lift = segOut(p, 0, 0.4);
     const float = reduced ? 0 : Math.sin(idle) * 4 * (1 - fan);
+
     cards.forEach((c, i) => {
       const off = i - MID;
-      const angle = off * 11 * fan;
+      const angle = off * fanDeg * fan;
       const stackX = off * 0.8 * (1 - fan), stackY = -off * 0.6 * (1 - fan);
       const k = FLIP.indexOf(i);
-      const flip = k >= 0 ? seg(p, 0.6 + k * 0.08, 0.72 + k * 0.08) : 0;
-      const pop = k >= 0 ? -26 * seg(p, 0.58, 0.7) : 0;
-      c.style.transform = `translate(${stackX}px, ${stackY - 70 * lift + float + pop}px) rotate(${angle}deg) rotateY(${180 * flip}deg)`;
+      const flip = k >= 0 ? seg(p, 0.38 + k * 0.05, 0.56 + k * 0.05) : 0;
+      const pop = k >= 0 ? -22 * seg(p, 0.36, 0.5) : 0;
+      c.style.transform = `translate(${stackX}px, ${stackY - 50 * lift + float + pop}px) rotate(${angle}deg) rotateY(${180 * flip}deg)`;
     });
+    stage.style.setProperty("--deck-shadow", (1 - fan).toFixed(2));
 
-    if (zodiac) zodiac.style.transform = `translate(-50%,-50%) rotate(${p * 70 + (reduced ? 0 : idle * 2)}deg)`;
-    if (moon) moon.style.transform = `translateY(${p * 60}px)`;
+    if (zodiac) zodiac.style.transform = `translate(-50%,-50%) rotate(${p * 50 + (reduced ? 0 : idle * 2)}deg)`;
+    if (moon) moon.style.transform = `translateY(${p * 30}px)`;
 
-    const o0 = 1 - seg(p, 0.04, 0.16);
-    const o1 = seg(p, 0.22, 0.32) * (1 - seg(p, 0.5, 0.6));
-    const o2 = seg(p, 0.7, 0.82);
-    [o0, o1, o2].forEach((o, i) => {
-      caps[i].style.opacity = o;
-      caps[i].style.transform = `translateY(${(1 - o) * 12}px)`;
-      caps[i].style.visibility = o < 0.02 ? "hidden" : "visible";
-    });
+    const o0 = 1 - seg(p, 0.02, 0.14);
+    const o2 = seg(p, 0.52, 0.68);
+    const drop = 28 * seg(p, 0.72, 1);   // ostatni napis lekko opada pod koniec
+    caps[0].style.opacity = o0;
+    caps[0].style.transform = `translateY(${-(1 - o0) * 10}px)`;
+    caps[0].style.visibility = o0 < 0.02 ? "hidden" : "visible";
+    caps[1].style.opacity = o2;
+    caps[1].style.transform = `translateY(${(1 - o2) * 12 + drop}px)`;
+    caps[1].style.visibility = o2 < 0.02 ? "hidden" : "visible";
   }
 
   function onScroll() {
     const r = hero.getBoundingClientRect();
     const total = hero.offsetHeight - stage.offsetHeight;
-    progress = clamp(-r.top / total);
+    progress = total > 0 ? clamp(-r.top / total) : 1;
   }
 
   function loop(t) {
@@ -119,17 +139,11 @@
   if (reduced) { drawStars(0); render(); } else requestAnimationFrame(loop);
 })();
 
-// ---------- faza Księżyca ----------
+// ---------- sekcja „Księżyc dziś” ----------
 (function () {
   const box = document.getElementById("ksiezyc");
   if (!box) return;
-  const SYN = 29.530588853;
-  const REF = Date.UTC(2000, 0, 6, 18, 14); // nów 6 stycznia 2000
-  const now = Date.now();
-  const age = (((now - REF) / 86400000) % SYN + SYN) % SYN;
-  const frac = age / SYN;
-  const illum = (1 - Math.cos(2 * Math.PI * frac)) / 2;
-
+  const { SYN, age, illum, now } = MOON;
   const PHASES = [
     [1.84, "Nów", "Czas ciszy i nowych początków. Zapisz intencje na najbliższy cykl i zastanów się, co chcesz w swoim życiu zasiać."],
     [5.54, "Przybywający sierp", "Energia rośnie. Zrób pierwszy mały krok w stronę intencji z nowiu i nie oczekuj od razu efektów."],
@@ -142,15 +156,6 @@
     [SYN + 1, "Nów", "Czas ciszy i nowych początków. Zapisz intencje na najbliższy cykl i zastanów się, co chcesz w swoim życiu zasiać."],
   ];
   const ph = PHASES.find(x => age < x[0]);
-
-  // rysowanie oświetlonej części tarczy
-  const R = 80, lit = box.querySelector(".lit");
-  const waxing = frac < 0.5;
-  const rx = Math.abs(Math.cos(2 * Math.PI * frac)) * R;
-  const outerSweep = waxing ? 1 : 0;           // jasna krawędź po prawej przy przybywaniu
-  const innerSweep = (illum > 0.5) === waxing ? 1 : 0;
-  lit.setAttribute("d", `M0 ${-R} A${R} ${R} 0 0 ${outerSweep} 0 ${R} A${rx} ${R} 0 0 ${innerSweep} 0 ${-R}Z`);
-
   const fmt = d => d.toLocaleDateString("pl-PL", { day: "numeric", month: "long" });
   const daysTo = target => ((target - age) % SYN + SYN) % SYN || SYN;
   const nextFull = new Date(now + daysTo(SYN / 2) * 86400000);
