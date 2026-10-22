@@ -32,7 +32,7 @@ Skrypt odświeża strony rozkładów, 78 stron kart, menu i stopkę we wszystkic
 
 Formularze zapisu (strona główna, stopka, pod wpisami na blogu) i strona `/polityka-prywatnosci/` pojawiają się dopiero po włączeniu w `src/newsletter.mjs`:
 
-1. MailerLite → Forms → Embedded forms → nowy formularz z włączonym Double opt-in.
+1. MailerLite → Forms → Embedded forms → nowy formularz (zapis bez potwierdzania mailem; komunikat po zapisie: „Dziękujemy za zapis!” w `assets/newsletter.js`).
 2. Z kodu HTML formularza skopiuj adres z atrybutu `action` (np. `https://assets.mailerlite.com/jsonp/123456/forms/987654321/subscribe`) do `mailerliteAction`.
 3. Uzupełnij `adminName` i `adminEmail` (administrator danych w polityce prywatności), ustaw `enabled: true` i uruchom `node tools/build.mjs`.
 

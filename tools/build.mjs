@@ -515,7 +515,7 @@ if (NL_ON) {
       <li><strong>Okres przechowywania:</strong> do czasu wypisania się z newslettera lub cofnięcia zgody.</li>
       <li><strong>Twoje prawa:</strong> dostęp do danych, ich sprostowanie, usunięcie, ograniczenie przetwarzania, przeniesienie, cofnięcie zgody w dowolnym momencie (bez wpływu na zgodność z prawem wcześniejszego przetwarzania) oraz skarga do Prezesa UODO.</li>
     </ul>
-    <p>Zapis wymaga potwierdzenia linkiem wysłanym na podany adres. Z newslettera wypiszesz się linkiem w stopce każdej wiadomości albo pisząc na adres podany wyżej. Podanie adresu e-mail jest dobrowolne, ale niezbędne do otrzymywania newslettera.</p>
+    <p>Z newslettera wypiszesz się linkiem w stopce każdej wiadomości albo pisząc na adres podany wyżej. Podanie adresu e-mail jest dobrowolne, ale niezbędne do otrzymywania newslettera.</p>
   </article>
 </main>`;
   write("polityka-prywatnosci/index.html", page({

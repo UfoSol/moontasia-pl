@@ -40,7 +40,7 @@
       sent = false;
       form.classList.add("done");
       status.className = "nl-status ok";
-      status.textContent = "Dziękujemy! Sprawdź skrzynkę i kliknij link w mailu, aby potwierdzić zapis.";
+      status.textContent = "Dziękujemy za zapis!";
     });
   });
 })();
