@@ -53,6 +53,8 @@
   }
   header p{color:var(--text-dim);margin:0;font-size:0.98rem;}
   header .brand{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+  header .blog-link{display:inline-block;margin-top:10px;color:var(--accent-soft);font-size:0.9rem;text-decoration:none;border-bottom:1px solid var(--line);}
+  header .blog-link:hover{color:var(--accent);border-color:var(--accent);}
   .sparkle{color:var(--accent);}
 
   /* ---- tabs ---- */
@@ -312,6 +314,7 @@
     <div class="brand">Moontasia</div>
     <h1><span class="sparkle">✦</span> Odczyty tarota <span class="sparkle">✦</span></h1>
     <p>Wybierz rodzaj rozkładu poniżej</p>
+    <a class="blog-link" href="/blog/">Blog: poradniki tarota →</a>
   </header>
 
   <div class="tabs">
@@ -546,7 +549,7 @@
     </section>
   </div>
 
-  <footer>© Moontasia · moontasia.pl · Odczyty powstają w Twojej przeglądarce, pytania nie są nigdzie wysyłane.</footer>
+  <footer>© Moontasia · moontasia.pl · <a href="/blog/" style="color:var(--accent-soft);">Blog</a> · Odczyty powstają w Twojej przeglądarce, pytania nie są nigdzie wysyłane.</footer>
 </div>
 
 <!-- Modal: card picker -->
