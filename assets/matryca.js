@@ -741,7 +741,7 @@ document.getElementById("a-go")?.addEventListener("click",()=>{
       <div class="zodiac-big">${zA.sym}</div><div class="big">${zA.name}</div>
       <p class="kw">${degTxt(zA)} · ${A.el} · władca: ${A.ruler}</p>
       <p class="meaning">Jak widzą Cię inni i jak reagujesz na nowe sytuacje.</p></div>
-     <div class="infocard"><h3>☉ Słońce</h3>
+     <div class="infocard sun-card"><span class="sun-badge">Twój znak zodiaku</span><h3>☉ Słońce</h3>
       <div class="zodiac-big">${zS.sym}</div><div class="big">${zS.name}</div>
       <p class="kw">${degTxt(zS)}</p>
       <p class="meaning">Twój rdzeń: ${S.core}. ${S.d}</p></div>

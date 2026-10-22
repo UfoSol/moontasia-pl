@@ -103,3 +103,12 @@ details.tech p{margin-top:6px}
 .err{color:var(--bad);text-align:center;margin-top:8px;font-size:.9rem}
 .sign-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px 14px}
 .page-hero+.tabs{margin-top:6px}
+
+/* Słońce (znak zodiaku) wyróżnione w wynikach ascendentu */
+.ascres .sun-card{position:relative;border:2px solid var(--accent);
+  background:radial-gradient(ellipse at 50% 0%, rgba(148,70,149,.32), transparent 70%),var(--card);
+  box-shadow:0 0 0 4px rgba(148,70,149,.18),0 10px 30px rgba(148,70,149,.25)}
+.ascres .sun-card .big{color:#fff}
+.sun-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  background:var(--accent);color:#fff;font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:12px}
+.ascres{padding-top:12px}
