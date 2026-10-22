@@ -14,6 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { TAROT_PAGES, toolLinks } from "../src/tarot/pages.mjs";
+import { POSTS } from "../src/blog/posts.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const SITE = "https://moontasia.pl";
@@ -29,7 +30,11 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replac
 const stripTags = s => String(s).replace(/<[^>]+>/g, "");
 
 const HEADER = read("src/partials/header.html").trim();
-const FOOTER = read("src/partials/footer.html").trim();
+const MONTHS = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"];
+const plDate = d => { const [y, m, day] = d.split("-").map(Number); return `${day} ${MONTHS[m - 1]} ${y}`; };
+const POSTS_SORTED = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
+const FOOTER = read("src/partials/footer.html").trim().replace("{{FOOTER_BLOG}}",
+  POSTS_SORTED.slice(0, 4).map(p => `<li><a href="/blog/${p.slug}/">${p.title.split(":")[0]}</a></li>`).join("\n        "));
 
 // ---------- dane kart ----------
 const ctx = {};
@@ -161,8 +166,6 @@ const MODAL = `
 </div>`;
 
 for (const tp of TAROT_PAGES) {
-  const tabs = `<nav class="tabs" aria-label="Rodzaje odczytów">${TAROT_PAGES.map(o =>
-    `<a class="tab-btn${o.path === tp.path ? " active" : ""}" href="${o.path}"${o.path === tp.path ? ' aria-current="page"' : ""}>${o.tabLabel}</a>`).join("")}</nav>`;
   const faq = faqBlock(tp.faq);
   const isHome = tp.path === "/";
   const bc = isHome ? null : breadcrumbs([["Tarot online", "/"], [tp.h1, tp.path]]);
@@ -173,7 +176,6 @@ for (const tp of TAROT_PAGES) {
     <h1>${tp.h1}</h1>
     <p>${tp.lead}</p>
   </div>
-  ${tabs}
 ${tp.panel}
   ${content || faq.html ? `<article class="prose">${content}
       ${faq.html}
@@ -348,18 +350,89 @@ for (const c of CARDS) {
   addToSitemap("/znaczenie-kart/", "0.9");
 }
 
-// ---------- wspólne menu i stopka w stronach pisanych ręcznie ----------
-const MANUAL_PAGES = ["matryca/index.html", "ascendent/index.html", "404.html", "blog/index.html"];
-for (const d of fs.readdirSync(path.join(ROOT, "blog"), { withFileTypes: true })) {
-  if (d.isDirectory()) MANUAL_PAGES.push(`blog/${d.name}/index.html`);
+// ---------- blog ----------
+for (const post of POSTS_SORTED) {
+  const url = `/blog/${post.slug}/`;
+  const bc = breadcrumbs([["Strona główna", "/"], ["Blog", "/blog/"], [post.title, url]]);
+  const related = [
+    ...POSTS_SORTED.filter(o => o !== post && o.category === post.category),
+    ...POSTS_SORTED.filter(o => o !== post && o.category !== post.category),
+  ].slice(0, 3);
+  const body = `<div class="wrap">
+  ${bc.html}
+  <article>
+    <div class="post-meta">${plDate(post.date)} · ${post.category}</div>
+    <h1>${post.title}</h1>
+    <p class="lead">${post.lead}</p>
+    ${post.body.trim()}
+    <div class="cta"><a class="btn-main" href="${post.cta[0]}">${post.cta[1]}</a></div>
+    <a class="back" href="/blog/">← Wszystkie wpisy</a>
+  </article>
+  <section class="related">
+    <h2>Przeczytaj też</h2>
+    ${related.map(o => `<a class="post-card" href="/blog/${o.slug}/"><div class="post-meta">${o.category}</div><h3>${o.title}</h3><p>${o.description}</p></a>`).join("\n    ")}
+  </section>
+</div>`;
+  const ld = {
+    "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.description,
+    datePublished: post.date, dateModified: post.date, inLanguage: "pl-PL", mainEntityOfPage: SITE + url,
+    image: SITE + "/logo/og-image.png",
+    author: { "@type": "Organization", name: "Moontasia", url: SITE + "/" },
+    publisher: { "@type": "Organization", name: "Moontasia", logo: { "@type": "ImageObject", url: SITE + "/logo/moontasia-purple.png" } },
+  };
+  write(url.slice(1) + "index.html", page({
+    path: url, title: post.seoTitle, description: post.description, css: ["/blog/blog.css"], ld: [ld, bc.ld], body, ogType: "article",
+  }));
+  addToSitemap(url, "0.7");
 }
+{
+  const bc = breadcrumbs([["Strona główna", "/"], ["Blog", "/blog/"]]);
+  const cats = [...new Set(POSTS_SORTED.map(p => p.category))];
+  const body = `<div class="wrap">
+  ${bc.html}
+  <header class="blog-header">
+    <h1><span class="sparkle">✦</span> Blog o tarocie <span class="sparkle">✦</span></h1>
+    <p>Poradniki tarota dla początkujących i zaawansowanych, rozkłady krok po kroku, znaczenie kart, matryca przeznaczenia i astrologia.</p>
+  </header>
+  <nav class="cat-filter" aria-label="Kategorie">
+    <button type="button" class="active" data-cat="">Wszystkie</button>
+    ${cats.map(c => `<button type="button" data-cat="${c}">${c}</button>`).join("")}
+  </nav>
+  <main>
+    ${POSTS_SORTED.map(p => `<a class="post-card" href="/blog/${p.slug}/" data-cat="${p.category}">
+      <div class="post-meta">${plDate(p.date)} · ${p.category}</div>
+      <h2>${p.title}</h2>
+      <p>${p.description}</p>
+    </a>`).join("\n    ")}
+  </main>
+</div>
+<script>
+document.querySelectorAll(".cat-filter button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".cat-filter button").forEach(x => x.classList.toggle("active", x === b));
+  document.querySelectorAll(".post-card[data-cat]").forEach(c => { c.style.display = !b.dataset.cat || c.dataset.cat === b.dataset.cat ? "" : "none"; });
+}));
+</script>`;
+  const ld = {
+    "@context": "https://schema.org", "@type": "Blog", name: "Blog Moontasia", url: SITE + "/blog/", inLanguage: "pl-PL",
+    blogPost: POSTS_SORTED.map(p => ({ "@type": "BlogPosting", headline: p.title, url: `${SITE}/blog/${p.slug}/`, datePublished: p.date })),
+  };
+  write("blog/index.html", page({
+    path: "/blog/", title: "Blog o tarocie – poradniki, rozkłady i znaczenie kart | Moontasia",
+    description: "Blog Moontasia: tarot dla początkujących, krzyż celtycki, tarot miłosny, jak zadawać pytania, karty dworskie, matryca przeznaczenia i ascendent.",
+    css: ["/blog/blog.css"], ld: [ld, bc.ld], body,
+  }));
+  addToSitemap("/blog/", "0.8");
+}
+
+// ---------- wspólne menu i stopka w stronach pisanych ręcznie ----------
+const MANUAL_PAGES = ["matryca/index.html", "matryca-partnerska/index.html", "ascendent/index.html", "404.html"];
 for (const p of MANUAL_PAGES) {
   if (!fs.existsSync(path.join(ROOT, p))) continue;
   let s = read(p);
   s = s.replace(/<!--HEADER-->[\s\S]*?<!--\/HEADER-->/, `<!--HEADER-->\n${HEADER}\n<!--/HEADER-->`);
   s = s.replace(/<!--FOOTER-->[\s\S]*?<!--\/FOOTER-->/, `<!--FOOTER-->\n${FOOTER}\n<!--/FOOTER-->`);
   write(p, s);
-  if (p !== "404.html") addToSitemap("/" + p.replace(/index\.html$/, ""), p.startsWith("blog/") ? "0.6" : "0.9");
+  if (p !== "404.html") addToSitemap("/" + p.replace(/index\.html$/, ""), "0.9");
 }
 
 // ---------- wersje plików CSS/JS (żeby przeglądarki nie trzymały starych stylów) ----------
@@ -395,4 +468,4 @@ ${sitemap.map(u => `  <url>
 </urlset>
 `);
 
-console.log(`Gotowe: ${TAROT_PAGES.length} stron rozkładów, ${CARDS.length} kart, ${sitemap.length} adresów w sitemap.xml`);
+console.log(`Gotowe: ${TAROT_PAGES.length} stron rozkładów, ${CARDS.length} kart, ${POSTS.length} wpisów, ${sitemap.length} adresów w sitemap.xml`);

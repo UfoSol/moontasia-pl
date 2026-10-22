@@ -7,12 +7,12 @@ Tarot online: rozkład na 3 karty, krzyż z 5 kart, tak/nie, karta dnia. Statycz
 - `index.html`, `rozklad-5-kart/`, `tarot-tak-nie/`, `karta-dnia/`, `zapisane-odczyty/`: strony rozkładów (generowane)
 - `app.js`, `data.js`: logika tarota i baza znaczeń kart
 - `znaczenie-kart/`: strona zbiorcza i 78 stron kart (generowane z `data.js`)
-- `matryca/`, `ascendent/`: kalkulatory (wspólny skrypt `assets/matryca.js`)
+- `matryca/`, `matryca-partnerska/`, `ascendent/`: kalkulatory (wspólny skrypt `assets/matryca.js`)
 - `assets/`: wspólne style (`site.css`, `tarot.css`, `cards.css`, `matryca.css`) i menu (`nav.js`)
 - `src/`: szablony: menu i stopka (`src/partials/`), treści stron rozkładów (`src/tarot/pages.mjs`)
 - `tools/build.mjs`: generator stron
 - `karty/`: 78 grafik kart (SVG)
-- `blog/`: blog (lista wpisów w `blog/index.html`, każdy wpis w osobnym folderze, style w `blog/blog.css`)
+- `blog/`: blog (generowany z `src/blog/posts.mjs`, style w `blog/blog.css`)
 - `logo/`: logotypy (oryginały oraz wersje do strony: `moontasia-white.png`, `favicon.png`, `apple-touch-icon.png`, `og-image.png`)
 - `CNAME`: domena moontasia.pl dla GitHub Pages
 - `.nojekyll`, `404.html`, `robots.txt`, `sitemap.xml`
@@ -25,7 +25,7 @@ Część stron powstaje z szablonów. Po zmianie menu lub stopki (`src/partials/
 node tools/build.mjs
 ```
 
-Skrypt odświeża strony rozkładów, 78 stron kart, menu i stopkę we wszystkich stronach (między znacznikami `<!--HEADER-->` i `<!--FOOTER-->`) oraz `sitemap.xml`. Nowy wpis na blogu: skopiuj folder istniejącego wpisu w `blog/`, zmień treść, dodaj go do `blog/index.html` i uruchom skrypt.
+Skrypt odświeża strony rozkładów, 78 stron kart, menu i stopkę we wszystkich stronach (między znacznikami `<!--HEADER-->` i `<!--FOOTER-->`) oraz `sitemap.xml`. Nowy wpis na blogu: dodaj obiekt na początku listy `NEW_POSTS` w `src/blog/posts.mjs` (adres, tytuł, opis, kategoria, data, treść) i uruchom skrypt. Strona wpisu, lista na `/blog/`, powiązane wpisy, stopka i sitemap zaktualizują się same.
 
 ## Kolorystyka
 

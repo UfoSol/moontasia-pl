@@ -138,3 +138,5 @@ a:hover{color:#fff}
 .site-footer .brand img{width:150px;height:auto}
 .site-footer .brand p{color:var(--text-dim);font-size:.85rem;line-height:1.55;margin:10px 0 0}
 .site-footer .copy{text-align:center;color:var(--text-dim);font-size:.78rem;padding:14px 16px 24px}
+.main-nav .drop-head{display:block;padding:8px 12px 2px;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:#9a8699}
+.main-nav .drop-head~.drop-head{margin-top:6px;border-top:1px solid #e3d6e3;padding-top:10px}
