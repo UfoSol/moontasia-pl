@@ -112,3 +112,6 @@ details.tech p{margin-top:6px}
 .sun-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;
   background:var(--accent);color:#fff;font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:12px}
 .ascres{padding-top:12px}
+
+/* po kliknięciu „Oblicz” wynik przewija się tuż pod menu, a nie pod nie */
+#a-result,#s-result,#c-result{scroll-margin-top:84px}
