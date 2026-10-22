@@ -140,3 +140,28 @@ a:hover{color:#fff}
 .site-footer .copy{text-align:center;color:var(--text-dim);font-size:.78rem;padding:14px 16px 24px}
 .main-nav .drop-head{display:block;padding:8px 12px 2px;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:#9a8699}
 .main-nav .drop-head~.drop-head{margin-top:6px;border-top:1px solid #e3d6e3;padding-top:10px}
+
+/* ---------- newsletter ---------- */
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nl{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr minmax(0,1.1fr);gap:26px;align-items:center;text-align:left;
+  background:radial-gradient(ellipse at 0% 0%, rgba(148,70,149,.35), transparent 55%),radial-gradient(circle at 92% 20%, rgba(217,184,218,.18), transparent 30%),var(--panel);
+  border:1px solid var(--accent);border-radius:20px;padding:30px 32px}
+@media (max-width:760px){.nl{grid-template-columns:1fr;padding:24px 18px}}
+.nl-eyebrow{font-size:.74rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent-soft);margin:0 0 6px}
+.nl-title{font-size:1.6rem;color:#fff;margin:0 0 8px}
+.nl-text{color:var(--text-dim);line-height:1.6;margin:0}
+.nl-row{display:flex;gap:10px;flex-wrap:wrap}
+.nl-row input[type=email]{flex:1 1 220px;min-width:0;background:#1f181f;border:1px solid var(--line);color:var(--text);
+  border-radius:30px;padding:13px 18px;font-size:1rem;font-family:inherit}
+.nl-row input[type=email]:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+.nl-row .btn-main{flex:0 0 auto}
+.nl-consent{display:flex;gap:8px;align-items:flex-start;font-size:.8rem;color:var(--text-dim);line-height:1.5;margin-top:12px;cursor:pointer}
+.nl-consent input{accent-color:var(--accent);margin-top:3px;flex-shrink:0}
+.nl-status{font-size:.9rem;margin:10px 0 0;min-height:1.2em}
+.nl-status.ok{color:var(--good)}
+.nl-status.err{color:var(--bad)}
+.nl-form.done .nl-row,.nl-form.done .nl-consent{display:none}
+.site-footer .nl{max-width:1068px;margin:28px auto 0;border-color:var(--line)}
+@media (max-width:1100px){.site-footer .nl{margin:28px 16px 0}}
+.wrap .nl{margin-top:30px;grid-template-columns:1fr}
+.nl-consent a{font-size:inherit!important;color:var(--accent-soft)!important;text-decoration:underline}

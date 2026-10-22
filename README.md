@@ -28,6 +28,14 @@ node tools/build.mjs
 
 Skrypt odświeża strony rozkładów, 78 stron kart, menu i stopkę we wszystkich stronach (między znacznikami `<!--HEADER-->` i `<!--FOOTER-->`) oraz `sitemap.xml`. Nowy wpis na blogu: dodaj obiekt na początku listy `NEW_POSTS` w `src/blog/posts.mjs` (adres, tytuł, opis, kategoria, data, treść) i uruchom skrypt. Strona wpisu, lista na `/blog/`, powiązane wpisy, stopka i sitemap zaktualizują się same.
 
+## Newsletter (MailerLite)
+
+Formularze zapisu (strona główna, stopka, pod wpisami na blogu) i strona `/polityka-prywatnosci/` pojawiają się dopiero po włączeniu w `src/newsletter.mjs`:
+
+1. MailerLite → Forms → Embedded forms → nowy formularz z włączonym Double opt-in.
+2. Z kodu HTML formularza skopiuj adres z atrybutu `action` (np. `https://assets.mailerlite.com/jsonp/123456/forms/987654321/subscribe`) do `mailerliteAction`.
+3. Uzupełnij `adminName` i `adminEmail` (administrator danych w polityce prywatności), ustaw `enabled: true` i uruchom `node tools/build.mjs`.
+
 ## Kolorystyka
 
 Paleta marki: `#944695` (fiolet, akcent), `#50434F` (ciemny śliwkowo-szary, obramowania), `#B6A6B5` (jasny wrzos, tekst pomocniczy). Tło strony i panele to głęboka śliwka (`#1d171d`–`#2a2029`), `#50434F` służy do obramowań, żeby fiolet i jasny tekst miały mocny kontrast.

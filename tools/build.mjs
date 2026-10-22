@@ -15,6 +15,7 @@ import path from "node:path";
 import vm from "node:vm";
 import { TAROT_PAGES, toolLinks } from "../src/tarot/pages.mjs";
 import { POSTS } from "../src/blog/posts.mjs";
+import { NEWSLETTER } from "../src/newsletter.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const SITE = "https://moontasia.pl";
@@ -33,7 +34,35 @@ const HEADER = read("src/partials/header.html").trim();
 const MONTHS = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"];
 const plDate = d => { const [y, m, day] = d.split("-").map(Number); return `${day} ${MONTHS[m - 1]} ${y}`; };
 const POSTS_SORTED = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
-const FOOTER = read("src/partials/footer.html").trim().replace("{{FOOTER_BLOG}}",
+// ---------- newsletter (włączany w src/newsletter.mjs) ----------
+const NL_ON = NEWSLETTER.enabled && NEWSLETTER.mailerliteAction;
+function newsletterForm(variant, heading, text) {
+  if (!NL_ON) return "";
+  return `<div class="nl nl-${variant}">
+  <div class="nl-copy">
+    <p class="nl-eyebrow">✦ Newsletter ✦</p>
+    <h2 class="nl-title">${heading}</h2>
+    <p class="nl-text">${text}</p>
+  </div>
+  <form class="nl-form" action="${esc(NEWSLETTER.mailerliteAction)}" method="post" novalidate>
+    <div class="nl-row">
+      <label class="visually-hidden" for="nl-email-${variant}">Adres e-mail</label>
+      <input id="nl-email-${variant}" type="email" name="fields[email]" placeholder="Twój adres e-mail" autocomplete="email" required>
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit" class="btn-main">Zapisz się</button>
+    </div>
+    <label class="nl-consent"><input type="checkbox" name="nl-consent" required> <span>Chcę otrzymywać newsletter Moontasii. Mogę wypisać się w każdej chwili. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</span></label>
+    <p class="nl-status" role="status" aria-live="polite"></p>
+  </form>
+</div>`;
+}
+const FOOTER_NL = NL_ON ? newsletterForm("footer", "Księżycowe wiadomości",
+  "Raz na jakiś czas: pełnie i nowie, karta tygodnia i nowe poradniki. Bez spamu.") + '\n<script src="/assets/newsletter.js" defer></script>' : "";
+
+const FOOTER = read("src/partials/footer.html").trim().replace("{{FOOTER_NEWSLETTER}}", FOOTER_NL)
+  .replace("{{PRIVACY_LINK}}", NL_ON ? ' · <a href="/polityka-prywatnosci/">Polityka prywatności</a>' : "")
+  .replace("{{FOOTER_BLOG}}",
   POSTS_SORTED.slice(0, 4).map(p => `<li><a href="/blog/${p.slug}/">${p.title.split(":")[0]}</a></li>`).join("\n        "));
 
 // ---------- dane kart ----------
@@ -227,7 +256,9 @@ ${MODAL}`;
     ["Skąd wiadomo, jaka jest dziś faza Księżyca?", "Fazę liczymy astronomicznie z długości miesiąca synodycznego (ok. 29,53 dnia). Podajemy też daty najbliższej pełni i nowiu."],
   ]);
   let body = read("src/home/home.html")
-    .replace("{{ZODIAC}}", zodiac).replace("{{DECK}}", deck).replace("{{LATEST_POSTS}}", latest).replace("{{FAQ}}", faq.html);
+    .replace("{{ZODIAC}}", zodiac).replace("{{DECK}}", deck).replace("{{LATEST_POSTS}}", latest).replace("{{FAQ}}", faq.html)
+    .replace("{{NEWSLETTER}}", NL_ON ? `<section class="home-section">${newsletterForm("home", "Księżycowy newsletter",
+      "Przypomnienia o pełni i nowiu z krótkim rytuałem, karta tygodnia i nowe poradniki o tarocie. Prosto na Twoją skrzynkę, bez spamu.")}</section>` : "");
   for (const [k, v] of Object.entries(ICONS)) body = body.replace(`{{${k}}}`, v);
   write("index.html", page({
     path: "/",
@@ -409,6 +440,7 @@ for (const post of POSTS_SORTED) {
     <div class="cta"><a class="btn-main" href="${post.cta[0]}">${post.cta[1]}</a></div>
     <a class="back" href="/blog/">← Wszystkie wpisy</a>
   </article>
+  ${newsletterForm("post", "Spodobał Ci się ten poradnik?", "Zapisz się, a co jakiś czas dostaniesz nowe artykuły, kartę tygodnia i przypomnienia o pełni i nowiu.")}
   <section class="related">
     <h2>Przeczytaj też</h2>
     ${related.map(o => `<a class="post-card" href="/blog/${o.slug}/"><div class="post-meta">${o.category}</div><h3>${o.title}</h3><p>${o.description}</p></a>`).join("\n    ")}
@@ -465,6 +497,34 @@ document.querySelectorAll(".cat-filter button").forEach(b => b.addEventListener(
   addToSitemap("/blog/", "0.8");
 }
 
+// ---------- polityka prywatności (tylko gdy newsletter jest włączony) ----------
+if (NL_ON) {
+  const bc = breadcrumbs([["Strona główna", "/"], ["Polityka prywatności", "/polityka-prywatnosci/"]]);
+  const body = `<main class="page narrow">
+  ${bc.html}
+  <article class="prose" style="margin-top:0">
+    <h1 style="color:var(--accent-soft);font-size:1.9rem;margin-top:0">Polityka prywatności</h1>
+    <h2>Odczyty, matryca i ascendent</h2>
+    <p>Odczyty tarota, matryca przeznaczenia i kalkulator ascendentu działają w całości w Twojej przeglądarce. Pytania, daty urodzenia i wyniki nie są wysyłane na żaden serwer. Zapisane odczyty są przechowywane wyłącznie w pamięci tej przeglądarki (localStorage) i możesz je w każdej chwili usunąć.</p>
+    <h2>Newsletter</h2>
+    <p>Administratorem danych osobowych osób zapisanych do newslettera jest ${esc(NEWSLETTER.adminName)}, kontakt: <a href="mailto:${esc(NEWSLETTER.adminEmail)}">${esc(NEWSLETTER.adminEmail)}</a>.</p>
+    <ul>
+      <li><strong>Zakres danych:</strong> adres e-mail.</li>
+      <li><strong>Cel i podstawa:</strong> wysyłka newslettera na podstawie Twojej zgody (art. 6 ust. 1 lit. a RODO).</li>
+      <li><strong>Odbiorca danych:</strong> MailerLite (UAB „MailerLite”), dostawca systemu do wysyłki newslettera, który przetwarza dane w naszym imieniu.</li>
+      <li><strong>Okres przechowywania:</strong> do czasu wypisania się z newslettera lub cofnięcia zgody.</li>
+      <li><strong>Twoje prawa:</strong> dostęp do danych, ich sprostowanie, usunięcie, ograniczenie przetwarzania, przeniesienie, cofnięcie zgody w dowolnym momencie (bez wpływu na zgodność z prawem wcześniejszego przetwarzania) oraz skarga do Prezesa UODO.</li>
+    </ul>
+    <p>Zapis wymaga potwierdzenia linkiem wysłanym na podany adres. Z newslettera wypiszesz się linkiem w stopce każdej wiadomości albo pisząc na adres podany wyżej. Podanie adresu e-mail jest dobrowolne, ale niezbędne do otrzymywania newslettera.</p>
+  </article>
+</main>`;
+  write("polityka-prywatnosci/index.html", page({
+    path: "/polityka-prywatnosci/", title: "Polityka prywatności | Moontasia",
+    description: "Polityka prywatności Moontasii: odczyty w przeglądarce, newsletter i Twoje prawa.", ld: [bc.ld], body,
+  }));
+  addToSitemap("/polityka-prywatnosci/", "0.3");
+}
+
 // ---------- wspólne menu i stopka w stronach pisanych ręcznie ----------
 const MANUAL_PAGES = ["matryca/index.html", "matryca-partnerska/index.html", "ascendent/index.html", "404.html"];
 for (const p of MANUAL_PAGES) {
@@ -478,7 +538,7 @@ for (const p of MANUAL_PAGES) {
 
 // ---------- wersje plików CSS/JS (żeby przeglądarki nie trzymały starych stylów) ----------
 import crypto from "node:crypto";
-const ASSETS = ["assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
+const ASSETS = ["assets/newsletter.js", "assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
 const version = f => crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8);
 const VERSIONS = Object.fromEntries(ASSETS.map(f => [f, version(f)]));
 function allHtml(dir) {
