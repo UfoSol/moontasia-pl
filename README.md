@@ -14,7 +14,7 @@ Tarot online: rozkład na 3 karty, krzyż z 5 kart, tak/nie, karta dnia. Statycz
 
 ## Kolorystyka
 
-Paleta marki: `#944695` (fiolet, akcent), `#50434F` (ciemny śliwkowo-szary, panele), `#B6A6B5` (jasny wrzos, tekst pomocniczy). Tło strony to ciemniejsze odcienie `#50434F`.
+Paleta marki: `#944695` (fiolet, akcent), `#50434F` (ciemny śliwkowo-szary, obramowania), `#B6A6B5` (jasny wrzos, tekst pomocniczy). Tło strony i panele to głęboka śliwka (`#1d171d`–`#2a2029`), `#50434F` służy do obramowań, żeby fiolet i jasny tekst miały mocny kontrast.
 
 ## Publikacja na GitHub Pages
 

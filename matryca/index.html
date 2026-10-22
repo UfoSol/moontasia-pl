@@ -6,7 +6,7 @@
 <title>Matryca przeznaczenia: kalkulator, matryca partnerska, ascendent | Moontasia</title>
 <meta name="description" content="Darmowy kalkulator matrycy przeznaczenia (22 Wielkie Arkana): pełna matryca z opisami, ogon karmiczny, linia miłości i pieniędzy, matryca partnerska oraz kalkulator ascendentu z opisem znaczenia.">
 <link rel="canonical" href="https://moontasia.pl/matryca/">
-<meta name="theme-color" content="#2b242b">
+<meta name="theme-color" content="#1d171d">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Moontasia">
@@ -18,10 +18,10 @@
 <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png">
 <style>
   :root{
-    --bg-1:#2b242b; --bg-2:#3b313a;
-    --panel:#50434Fd9; --card:#433842; --card-2:#4a3d49;
+    --bg-1:#1d171d; --bg-2:#261e26;
+    --panel:#2a2029e6; --card:#221a22; --card-2:#2b1f2c;
     --accent:#944695; --accent-soft:#d9b8da;
-    --text:#f5eff5; --text-dim:#B6A6B5; --line:#6b5b6a;
+    --text:#f5eff5; --text-dim:#B6A6B5; --line:#50434F;
     --plum:#d2a0d3; --lavender:#a3a6e6;
     --good:#7fbf7f; --bad:#d98a8a; --pink:#e59ac4;
     --radius:14px;
@@ -31,9 +31,9 @@
     min-height:100vh;line-height:1.6;color:var(--text);
     font-family:'Georgia','Iowan Old Style',serif;
     background:
-      radial-gradient(ellipse at 20% 0%, #5a3d5b 0%, transparent 55%),
-      radial-gradient(ellipse at 85% 15%, #463a45 0%, transparent 50%),
-      linear-gradient(160deg, var(--bg-1), var(--bg-2) 60%, #1f1a1f 100%);
+      radial-gradient(ellipse at 20% 0%, #3d2440 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 15%, #2e242e 0%, transparent 50%),
+      linear-gradient(160deg, var(--bg-1), var(--bg-2) 60%, #140f14 100%);
     padding:24px 16px 64px;
   }
   h1,h2,h3{font-family:'Palatino Linotype','Book Antiqua',Georgia,serif;font-weight:normal}
@@ -46,7 +46,7 @@
   .site-nav .brand{line-height:0}
   .site-nav .brand img{width:180px;height:auto}
   .site-nav .links{display:flex;gap:8px;flex-wrap:wrap}
-  .site-nav .links a{background:#3a3039;border:1px solid var(--line);color:var(--text-dim);
+  .site-nav .links a{background:#1f181f;border:1px solid var(--line);color:var(--text-dim);
     padding:8px 16px;border-radius:24px;font-size:.88rem;text-decoration:none;
     font-family:'Palatino Linotype',Georgia,serif;transition:all .15s}
   .site-nav .links a:hover{border-color:var(--accent);color:var(--text)}
@@ -59,7 +59,7 @@
 
   /* zakładki */
   .tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0 24px}
-  .tabbtn{background:#3a3039;border:1px solid var(--line);color:var(--text-dim);padding:10px 20px;border-radius:24px;
+  .tabbtn{background:#1f181f;border:1px solid var(--line);color:var(--text-dim);padding:10px 20px;border-radius:24px;
     cursor:pointer;font-size:.92rem;font-family:'Palatino Linotype',Georgia,serif;letter-spacing:.3px;transition:all .15s}
   .tabbtn:hover{border-color:var(--accent);color:var(--text)}
   .tabbtn.active{background:var(--accent);color:#ffffff;border-color:var(--accent);font-weight:bold}
@@ -71,7 +71,7 @@
   .frm{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;justify-content:center}
   .fld{display:flex;flex-direction:column;gap:5px;max-width:100%}
   .fld label{font-size:.74rem;color:var(--accent-soft);text-transform:uppercase;letter-spacing:1.2px}
-  input,select{background:#3a3039;border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:10px;
+  input,select{background:#1f181f;border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:10px;
     font-size:1rem;font-family:inherit;color-scheme:dark;max-width:100%}
   input:focus,select:focus{outline:1px solid var(--accent);border-color:var(--accent)}
   input::placeholder{color:#9a8a99}
@@ -92,7 +92,7 @@
   .agemaj{fill:#e3d8e2;font-size:11px;font-weight:600}
 
   /* dymek */
-  #tooltip{position:fixed;z-index:99;max-width:340px;background:#463a45;border:1px solid var(--accent);
+  #tooltip{position:fixed;z-index:99;max-width:340px;background:#2e242e;border:1px solid var(--accent);
     border-radius:12px;padding:12px 14px;font-size:.88rem;pointer-events:none;display:none;
     box-shadow:0 10px 30px rgba(0,0,0,.55)}
   #tooltip .tt-pos{color:var(--accent-soft);font-size:.95rem}
@@ -114,7 +114,7 @@
   .pm b.p{color:var(--good)} .pm b.m{color:var(--bad)}
   table.tbl{width:100%;border-collapse:collapse;font-size:.9rem}
   table.tbl th,table.tbl td{border:1px solid var(--line);padding:8px 10px;text-align:center}
-  table.tbl th{background:#3b313a;color:var(--accent-soft);font-weight:normal}
+  table.tbl th{background:#261e26;color:var(--accent-soft);font-weight:normal}
   table.tbl td.rowname{text-align:left;color:var(--accent-soft)}
   table.tbl td span.arkname{display:block;font-size:.75rem;color:var(--text-dim)}
   table.tbl tr.now{background:rgba(148,70,149,.14)}
@@ -800,7 +800,7 @@ function renderMatrix(containerId, M, size){
   s+=line(P.A,P.B,"#7a6479",1.6)+line(P.B,P.C,"#7a6479",1.6)+line(P.C,P.D,"#7a6479",1.6)+line(P.D,P.A,"#7a6479",1.6);
   s+=line(P.F,P.G,"#5d5f94",1.6)+line(P.G,P.H,"#5d5f94",1.6)+line(P.H,P.I,"#5d5f94",1.6)+line(P.I,P.F,"#5d5f94",1.6);
   // osie
-  s+=line(P.A,P.C,"#6b5b6a",1.2)+line(P.B,P.D,"#6b5b6a",1.2);
+  s+=line(P.A,P.C,"#50434F",1.2)+line(P.B,P.D,"#50434F",1.2);
   s+=line(P.F,P.H,"#5d5f94",1,"4,4")+line(P.G,P.I,"#5d5f94",1,"4,4");
   // ogon karmiczny — podświetlenie
   s+=line(P.I,P.D,"#d98a8a",2.4,"6,4");
@@ -826,7 +826,7 @@ function renderMatrix(containerId, M, size){
     let ex="";
     if(label) ex=`<text x="${x}" y="${y-r-6}" text-anchor="middle" font-size="${r*0.9}" fill="${fill}">${label}</text>`;
     return `<g class="pt" data-k="${key}" data-v="${val}">
-      <circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${stroke||"#2b242b"}" stroke-width="1.5"/>
+      <circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${stroke||"#1d171d"}" stroke-width="1.5"/>
       <text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central" font-size="${r*0.95}" fill="${txtcol}">${val}</text>${ex}</g>`;
   };
   const u=size/660;
@@ -839,7 +839,7 @@ function renderMatrix(containerId, M, size){
   s+=circle("LOVE",M.LOVE,15*u,"#6e3a5c","#ffe3f1","#e59ac4","♥");
   s+=circle("MONEY",M.MONEY,15*u,"#2f5a3a","#e3f7e3","#7fbf7f","$");
   for(const k of ["F","G","H","I"]){
-    s+=circle(k,M[k],20*u,"#a3a6e6","#2b242b", k==="I"?"#d98a8a":null);
+    s+=circle(k,M[k],20*u,"#a3a6e6","#1d171d", k==="I"?"#d98a8a":null);
   }
   for(const k of ["A","B","C","D"]){
     s+=circle(k,M[k],22*u,"#944695","#ffffff", k==="D"?"#d98a8a":null);
