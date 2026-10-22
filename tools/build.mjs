@@ -507,7 +507,7 @@ if (NL_ON) {
     <h2>Odczyty, matryca i ascendent</h2>
     <p>Odczyty tarota, matryca przeznaczenia i kalkulator ascendentu działają w całości w Twojej przeglądarce. Pytania, daty urodzenia i wyniki nie są wysyłane na żaden serwer. Zapisane odczyty są przechowywane wyłącznie w pamięci tej przeglądarki (localStorage) i możesz je w każdej chwili usunąć.</p>
     <h2>Newsletter</h2>
-    <p>Administratorem danych osobowych osób zapisanych do newslettera jest ${esc(NEWSLETTER.adminName)}, kontakt: <a href="mailto:${esc(NEWSLETTER.adminEmail)}">${esc(NEWSLETTER.adminEmail)}</a>.</p>
+    <p>Administratorem danych osobowych osób zapisanych do newslettera jest ${NEWSLETTER.adminName ? esc(NEWSLETTER.adminName) : "właściciel serwisu moontasia.pl"}, kontakt: <a href="mailto:${esc(NEWSLETTER.adminEmail)}">${esc(NEWSLETTER.adminEmail)}</a>.</p>
     <ul>
       <li><strong>Zakres danych:</strong> adres e-mail.</li>
       <li><strong>Cel i podstawa:</strong> wysyłka newslettera na podstawie Twojej zgody (art. 6 ust. 1 lit. a RODO).</li>
