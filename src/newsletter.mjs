@@ -12,7 +12,7 @@
 // ============================================================
 export const NEWSLETTER = {
   enabled: false,
-  mailerliteAction: "",
+  mailerliteAction: "https://assets.mailerlite.com/jsonp/2734687/forms/202060681993782473/subscribe",
   // dane do polityki prywatności (administrator danych osobowych)
   adminName: "",
   adminEmail: "",
