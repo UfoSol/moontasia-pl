@@ -12,7 +12,7 @@ Tarot online: rozkład na 3 karty, krzyż z 5 kart, tak/nie, karta dnia. Statycz
 - `assets/`: wspólne style (`site.css`, `tarot.css`, `cards.css`, `matryca.css`) i menu (`nav.js`)
 - `src/`: szablony: menu i stopka (`src/partials/`), treści stron rozkładów (`src/tarot/pages.mjs`)
 - `tools/build.mjs`: generator stron
-- `karty/`: 78 grafik kart (SVG)
+- `karty/`: 78 grafik kart (SVG) oraz lekkie wersje WebP: `karty/s/` (miniatury) i `karty/m/` (rozkłady, strony kart); po zmianie grafik uruchom `node tools/make-thumbs.mjs`
 - `blog/`: blog (generowany z `src/blog/posts.mjs`, style w `blog/blog.css`)
 - `logo/`: logotypy (oryginały oraz wersje do strony: `moontasia-white.png`, `favicon.png`, `apple-touch-icon.png`, `og-image.png`)
 - `CNAME`: domena moontasia.pl dla GitHub Pages

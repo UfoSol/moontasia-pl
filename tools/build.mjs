@@ -243,7 +243,7 @@ ${MODAL}`;
     const a = (i * 30 - 90) * Math.PI / 180;
     return `<text x="${(251 * Math.cos(a)).toFixed(1)}" y="${(251 * Math.sin(a)).toFixed(1)}">${s}︎</text>`;
   }).join("");
-  const FACES = { 4: "karty/18-the-star.svg", 5: "karty/19-the-moon.svg", 6: "karty/20-the-sun.svg" };
+  const FACES = { 4: "karty/m/18-the-star.webp", 5: "karty/m/19-the-moon.webp", 6: "karty/m/20-the-sun.webp" };
   const deck = Array.from({ length: 11 }, (_, i) =>
     `<div class="tcard"><div class="face back"></div>${FACES[i] ? `<div class="face front" style="background-image:url(/${FACES[i]})"></div>` : ""}</div>`).join("");
   const latest = POSTS_SORTED.slice(0, 3).map(p =>
@@ -278,7 +278,8 @@ const YES_NO_TEXT = {
   "Nie": "To karta wyraźnego „nie”: jej energia nie wspiera sprawy w obecnej formie.",
 };
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
-const imgTag = (c, w, h, extra = "") => `<img src="/${c.file}" alt="Karta tarota ${c.pl}" width="${w}" height="${h}"${extra}>`;
+const webp = (file, size) => "/" + file.replace("karty/", `karty/${size}/`).replace(/\.svg$/, ".webp");
+const imgTag = (c, w, h, extra = "") => `<img src="${webp(c.file, w > 130 ? "m" : "s")}" alt="Karta tarota ${c.pl}" width="${w}" height="${h}" decoding="async"${extra}>`;
 
 for (const c of CARDS) {
   const m = MEANINGS[c.en], yn = YES_NO[c.en], day = DAY_MEANINGS[c.en];
@@ -364,7 +365,7 @@ for (const c of CARDS) {
 </main>`;
   const articleLd = {
     "@context": "https://schema.org", "@type": "Article", headline: `${c.pl} – znaczenie karty tarota`,
-    description, image: SITE + "/" + c.file, inLanguage: "pl-PL", mainEntityOfPage: SITE + c.url,
+    description, image: SITE + webp(c.file, "m"), inLanguage: "pl-PL", mainEntityOfPage: SITE + c.url,
     author: { "@type": "Organization", name: "Moontasia" }, publisher: { "@type": "Organization", name: "Moontasia", logo: { "@type": "ImageObject", url: SITE + "/logo/moontasia-white.png" } },
   };
   write(c.url.slice(1) + "index.html", page({

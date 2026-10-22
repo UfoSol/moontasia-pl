@@ -107,10 +107,9 @@ document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litP
     const x = ease(clamp((p - 0.38) / 0.07));
     const o0 = 1 - x, o2 = x;
     const drop = 50 * seg(p, 0.66, 1);   // ostatni napis wyraźnie opada pod koniec
-    // gdy scena odjeżdża w górę, napis jeszcze chwilę podąża za ekranem, potem znika
-    const trail = Math.min(over, 320) * 0.75;
-    const trailFade = 1 - clamp((over - 170) / 130);
-    caps[1].style.setProperty("--veil", clamp(over / 90).toFixed(2));
+    // gdy scena odjeżdża w górę, napis jeszcze chwilę podąża za ekranem i chowa się za kartami
+    const trail = Math.min(over, 420) * 0.75;
+    const trailFade = 1 - clamp((over - 320) / 100);
     if (hint) hint.style.opacity = 1 - seg(p, 0, 0.06);
     caps[0].style.opacity = o0;
     caps[0].style.transform = `translateY(${-x * 30}px)`;

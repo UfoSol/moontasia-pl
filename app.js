@@ -4,6 +4,11 @@
 
 const IMG_DIR = "/";
 
+// lekkie obrazki WebP: "s" miniatury (okno wyboru), "m" karty w rozkładzie
+function cardImg(file, size) {
+  return IMG_DIR + file.replace("karty/", `karty/${size}/`).replace(/\.svg$/, ".webp");
+}
+
 // stan wylosowanych kart, osobno dla każdego rozkładu
 const state = {
   three: { left: null, right: null, top: null },
@@ -66,7 +71,7 @@ function renderSlot(spread, pos) {
 
   const card = cardByEn(val.en);
   frame.classList.add("filled");
-  frame.innerHTML = `<img src="${IMG_DIR}${card.file}" alt="${card.pl}" class="${val.reversed ? 'reversed' : ''}">`;
+  frame.innerHTML = `<img src="${cardImg(card.file, "m")}" alt="${card.pl}" class="${val.reversed ? 'reversed' : ''}" style="background:url(${cardImg(card.file, "s")}) center/contain no-repeat" decoding="async">`;
   nameEl.innerHTML = `${card.pl} ${val.reversed ? '<span class="ori">(odwrócona)</span>' : ''}`;
   toggle.checked = val.reversed;
   toggle.disabled = false;
@@ -208,7 +213,7 @@ function renderCardGrid() {
   filtered.forEach(c => {
     const item = document.createElement("div");
     item.className = "grid-item";
-    item.innerHTML = `<img src="${IMG_DIR}${c.file}" alt="${c.pl}" loading="lazy"><div class="gi-name">${c.pl}</div>`;
+    item.innerHTML = `<img src="${cardImg(c.file, "s")}" alt="${c.pl}" loading="lazy" decoding="async" width="90" height="158"><div class="gi-name">${c.pl}</div>`;
     item.addEventListener("click", () => selectCard(c.en));
     cardGrid.appendChild(item);
   });
@@ -752,5 +757,15 @@ function listSavedReadings() {
 
 // ---------- start ----------
 renderAllSlots();
+
+// miniatury do okna wyboru ładujemy w tle, gdy strona już jest gotowa (nie na wolnym łączu)
+(function preloadThumbs() {
+  if (!document.getElementById("cardGrid")) return;
+  const c = navigator.connection;
+  if (c && (c.saveData || /2g/.test(c.effectiveType || ""))) return;
+  const run = () => CARDS.forEach((card, i) => setTimeout(() => { new Image().src = cardImg(card.file, "s"); }, i * 15));
+  if ("requestIdleCallback" in window) requestIdleCallback(run, { timeout: 3000 });
+  else setTimeout(run, 1500);
+})();
 document.querySelectorAll(".table-question").forEach(box => updateTableQuestion(box.dataset.spread));
 if (document.getElementById("savedList")) listSavedReadings();
