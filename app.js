@@ -769,3 +769,14 @@ renderAllSlots();
 })();
 document.querySelectorAll(".table-question").forEach(box => updateTableQuestion(box.dataset.spread));
 if (document.getElementById("savedList")) listSavedReadings();
+
+// link z „#losuj” (np. ze strony głównej) od razu losuje karty w rozkładzie na tej stronie
+if (location.hash === "#losuj") {
+  const spread = Object.keys(state).find(s => hasSpread(s) && s !== "saved");
+  if (spread) {
+    drawCards(spread);
+    history.replaceState(null, "", location.pathname);
+    const anchor = document.getElementById("rozklad");
+    if (anchor) anchor.scrollIntoView({ block: "start" });
+  }
+}
