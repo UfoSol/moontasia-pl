@@ -50,13 +50,15 @@
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   const seg = (p, a, b) => ease(clamp((p - a) / (b - a)));
+  const easeOut = t => 1 - Math.pow(1 - t, 2.2);
+  const segOut = (p, a, b) => easeOut(clamp((p - a) / (b - a)));
 
-  let progress = reduced ? 1 : 0, idle = 0;
+  let progress = 0, idle = 0;
   function render() {
     const p = progress;
-    const fan = seg(p, 0.12, 0.55);        // rozkładanie wachlarza
-    const handsOut = seg(p, 0.08, 0.5);    // dłonie odsuwają się
-    const lift = seg(p, 0.1, 0.45);
+    const fan = segOut(p, 0.0, 0.5);        // rozkładanie wachlarza
+    const handsOut = segOut(p, 0.0, 0.42);    // dłonie odsuwają się
+    const lift = segOut(p, 0.0, 0.4);
 
     handsL.forEach(h => {
       h.style.transform = `translate(${-170 * handsOut}px, ${210 * handsOut}px) rotate(${-10 * handsOut}deg)`;
@@ -78,10 +80,10 @@
       c.style.transform = `translate(${stackX}px, ${stackY - 70 * lift + float + pop}px) rotate(${angle}deg) rotateY(${180 * flip}deg)`;
     });
 
-    if (zodiac) zodiac.style.transform = `translate(-50%,-50%) rotate(${p * 70 + idle * 2}deg)`;
+    if (zodiac) zodiac.style.transform = `translate(-50%,-50%) rotate(${p * 70 + (reduced ? 0 : idle * 2)}deg)`;
     if (moon) moon.style.transform = `translateY(${p * 60}px)`;
 
-    const o0 = 1 - seg(p, 0.06, 0.2);
+    const o0 = 1 - seg(p, 0.04, 0.16);
     const o1 = seg(p, 0.22, 0.32) * (1 - seg(p, 0.5, 0.6));
     const o2 = seg(p, 0.7, 0.82);
     [o0, o1, o2].forEach((o, i) => {
@@ -92,22 +94,27 @@
   }
 
   function onScroll() {
-    if (reduced) return;
     const r = hero.getBoundingClientRect();
     const total = hero.offsetHeight - stage.offsetHeight;
     progress = clamp(-r.top / total);
   }
 
-  let last = 0;
   function loop(t) {
     idle = t / 900;
-    if (t - last > 33 || !reduced) { drawStars(t); last = t; }
+    drawStars(t);
     render();
-    if (!reduced) requestAnimationFrame(loop);
+    requestAnimationFrame(loop);
+  }
+  let queued = false;
+  function renderOnce() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; render(); });
   }
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", () => { fit(); onScroll(); });
+  // przewijanie zawsze steruje talią; ograniczony ruch wyłącza tylko unoszenie i migotanie
+  window.addEventListener("scroll", () => { onScroll(); if (reduced) renderOnce(); }, { passive: true });
+  window.addEventListener("resize", () => { fit(); onScroll(); if (reduced) { drawStars(0); renderOnce(); } });
   fit(); onScroll();
   if (reduced) { drawStars(0); render(); } else requestAnimationFrame(loop);
 })();
