@@ -27,6 +27,7 @@ document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litP
   const stage = hero.querySelector(".stage");
   const cards = [...hero.querySelectorAll(".tcard")];
   const caps = [...hero.querySelectorAll(".caption")];
+  const hint = hero.querySelector(".scroll-hint");
   const zodiac = hero.querySelector(".zodiac");
   const moon = hero.querySelector(".moon");
   const N = cards.length, MID = (N - 1) / 2;
@@ -64,13 +65,13 @@ document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litP
     const D = Math.min(H * 0.94, 820, mobile ? Math.max(W * 1.15, H * 0.72) : W);
     const cy = H * 0.5;
     const s = Math.max(0.42, Math.min(D / 760, W / (mobile ? 720 : 620), 1.1));
-    fanDeg = mobile ? 7.5 : 9;
+    fanDeg = mobile ? 7.5 : 8;
     const st = stage.style;
     st.setProperty("--d", `${D}px`);
     st.setProperty("--cy", `${cy}px`);
-    st.setProperty("--cap-top", `${cy - D * (mobile ? 0.44 : 0.4)}px`);
+    st.setProperty("--cap-top", `${cy - D * (mobile ? 0.38 : 0.32)}px`);
     st.setProperty("--cap-w", `${Math.max(D * 0.72, Math.min(W - 32, 360))}px`);
-    st.setProperty("--deck-y", `${cy + D * (mobile ? 0.17 : 0.13)}px`);
+    st.setProperty("--deck-y", `${cy + D * (mobile ? 0.24 : 0.21)}px`);
     st.setProperty("--s", s.toFixed(3));
     makeStars();
   }
@@ -95,28 +96,32 @@ document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litP
       const k = FLIP.indexOf(i);
       const flip = k >= 0 ? seg(p, 0.38 + k * 0.05, 0.56 + k * 0.05) : 0;
       const pop = k >= 0 ? -22 * seg(p, 0.36, 0.5) : 0;
-      c.style.transform = `translate(${stackX}px, ${stackY - 50 * lift + float + pop}px) rotate(${angle}deg) rotateY(${180 * flip}deg)`;
+      c.style.transform = `translate(${stackX}px, ${stackY - 30 * lift + float + pop}px) rotate(${angle}deg) rotateY(${180 * flip}deg)`;
     });
     stage.style.setProperty("--deck-shadow", (1 - fan).toFixed(2));
 
     if (zodiac) zodiac.style.transform = `translate(-50%,-50%) rotate(${p * 50 + (reduced ? 0 : idle * 2)}deg)`;
     if (moon) moon.style.transform = `translateY(${p * 30}px)`;
 
-    const o0 = 1 - seg(p, 0.02, 0.14);
-    const o2 = seg(p, 0.52, 0.68);
-    const drop = 28 * seg(p, 0.72, 1);   // ostatni napis lekko opada pod koniec
+    // pierwszy napis zostaje do połowy animacji i płynnie przechodzi w drugi (bez pustej chwili)
+    const x = ease(clamp((p - 0.38) / 0.07));
+    const o0 = 1 - x, o2 = x;
+    const drop = 28 * seg(p, 0.7, 1);   // ostatni napis lekko opada pod koniec
+    if (hint) hint.style.opacity = 1 - seg(p, 0, 0.06);
     caps[0].style.opacity = o0;
-    caps[0].style.transform = `translateY(${-(1 - o0) * 10}px)`;
+    caps[0].style.transform = `translateY(${-x * 30}px)`;
     caps[0].style.visibility = o0 < 0.02 ? "hidden" : "visible";
     caps[1].style.opacity = o2;
-    caps[1].style.transform = `translateY(${(1 - o2) * 12 + drop}px)`;
+    caps[1].style.transform = `translateY(${(1 - x) * 30 + drop}px)`;
     caps[1].style.visibility = o2 < 0.02 ? "hidden" : "visible";
   }
 
   function onScroll() {
+    // scena przykleja się pod menu, więc liczymy od miejsca przyklejenia
+    const stickTop = parseFloat(getComputedStyle(stage).top) || 0;
     const r = hero.getBoundingClientRect();
     const total = hero.offsetHeight - stage.offsetHeight;
-    progress = total > 0 ? clamp(-r.top / total) : 1;
+    progress = total > 0 ? clamp((stickTop - r.top) / total) : 1;
   }
 
   function loop(t) {
