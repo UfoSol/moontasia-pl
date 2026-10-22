@@ -1,0 +1,37 @@
+/* ============================================================
+   Moontasia — strony ze znaczeniem kart tarota
+   ============================================================ */
+.card-hero{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:start;margin-bottom:6px}
+@media (max-width:640px){.card-hero{grid-template-columns:1fr;text-align:center}.card-hero .card-img{margin:0 auto}}
+.card-img{width:220px;max-width:70vw;background:#f4ecd9;border-radius:12px;padding:6px;box-shadow:0 10px 30px rgba(0,0,0,.45);border:2px solid var(--accent)}
+.card-img img{display:block;width:100%;height:auto}
+.card-hero h1{font-size:2rem;color:var(--accent-soft);margin:4px 0 10px;line-height:1.2}
+@media (max-width:560px){.card-hero h1{font-size:1.6rem}}
+.card-lead{line-height:1.7;margin:0 0 16px;color:var(--text)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:8px;margin:0;text-align:left}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.facts dt{font-size:.7rem;letter-spacing:1.3px;text-transform:uppercase;color:var(--text-dim)}
+.facts dd{margin:2px 0 0;color:var(--accent-soft);font-size:.95rem}
+.card-cta{text-align:center;background:rgba(148,70,149,.12);border:1px solid var(--accent);border-radius:14px;padding:18px;margin:28px 0}
+.card-cta p{margin:0 0 12px}
+.card-cta .btn-ghost{margin:10px 0 0 6px}
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:10px}
+.mini-grid a{text-decoration:none;text-align:center;color:var(--text-dim);font-size:.74rem;line-height:1.25}
+.mini-grid a:hover{color:var(--accent-soft)}
+.mini-grid img{display:block;width:100%;height:auto;background:#f4ecd9;border-radius:6px;padding:3px;margin-bottom:4px;transition:transform .15s}
+.mini-grid a:hover img{transform:translateY(-3px)}
+.prev-next{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:26px;padding-top:16px;border-top:1px solid var(--line)}
+.prev-next a{text-decoration:none}
+
+.suit-jump{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
+.suit-section{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-top:20px;scroll-margin-top:80px}
+@media (max-width:560px){.suit-section{padding:18px 14px}}
+.suit-section h2{color:var(--accent-soft);margin:0 0 6px;font-size:1.4rem}
+.suit-section h2 small{font-size:.85rem;color:var(--text-dim)}
+.suit-section>p{color:var(--text-dim);margin:0 0 16px;line-height:1.6}
+.card-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:14px}
+.card-index a{text-decoration:none;text-align:center;color:var(--text);display:block;padding:6px;border-radius:10px;border:1px solid transparent;transition:all .15s}
+.card-index a:hover{border-color:var(--accent);background:var(--card)}
+.card-index img{display:block;width:100%;height:auto;background:#f4ecd9;border-radius:6px;padding:3px;margin-bottom:6px}
+.card-index b{display:block;font-weight:normal;color:var(--accent-soft);font-family:'Palatino Linotype',Georgia,serif;font-size:.95rem}
+.card-index span{display:block;font-size:.74rem;color:var(--text-dim);line-height:1.3;margin-top:2px}

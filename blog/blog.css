@@ -1,46 +1,6 @@
-:root{
-  --bg-1:#1d171d;
-  --bg-2:#261e26;
-  --panel:#2a2029e6;
-  --accent:#944695;
-  --accent-soft:#d9b8da;
-  --text:#f5eff5;
-  --text-dim:#B6A6B5;
-  --line:#50434F;
-  --radius:14px;
-  font-family:'Georgia','Iowan Old Style',serif;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  min-height:100vh;
-  background:
-    radial-gradient(ellipse at 20% 0%, #3d2440 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 15%, #2e242e 0%, transparent 50%),
-    linear-gradient(160deg, var(--bg-1), var(--bg-2) 60%, #140f14 100%);
-  color:var(--text);
-  padding:24px 16px 64px;
-}
-h1,h2,h3{font-family:'Palatino Linotype','Book Antiqua',Georgia,serif;font-weight:normal;}
-a{color:var(--accent-soft);}
-a:hover{color:var(--accent-soft);}
-.wrap{max-width:760px;margin:0 auto;}
-
-/* ---- nawigacja ---- */
-.site-nav{
-  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
-  margin-bottom:28px;
-}
-.site-nav .brand{line-height:0;}
-.site-nav .brand img{width:180px;height:auto;}
-.site-nav .links{display:flex;gap:8px;flex-wrap:wrap;}
-.site-nav .links a{
-  background:#1f181f;border:1px solid var(--line);color:var(--text-dim);
-  padding:8px 16px;border-radius:24px;font-size:0.88rem;text-decoration:none;
-  font-family:'Palatino Linotype',Georgia,serif;transition:all .15s;
-}
-.site-nav .links a:hover{border-color:var(--accent);color:var(--text);}
-.site-nav .links a.active{background:var(--accent);color:#ffffff;border-color:var(--accent);}
+/* Moontasia — style bloga (kolory, menu i stopka: /assets/site.css) */
+.wrap{max-width:760px;margin:0 auto;padding:22px 16px 20px}
+.sparkle{color:var(--accent-soft);}
 
 /* ---- lista wpisów ---- */
 .blog-header{text-align:center;margin-bottom:26px;}
@@ -88,4 +48,3 @@ article .lead{font-size:1.1rem;color:var(--text-dim);font-style:italic;}
 .btn-main:hover{transform:translateY(-2px);color:#ffffff;}
 .back{display:inline-block;margin-top:22px;font-size:0.92rem;}
 
-footer{text-align:center;color:var(--text-dim);font-size:0.78rem;margin-top:30px;}

@@ -3,348 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarot online: rozkład 3 i 5 kart, tak/nie, karta dnia | Moontasia</title>
-<meta name="description" content="Darmowy tarot online po polsku: rozkład na 3 karty, krzyż z 5 kart, odpowiedź tak/nie i karta dnia. Wybierz karty i odczytaj interpretację wszystkich 78 kart tarota.">
+<title>Tarot online za darmo – rozkład na 3 karty | Moontasia</title>
+<meta name="description" content="Darmowy tarot online po polsku. Zadaj pytanie, wylosuj 3 karty i od razu przeczytaj interpretację: przeszłość, teraźniejszość, przyszłość. Bez rejestracji.">
 <link rel="canonical" href="https://moontasia.pl/">
 <meta name="theme-color" content="#1d171d">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Moontasia">
 <meta property="og:url" content="https://moontasia.pl/">
-<meta property="og:title" content="Tarot online | Moontasia">
-<meta property="og:description" content="Rozkład na 3 karty, krzyż z 5 kart, odpowiedź tak/nie i karta dnia. Interpretacje wszystkich 78 kart tarota po polsku.">
+<meta property="og:title" content="Tarot online za darmo – rozkład na 3 karty">
+<meta property="og:description" content="Darmowy tarot online po polsku. Zadaj pytanie, wylosuj 3 karty i od razu przeczytaj interpretację: przeszłość, teraźniejszość, przyszłość. Bez rejestracji.">
 <meta property="og:image" content="https://moontasia.pl/logo/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/logo/favicon.png">
 <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png">
-<style>
-  :root{
-    --bg-1:#1d171d;
-    --bg-2:#261e26;
-    --panel:#2a2029e6;
-    --panel-solid:#2e242e;
-    --accent:#944695;
-    --accent-soft:#d9b8da;
-    --text:#f5eff5;
-    --text-dim:#B6A6B5;
-    --line:#50434F;
-    --card-empty:#2e242e;
-    --card-face:#f4ecd9;
-    --good:#7fbf7f;
-    --bad:#d98a8a;
-    --mid:#d9c07f;
-    --radius:14px;
-    font-family: 'Georgia', 'Iowan Old Style', serif;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    min-height:100vh;
-    background:
-      radial-gradient(ellipse at 20% 0%, #3d2440 0%, transparent 55%),
-      radial-gradient(ellipse at 85% 15%, #2e242e 0%, transparent 50%),
-      linear-gradient(160deg, var(--bg-1), var(--bg-2) 60%, #140f14 100%);
-    color:var(--text);
-    padding:24px 16px 64px;
-  }
-  h1,h2,h3{font-family:'Palatino Linotype','Book Antiqua',Georgia,serif; font-weight:normal;}
-  .wrap{max-width:980px;margin:0 auto;}
-  header{text-align:center;margin-bottom:22px;}
-  header .logo{margin:0 0 10px;line-height:0;}
-  header .logo img{width:360px;max-width:80%;height:auto;}
-  header h1{
-    font-size:1.6rem;letter-spacing:1px;color:var(--accent-soft);
-    margin:0 0 6px;
-  }
-  header p{color:var(--text-dim);margin:0;font-size:0.98rem;}
-  header .brand{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;}
-  header .site-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px;}
-  header .blog-link{display:inline-block;color:var(--accent-soft);font-size:0.9rem;text-decoration:none;border-bottom:1px solid var(--line);}
-  header .blog-link:hover{color:var(--accent-soft);border-color:var(--accent);}
-  .sparkle{color:var(--accent-soft);}
-
-  /* ---- tabs ---- */
-  .tabs{
-    display:flex;justify-content:center;gap:10px;margin-bottom:24px;flex-wrap:wrap;
-  }
-  .tab-btn{
-    background:#1f181f;border:1px solid var(--line);color:var(--text-dim);
-    padding:10px 20px;border-radius:24px;font-size:0.92rem;cursor:pointer;
-    font-family:'Palatino Linotype',Georgia,serif;letter-spacing:0.3px;
-    transition:all .15s;
-  }
-  .tab-btn:hover{border-color:var(--accent);color:var(--text);}
-  .tab-btn.active{background:var(--accent);color:#ffffff;border-color:var(--accent);font-weight:bold;}
-
-  .panel{display:none;}
-  .panel.active{display:block;}
-
-  section{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:22px 24px;
-    margin-bottom:22px;
-    backdrop-filter: blur(2px);
-  }
-  section h2{
-    font-size:1.15rem;color:var(--accent-soft);
-    margin:0 0 14px;
-    display:flex;align-items:center;gap:8px;
-  }
-  section h2 .num{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:26px;height:26px;border-radius:50%;
-    background:var(--accent);color:#ffffff;font-size:0.85rem;font-weight:bold;
-  }
-  section p.hint{color:var(--text-dim);font-size:0.88rem;margin-top:-6px;}
-
-  textarea, input[type=text]{
-    width:100%;
-    background:#1f181f;
-    border:1px solid var(--line);
-    color:var(--text);
-    border-radius:10px;
-    padding:12px 14px;
-    font-family:inherit;
-    font-size:1rem;
-    resize:vertical;
-  }
-  textarea:focus, input[type=text]:focus{outline:1px solid var(--accent);}
-  textarea::placeholder, input::placeholder{color:#9a8a99;}
-
-  /* ---- layouts ---- */
-  .layout-area{
-    display:flex;flex-direction:column;align-items:center;gap:18px;
-    padding:10px 0 6px;
-  }
-  .layout-row{display:flex;justify-content:center;}
-  .layout-row.gap-lg{gap:56px;}
-  .layout-row.gap-md{gap:20px;}
-  @media (max-width:560px){
-    .layout-row.gap-lg{gap:16px;}
-    .layout-row.gap-md{gap:10px;}
-  }
-
-  .slot{
-    width:140px;
-    display:flex;flex-direction:column;align-items:center;gap:8px;
-  }
-  .slot .label{
-    font-size:0.74rem;text-transform:uppercase;letter-spacing:1.3px;
-    color:var(--accent-soft);text-align:center;line-height:1.3;
-  }
-  .card-frame{
-    width:124px;height:200px;
-    border-radius:10px;
-    border:2px dashed var(--line);
-    background:var(--card-empty);
-    display:flex;align-items:center;justify-content:center;
-    cursor:pointer;
-    transition:border-color .15s, transform .15s, box-shadow .15s;
-    position:relative;
-    overflow:hidden;
-  }
-  .card-frame.big{width:170px;height:275px;}
-  .card-frame:hover{border-color:var(--accent); transform:translateY(-2px);}
-  .card-frame.filled{
-    border-style:solid;border-color:var(--accent);
-    background:var(--card-face);
-    box-shadow:0 4px 18px rgba(0,0,0,0.45);
-  }
-  .card-frame .placeholder{
-    color:var(--text-dim);font-size:0.82rem;text-align:center;padding:10px;
-    line-height:1.4;
-  }
-  .card-frame img{
-    width:100%;height:100%;object-fit:contain;
-    transition:transform .25s;
-  }
-  .card-frame img.reversed{transform:rotate(180deg);}
-
-  .slot .card-name{
-    font-size:0.85rem;text-align:center;min-height:1.2em;color:var(--text);
-  }
-  .slot .card-name .ori{color:var(--accent-soft);font-style:italic;}
-
-  .reverse-toggle{
-    display:flex;align-items:center;gap:6px;
-    font-size:0.8rem;color:var(--text-dim);
-    cursor:pointer;user-select:none;
-  }
-  .reverse-toggle input{accent-color:var(--accent);}
-  .reverse-toggle.disabled{opacity:0.35;pointer-events:none;}
-
-  .clear-btn{
-    background:none;border:1px solid var(--line);color:var(--text-dim);
-    font-size:0.72rem;border-radius:6px;padding:3px 8px;cursor:pointer;
-  }
-  .clear-btn:hover{border-color:var(--bad);color:var(--bad);}
-
-  /* ---- generate button ---- */
-  .generate-row{display:flex;justify-content:center;margin:26px 0 6px;}
-  .btn-main{
-    background:linear-gradient(135deg, var(--accent), #7a3a7b);
-    color:#ffffff;border:none;
-    padding:14px 34px;border-radius:30px;
-    font-size:1.05rem;font-family:'Palatino Linotype',Georgia,serif;
-    letter-spacing:0.5px;cursor:pointer;
-    box-shadow:0 6px 20px rgba(148,70,149,0.25);
-    transition:transform .15s, box-shadow .15s;
-  }
-  .btn-main:hover{transform:translateY(-2px); box-shadow:0 8px 26px rgba(148,70,149,0.35);}
-  .btn-main:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none;}
-
-  /* ---- results ---- */
-  .results-block{display:none;}
-  .spread-block{margin-bottom:26px;}
-  .spread-block h3{
-    color:var(--accent-soft);border-bottom:1px solid var(--line);
-    padding-bottom:8px;margin-bottom:14px;font-size:1.05rem;
-  }
-  .card-interp{
-    margin-bottom:16px;padding:14px 16px;
-    background:#221a22;border-radius:10px;border-left:3px solid var(--accent);
-  }
-  .card-interp .ci-title{font-size:0.95rem;color:var(--accent-soft);margin-bottom:6px;}
-  .card-interp .ci-title .ori-tag{
-    font-size:0.72rem;color:var(--text-dim);font-style:italic;margin-left:4px;
-  }
-  .card-interp p{margin:0;line-height:1.6;color:var(--text);}
-  .synthesis{
-    background:#2b1f2c;border-radius:10px;padding:14px 16px;
-    border-left:3px solid var(--accent-soft);
-  }
-  .synthesis .ci-title{color:var(--accent-soft);margin-bottom:6px;font-size:0.95rem;}
-  .synthesis p{margin:0;line-height:1.6;}
-  .question-echo{
-    font-style:italic;color:var(--text-dim);margin-bottom:18px;
-    padding:10px 14px;border-left:2px solid var(--line);
-  }
-  .note{
-    font-size:0.78rem;color:var(--text-dim);margin-top:24px;line-height:1.5;
-    border-top:1px solid var(--line);padding-top:14px;
-  }
-
-  /* ---- yes/no verdict badge ---- */
-  .verdict-row{display:flex;justify-content:center;margin-bottom:20px;}
-  .verdict-badge{
-    display:inline-block;padding:10px 28px;border-radius:30px;
-    font-size:1.3rem;letter-spacing:0.5px;border:2px solid;
-  }
-  .verdict-badge.v-yes{background:rgba(127,191,127,0.15);color:var(--good);border-color:var(--good);}
-  .verdict-badge.v-leanyes{background:rgba(127,191,127,0.1);color:var(--good);border-color:var(--good);}
-  .verdict-badge.v-unclear{background:rgba(217,192,127,0.12);color:var(--mid);border-color:var(--mid);}
-  .verdict-badge.v-leanno{background:rgba(217,138,138,0.1);color:var(--bad);border-color:var(--bad);}
-  .verdict-badge.v-no{background:rgba(217,138,138,0.15);color:var(--bad);border-color:var(--bad);}
-
-  /* ---- modal picker ---- */
-  .modal-backdrop{
-    display:none;position:fixed;inset:0;background:rgba(25,20,25,0.75);
-    z-index:50;align-items:flex-start;justify-content:center;
-    padding:30px 12px;overflow-y:auto;
-  }
-  .modal-backdrop.open{display:flex;}
-  .modal{
-    background:var(--panel-solid);border:1px solid var(--line);
-    border-radius:16px;max-width:760px;width:100%;
-    padding:20px 22px 26px;
-  }
-  .modal-header{
-    display:flex;justify-content:space-between;align-items:center;
-    margin-bottom:14px;
-  }
-  .modal-header h3{margin:0;color:var(--accent-soft);}
-  .modal-header button{
-    background:none;border:none;color:var(--text-dim);font-size:1.4rem;
-    cursor:pointer;line-height:1;
-  }
-  .modal-search{margin-bottom:12px;}
-  .suit-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
-  .suit-tabs button{
-    background:#1f181f;border:1px solid var(--line);color:var(--text-dim);
-    padding:6px 12px;border-radius:20px;font-size:0.8rem;cursor:pointer;
-  }
-  .suit-tabs button.active{background:var(--accent);color:#ffffff;border-color:var(--accent);}
-  .card-grid{
-    display:grid;grid-template-columns:repeat(auto-fill, minmax(90px,1fr));
-    gap:10px;max-height:420px;overflow-y:auto;padding:4px;
-  }
-  .grid-item{
-    cursor:pointer;text-align:center;padding:6px;border-radius:8px;
-    border:1px solid transparent;
-  }
-  .grid-item:hover{border-color:var(--accent);background:#221a22;}
-  .grid-item img{width:100%;aspect-ratio:2/3.2;object-fit:contain;border-radius:5px;margin-bottom:4px;background:var(--card-face);padding:3px;}
-  .grid-item .gi-name{font-size:0.68rem;color:var(--text-dim);line-height:1.2;}
-
-  /* ---- zapisywanie odczytów ---- */
-  .save-row{
-    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
-    margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
-  }
-  .folder-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;}
-  .btn-save{
-    background:#1f181f;border:1px solid var(--accent);color:var(--accent-soft);
-    padding:9px 18px;border-radius:20px;font-size:0.88rem;cursor:pointer;
-    font-family:'Palatino Linotype',Georgia,serif;transition:all .15s;
-  }
-  .btn-save:hover{background:var(--accent);color:#ffffff;}
-  .save-status{font-size:0.82rem;color:var(--text-dim);display:inline-block;}
-
-  .saved-item{
-    background:#221a22;border:1px solid var(--line);border-radius:10px;
-    padding:12px 16px;margin-bottom:12px;
-  }
-  .saved-item-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
-  .saved-item-title{color:var(--accent-soft);font-size:0.95rem;}
-  .saved-item-meta{color:var(--text-dim);font-size:0.75rem;margin-top:2px;}
-  .saved-item-actions{display:flex;gap:6px;flex-shrink:0;}
-  .saved-item-body{
-    white-space:pre-wrap;word-wrap:break-word;color:var(--text);
-    font-family:inherit;font-size:0.88rem;line-height:1.6;
-    margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line);
-  }
-
-  footer{text-align:center;color:var(--text-dim);font-size:0.78rem;margin-top:30px;}
-
-  @media print{
-    .tabs, .generate-row{display:none;}
-  }
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/tarot.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Moontasia","url":"https://moontasia.pl/","inLanguage":"pl-PL","description":"Darmowy tarot online po polsku, znaczenie kart tarota, matryca przeznaczenia i kalkulator ascendentu."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Moontasia","url":"https://moontasia.pl/","logo":"https://moontasia.pl/logo/moontasia-white.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Tarot online – rozkład na 3 karty","url":"https://moontasia.pl/","applicationCategory":"LifestyleApplication","operatingSystem":"Wszystkie","inLanguage":"pl-PL","offers":{"@type":"Offer","price":"0","priceCurrency":"PLN"},"description":"Darmowy tarot online po polsku. Zadaj pytanie, wylosuj 3 karty i od razu przeczytaj interpretację: przeszłość, teraźniejszość, przyszłość. Bez rejestracji."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Czy tarot online jest darmowy?","acceptedAnswer":{"@type":"Answer","text":"Tak. Wszystkie odczyty w Moontasii są bezpłatne i nie wymagają rejestracji ani podawania adresu e-mail."}},{"@type":"Question","name":"Czy moje pytania są gdzieś zapisywane?","acceptedAnswer":{"@type":"Answer","text":"Nie. Odczyt powstaje w Twojej przeglądarce, a pytanie nie jest wysyłane na serwer. Jeśli chcesz, możesz zapisać odczyt w pamięci przeglądarki albo pobrać go jako plik."}},{"@type":"Question","name":"Jak zadać dobre pytanie do tarota?","acceptedAnswer":{"@type":"Answer","text":"Najlepiej działają pytania otwarte i dotyczące Ciebie: „Na co zwrócić uwagę…”, „Co pomoże mi…”, „Czego potrzebuję…”. Pytania typu tak/nie lepiej zadać w odczycie z jednej karty."}},{"@type":"Question","name":"Co oznacza karta odwrócona?","acceptedAnswer":{"@type":"Answer","text":"Karta odwrócona zwykle opisuje energię zablokowaną, osłabioną albo skierowaną do wewnątrz. Jeśli nie chcesz ich używać, odznacz opcję „także karty odwrócone” przed losowaniem."}},{"@type":"Question","name":"Czy mogę używać własnej talii?","acceptedAnswer":{"@type":"Answer","text":"Tak. Potasuj swoją talię, wyciągnij karty i kliknij w puste miejsca, aby wybrać je z listy. Interpretacja pojawi się tak samo jak przy losowaniu."}}]}</script>
 </head>
 <body>
-<div class="wrap">
-
-  <header>
-    <div class="logo"><img src="/logo/moontasia-white.png" alt="Moontasia" width="360" height="100"></div>
-    <h1><span class="sparkle">✦</span> Odczyty tarota <span class="sparkle">✦</span></h1>
-    <p>Wybierz rodzaj rozkładu poniżej</p>
-    <div class="site-links"><a class="blog-link" href="/matryca/">Matryca przeznaczenia i ascendent →</a><a class="blog-link" href="/blog/">Blog: poradniki tarota →</a></div>
-  </header>
-
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="three">Rozkład na 3 karty</button>
-    <button class="tab-btn" data-tab="five">Rozkład na 5 kart</button>
-    <button class="tab-btn" data-tab="one">Tak / Nie</button>
-    <button class="tab-btn" data-tab="day">Karta dnia</button>
-    <button class="tab-btn" data-tab="saved">Zapisane odczyty</button>
+<!--HEADER-->
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Moontasia – strona główna"><img src="/logo/moontasia-white.png" alt="Moontasia" width="150" height="42"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="bars"></span> Menu</button>
+    <nav class="main-nav" id="main-nav" aria-label="Menu główne">
+      <ul>
+        <li class="has-drop">
+          <button class="drop-btn" type="button" aria-expanded="false">Tarot online</button>
+          <span class="drop-label">Tarot online</span>
+          <div class="dropdown">
+            <a href="/">Rozkład na 3 karty<small>przeszłość, teraźniejszość, przyszłość</small></a>
+            <a href="/rozklad-5-kart/">Krzyż z 5 kart<small>pełny obraz sytuacji</small></a>
+            <a href="/tarot-tak-nie/">Tarot tak / nie<small>szybka odpowiedź z jednej karty</small></a>
+            <a href="/karta-dnia/">Karta dnia<small>wskazówka na dziś</small></a>
+            <a href="/zapisane-odczyty/">Zapisane odczyty<small>Twoje odczyty w tej przeglądarce</small></a>
+          </div>
+        </li>
+        <li><a href="/znaczenie-kart/">Znaczenie kart</a></li>
+        <li><a href="/matryca/">Matryca przeznaczenia</a></li>
+        <li><a href="/ascendent/">Ascendent</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a class="nav-cta" href="/#rozklad">Zrób odczyt</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+<!--/HEADER-->
+<main class="page tool">
+  
+  <div class="page-hero">
+    <h1>Tarot online – rozkład na 3 karty</h1>
+    <p>Zadaj pytanie, wylosuj trzy karty i od razu przeczytaj interpretację. Za darmo, bez rejestracji, z opisem wszystkich 78 kart tarota.</p>
+  </div>
+  <nav class="tabs" aria-label="Rodzaje odczytów"><a class="tab-btn active" href="/" aria-current="page">Rozkład na 3 karty</a><a class="tab-btn" href="/rozklad-5-kart/">Krzyż z 5 kart</a><a class="tab-btn" href="/tarot-tak-nie/">Tak / Nie</a><a class="tab-btn" href="/karta-dnia/">Karta dnia</a><a class="tab-btn" href="/zapisane-odczyty/">Zapisane</a></nav>
 
-  <!-- ============ PANEL: 3 KARTY ============ -->
   <div class="panel active" id="panel-three">
-    <section>
-      <h2><span class="num">1</span> Twoje pytanie</h2>
-      <textarea id="question-three" rows="2" placeholder="Wpisz swoje pytanie do kart"></textarea>
-    </section>
+    <section id="rozklad">
+      <h2><span class="num">1</span> Zadaj pytanie i wybierz karty</h2>
+      <p class="hint">Losujemy za Ciebie albo, jeśli masz własną talię, kliknij w puste miejsce i wybierz kartę, którą wyciągnęłaś lub wyciągnąłeś.</p>
 
-    <section>
-      <h2><span class="num">2</span> Wylosowane karty</h2>
-      <p class="hint">
-        Kliknij w puste miejsce, aby wybrać kartę. Ta sama karta jest odczytywana w obu układach poniżej —
-        dolny lewy i prawy oraz górny odpowiadają kolejno Kartom 1, 2 i 3.
-      </p>
-      <div class="layout-area">
-        <div class="layout-row">
+      <div class="question-board">
+        <label for="question-three">Twoje pytanie</label>
+        <textarea id="question-three" rows="2" placeholder="O co chcesz zapytać karty?"></textarea>
+        <div class="question-chips" data-spread="three">
+          <span>Przykłady:</span>
+          <button type="button">Co pomoże mi w pracy?</button>
+          <button type="button">Czego potrzebuję w związku?</button>
+          <button type="button">Jak rozwiązać ten konflikt?</button>
+        </div>
+      </div>
+      <div class="table-area">
+        <p class="table-question empty" data-spread="three">Twoje pytanie pojawi się tutaj, nad kartami</p>
+        <div class="layout-area">
+          <div class="layout-row">
           <div class="slot" data-spread="three" data-pos="top">
             <div class="label">Przyszłość / Rozwiązanie<br>Karta 3</div>
             <div class="card-frame" data-spread="three" data-pos="top"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
@@ -352,8 +87,8 @@
             <label class="reverse-toggle disabled"><input type="checkbox" data-spread="three" data-pos="top"> odwrócona</label>
             <button class="clear-btn" data-spread="three" data-pos="top" style="display:none;">wyczyść</button>
           </div>
-        </div>
-        <div class="layout-row gap-lg">
+          </div>
+          <div class="layout-row gap-lg">
           <div class="slot" data-spread="three" data-pos="left">
             <div class="label">Przeszłość / Sytuacja<br>Karta 1</div>
             <div class="card-frame" data-spread="three" data-pos="left"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
@@ -368,201 +103,70 @@
             <label class="reverse-toggle disabled"><input type="checkbox" data-spread="three" data-pos="right"> odwrócona</label>
             <button class="clear-btn" data-spread="three" data-pos="right" style="display:none;">wyczyść</button>
           </div>
+          </div>
         </div>
       </div>
+
+      <div class="toolbar">
+        <button type="button" class="btn-ghost" data-draw="three">✦ Wylosuj karty</button>
+        <label class="opt"><input type="checkbox" data-allow-reversed="three" checked> także karty odwrócone</label>
+        <button type="button" class="btn-ghost danger" data-reset="three">↺ Wyczyść wszystko</button>
+      </div>
+      <p class="progress" id="progress-three"></p>
     </section>
 
     <div class="generate-row"><button class="btn-main" id="generateBtn-three" disabled>Odczytaj karty</button></div>
 
     <section class="results-block" id="results-three">
-      <h2><span class="num">✦</span> Interpretacja</h2>
+      <h2><span class="num">2</span> Interpretacja</h2>
       <div id="questionEcho-three" class="question-echo" style="display:none;"></div>
       <div class="spread-block">
-        <h3>1. Przeszłość – Teraźniejszość – Przyszłość</h3>
+        <h3>Przeszłość – Teraźniejszość – Przyszłość</h3>
         <div id="spreadA-three"></div>
       </div>
       <div class="spread-block">
-        <h3>2. Sytuacja – Przeszkoda – Rozwiązanie</h3>
+        <h3>Sytuacja – Przeszkoda – Rozwiązanie</h3>
         <div id="spreadB-three"></div>
       </div>
-      <div class="note">Interpretacje generowane są automatycznie na podstawie lokalnej bazy znaczeń kart (bez użycia zewnętrznego API) — potraktuj je jako punkt wyjścia do własnej refleksji i intuicyjnego odczytania kart, nie jako gotową wyrocznię.</div>
+      <div class="note">Interpretacje powstają automatycznie na podstawie znaczeń kart. Potraktuj je jako punkt wyjścia do własnej refleksji, nie jako gotową wyrocznię.</div>
+
       <div class="save-row">
         <button class="btn-save" id="saveBtn-three">💾 Zapisz interpretację</button>
         <button class="btn-save" id="downloadBtn-three">⬇ Pobierz jako plik .txt</button>
+        <button class="btn-save" data-reset="three">↺ Nowy odczyt</button>
         <span class="save-status" id="saveStatus-three"></span>
       </div>
     </section>
   </div>
-
-  <!-- ============ PANEL: 5 KART ============ -->
-  <div class="panel" id="panel-five">
-    <section>
-      <h2><span class="num">1</span> Twoje pytanie</h2>
-      <textarea id="question-five" rows="2" placeholder="Wpisz swoje pytanie do kart"></textarea>
-    </section>
-
-    <section>
-      <h2><span class="num">2</span> Wylosowane karty</h2>
-      <p class="hint">
-        Klasyczny rozkład krzyżowy: karta w środku, dwie po bokach, jedna nad i jedna pod. Kliknij w puste miejsce, aby wybrać kartę.
-      </p>
-      <div class="layout-area">
-        <div class="layout-row">
-          <div class="slot" data-spread="five" data-pos="above">
-            <div class="label">Góra — Karta 4<br>Cel, do którego dążysz</div>
-            <div class="card-frame" data-spread="five" data-pos="above"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
-            <div class="card-name"></div>
-            <label class="reverse-toggle disabled"><input type="checkbox" data-spread="five" data-pos="above"> odwrócona</label>
-            <button class="clear-btn" data-spread="five" data-pos="above" style="display:none;">wyczyść</button>
-          </div>
-        </div>
-        <div class="layout-row gap-md">
-          <div class="slot" data-spread="five" data-pos="left">
-            <div class="label">Lewo — Karta 2<br>Przeszłość</div>
-            <div class="card-frame" data-spread="five" data-pos="left"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
-            <div class="card-name"></div>
-            <label class="reverse-toggle disabled"><input type="checkbox" data-spread="five" data-pos="left"> odwrócona</label>
-            <button class="clear-btn" data-spread="five" data-pos="left" style="display:none;">wyczyść</button>
-          </div>
-          <div class="slot" data-spread="five" data-pos="center">
-            <div class="label">Środek — Karta 1<br>Aktualna sytuacja</div>
-            <div class="card-frame" data-spread="five" data-pos="center"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
-            <div class="card-name"></div>
-            <label class="reverse-toggle disabled"><input type="checkbox" data-spread="five" data-pos="center"> odwrócona</label>
-            <button class="clear-btn" data-spread="five" data-pos="center" style="display:none;">wyczyść</button>
-          </div>
-          <div class="slot" data-spread="five" data-pos="right">
-            <div class="label">Prawo — Karta 3<br>Prawdopodobna przyszłość</div>
-            <div class="card-frame" data-spread="five" data-pos="right"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
-            <div class="card-name"></div>
-            <label class="reverse-toggle disabled"><input type="checkbox" data-spread="five" data-pos="right"> odwrócona</label>
-            <button class="clear-btn" data-spread="five" data-pos="right" style="display:none;">wyczyść</button>
-          </div>
-        </div>
-        <div class="layout-row">
-          <div class="slot" data-spread="five" data-pos="below">
-            <div class="label">Dół — Karta 5<br>Dlaczego sytuacja tak wygląda</div>
-            <div class="card-frame" data-spread="five" data-pos="below"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
-            <div class="card-name"></div>
-            <label class="reverse-toggle disabled"><input type="checkbox" data-spread="five" data-pos="below"> odwrócona</label>
-            <button class="clear-btn" data-spread="five" data-pos="below" style="display:none;">wyczyść</button>
-          </div>
-        </div>
+  <article class="prose">
+      <h2>Darmowy tarot online po polsku</h2>
+      <p>Moontasia to tarot online, który działa w całości w Twojej przeglądarce. Możesz wylosować karty jednym kliknięciem albo, jeśli masz własną talię, wybrać karty, które wyciągnęłaś lub wyciągnąłeś. Interpretacja pojawia się od razu i opiera się na tradycyjnych znaczeniach wszystkich 78 kart tarota Ridera-Waite’a: 22 Wielkich Arkanów i 56 Małych Arkanów.</p>
+      <h2>Jak zrobić rozkład na 3 karty?</h2>
+      <ol>
+        <li><strong>Zadaj pytanie.</strong> Najlepiej otwarte, dotyczące Ciebie, np. „Co pomoże mi w pracy?” zamiast „Czy dostanę awans?”.</li>
+        <li><strong>Wylosuj karty</strong> przyciskiem „Wylosuj karty” albo wybierz je ręcznie, klikając w puste miejsca.</li>
+        <li><strong>Odczytaj interpretację.</strong> Te same trzy karty czytamy w dwóch układach, dzięki czemu widzisz sprawę z dwóch perspektyw.</li>
+      </ol>
+      <h2>Co oznaczają pozycje kart?</h2>
+      <p>W układzie <strong>Przeszłość – Teraźniejszość – Przyszłość</strong> pierwsza karta pokazuje, co doprowadziło Cię do obecnej sytuacji, druga opisuje to, co dzieje się teraz, a trzecia wskazuje, dokąd zmierzają sprawy. W układzie <strong>Sytuacja – Przeszkoda – Rozwiązanie</strong> te same karty mówią o sednie sprawy, o tym, co Cię blokuje, i o kierunku, który warto rozważyć. Więcej o czytaniu tego rozkładu przeczytasz w poradniku <a href="/blog/jak-czytac-rozklad-na-3-karty/">Jak czytać rozkład na 3 karty</a>.</p>
+      <h2>Inne odczyty i narzędzia</h2>
+      <div class="tool-links"><a href="/rozklad-5-kart/"><b>Krzyż z 5 kart</b><span>Sytuacja, przyczyna, cel i kierunek, w którym zmierza sprawa.</span></a><a href="/tarot-tak-nie/"><b>Tarot tak / nie</b><span>Szybka odpowiedź na konkretne pytanie z jednej karty.</span></a><a href="/karta-dnia/"><b>Karta dnia</b><span>Krótka wskazówka i energia na dzisiejszy dzień.</span></a><a href="/znaczenie-kart/"><b>Znaczenie kart</b><span>Opis wszystkich 78 kart: prosta, odwrócona, tak/nie.</span></a><a href="/matryca/"><b>Matryca przeznaczenia</b><span>Twoje energie, ogon karmiczny i linia pieniędzy z daty urodzenia.</span></a></div>
+      <h2>Najczęstsze pytania</h2>
+      <div class="faq">
+        <details><summary>Czy tarot online jest darmowy?</summary><p>Tak. Wszystkie odczyty w Moontasii są bezpłatne i nie wymagają rejestracji ani podawania adresu e-mail.</p></details>
+        <details><summary>Czy moje pytania są gdzieś zapisywane?</summary><p>Nie. Odczyt powstaje w Twojej przeglądarce, a pytanie nie jest wysyłane na serwer. Jeśli chcesz, możesz zapisać odczyt w pamięci przeglądarki albo pobrać go jako plik.</p></details>
+        <details><summary>Jak zadać dobre pytanie do tarota?</summary><p>Najlepiej działają pytania otwarte i dotyczące Ciebie: „Na co zwrócić uwagę…”, „Co pomoże mi…”, „Czego potrzebuję…”. Pytania typu tak/nie lepiej zadać w odczycie z jednej karty.</p></details>
+        <details><summary>Co oznacza karta odwrócona?</summary><p>Karta odwrócona zwykle opisuje energię zablokowaną, osłabioną albo skierowaną do wewnątrz. Jeśli nie chcesz ich używać, odznacz opcję „także karty odwrócone” przed losowaniem.</p></details>
+        <details><summary>Czy mogę używać własnej talii?</summary><p>Tak. Potasuj swoją talię, wyciągnij karty i kliknij w puste miejsca, aby wybrać je z listy. Interpretacja pojawi się tak samo jak przy losowaniu.</p></details>
       </div>
-    </section>
+  </article>
+</main>
 
-    <div class="generate-row"><button class="btn-main" id="generateBtn-five" disabled>Odczytaj karty</button></div>
-
-    <section class="results-block" id="results-five">
-      <h2><span class="num">✦</span> Interpretacja</h2>
-      <div id="questionEcho-five" class="question-echo" style="display:none;"></div>
-      <div id="spreadFive"></div>
-      <div class="note">Interpretacje generowane są automatycznie na podstawie lokalnej bazy znaczeń kart (bez użycia zewnętrznego API) — potraktuj je jako punkt wyjścia do własnej refleksji i intuicyjnego odczytania kart, nie jako gotową wyrocznię.</div>
-      <div class="save-row">
-        <button class="btn-save" id="saveBtn-five">💾 Zapisz interpretację</button>
-        <button class="btn-save" id="downloadBtn-five">⬇ Pobierz jako plik .txt</button>
-        <span class="save-status" id="saveStatus-five"></span>
-      </div>
-    </section>
-  </div>
-
-  <!-- ============ PANEL: TAK/NIE ============ -->
-  <div class="panel" id="panel-one">
-    <section>
-      <h2><span class="num">1</span> Twoje pytanie</h2>
-      <textarea id="question-one" rows="2" placeholder="Wpisz swoje pytanie do kart (najlepiej takie, na które da się odpowiedzieć tak lub nie)"></textarea>
-    </section>
-
-    <section>
-      <h2><span class="num">2</span> Wylosowana karta</h2>
-      <p class="hint">Wyciągnij jedną kartę i wybierz ją poniżej.</p>
-      <div class="layout-area">
-        <div class="layout-row">
-          <div class="slot" data-spread="one" data-pos="single">
-            <div class="label">Karta</div>
-            <div class="card-frame big" data-spread="one" data-pos="single"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
-            <div class="card-name"></div>
-            <label class="reverse-toggle disabled"><input type="checkbox" data-spread="one" data-pos="single"> odwrócona</label>
-            <button class="clear-btn" data-spread="one" data-pos="single" style="display:none;">wyczyść</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="generate-row"><button class="btn-main" id="generateBtn-one" disabled>Odczytaj kartę</button></div>
-
-    <section class="results-block" id="results-one">
-      <h2><span class="num">✦</span> Interpretacja</h2>
-      <div id="questionEcho-one" class="question-echo" style="display:none;"></div>
-      <div class="verdict-row"><span class="verdict-badge" id="verdictBadge"></span></div>
-      <div id="spreadOne"></div>
-      <div class="note">Odpowiedź generowana jest na podstawie tradycyjnych skojarzeń tarota tak/nie oraz lokalnej bazy znaczeń kart — potraktuj ją jako inspirację do refleksji, nie jako wyrocznię dającą ostateczne rozstrzygnięcie.</div>
-      <div class="save-row">
-        <button class="btn-save" id="saveBtn-one">💾 Zapisz interpretację</button>
-        <button class="btn-save" id="downloadBtn-one">⬇ Pobierz jako plik .txt</button>
-        <span class="save-status" id="saveStatus-one"></span>
-      </div>
-    </section>
-  </div>
-
-  <!-- ============ PANEL: KARTA DNIA ============ -->
-  <div class="panel" id="panel-day">
-    <section>
-      <h2><span class="num">1</span> Twoja karta dnia</h2>
-      <p class="hint">Wyciągnij jedną kartę na dziś i wybierz ją poniżej, by odczytać jej znaczenie i wskazówkę na dzisiejszy dzień.</p>
-      <div class="layout-area">
-        <div class="layout-row">
-          <div class="slot" data-spread="day" data-pos="single">
-            <div class="label">Karta dnia</div>
-            <div class="card-frame big" data-spread="day" data-pos="single"><span class="placeholder">Kliknij, aby wybrać kartę</span></div>
-            <div class="card-name"></div>
-            <label class="reverse-toggle disabled"><input type="checkbox" data-spread="day" data-pos="single"> odwrócona</label>
-            <button class="clear-btn" data-spread="day" data-pos="single" style="display:none;">wyczyść</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="generate-row"><button class="btn-main" id="generateBtn-day" disabled>Odczytaj kartę dnia</button></div>
-
-    <section class="results-block" id="results-day">
-      <h2><span class="num">✦</span> Interpretacja</h2>
-      <div id="dayDateEcho" class="question-echo" style="display:none;"></div>
-      <div id="spreadDay"></div>
-      <div class="note">Interpretacja generowana jest automatycznie na podstawie lokalnej bazy znaczeń kart — potraktuj ją jako inspirację i punkt wyjścia do własnej refleksji na dziś.</div>
-      <div class="save-row">
-        <button class="btn-save" id="saveBtn-day">💾 Zapisz interpretację</button>
-        <button class="btn-save" id="downloadBtn-day">⬇ Pobierz jako plik .txt</button>
-        <span class="save-status" id="saveStatus-day"></span>
-      </div>
-    </section>
-  </div>
-
-  <!-- ============ PANEL: ZAPISANE ODCZYTY ============ -->
-  <div class="panel" id="panel-saved">
-    <section>
-      <h2><span class="num">✦</span> Zapisane odczyty</h2>
-      <p class="hint">
-        Zapisane odczyty są przechowywane tylko w tej przeglądarce na tym urządzeniu. Nie trafiają na serwer.
-        Wyczyszczenie danych przeglądarki usuwa je, dlatego ważne odczyty warto pobrać jako plik.
-      </p>
-      <div class="folder-row">
-        <button class="btn-save" id="clearAllBtn">🗑 Usuń wszystkie</button>
-      </div>
-      <div id="savedFolderStatus" class="save-status" style="display:block;margin:10px 0 18px;"></div>
-      <div id="savedList"></div>
-    </section>
-  </div>
-
-  <footer>© Moontasia · moontasia.pl · <a href="/matryca/" style="color:var(--accent-soft);">Matryca</a> · <a href="/blog/" style="color:var(--accent-soft);">Blog</a> · Odczyty powstają w Twojej przeglądarce, pytania nie są nigdzie wysyłane.</footer>
-</div>
-
-<!-- Modal: card picker -->
 <div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Wybierz kartę">
     <div class="modal-header">
       <h3>Wybierz kartę</h3>
-      <button id="modalClose">&times;</button>
+      <button id="modalClose" aria-label="Zamknij">&times;</button>
     </div>
     <input type="text" id="modalSearch" class="modal-search" placeholder="Szukaj karty po nazwie…">
     <div class="suit-tabs" id="suitTabs">
@@ -576,8 +180,56 @@
     <div class="card-grid" id="cardGrid"></div>
   </div>
 </div>
-
-<script src="data.js"></script>
-<script src="app.js"></script>
+<!--FOOTER-->
+<footer class="site-footer">
+  <div class="cols">
+    <div class="brand">
+      <a href="/"><img src="/logo/moontasia-white.png" alt="Moontasia" width="150" height="42" loading="lazy"></a>
+      <p>Darmowy tarot online po polsku. Odczyty powstają w Twojej przeglądarce, pytania nie są nigdzie wysyłane.</p>
+    </div>
+    <div>
+      <h3>Tarot online</h3>
+      <ul>
+        <li><a href="/">Rozkład na 3 karty</a></li>
+        <li><a href="/rozklad-5-kart/">Krzyż z 5 kart</a></li>
+        <li><a href="/tarot-tak-nie/">Tarot tak / nie</a></li>
+        <li><a href="/karta-dnia/">Karta dnia</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Znaczenie kart</h3>
+      <ul>
+        <li><a href="/znaczenie-kart/">Wszystkie 78 kart</a></li>
+        <li><a href="/znaczenie-kart/#wielkie-arkana">Wielkie Arkana</a></li>
+        <li><a href="/znaczenie-kart/#kielichy">Kielichy</a></li>
+        <li><a href="/znaczenie-kart/#miecze">Miecze</a></li>
+        <li><a href="/znaczenie-kart/#bulawy">Buławy</a></li>
+        <li><a href="/znaczenie-kart/#pentakle">Pentakle</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Astrologia i numerologia</h3>
+      <ul>
+        <li><a href="/matryca/">Matryca przeznaczenia</a></li>
+        <li><a href="/matryca/#partnerska">Matryca partnerska</a></li>
+        <li><a href="/ascendent/">Kalkulator ascendentu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Blog</h3>
+      <ul>
+        <li><a href="/blog/jak-czytac-rozklad-na-3-karty/">Jak czytać rozkład na 3 karty</a></li>
+        <li><a href="/blog/karty-odwrocone-w-tarocie/">Karty odwrócone</a></li>
+        <li><a href="/blog/wielkie-i-male-arkana/">Wielkie i Małe Arkana</a></li>
+        <li><a href="/blog/">Wszystkie wpisy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">© Moontasia · moontasia.pl · Tarot i matryca przeznaczenia mają charakter rozrywkowy i refleksyjny, nie zastępują porady specjalisty.</div>
+</footer>
+<script src="/assets/nav.js" defer></script>
+<!--/FOOTER-->
+<script src="/data.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>

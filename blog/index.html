@@ -16,19 +16,39 @@
 <meta property="og:image" content="https://moontasia.pl/logo/og-image.png">
 <link rel="icon" type="image/png" href="/logo/favicon.png">
 <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/blog/blog.css">
 </head>
 <body>
+<!--HEADER-->
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Moontasia – strona główna"><img src="/logo/moontasia-white.png" alt="Moontasia" width="150" height="42"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="bars"></span> Menu</button>
+    <nav class="main-nav" id="main-nav" aria-label="Menu główne">
+      <ul>
+        <li class="has-drop">
+          <button class="drop-btn" type="button" aria-expanded="false">Tarot online</button>
+          <span class="drop-label">Tarot online</span>
+          <div class="dropdown">
+            <a href="/">Rozkład na 3 karty<small>przeszłość, teraźniejszość, przyszłość</small></a>
+            <a href="/rozklad-5-kart/">Krzyż z 5 kart<small>pełny obraz sytuacji</small></a>
+            <a href="/tarot-tak-nie/">Tarot tak / nie<small>szybka odpowiedź z jednej karty</small></a>
+            <a href="/karta-dnia/">Karta dnia<small>wskazówka na dziś</small></a>
+            <a href="/zapisane-odczyty/">Zapisane odczyty<small>Twoje odczyty w tej przeglądarce</small></a>
+          </div>
+        </li>
+        <li><a href="/znaczenie-kart/">Znaczenie kart</a></li>
+        <li><a href="/matryca/">Matryca przeznaczenia</a></li>
+        <li><a href="/ascendent/">Ascendent</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a class="nav-cta" href="/#rozklad">Zrób odczyt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!--/HEADER-->
 <div class="wrap">
-
-  <nav class="site-nav">
-    <a class="brand" href="/"><img src="/logo/moontasia-white.png" alt="Moontasia" width="180" height="50"></a>
-    <div class="links">
-      <a href="/">Odczyty tarota</a>
-      <a href="/matryca/">Matryca</a>
-      <a href="/blog/" class="active">Blog</a>
-    </div>
-  </nav>
 
   <header class="blog-header">
     <h1><span class="sparkle">✦</span> Blog <span class="sparkle">✦</span></h1>
@@ -55,7 +75,55 @@
     </a>
   </main>
 
-  <footer>© Moontasia · moontasia.pl</footer>
 </div>
+<!--FOOTER-->
+<footer class="site-footer">
+  <div class="cols">
+    <div class="brand">
+      <a href="/"><img src="/logo/moontasia-white.png" alt="Moontasia" width="150" height="42" loading="lazy"></a>
+      <p>Darmowy tarot online po polsku. Odczyty powstają w Twojej przeglądarce, pytania nie są nigdzie wysyłane.</p>
+    </div>
+    <div>
+      <h3>Tarot online</h3>
+      <ul>
+        <li><a href="/">Rozkład na 3 karty</a></li>
+        <li><a href="/rozklad-5-kart/">Krzyż z 5 kart</a></li>
+        <li><a href="/tarot-tak-nie/">Tarot tak / nie</a></li>
+        <li><a href="/karta-dnia/">Karta dnia</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Znaczenie kart</h3>
+      <ul>
+        <li><a href="/znaczenie-kart/">Wszystkie 78 kart</a></li>
+        <li><a href="/znaczenie-kart/#wielkie-arkana">Wielkie Arkana</a></li>
+        <li><a href="/znaczenie-kart/#kielichy">Kielichy</a></li>
+        <li><a href="/znaczenie-kart/#miecze">Miecze</a></li>
+        <li><a href="/znaczenie-kart/#bulawy">Buławy</a></li>
+        <li><a href="/znaczenie-kart/#pentakle">Pentakle</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Astrologia i numerologia</h3>
+      <ul>
+        <li><a href="/matryca/">Matryca przeznaczenia</a></li>
+        <li><a href="/matryca/#partnerska">Matryca partnerska</a></li>
+        <li><a href="/ascendent/">Kalkulator ascendentu</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Blog</h3>
+      <ul>
+        <li><a href="/blog/jak-czytac-rozklad-na-3-karty/">Jak czytać rozkład na 3 karty</a></li>
+        <li><a href="/blog/karty-odwrocone-w-tarocie/">Karty odwrócone</a></li>
+        <li><a href="/blog/wielkie-i-male-arkana/">Wielkie i Małe Arkana</a></li>
+        <li><a href="/blog/">Wszystkie wpisy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">© Moontasia · moontasia.pl · Tarot i matryca przeznaczenia mają charakter rozrywkowy i refleksyjny, nie zastępują porady specjalisty.</div>
+</footer>
+<script src="/assets/nav.js" defer></script>
+<!--/FOOTER-->
 </body>
 </html>

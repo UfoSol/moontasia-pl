@@ -2,7 +2,7 @@
    Tarot Apka — logika aplikacji
    ============================================================ */
 
-const IMG_DIR = "";
+const IMG_DIR = "/";
 
 // stan wylosowanych kart, osobno dla każdego rozkładu
 const state = {
@@ -31,18 +31,15 @@ function getCardMeaning(spread, pos) {
   return MEANINGS[val.en][val.reversed ? "reversed" : "upright"];
 }
 
-// ---------- tabs ----------
+// każdy rozkład ma własną stronę; na stronie jest tylko jego panel
+function hasSpread(spread) {
+  return !!document.getElementById(`panel-${spread}`);
+}
 
-document.querySelectorAll(".tab-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    const tab = btn.dataset.tab;
-    document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
-    document.getElementById(`panel-${tab}`).classList.add("active");
-    if (tab === "saved") listSavedReadings();
-  });
-});
+function on(id, event, fn) {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener(event, fn);
+}
 
 // ---------- render slotów ----------
 
@@ -80,16 +77,101 @@ function renderSlot(spread, pos) {
 }
 
 function renderAllSlots() {
-  Object.keys(state).forEach(spread => {
+  Object.keys(state).filter(hasSpread).forEach(spread => {
     Object.keys(state[spread]).forEach(pos => renderSlot(spread, pos));
   });
 }
 
 function updateGenerateButton(spread) {
   const btn = document.getElementById(`generateBtn-${spread}`);
-  const allFilled = Object.values(state[spread]).every(v => v !== null);
-  btn.disabled = !allFilled;
+  const values = Object.values(state[spread]);
+  const filled = values.filter(v => v !== null).length;
+  btn.disabled = filled < values.length;
+  const progress = document.getElementById(`progress-${spread}`);
+  if (progress) {
+    progress.textContent = filled === values.length
+      ? "Wszystkie karty wybrane. Możesz odczytać rozkład."
+      : values.length > 1 ? `Wybrane karty: ${filled} z ${values.length}` : "";
+  }
 }
+
+// ---------- pytanie widoczne nad kartami ----------
+
+function updateTableQuestion(spread) {
+  const box = document.querySelector(`.table-question[data-spread="${spread}"]`);
+  const input = document.getElementById(`question-${spread}`);
+  if (!box || !input) return;
+  const q = input.value.trim();
+  box.classList.toggle("empty", !q);
+  box.textContent = q ? `„${q}”` : box.dataset.empty;
+}
+
+document.querySelectorAll(".table-question").forEach(box => {
+  const spread = box.dataset.spread;
+  box.dataset.empty = box.textContent.trim();
+  const input = document.getElementById(`question-${spread}`);
+  if (input) input.addEventListener("input", () => updateTableQuestion(spread));
+});
+
+document.querySelectorAll(".question-chips button").forEach(chip => {
+  chip.addEventListener("click", () => {
+    const spread = chip.closest(".question-chips").dataset.spread;
+    const input = document.getElementById(`question-${spread}`);
+    input.value = chip.dataset.q || chip.textContent;
+    updateTableQuestion(spread);
+    input.focus();
+  });
+});
+
+// ---------- losowanie kart ----------
+
+function drawCards(spread) {
+  const allowReversed = document.querySelector(`[data-allow-reversed="${spread}"]`);
+  const reversedOk = allowReversed ? allowReversed.checked : true;
+  const deck = CARDS.map(c => c.en);
+  for (let i = deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  Object.keys(state[spread]).forEach((pos, idx) => {
+    state[spread][pos] = { en: deck[idx], reversed: reversedOk && Math.random() < 0.3 };
+    renderSlot(spread, pos);
+    const frame = document.querySelector(`.card-frame[data-spread="${spread}"][data-pos="${pos}"]`);
+    frame.classList.remove("dealt");
+    void frame.offsetWidth;
+    frame.style.animationDelay = `${idx * 0.12}s`;
+    frame.classList.add("dealt");
+  });
+  hideResults(spread);
+}
+
+function hideResults(spread) {
+  const results = document.getElementById(`results-${spread}`);
+  if (results) results.style.display = "none";
+}
+
+function resetSpread(spread) {
+  Object.keys(state[spread]).forEach(pos => {
+    state[spread][pos] = null;
+    renderSlot(spread, pos);
+  });
+  const input = document.getElementById(`question-${spread}`);
+  if (input) input.value = "";
+  updateTableQuestion(spread);
+  hideResults(spread);
+  const status = document.getElementById(`saveStatus-${spread}`);
+  if (status) status.textContent = "";
+  const anchor = document.getElementById("rozklad");
+  if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (input) input.focus({ preventScroll: true });
+}
+
+document.querySelectorAll("[data-draw]").forEach(btn => {
+  btn.addEventListener("click", () => drawCards(btn.dataset.draw));
+});
+document.querySelectorAll("[data-reset]").forEach(btn => {
+  btn.addEventListener("click", () => resetSpread(btn.dataset.reset));
+});
 
 // ---------- modal wyboru karty ----------
 
@@ -167,7 +249,7 @@ document.querySelectorAll(".clear-btn").forEach(btn => {
     const pos = e.target.dataset.pos;
     state[spread][pos] = null;
     renderSlot(spread, pos);
-    document.getElementById(`results-${spread}`).style.display = "none";
+    hideResults(spread);
   });
 });
 
@@ -246,7 +328,7 @@ function synthesisB3() {
   return `Obecna sytuacja związana jest z tematem „${kwSit}”, a głównym utrudnieniem na tej drodze wydaje się „${kwObs}”. Karty sugerują, że kluczem do rozwiązania jest „${kwSol}” — czyli konkretna zmiana podejścia lub działania opisana przy trzeciej karcie powyżej. To nie gotowa odpowiedź „tak” albo „nie”, ale wskazówka, na czym warto się skupić, by ruszyć sprawę do przodu.`;
 }
 
-document.getElementById("generateBtn-three").addEventListener("click", () => {
+on("generateBtn-three", "click", () => {
   const question = document.getElementById("question-three").value.trim();
   const echo = document.getElementById("questionEcho-three");
   if (question) {
@@ -307,7 +389,7 @@ function synthesisFive() {
   return `Cały rozkład opowiada spójną historię: obecna sytuacja związana z „${kws[0]}” wyrasta z przeszłości naznaczonej tematem „${kws[1]}”, a jej głębszą przyczyną jest „${kws[4]}”. Jeśli nic się nie zmieni, sprawy zmierzają w stronę „${kws[2]}”, natomiast Twoim celem — świadomym lub nie — wydaje się „${kws[3]}”. ${tone} Zestaw te elementy ze sobą i zastanów się, czy kierunek, w którym to zmierza, faktycznie prowadzi Cię do celu z karty czwartej.`;
 }
 
-document.getElementById("generateBtn-five").addEventListener("click", () => {
+on("generateBtn-five", "click", () => {
   const question = document.getElementById("question-five").value.trim();
   const echo = document.getElementById("questionEcho-five");
   if (question) {
@@ -356,7 +438,7 @@ const VERDICT_CLASS = {
   "Nie": "v-no",
 };
 
-document.getElementById("generateBtn-one").addEventListener("click", () => {
+on("generateBtn-one", "click", () => {
   const question = document.getElementById("question-one").value.trim();
   const echo = document.getElementById("questionEcho-one");
   if (question) {
@@ -409,7 +491,7 @@ function formatTodayPl() {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-document.getElementById("generateBtn-day").addEventListener("click", () => {
+on("generateBtn-day", "click", () => {
   const echo = document.getElementById("dayDateEcho");
   echo.style.display = "block";
   echo.textContent = `Twoja karta na dziś — ${formatTodayPl()}`;
@@ -597,7 +679,7 @@ const SAVE_CONFIG = {
   day:   { label: "karta-dnia", build: () => buildSavedTextDay() },
 };
 
-Object.entries(SAVE_CONFIG).forEach(([spread, cfg]) => {
+Object.entries(SAVE_CONFIG).filter(([spread]) => hasSpread(spread)).forEach(([spread, cfg]) => {
   const statusEl = document.getElementById(`saveStatus-${spread}`);
   document.getElementById(`saveBtn-${spread}`).addEventListener("click", () => {
     saveReadingText(cfg.build(), cfg.label, statusEl);
@@ -609,7 +691,7 @@ Object.entries(SAVE_CONFIG).forEach(([spread, cfg]) => {
 
 // ---------- zakładka "Zapisane odczyty" ----------
 
-document.getElementById("clearAllBtn").addEventListener("click", () => {
+on("clearAllBtn", "click", () => {
   if (loadSaved().length === 0) return;
   if (!confirm("Usunąć wszystkie zapisane odczyty z tej przeglądarki?")) return;
   storeSaved([]);
@@ -670,3 +752,5 @@ function listSavedReadings() {
 
 // ---------- start ----------
 renderAllSlots();
+document.querySelectorAll(".table-question").forEach(box => updateTableQuestion(box.dataset.spread));
+if (document.getElementById("savedList")) listSavedReadings();
