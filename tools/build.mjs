@@ -362,6 +362,28 @@ for (const p of MANUAL_PAGES) {
   if (p !== "404.html") addToSitemap("/" + p.replace(/index\.html$/, ""), p.startsWith("blog/") ? "0.6" : "0.9");
 }
 
+// ---------- wersje plików CSS/JS (żeby przeglądarki nie trzymały starych stylów) ----------
+import crypto from "node:crypto";
+const ASSETS = ["assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
+const version = f => crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8);
+const VERSIONS = Object.fromEntries(ASSETS.map(f => [f, version(f)]));
+function allHtml(dir) {
+  return fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true }).flatMap(d => {
+    const rel = path.join(dir, d.name);
+    if (d.isDirectory()) return [".git", "node_modules", "src", "tools", "karty", "logo"].includes(d.name) ? [] : allHtml(rel);
+    return d.name.endsWith(".html") ? [rel] : [];
+  });
+}
+for (const f of allHtml(".")) {
+  let s = read(f);
+  const before = s;
+  for (const [asset, v] of Object.entries(VERSIONS)) {
+    const re = new RegExp(`(["'])/${asset.replace(/[.]/g, "\\.")}(\\?v=[0-9a-f]+)?\\1`, "g");
+    s = s.replace(re, `$1/${asset}?v=${v}$1`);
+  }
+  if (s !== before) write(f, s);
+}
+
 // ---------- sitemap ----------
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
