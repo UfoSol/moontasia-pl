@@ -24,7 +24,9 @@
 .caption .eyebrow{margin:0 auto 8px}
 .caption .big{font-size:clamp(1.2rem,2.6vw,1.8rem);color:#fff;font-family:'Palatino Linotype',Georgia,serif;line-height:1.3;text-shadow:0 2px 20px rgba(148,70,149,.6)}
 .caption.c2{opacity:0}
-.caption .cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px;pointer-events:auto}
+.caption .cta-row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:nowrap;margin-top:14px;pointer-events:auto}
+.caption .cta-row .btn-ghost{background:#1a141a;padding:11px 18px}
+@media (max-width:480px){.caption .cta-row{gap:6px}.caption .cta-row .btn-main{padding:11px 14px;font-size:.9rem}.caption .cta-row .btn-ghost{padding:9px 11px;font-size:.82rem}}
 .scroll-hint{margin-top:14px!important;font-size:.82rem!important;letter-spacing:1px}
 .scroll-hint span{display:inline-block;animation:bob 1.6s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(5px)}}
