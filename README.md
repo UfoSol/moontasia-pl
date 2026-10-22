@@ -6,6 +6,8 @@ Tarot online: rozkład na 3 karty, krzyż z 5 kart, tak/nie, karta dnia. Statycz
 
 - `index.html`, `app.js`, `data.js`: aplikacja
 - `karty/`: 78 grafik kart (SVG)
+- `blog/`: blog (lista wpisów w `blog/index.html`, każdy wpis w osobnym folderze, style w `blog/blog.css`)
+- `logo/`: logotypy (oryginały oraz wersje do strony: `moontasia-white.png`, `favicon.png`, `apple-touch-icon.png`, `og-image.png`)
 - `CNAME`: domena moontasia.pl dla GitHub Pages
 - `.nojekyll`, `404.html`, `robots.txt`, `sitemap.xml`
 

@@ -31,10 +31,8 @@ a:hover{color:var(--accent);}
   display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
   margin-bottom:28px;
 }
-.site-nav .brand{
-  font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent);
-  text-decoration:none;
-}
+.site-nav .brand{line-height:0;}
+.site-nav .brand img{width:180px;height:auto;}
 .site-nav .links{display:flex;gap:8px;flex-wrap:wrap;}
 .site-nav .links a{
   background:#1a1126;border:1px solid var(--line);color:var(--text-dim);
