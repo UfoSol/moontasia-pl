@@ -82,7 +82,7 @@ document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litP
   const seg = (p, a, b) => ease(clamp((p - a) / (b - a)));
   const segOut = (p, a, b) => easeOut(clamp((p - a) / (b - a)));
 
-  let progress = 0, idle = 0;
+  let progress = 0, over = 0, idle = 0;
   function render() {
     const p = progress;
     const fan = segOut(p, 0, 0.45);
@@ -106,14 +106,18 @@ document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litP
     // pierwszy napis zostaje do połowy animacji i płynnie przechodzi w drugi (bez pustej chwili)
     const x = ease(clamp((p - 0.38) / 0.07));
     const o0 = 1 - x, o2 = x;
-    const drop = 28 * seg(p, 0.7, 1);   // ostatni napis lekko opada pod koniec
+    const drop = 50 * seg(p, 0.66, 1);   // ostatni napis wyraźnie opada pod koniec
+    // gdy scena odjeżdża w górę, napis jeszcze chwilę podąża za ekranem, potem znika
+    const trail = Math.min(over, 320) * 0.75;
+    const trailFade = 1 - clamp((over - 170) / 130);
+    caps[1].style.setProperty("--veil", clamp(over / 90).toFixed(2));
     if (hint) hint.style.opacity = 1 - seg(p, 0, 0.06);
     caps[0].style.opacity = o0;
     caps[0].style.transform = `translateY(${-x * 30}px)`;
     caps[0].style.visibility = o0 < 0.02 ? "hidden" : "visible";
-    caps[1].style.opacity = o2;
-    caps[1].style.transform = `translateY(${(1 - x) * 30 + drop}px)`;
-    caps[1].style.visibility = o2 < 0.02 ? "hidden" : "visible";
+    caps[1].style.opacity = o2 * trailFade;
+    caps[1].style.transform = `translateY(${(1 - x) * 30 + drop + trail}px)`;
+    caps[1].style.visibility = o2 * trailFade < 0.02 ? "hidden" : "visible";
   }
 
   function onScroll() {
@@ -121,7 +125,9 @@ document.querySelectorAll("svg .lit").forEach(p => p.setAttribute("d", MOON.litP
     const stickTop = parseFloat(getComputedStyle(stage).top) || 0;
     const r = hero.getBoundingClientRect();
     const total = hero.offsetHeight - stage.offsetHeight;
-    progress = total > 0 ? clamp((stickTop - r.top) / total) : 1;
+    const passed = stickTop - r.top;
+    progress = total > 0 ? clamp(passed / total) : 1;
+    over = Math.max(0, passed - total);   // ile przewinięto za koniec animacji
   }
 
   function loop(t) {
