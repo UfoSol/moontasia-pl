@@ -6,10 +6,15 @@ Tarot online: rozkład na 3 karty, krzyż z 5 kart, tak/nie, karta dnia. Statycz
 
 - `index.html`, `app.js`, `data.js`: aplikacja
 - `karty/`: 78 grafik kart (SVG)
+- `matryca/`: kalkulator matrycy przeznaczenia, matrycy partnerskiej i ascendentu
 - `blog/`: blog (lista wpisów w `blog/index.html`, każdy wpis w osobnym folderze, style w `blog/blog.css`)
 - `logo/`: logotypy (oryginały oraz wersje do strony: `moontasia-white.png`, `favicon.png`, `apple-touch-icon.png`, `og-image.png`)
 - `CNAME`: domena moontasia.pl dla GitHub Pages
 - `.nojekyll`, `404.html`, `robots.txt`, `sitemap.xml`
+
+## Kolorystyka
+
+Paleta marki: `#944695` (fiolet, akcent), `#50434F` (ciemny śliwkowo-szary, panele), `#B6A6B5` (jasny wrzos, tekst pomocniczy). Tło strony to ciemniejsze odcienie `#50434F`.
 
 ## Publikacja na GitHub Pages
 
