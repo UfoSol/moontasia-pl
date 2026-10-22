@@ -191,7 +191,7 @@ const PANEL_SAVED = `
 // ---------- linki do innych narzędzi (linkowanie wewnętrzne) ----------
 
 export const TOOLS = [
-  { href: "/", name: "Rozkład na 3 karty", desc: "Przeszłość, teraźniejszość i przyszłość w jednym odczycie." },
+  { href: "/rozklad-3-karty/", name: "Rozkład na 3 karty", desc: "Przeszłość, teraźniejszość i przyszłość w jednym odczycie." },
   { href: "/rozklad-5-kart/", name: "Krzyż z 5 kart", desc: "Sytuacja, przyczyna, cel i kierunek, w którym zmierza sprawa." },
   { href: "/tarot-tak-nie/", name: "Tarot tak / nie", desc: "Szybka odpowiedź na konkretne pytanie z jednej karty." },
   { href: "/karta-dnia/", name: "Karta dnia", desc: "Krótka wskazówka i energia na dzisiejszy dzień." },
@@ -208,12 +208,12 @@ export function toolLinks(exclude) {
 
 export const TAROT_PAGES = [
   {
-    path: "/",
+    path: "/rozklad-3-karty/",
     spread: "three",
     tabLabel: "Rozkład na 3 karty",
-    title: "Tarot online za darmo – rozkład na 3 karty | Moontasia",
+    title: "Rozkład tarota na 3 karty online – darmowy odczyt | Moontasia",
     description: "Darmowy tarot online po polsku. Zadaj pytanie, wylosuj 3 karty i od razu przeczytaj interpretację: przeszłość, teraźniejszość, przyszłość. Bez rejestracji.",
-    h1: "Tarot online – rozkład na 3 karty",
+    h1: "Rozkład tarota na 3 karty",
     lead: "Zadaj pytanie, wylosuj trzy karty i od razu przeczytaj interpretację. Za darmo, bez rejestracji, z opisem wszystkich 78 kart tarota.",
     panel: PANEL_THREE,
     content: `
@@ -250,7 +250,7 @@ export const TAROT_PAGES = [
       <h2>Na czym polega krzyż z 5 kart?</h2>
       <p>Krzyż to jeden z najpopularniejszych rozkładów tarota. Środkowa karta opisuje sedno sprawy, karty po bokach pokazują oś czasu (przeszłość i prawdopodobną przyszłość), karta u góry mówi o celu, do którego dążysz, a karta u dołu o przyczynie, dla której sytuacja wygląda tak, a nie inaczej.</p>
       <h2>Kiedy wybrać rozkład na 5 kart?</h2>
-      <p>Sięgnij po krzyż, gdy sprawa jest złożona i chcesz zrozumieć ją głębiej niż w <a href="/">rozkładzie na 3 karty</a>: przy decyzjach zawodowych, kryzysie w związku albo gdy czujesz, że „coś stoi w miejscu” i chcesz wiedzieć dlaczego.</p>
+      <p>Sięgnij po krzyż, gdy sprawa jest złożona i chcesz zrozumieć ją głębiej niż w <a href="/rozklad-3-karty/">rozkładzie na 3 karty</a>: przy decyzjach zawodowych, kryzysie w związku albo gdy czujesz, że „coś stoi w miejscu” i chcesz wiedzieć dlaczego.</p>
       <h2>Pozycje kart w krzyżu</h2>
       <ul>
         <li><strong>Karta 1, środek:</strong> aktualna sytuacja, to, co dzieje się teraz.</li>
@@ -288,7 +288,7 @@ export const TAROT_PAGES = [
         <li><strong>Nie:</strong> energia karty wyraźnie nie wspiera sprawy w obecnej formie.</li>
       </ul>
       <h2>Jak zadać pytanie tak/nie?</h2>
-      <p>Pytaj o jedną rzecz naraz i formułuj pytanie tak, by odpowiedź „tak” lub „nie” miała sens: „Czy to dobry moment na zmianę pracy?” zamiast „Co z moją pracą?”. Na pytania otwarte lepiej odpowie <a href="/">rozkład na 3 karty</a>.</p>
+      <p>Pytaj o jedną rzecz naraz i formułuj pytanie tak, by odpowiedź „tak” lub „nie” miała sens: „Czy to dobry moment na zmianę pracy?” zamiast „Co z moją pracą?”. Na pytania otwarte lepiej odpowie <a href="/rozklad-3-karty/">rozkład na 3 karty</a>.</p>
       <h2>Inne odczyty i narzędzia</h2>
       ${"{{TOOL_LINKS}}"}`,
     faq: [

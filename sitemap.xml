@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://moontasia.pl/</loc>
+    <loc>https://moontasia.pl/rozklad-3-karty/</loc>
     <lastmod>2026-10-22</lastmod>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://moontasia.pl/rozklad-5-kart/</loc>
@@ -19,6 +19,11 @@
     <loc>https://moontasia.pl/karta-dnia/</loc>
     <lastmod>2026-10-22</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://moontasia.pl/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://moontasia.pl/znaczenie-kart/glupiec/</loc>

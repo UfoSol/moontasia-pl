@@ -38,7 +38,7 @@ const NEW_POSTS = [
     <p>Zapisuj datę, pytanie, wylosowane karty i swoją interpretację. Po kilku tygodniach zobaczysz, które karty wracają i jak sprawdzały się Twoje odczyty. Na Moontasii możesz zapisywać odczyty w przeglądarce albo pobierać je jako plik.</p>
 
     <h2>5. Przejdź do prostych rozkładów</h2>
-    <p>Gdy jedna karta przestanie Cię zaskakiwać, sięgnij po <a href="/">rozkład na 3 karty</a>. To najlepszy most między pojedynczą kartą a dużymi rozkładami, takimi jak <a href="/blog/krzyz-celtycki/">krzyż celtycki</a>. Na pytania zamknięte używaj <a href="/tarot-tak-nie/">tarota tak/nie</a>.</p>
+    <p>Gdy jedna karta przestanie Cię zaskakiwać, sięgnij po <a href="/rozklad-3-karty/">rozkład na 3 karty</a>. To najlepszy most między pojedynczą kartą a dużymi rozkładami, takimi jak <a href="/blog/krzyz-celtycki/">krzyż celtycki</a>. Na pytania zamknięte używaj <a href="/tarot-tak-nie/">tarota tak/nie</a>.</p>
 
     <div class="callout"><p>Najczęstszy błąd początkujących: losowanie kart tak długo, aż wypadnie „dobra” odpowiedź. Przyjmij pierwszy odczyt i potraktuj go jako materiał do przemyśleń.</p></div>
 
@@ -100,7 +100,7 @@ const NEW_POSTS = [
     category: "Rozkłady",
     date: "2026-10-22",
     lead: "Pytania o miłość to najczęstszy powód, dla którego sięgamy po tarot. Żeby odczyt naprawdę pomógł, warto dobrać odpowiedni rozkład i dobrze sformułować pytanie.",
-    cta: ["/", "Zrób rozkład o swoim związku"],
+    cta: ["/rozklad-3-karty/", "Zrób rozkład o swoim związku"],
     body: `
     <h2>Jak pytać tarot o miłość?</h2>
     <p>Tarot nie czyta w cudzych myślach i nie zmusi nikogo do uczucia. Najlepiej działa, gdy pytasz o siebie i swoją rolę w relacji:</p>
@@ -111,7 +111,7 @@ const NEW_POSTS = [
     </ul>
 
     <h2>Rozkład miłosny na 3 karty</h2>
-    <p>Prosty i bardzo pojemny. Wykorzystaj <a href="/">rozkład na 3 karty</a> i przypisz pozycjom nowe znaczenia:</p>
+    <p>Prosty i bardzo pojemny. Wykorzystaj <a href="/rozklad-3-karty/">rozkład na 3 karty</a> i przypisz pozycjom nowe znaczenia:</p>
     <ol>
       <li><strong>Ty</strong>: co wnosisz do relacji.</li>
       <li><strong>Partner lub partnerka</strong>: co wnosi druga strona.</li>
@@ -143,7 +143,7 @@ const NEW_POSTS = [
     category: "Podstawy",
     date: "2026-10-22",
     lead: "Odpowiedź tarota jest tak dobra, jak pytanie. To samo losowanie może być bezużyteczne albo bardzo pomocne, w zależności od tego, jak sformułujesz to, o co pytasz.",
-    cta: ["/", "Zadaj pytanie kartom"],
+    cta: ["/rozklad-3-karty/", "Zadaj pytanie kartom"],
     body: `
     <h2>Cztery zasady dobrego pytania</h2>
     <ol>
@@ -185,7 +185,7 @@ const NEW_POSTS = [
       <li>Czy warto podjąć ten kurs?</li>
       <li>Czy wyjazd w tym miesiącu będzie udany?</li>
     </ul>
-    <p>Pytania tak/nie najlepiej zadawać w odczycie z jednej karty: <a href="/tarot-tak-nie/">tarot tak/nie</a>. Pozostałe pasują do <a href="/">rozkładu na 3 karty</a> albo <a href="/rozklad-5-kart/">krzyża z 5 kart</a>.</p>
+    <p>Pytania tak/nie najlepiej zadawać w odczycie z jednej karty: <a href="/tarot-tak-nie/">tarot tak/nie</a>. Pozostałe pasują do <a href="/rozklad-3-karty/">rozkładu na 3 karty</a> albo <a href="/rozklad-5-kart/">krzyża z 5 kart</a>.</p>
 
     <div class="callout"><p>Na Moontasii przykładowe pytania znajdziesz też pod polem pytania. Kliknij jedno z nich, żeby wpisać je od razu.</p></div>`,
   },
@@ -197,7 +197,7 @@ const NEW_POSTS = [
     category: "Podstawy",
     date: "2026-10-22",
     lead: "Nowa talia tarota to nie tylko 78 kartoników. Wiele osób traktuje ją jak narzędzie, z którym trzeba się zaprzyjaźnić. Oto proste rytuały, które pomagają skupić się przed odczytem.",
-    cta: ["/", "Wylosuj karty online"],
+    cta: ["/rozklad-3-karty/", "Wylosuj karty online"],
     body: `
     <h2>Pierwsze spotkanie z talią</h2>
     <p>Zanim zaczniesz wróżyć, przejrzyj każdą kartę po kolei. Zatrzymaj się przy tych, które Cię poruszają, i zapisz pierwsze skojarzenia. Możesz też ułożyć karty w porządku: Wielkie Arkana od <a href="/znaczenie-kart/glupiec/">Głupca</a> do <a href="/znaczenie-kart/swiat/">Świata</a>, a potem cztery kolory od Asa do Króla.</p>

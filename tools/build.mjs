@@ -168,7 +168,7 @@ const MODAL = `
 for (const tp of TAROT_PAGES) {
   const faq = faqBlock(tp.faq);
   const isHome = tp.path === "/";
-  const bc = isHome ? null : breadcrumbs([["Tarot online", "/"], [tp.h1, tp.path]]);
+  const bc = isHome ? null : breadcrumbs([["Strona główna", "/"], [tp.h1, tp.path]]);
   const content = tp.content.replace("{{TOOL_LINKS}}", toolLinks(tp.path));
   const body = `<main class="page tool">
   ${bc ? bc.html : ""}
@@ -197,6 +197,47 @@ ${MODAL}`;
   if (!tp.noindex) addToSitemap(tp.path, isHome ? "1.0" : "0.9");
 }
 
+// ---------- strona główna ----------
+{
+  const ICONS = {
+    ICON_3: '<svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="6" height="10" rx="1"/><rect x="9" y="4" width="6" height="10" rx="1"/><rect x="15.5" y="7" width="6" height="10" rx="1"/></svg>',
+    ICON_5: '<svg viewBox="0 0 24 24"><rect x="9.5" y="8" width="5" height="8" rx="1"/><rect x="9.5" y="1" width="5" height="5.5" rx="1"/><rect x="9.5" y="17.5" width="5" height="5.5" rx="1"/><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/></svg>',
+    ICON_YN: '<svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="1.5"/><path d="M10 12l1.5 1.5L14.5 10"/></svg>',
+    ICON_DAY: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>',
+    ICON_BOOK: '<svg viewBox="0 0 24 24"><path d="M3 5c3-1.5 6-1.5 9 0v15c-3-1.5-6-1.5-9 0zM21 5c-3-1.5-6-1.5-9 0v15c3-1.5 6-1.5 9 0z"/></svg>',
+    ICON_MATRIX: '<svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14"/><path d="M12 2l10 10-10 10L2 12z"/><circle cx="12" cy="12" r="2"/></svg>',
+    ICON_HEART: '<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>',
+    ICON_SUN: '<svg viewBox="0 0 24 24"><path d="M3 17h18"/><path d="M6.5 17a5.5 5.5 0 0 1 11 0"/><path d="M12 6v3M5.6 9.6l2 2M18.4 9.6l-2 2"/></svg>',
+  };
+  const SIGNS = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+  const zodiac = SIGNS.map((s, i) => {
+    const a = (i * 30 - 90) * Math.PI / 180;
+    return `<text x="${(251 * Math.cos(a)).toFixed(1)}" y="${(251 * Math.sin(a)).toFixed(1)}">${s}︎</text>`;
+  }).join("");
+  const FACES = { 4: "karty/18-the-star.svg", 5: "karty/19-the-moon.svg", 6: "karty/20-the-sun.svg" };
+  const deck = Array.from({ length: 11 }, (_, i) =>
+    `<div class="tcard"><div class="face back"></div>${FACES[i] ? `<div class="face front" style="background-image:url(/${FACES[i]})"></div>` : ""}</div>`).join("");
+  const latest = POSTS_SORTED.slice(0, 3).map(p =>
+    `<a href="/blog/${p.slug}/"><small>${p.category}</small><b>${p.title}</b><span>${p.description}</span></a>`).join("");
+  const faq = faqBlock([
+    ["Czy tarot online w Moontasii jest darmowy?", "Tak. Wszystkie odczyty, kalkulatory i opisy kart są bezpłatne i nie wymagają rejestracji."],
+    ["Jaki rozkład tarota wybrać na początek?", "Na pytania otwarte najlepiej sprawdza się <a href=\"/rozklad-3-karty/\">rozkład na 3 karty</a>, a na pytania zamknięte <a href=\"/tarot-tak-nie/\">tarot tak/nie</a>. Codzienną praktykę warto zacząć od <a href=\"/karta-dnia/\">karty dnia</a>."],
+    ["Czy moje pytania i daty urodzenia są gdzieś zapisywane?", "Nie. Wszystkie obliczenia i odczyty powstają w Twojej przeglądarce, a dane nie są wysyłane na serwer."],
+    ["Czym jest matryca przeznaczenia?", "To system łączący numerologię z 22 Wielkimi Arkanami tarota. Z daty urodzenia powstaje mapa Twoich talentów, lekcji karmicznych, relacji i finansów. Obliczysz ją w <a href=\"/matryca/\">kalkulatorze matrycy</a>."],
+    ["Skąd wiadomo, jaka jest dziś faza Księżyca?", "Fazę liczymy astronomicznie z długości miesiąca synodycznego (ok. 29,53 dnia). Podajemy też daty najbliższej pełni i nowiu."],
+  ]);
+  let body = read("src/home/home.html")
+    .replace("{{ZODIAC}}", zodiac).replace("{{DECK}}", deck).replace("{{LATEST_POSTS}}", latest).replace("{{FAQ}}", faq.html);
+  for (const [k, v] of Object.entries(ICONS)) body = body.replace(`{{${k}}}`, v);
+  write("index.html", page({
+    path: "/",
+    title: "Moontasia – darmowy tarot online, znaczenie kart i matryca przeznaczenia",
+    description: "Darmowy tarot online po polsku: rozkład na 3 karty, krzyż z 5 kart, tarot tak/nie i karta dnia. Znaczenie 78 kart, matryca przeznaczenia, matryca partnerska, ascendent i faza Księżyca.",
+    css: ["/assets/home.css"], scripts: ["/assets/home.js"], ld: [WEBSITE_LD, ORG_LD, faq.ld], body,
+  }));
+  addToSitemap("/", "1.0");
+}
+
 // ---------- znaczenie kart: strony pojedynczych kart ----------
 const YES_NO_TEXT = {
   "Tak": "To karta wyraźnego „tak”: jej energia sprzyja sprawie.",
@@ -216,7 +257,7 @@ for (const c of CARDS) {
   const next = CARDS[(c.index + 1) % CARDS.length];
   const title = `${c.pl} – znaczenie karty tarota (prosta i odwrócona) | Moontasia`;
   const description = `${c.pl} w tarocie: ${m.upright.keyword}. Znaczenie karty prostej i odwróconej, odpowiedź tak/nie, rada i wskazówka na dziś.`;
-  const bc = breadcrumbs([["Tarot online", "/"], ["Znaczenie kart", "/znaczenie-kart/"], [suit.name, `/znaczenie-kart/#${suit.anchor}`], [c.pl, c.url]]);
+  const bc = breadcrumbs([["Strona główna", "/"], ["Znaczenie kart", "/znaczenie-kart/"], [suit.name, `/znaczenie-kart/#${suit.anchor}`], [c.pl, c.url]]);
   const faq = faqBlock([
     [`Co oznacza karta ${c.pl} w tarocie?`, `${c.pl} w pozycji prostej oznacza: ${m.upright.keyword}. ${m.upright.meaning}`],
     [`Co oznacza odwrócona karta ${c.pl}?`, `Odwrócona karta ${c.pl} oznacza: ${m.reversed.keyword}. ${m.reversed.meaning}`],
@@ -273,7 +314,7 @@ for (const c of CARDS) {
 
       <div class="card-cta">
         <p>Chcesz sprawdzić, co karty mówią o Twojej sytuacji?</p>
-        <a class="btn-main" href="/">Zrób darmowy rozkład na 3 karty</a>
+        <a class="btn-main" href="/rozklad-3-karty/">Zrób darmowy rozkład na 3 karty</a>
         <a class="btn-ghost" href="/tarot-tak-nie/">Zapytaj tarot tak/nie</a>
       </div>
 
@@ -303,7 +344,7 @@ for (const c of CARDS) {
 
 // ---------- znaczenie kart: strona zbiorcza ----------
 {
-  const bc = breadcrumbs([["Tarot online", "/"], ["Znaczenie kart", "/znaczenie-kart/"]]);
+  const bc = breadcrumbs([["Strona główna", "/"], ["Znaczenie kart", "/znaczenie-kart/"]]);
   const sections = SUIT_ORDER.map(s => {
     const suit = SUITS[s];
     const cards = CARDS.filter(c => c.suit === s);
@@ -333,7 +374,7 @@ for (const c of CARDS) {
   ${sections}
   <article class="prose">
     <h2>Jak korzystać ze znaczeń kart?</h2>
-    <p>Opisy kart są punktem wyjścia, a nie sztywną definicją. Czytaj kartę zawsze w kontekście pytania i pozycji w rozkładzie: ta sama karta inaczej brzmi jako „przeszłość”, a inaczej jako „rozwiązanie”. Najlepiej sprawdzisz to w praktyce: <a href="/">wylosuj rozkład na 3 karty</a> i porównaj interpretację z opisami kart.</p>
+    <p>Opisy kart są punktem wyjścia, a nie sztywną definicją. Czytaj kartę zawsze w kontekście pytania i pozycji w rozkładzie: ta sama karta inaczej brzmi jako „przeszłość”, a inaczej jako „rozwiązanie”. Najlepiej sprawdzisz to w praktyce: <a href="/rozklad-3-karty/">wylosuj rozkład na 3 karty</a> i porównaj interpretację z opisami kart.</p>
     ${faq.html}
   </article>
 </main>`;
@@ -437,7 +478,7 @@ for (const p of MANUAL_PAGES) {
 
 // ---------- wersje plików CSS/JS (żeby przeglądarki nie trzymały starych stylów) ----------
 import crypto from "node:crypto";
-const ASSETS = ["assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
+const ASSETS = ["assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
 const version = f => crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8);
 const VERSIONS = Object.fromEntries(ASSETS.map(f => [f, version(f)]));
 function allHtml(dir) {
