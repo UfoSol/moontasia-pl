@@ -39,8 +39,10 @@
       if (!sent) return;
       sent = false;
       form.classList.add("done");
+      const box = form.closest(".nl");
+      if (box) box.classList.add("nl-done");
       status.className = "nl-status ok";
-      status.textContent = "Dziękujemy za zapis!";
+      status.innerHTML = '<span class="nl-thanks-ico" aria-hidden="true">☾</span><b>Dziękujemy za zapis!</b><span>Księżycowe wiadomości wkrótce trafią do Twojej skrzynki.</span>';
     });
   });
 })();
