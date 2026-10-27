@@ -174,3 +174,16 @@ a:hover{color:#fff}
 .nl-status.ok b{font-family:'Palatino Linotype',Georgia,serif;font-weight:normal;font-size:1.4rem;color:#fff}
 .nl-status.ok span{color:var(--text-dim);font-size:.92rem}
 .nl-status.ok .nl-thanks-ico{font-size:1.8rem;color:var(--accent-soft);line-height:1}
+
+/* ---- tabela kart tak/nie ---- */
+.yn-table-wrap{overflow-x:auto;margin:0 0 8px}
+.yn-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.yn-table th,.yn-table td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+.yn-table th{color:var(--text-dim);font-weight:normal;font-size:.78rem;letter-spacing:1px;text-transform:uppercase}
+.yn-table td a{text-decoration:none}
+.yn{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.82rem;border:1px solid;white-space:nowrap}
+.yn-yes{color:#7fbf7f;border-color:#7fbf7f;background:rgba(127,191,127,.12)}
+.yn-lyes{color:#a9d4a0;border-color:rgba(127,191,127,.5)}
+.yn-mid{color:#d9c07f;border-color:rgba(217,192,127,.6)}
+.yn-lno{color:#e0a9a9;border-color:rgba(217,138,138,.5)}
+.yn-no{color:#d98a8a;border-color:#d98a8a;background:rgba(217,138,138,.12)}

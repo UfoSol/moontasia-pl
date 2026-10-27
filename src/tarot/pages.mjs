@@ -340,13 +340,13 @@ export const TAROT_PAGES = [
     path: "/tarot-tak-nie/",
     spread: "one",
     tabLabel: "Tak / Nie",
-    title: "Tarot tak czy nie online – odpowiedź z jednej karty | Moontasia",
-    description: "Tarot tak/nie online za darmo: zadaj pytanie, wylosuj jedną kartę i poznaj odpowiedź: tak, raczej tak, niejasne, raczej nie lub nie. Z opisem karty.",
-    h1: "Tarot tak czy nie – odpowiedź z jednej karty",
+    title: "Tarot tak nie online – darmowa odpowiedź z jednej karty | Moontasia",
+    description: "Tarot tak nie online za darmo: zadaj pytanie, wylosuj kartę i poznaj odpowiedź: tak, raczej tak, niejasne, raczej nie lub nie. Plus lista 78 kart tarota tak/nie.",
+    h1: "Tarot tak nie online – zapytaj karty za darmo",
     lead: "Masz konkretne pytanie? Wylosuj jedną kartę i sprawdź, czy odpowiedź brzmi tak, nie, czy sprawa nie jest jeszcze przesądzona.",
     panel: PANEL_ONE,
     content: `
-      <h2>Jak działa tarot tak/nie?</h2>
+      <h2>Jak działa tarot tak nie online?</h2>
       <p>Każda z 78 kart tarota ma tradycyjne skojarzenie z odpowiedzią twierdzącą lub przeczącą. Karty takie jak Słońce, Gwiazda czy As Kielichów sprzyjają odpowiedzi „tak”, a Wieża czy Dziesiątka Mieczy wskazują na „nie”. Znaczenie zmienia się, gdy karta jest odwrócona. Oprócz werdyktu dostajesz też opis karty, który podpowiada, <strong>dlaczego</strong> odpowiedź brzmi tak, a nie inaczej.</p>
       <h2>Pięć możliwych odpowiedzi</h2>
       <ul>
@@ -358,9 +358,13 @@ export const TAROT_PAGES = [
       </ul>
       <h2>Jak zadać pytanie tak/nie?</h2>
       <p>Pytaj o jedną rzecz naraz i formułuj pytanie tak, by odpowiedź „tak” lub „nie” miała sens: „Czy to dobry moment na zmianę pracy?” zamiast „Co z moją pracą?”. Na pytania otwarte lepiej odpowie <a href="/rozklad-3-karty/">rozkład na 3 karty</a>.</p>
+      <h2>Karty tarota tak nie – lista wszystkich 78 kart</h2>
+      <p>Poniżej znajdziesz odpowiedź tak/nie dla każdej karty tarota, w pozycji prostej i odwróconej. Kliknij nazwę karty, aby przeczytać jej pełne znaczenie.</p>
+      ${"{{YES_NO_TABLE}}"}
       <h2>Inne odczyty i narzędzia</h2>
       ${"{{TOOL_LINKS}}"}`,
     faq: [
+      ["Czy tarot tak nie online jest za darmo?", "Tak. Losowanie karty i odpowiedź są bezpłatne, bez rejestracji. Możesz też zapisać odczyt w przeglądarce."],
       ["Czy mogę zadać to samo pytanie kilka razy?", "Możesz, ale tradycja tarota zaleca, by przyjąć pierwszą odpowiedź. Ponowne losowanie, aż wypadnie „tak”, odbiera odczytowi sens."],
       ["Która karta tarota oznacza najmocniejsze „tak”?", "Za najbardziej jednoznaczne „tak” uważa się Słońce, Świat i As Kielichów w pozycji prostej."],
       ["Co znaczy odpowiedź „niejasne”?", "Że sprawa nie jest przesądzona. Zwykle oznacza to, że wynik zależy od Twoich kolejnych decyzji albo że brakuje jeszcze informacji."],

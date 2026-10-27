@@ -194,11 +194,24 @@ const MODAL = `
   </div>
 </div>`;
 
+// tabela tak/nie wszystkich kart (strona /tarot-tak-nie/)
+function yesNoTable() {
+  const cls = v => ({ "Tak": "yn-yes", "Raczej tak": "yn-lyes", "Niejasne": "yn-mid", "Raczej nie": "yn-lno", "Nie": "yn-no" }[v]);
+  return SUIT_ORDER.map(su => `
+      <h3>${SUITS[su].name}</h3>
+      <div class="yn-table-wrap"><table class="yn-table">
+        <thead><tr><th>Karta</th><th>Prosta</th><th>Odwrócona</th></tr></thead>
+        <tbody>${CARDS.filter(c => c.suit === su).map(c => `
+          <tr><td><a href="${c.url}">${c.pl}</a></td><td><span class="yn ${cls(YES_NO[c.en].upright)}">${YES_NO[c.en].upright}</span></td><td><span class="yn ${cls(YES_NO[c.en].reversed)}">${YES_NO[c.en].reversed}</span></td></tr>`).join("")}
+        </tbody>
+      </table></div>`).join("");
+}
+
 for (const tp of TAROT_PAGES) {
   const faq = faqBlock(tp.faq);
   const isHome = tp.path === "/";
   const bc = isHome ? null : breadcrumbs([["Strona główna", "/"], [tp.h1, tp.path]]);
-  const content = tp.content.replace("{{TOOL_LINKS}}", toolLinks(tp.path));
+  const content = tp.content.replace("{{TOOL_LINKS}}", toolLinks(tp.path)).replace("{{YES_NO_TABLE}}", yesNoTable());
   const body = `<main class="page tool">
   ${bc ? bc.html : ""}
   <div class="page-hero">
@@ -213,7 +226,7 @@ ${tp.panel}
 ${MODAL}`;
   const appLd = tp.noindex ? null : {
     "@context": "https://schema.org", "@type": "WebApplication", name: tp.h1, url: SITE + tp.path,
-    applicationCategory: "LifestyleApplication", operatingSystem: "Wszystkie", inLanguage: "pl-PL",
+    applicationCategory: "LifestyleApplication", operatingSystem: "Wszystkie", inLanguage: "pl-PL", isAccessibleForFree: true,
     offers: { "@type": "Offer", price: "0", priceCurrency: "PLN" }, description: tp.description,
   };
   const html = page({
@@ -249,7 +262,8 @@ ${MODAL}`;
   const latest = POSTS_SORTED.slice(0, 3).map(p =>
     `<a href="/blog/${p.slug}/"><small>${p.category}</small><b>${p.title}</b><span>${p.description}</span></a>`).join("");
   const faq = faqBlock([
-    ["Czy tarot online w Moontasii jest darmowy?", "Tak. Wszystkie odczyty, kalkulatory i opisy kart są bezpłatne i nie wymagają rejestracji."],
+    ["Czy tarot online w Moontasii jest naprawdę za darmo?", "Tak. To darmowy tarot online: wszystkie odczyty, kalkulatory i opisy kart są bezpłatne, bez rejestracji, SMS-ów i ukrytych opłat."],
+    ["Gdzie zrobić darmowy tarot tak nie?", "Na stronie <a href=\"/tarot-tak-nie/\">tarot tak nie online</a>. Wylosuj jedną kartę, a zobaczysz odpowiedź (tak, raczej tak, niejasne, raczej nie lub nie) razem z opisem karty."],
     ["Jaki rozkład tarota wybrać na początek?", "Na pytania otwarte najlepiej sprawdza się <a href=\"/rozklad-3-karty/\">rozkład na 3 karty</a>, a na pytania zamknięte <a href=\"/tarot-tak-nie/\">tarot tak/nie</a>. Codzienną praktykę warto zacząć od <a href=\"/karta-dnia/\">karty dnia</a>."],
     ["Czy moje pytania i daty urodzenia są gdzieś zapisywane?", "Nie. Wszystkie obliczenia i odczyty powstają w Twojej przeglądarce, a dane nie są wysyłane na serwer."],
     ["Czym jest matryca przeznaczenia?", "To system łączący numerologię z 22 Wielkimi Arkanami tarota. Z daty urodzenia powstaje mapa Twoich talentów, lekcji karmicznych, relacji i finansów. Obliczysz ją w <a href=\"/matryca/\">kalkulatorze matrycy</a>."],
@@ -262,9 +276,9 @@ ${MODAL}`;
   for (const [k, v] of Object.entries(ICONS)) body = body.replace(`{{${k}}}`, v);
   write("index.html", page({
     path: "/",
-    title: "Moontasia – darmowy tarot online, znaczenie kart i matryca przeznaczenia",
-    description: "Darmowy tarot online po polsku: rozkład na 3 karty, krzyż z 5 kart, tarot tak/nie i karta dnia. Znaczenie 78 kart, matryca przeznaczenia, matryca partnerska, ascendent i faza Księżyca.",
-    css: ["/assets/home.css"], scripts: ["/assets/home.js"], ld: [WEBSITE_LD, ORG_LD, faq.ld], body,
+    title: "Tarot za darmo online – darmowy tarot po polsku | Moontasia",
+    description: "Tarot za darmo online, bez rejestracji: rozkład na 3 karty, tarot tak nie, tarot miłosny i karta dnia. Darmowy tarot po polsku z interpretacją wszystkich 78 kart.",
+    css: ["/assets/home.css"], scripts: ["/assets/home.js"], ld: [WEBSITE_LD, ORG_LD, { "@context": "https://schema.org", "@type": "WebApplication", name: "Darmowy tarot online Moontasia", url: SITE + "/", applicationCategory: "LifestyleApplication", operatingSystem: "Wszystkie", inLanguage: "pl-PL", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "PLN" } }, faq.ld], body,
   }));
   addToSitemap("/", "1.0");
 }
