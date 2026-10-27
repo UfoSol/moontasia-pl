@@ -10,6 +10,88 @@ import { LEGACY_POSTS } from "./legacy.mjs";
 
 const NEW_POSTS = [
   {
+    slug: "karty-milosci-w-tarocie",
+    title: "Karty miłości w tarocie: 10 kart, które mówią o uczuciach",
+    seoTitle: "Karty miłości w tarocie – które karty oznaczają miłość i związek | Moontasia",
+    description: "Które karty tarota oznaczają miłość? Kochankowie, Dwójka Kielichów, As Kielichów i 7 innych kart uczuć: co mówią o związku, zakochaniu i nowej relacji.",
+    category: "Znaczenie kart",
+    date: "2026-10-27",
+    lead: "Gdy pytasz tarot o uczucia, niektóre karty od razu przyspieszają bicie serca. Oto dziesięć kart, które najczęściej mówią o miłości, i to, co oznaczają w związku.",
+    cta: ["/tarot-milosny/", "Sprawdź, co karty mówią o Twoich uczuciach"],
+    body: `
+    <h2>1. Kochankowie</h2>
+    <p>Najbardziej znana karta miłości. <a href="/znaczenie-kart/kochankowie/">Kochankowie</a> mówią o głębokiej więzi, wzajemnym przyciąganiu i miłości z wyboru: obie strony świadomie decydują się na siebie. Odwróceni sygnalizują rozdźwięk wartości albo trudny wybór.</p>
+
+    <h2>2. Dwójka Kielichów</h2>
+    <p>Klasyczna karta zakochania i wzajemności. <a href="/znaczenie-kart/dwojka-kielichow/">Dwójka Kielichów</a> to dwoje ludzi, którzy patrzą na siebie jak równi partnerzy. Często zapowiada nową relację albo pogodzenie się.</p>
+
+    <h2>3. As Kielichów</h2>
+    <p><a href="/znaczenie-kart/as-kielichow/">As Kielichów</a> to przypływ uczuć i otwarcie serca: nowa miłość, czułość albo odnowienie bliskości. Jedna z najpiękniejszych kart w odczycie o związku.</p>
+
+    <h2>4. Dziesiątka Kielichów</h2>
+    <p>Szczęśliwy dom, harmonia rodzinna i emocjonalne spełnienie. <a href="/znaczenie-kart/dziesiatka-kielichow/">Dziesiątka Kielichów</a> to miłość, o jakiej się marzy: spokojna, ciepła i trwała.</p>
+
+    <h2>5. Cesarzowa</h2>
+    <p><a href="/znaczenie-kart/cesarzowa/">Cesarzowa</a> wnosi do relacji czułość, zmysłowość i troskę. Bywa zapowiedzią rozkwitu uczuć, wspólnego domu, a czasem rodzicielstwa.</p>
+
+    <h2>6. Słońce</h2>
+    <p>Radość, szczerość i lekkość bycia razem. <a href="/znaczenie-kart/slonce/">Słońce</a> to jedna z najlepszych kart dla każdego związku i wyraźne „tak” w pytaniach o uczucia.</p>
+
+    <h2>7. Czwórka Buław</h2>
+    <p>Świętowanie i stabilizacja: zaręczyny, wspólne zamieszkanie, ślub. <a href="/znaczenie-kart/czworka-bulaw/">Czwórka Buław</a> pojawia się, gdy relacja wchodzi na nowy, radosny etap.</p>
+
+    <h2>8. Rycerz Kielichów</h2>
+    <p>Romantyk z sercem na dłoni. <a href="/znaczenie-kart/rycerz-kielichow/">Rycerz Kielichów</a> zapowiada wyznanie, propozycję albo randkę jak z filmu.</p>
+
+    <h2>9. Gwiazda</h2>
+    <p>Miłość po trudnym okresie i nadzieja, która wraca. <a href="/znaczenie-kart/gwiazda/">Gwiazda</a> mówi, że serce się leczy i jest gotowe na nowe uczucie.</p>
+
+    <h2>10. Hierofant</h2>
+    <p>Tradycja, deklaracje i wspólne wartości. <a href="/znaczenie-kart/hierofant/">Hierofant</a> w odczycie miłosnym często oznacza poważne zamiary, a nawet ślub.</p>
+
+    <div class="callout"><p>Nawet „trudne” karty mają w miłości swój sens. <a href="/znaczenie-kart/wieza/">Wieża</a> burzy to, co było na niepewnych fundamentach, a <a href="/znaczenie-kart/trojka-mieczy/">Trójka Mieczy</a> pokazuje ból, który trzeba przeżyć, by się uleczyć. Znaczenie każdej z 78 kart w miłości znajdziesz w <a href="/znaczenie-kart/">przewodniku po kartach</a>.</p></div>`,
+  },
+  {
+    slug: "czy-on-mnie-kocha-tarot",
+    title: "Czy on mnie kocha? Co tarot może powiedzieć o uczuciach drugiej osoby",
+    seoTitle: "Czy on mnie kocha? Tarot o uczuciach – jak pytać karty | Moontasia",
+    description: "Czy on mnie kocha? Czy ona coś do mnie czuje? Jak zadać kartom pytanie o uczucia drugiej osoby, który rozkład wybrać i jak czytać odpowiedź, żeby naprawdę pomogła.",
+    category: "Rozkłady",
+    date: "2026-10-27",
+    lead: "„Czy on mnie kocha?”, „Czy ona do mnie wróci?”. To pytania, z którymi najczęściej sięgamy po karty. Tarot może tu pomóc, ale pod warunkiem, że wiesz, o co pytać.",
+    cta: ["/tarot-milosny/", "Zrób darmowy rozkład miłosny"],
+    body: `
+    <h2>Czego tarot nie zrobi</h2>
+    <p>Tarot nie czyta w myślach i nie zmieni czyichś uczuć. Jeśli zapytasz wprost „czy on mnie kocha?”, karta może odpowiedzieć, ale łatwo wtedy zobaczyć w niej tylko to, czego się boisz albo na co liczysz.</p>
+
+    <h2>Lepsze pytania o uczucia</h2>
+    <ul>
+      <li>„Z jaką energią ta osoba wchodzi w naszą relację?”</li>
+      <li>„Czego potrzebuje nasz związek, żeby się rozwijać?”</li>
+      <li>„Co powinnam lub powinienem wiedzieć o tej relacji?”</li>
+      <li>„Co blokuje bliskość między nami?”</li>
+    </ul>
+    <p>Takie pytania dają odpowiedź, z którą możesz coś zrobić, a nie tylko czekać.</p>
+
+    <h2>Który rozkład wybrać?</h2>
+    <p>Najlepiej sprawdza się <a href="/tarot-milosny/">tarot miłosny na 3 karty</a>: pierwsza karta opisuje Ciebie, druga drugą osobę, a trzecia waszą relację. Dzięki temu widzisz nie tylko „ją” albo „jego”, ale też to, co sama lub sam wnosisz do związku.</p>
+    <p>Jeśli potrzebujesz szybkiej odpowiedzi na konkretne pytanie, np. „Czy to dobry moment, żeby powiedzieć, co czuję?”, użyj <a href="/tarot-tak-nie/">tarota tak/nie</a>.</p>
+
+    <h2>Jak czytać kartę drugiej osoby?</h2>
+    <ul>
+      <li><strong>Kielichy</strong> mówią o emocjach: ta osoba czuje, nawet jeśli tego nie pokazuje.</li>
+      <li><strong>Buławy</strong> to fascynacja, namiętność i chęć działania.</li>
+      <li><strong>Pentakle</strong> oznaczają poważne, praktyczne podejście: uczucie okazywane czynami, a nie słowami.</li>
+      <li><strong>Miecze</strong> wskazują, że w głowie tej osoby jest dużo myśli, wątpliwości albo niedopowiedzeń.</li>
+      <li><strong>Karty dworskie</strong> często opisują styl, w jakim ktoś kocha. Więcej w artykule o <a href="/blog/karty-dworskie-w-tarocie/">kartach dworskich</a>.</li>
+    </ul>
+
+    <div class="callout"><p>Gdy karta drugiej osoby jest odwrócona, nie oznacza to braku uczuć. Częściej mówi o blokadzie, lęku przed zaangażowaniem albo trudnym okresie. Zobacz, <a href="/blog/karty-odwrocone-w-tarocie/">co oznaczają karty odwrócone</a>.</p></div>
+
+    <h2>Najważniejsza wskazówka</h2>
+    <p>Najlepszą odpowiedź na pytanie „czy mnie kocha?” daje rozmowa. Potraktuj odczyt jako lustro, które pomoże Ci nazwać własne uczucia i zdecydować, co chcesz zrobić dalej.</p>`,
+  },
+  {
     slug: "tarot-dla-poczatkujacych",
     title: "Tarot dla początkujących: od czego zacząć?",
     seoTitle: "Tarot dla początkujących – jak zacząć czytać karty | Moontasia",
@@ -94,13 +176,13 @@ const NEW_POSTS = [
   },
   {
     slug: "tarot-milosny",
-    title: "Tarot miłosny: rozkłady na miłość i związek",
-    seoTitle: "Tarot miłosny – rozkłady na miłość, związek i uczucia | Moontasia",
-    description: "Tarot miłosny: najlepsze rozkłady na miłość i związek, karty, które mówią o uczuciach, oraz jak zadawać pytania o relację, żeby odczyt był pomocny.",
+    title: "Rozkłady tarota na miłość: 3 sposoby, by zapytać karty o związek",
+    seoTitle: "Rozkłady tarota na miłość i związek – jak pytać karty o uczucia | Moontasia",
+    description: "Najlepsze rozkłady tarota na miłość i związek: rozkład na 3 karty, krzyż z 5 kart i tak/nie. Jak zadawać pytania o relację i które karty mówią o uczuciach.",
     category: "Rozkłady",
     date: "2026-10-22",
     lead: "Pytania o miłość to najczęstszy powód, dla którego sięgamy po tarot. Żeby odczyt naprawdę pomógł, warto dobrać odpowiedni rozkład i dobrze sformułować pytanie.",
-    cta: ["/rozklad-3-karty/", "Zrób rozkład o swoim związku"],
+    cta: ["/tarot-milosny/", "Zrób rozkład tarota miłosnego"],
     body: `
     <h2>Jak pytać tarot o miłość?</h2>
     <p>Tarot nie czyta w cudzych myślach i nie zmusi nikogo do uczucia. Najlepiej działa, gdy pytasz o siebie i swoją rolę w relacji:</p>
@@ -111,7 +193,7 @@ const NEW_POSTS = [
     </ul>
 
     <h2>Rozkład miłosny na 3 karty</h2>
-    <p>Prosty i bardzo pojemny. Wykorzystaj <a href="/rozklad-3-karty/">rozkład na 3 karty</a> i przypisz pozycjom nowe znaczenia:</p>
+    <p>Prosty i bardzo pojemny. Gotowy znajdziesz w <a href="/tarot-milosny/">tarocie miłosnym online</a>, gdzie każda karta jest czytana w kontekście uczuć:</p>
     <ol>
       <li><strong>Ty</strong>: co wnosisz do relacji.</li>
       <li><strong>Partner lub partnerka</strong>: co wnosi druga strona.</li>

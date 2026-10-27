@@ -5,8 +5,9 @@ Tarot online: rozkład na 3 karty, krzyż z 5 kart, tak/nie, karta dnia. Statycz
 ## Zawartość
 
 - `index.html`: strona główna (szablon `src/home/home.html`, style i animacja `assets/home.css`, `assets/home.js`)
-- `rozklad-3-karty/`, `rozklad-5-kart/`, `tarot-tak-nie/`, `karta-dnia/`, `zapisane-odczyty/`: strony rozkładów (generowane)
+- `rozklad-3-karty/`, `tarot-milosny/`, `rozklad-5-kart/`, `tarot-tak-nie/`, `karta-dnia/`, `zapisane-odczyty/`: strony rozkładów (generowane)
 - `app.js`, `data.js`: logika tarota i baza znaczeń kart
+- `love.js`: znaczenie kart w miłości (strony kart i `/tarot-milosny/`)
 - `znaczenie-kart/`: strona zbiorcza i 78 stron kart (generowane z `data.js`)
 - `matryca/`, `matryca-partnerska/`, `ascendent/`: kalkulatory (wspólny skrypt `assets/matryca.js`)
 - `assets/`: wspólne style (`site.css`, `tarot.css`, `cards.css`, `matryca.css`) i menu (`nav.js`)

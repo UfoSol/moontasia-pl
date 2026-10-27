@@ -15,6 +15,7 @@ const state = {
   five: { center: null, left: null, right: null, above: null, below: null },
   one: { single: null },
   day: { single: null },
+  love: { you: null, rel: null, them: null },
 };
 
 let activeSpread = null;
@@ -531,6 +532,109 @@ on("generateBtn-day", "click", () => {
 });
 
 // ============================================================
+//  TAROT MIŁOSNY (3 karty: Ty / relacja / druga osoba)
+// ============================================================
+
+const LOVE_POSITIONS = {
+  couple: { you: "Ty w tej relacji", them: "Druga osoba", rel: "Wasza relacja" },
+  single: { you: "Ty teraz", them: "Czego naprawdę szukasz", rel: "Co nadchodzi w miłości" },
+};
+const LOVE_ORDER = ["you", "them", "rel"];
+
+function loveMode() {
+  const checked = document.querySelector('input[name="love-mode"]:checked');
+  return checked ? checked.value : "couple";
+}
+
+function updateLoveLabels() {
+  const labels = LOVE_POSITIONS[loveMode()];
+  LOVE_ORDER.forEach((pos, i) => {
+    const el = document.querySelector(`.slot[data-spread="love"][data-pos="${pos}"] .label`);
+    if (el) el.innerHTML = `Karta ${i + 1}<br>${labels[pos]}`;
+  });
+}
+document.querySelectorAll('input[name="love-mode"]').forEach(r => r.addEventListener("change", () => {
+  updateLoveLabels();
+  hideResults("love");
+}));
+
+function loveMeaning(pos) {
+  const val = state.love[pos];
+  return LOVE[val.en][val.reversed ? "reversed" : "upright"];
+}
+
+function synthesisLove() {
+  const mode = loveMode();
+  const kw = p => { const v = state.love[p]; return `${cardByEn(v.en).pl}${v.reversed ? " (odwrócona)" : ""}`; };
+  const relVal = state.love.rel;
+  const verdict = YES_NO[relVal.en][relVal.reversed ? "reversed" : "upright"];
+  const reversedCount = LOVE_ORDER.filter(p => state.love[p].reversed).length;
+  const tone = reversedCount === 0
+    ? "Wszystkie karty leżą prosto, więc uczucia mogą płynąć dość swobodnie, bez ukrytych blokad."
+    : reversedCount === 3
+      ? "Wszystkie karty są odwrócone: to czas pracy wewnętrznej i cierpliwości. Zanim coś się zmieni na zewnątrz, warto przyjrzeć się sobie."
+      : "Część kart jest odwrócona, więc obok tego, co płynie naturalnie, są tematy, które wymagają rozmowy i uważności.";
+  const outlook = {
+    "Tak": "Energia ostatniej karty wyraźnie sprzyja uczuciom.",
+    "Raczej tak": "Energia ostatniej karty raczej sprzyja uczuciom, choć wymaga zaangażowania.",
+    "Niejasne": "Ostatnia karta nie przesądza sprawy: wiele zależy od Waszych decyzji.",
+    "Raczej nie": "Ostatnia karta sugeruje ostrożność: coś wymaga zmiany, zanim uczucie rozkwitnie.",
+    "Nie": "Ostatnia karta wskazuje na trudności: warto zadbać najpierw o siebie i swoje granice.",
+  }[verdict];
+  if (mode === "single") {
+    return `Teraz w miłości towarzyszy Ci karta ${kw("you")}. To, czego naprawdę szukasz, opisuje ${kw("them")}, a w uczuciach nadchodzi energia karty ${kw("rel")}. ${outlook} ${tone} Pamiętaj, że karty pokazują kierunek, a pierwszy krok zawsze należy do Ciebie.`;
+  }
+  return `Ty wnosisz do tej relacji energię karty ${kw("you")}, druga osoba karty ${kw("them")}, a sam związek opisuje ${kw("rel")}. ${outlook} ${tone} Potraktuj ten odczyt jako zaproszenie do rozmowy, a nie wyrok: najwięcej mówią wspólne odpowiedzi na pytania, które w Tobie budzi.`;
+}
+
+on("generateBtn-love", "click", () => {
+  const question = document.getElementById("question-love").value.trim();
+  const echo = document.getElementById("questionEcho-love");
+  if (question) { echo.style.display = "block"; echo.textContent = `Twoje pytanie: „${question}”`; }
+  else echo.style.display = "none";
+
+  const labels = LOVE_POSITIONS[loveMode()];
+  const container = document.getElementById("spreadLove");
+  container.innerHTML = "";
+  LOVE_ORDER.forEach((pos, idx) => {
+    const val = state.love[pos];
+    const card = cardByEn(val.en);
+    const div = document.createElement("div");
+    div.className = "card-interp";
+    div.innerHTML = `
+      <div class="ci-title">Karta ${idx + 1}: ${labels[pos]} — ${card.pl}
+        <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
+      </div>
+      <p>${loveMeaning(pos)}</p>`;
+    container.appendChild(div);
+  });
+  const synth = document.createElement("div");
+  synth.className = "synthesis";
+  synth.innerHTML = `<div class="ci-title">Co karty mówią o Twoich uczuciach</div><p>${synthesisLove()}</p>`;
+  container.appendChild(synth);
+
+  const results = document.getElementById("results-love");
+  results.style.display = "block";
+  results.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+function buildSavedTextLove(question) {
+  const labels = LOVE_POSITIONS[loveMode()];
+  const lines = ["TAROT MIŁOSNY", `Data: ${new Date().toLocaleString("pl-PL")}`];
+  if (question) lines.push(`Pytanie: ${question}`);
+  lines.push("");
+  LOVE_ORDER.forEach((pos, idx) => {
+    const val = state.love[pos];
+    lines.push(`Karta ${idx + 1}: ${labels[pos]} — ${cardByEn(val.en).pl}${val.reversed ? " (odwrócona)" : ""}`);
+    lines.push(loveMeaning(pos));
+    lines.push("");
+  });
+  lines.push("Co karty mówią o Twoich uczuciach");
+  lines.push(synthesisLove());
+  return lines.join("\n");
+}
+
+// ============================================================
 //  ZAPISYWANIE ODCZYTÓW (pamięć przeglądarki + pobieranie .txt)
 // ============================================================
 
@@ -682,6 +786,7 @@ const SAVE_CONFIG = {
   five:  { label: "5-kart",  build: () => buildSavedTextFive(document.getElementById("question-five").value.trim()) },
   one:   { label: "tak-nie", build: () => buildSavedTextOne(document.getElementById("question-one").value.trim()) },
   day:   { label: "karta-dnia", build: () => buildSavedTextDay() },
+  love:  { label: "tarot-milosny", build: () => buildSavedTextLove(document.getElementById("question-love").value.trim()) },
 };
 
 Object.entries(SAVE_CONFIG).filter(([spread]) => hasSpread(spread)).forEach(([spread, cfg]) => {

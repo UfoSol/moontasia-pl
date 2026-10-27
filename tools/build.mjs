@@ -68,8 +68,8 @@ const FOOTER = read("src/partials/footer.html").trim().replace("{{FOOTER_NEWSLET
 // ---------- dane kart ----------
 const ctx = {};
 vm.createContext(ctx);
-vm.runInContext(read("data.js") + "\n;this.CARDS=CARDS;this.MEANINGS=MEANINGS;this.YES_NO=YES_NO;this.DAY_MEANINGS=DAY_MEANINGS;", ctx);
-const { CARDS, MEANINGS, YES_NO, DAY_MEANINGS } = ctx;
+vm.runInContext(read("data.js") + "\n" + read("love.js") + "\n;this.CARDS=CARDS;this.MEANINGS=MEANINGS;this.YES_NO=YES_NO;this.DAY_MEANINGS=DAY_MEANINGS;this.LOVE=LOVE;", ctx);
+const { CARDS, MEANINGS, YES_NO, DAY_MEANINGS, LOVE } = ctx;
 
 const slugify = s => s.toLowerCase()
   .replace(/ą/g, "a").replace(/ć/g, "c").replace(/ę/g, "e").replace(/ł/g, "l").replace(/ń/g, "n")
@@ -218,7 +218,7 @@ ${MODAL}`;
   };
   const html = page({
     path: tp.path, title: tp.title, description: tp.description, noindex: tp.noindex,
-    css: ["/assets/tarot.css"], scripts: ["/data.js", "/app.js"],
+    css: ["/assets/tarot.css"], scripts: tp.scripts || ["/data.js", "/app.js"],
     ld: [isHome ? WEBSITE_LD : null, isHome ? ORG_LD : null, appLd, bc && bc.ld, faq.ld],
     body,
   });
@@ -287,12 +287,13 @@ for (const c of CARDS) {
   const same = CARDS.filter(o => o.suit === c.suit && o !== c);
   const prev = CARDS[(c.index + CARDS.length - 1) % CARDS.length];
   const next = CARDS[(c.index + 1) % CARDS.length];
-  const title = `${c.pl} – znaczenie karty tarota (prosta i odwrócona) | Moontasia`;
-  const description = `${c.pl} w tarocie: ${m.upright.keyword}. Znaczenie karty prostej i odwróconej, odpowiedź tak/nie, rada i wskazówka na dziś.`;
+  const title = `${c.pl} – znaczenie karty tarota, w miłości, prosta i odwrócona | Moontasia`;
+  const description = `${c.pl} w tarocie: ${m.upright.keyword}. Znaczenie karty prostej i odwróconej, w miłości i związku, odpowiedź tak/nie i wskazówka na dziś.`;
   const bc = breadcrumbs([["Strona główna", "/"], ["Znaczenie kart", "/znaczenie-kart/"], [suit.name, `/znaczenie-kart/#${suit.anchor}`], [c.pl, c.url]]);
   const faq = faqBlock([
     [`Co oznacza karta ${c.pl} w tarocie?`, `${c.pl} w pozycji prostej oznacza: ${m.upright.keyword}. ${m.upright.meaning}`],
     [`Co oznacza odwrócona karta ${c.pl}?`, `Odwrócona karta ${c.pl} oznacza: ${m.reversed.keyword}. ${m.reversed.meaning}`],
+    [`Co oznacza ${c.pl} w miłości?`, `${LOVE[c.en].upright} Odwrócona: ${LOVE[c.en].reversed}`],
     [`Czy ${c.pl} to karta „tak” czy „nie”?`, `W pozycji prostej: ${yn.upright.toLowerCase()}. W pozycji odwróconej: ${yn.reversed.toLowerCase()}.`],
   ]);
   const facts = [
@@ -332,6 +333,12 @@ for (const c of CARDS) {
       <p>${cap(m.reversed.obstacle)}</p>
       <h3>Rada karty</h3>
       <p>${cap(m.reversed.solution)}</p>
+
+      <h2>${c.pl} w miłości i związku</h2>
+      <p>${LOVE[c.en].upright}</p>
+      <h3>${c.pl} odwrócona w miłości</h3>
+      <p>${LOVE[c.en].reversed}</p>
+      <p>Pytasz o uczucia? Zrób <a href="/tarot-milosny/">rozkład tarota miłosnego</a> i sprawdź, co karty mówią o Tobie, drugiej osobie i waszej relacji.</p>
 
       <h2>${c.pl} jako karta dnia</h2>
       <p>${day.upright.message}</p>
@@ -539,7 +546,7 @@ for (const p of MANUAL_PAGES) {
 
 // ---------- wersje plików CSS/JS (żeby przeglądarki nie trzymały starych stylów) ----------
 import crypto from "node:crypto";
-const ASSETS = ["assets/newsletter.js", "assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
+const ASSETS = ["love.js", "assets/newsletter.js", "assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
 const version = f => crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8);
 const VERSIONS = Object.fromEntries(ASSETS.map(f => [f, version(f)]));
 function allHtml(dir) {

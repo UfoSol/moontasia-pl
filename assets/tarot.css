@@ -282,3 +282,22 @@ textarea::placeholder, input::placeholder{color:#9a8a99;}
 .results-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
 .results-head h2{margin:0!important}
 .tool section{scroll-margin-top:80px}
+
+/* ---- tarot miłosny: wybór sytuacji ---- */
+.love-mode{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 16px}
+.love-mode label{display:flex;align-items:center;gap:8px;cursor:pointer;background:#1f181f;border:1px solid var(--line);
+  border-radius:22px;padding:8px 16px;font-size:.92rem;color:var(--text-dim);transition:all .15s}
+.love-mode label:has(input:checked){border-color:var(--accent);color:#fff;background:rgba(148,70,149,.22)}
+.love-mode input{accent-color:var(--accent)}
+
+/* ---- telefon: trzy karty w rzędzie mieszczą się na ekranie ---- */
+@media (max-width:480px){
+  .tool section{padding:18px 14px}
+  .layout-row.gap-md{gap:8px}
+  .layout-row.gap-md .slot{width:92px}
+  .layout-row.gap-md .card-frame{width:84px;height:136px}
+  .layout-row.gap-md .slot .label{font-size:.62rem;letter-spacing:.8px}
+  .layout-row.gap-md .slot .card-name{font-size:.74rem}
+  .layout-row.gap-md .reverse-toggle{font-size:.7rem}
+  .layout-row.gap-md .card-frame .placeholder{font-size:.68rem;padding:4px}
+}

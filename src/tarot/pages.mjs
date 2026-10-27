@@ -172,6 +172,37 @@ ${saveRow("day")}
     </section>
   </div>`;
 
+const PANEL_LOVE = `
+  <div class="panel active" id="panel-love">
+    <section id="rozklad">
+      <h2><span class="num">1</span> Zadaj pytanie o uczucia i wybierz karty</h2>
+      <p class="hint">${OWN_DECK_HINT}</p>
+      <div class="love-mode" role="radiogroup" aria-label="Twoja sytuacja">
+        <label><input type="radio" name="love-mode" value="couple" checked> Jestem w związku lub relacji</label>
+        <label><input type="radio" name="love-mode" value="single"> Szukam miłości</label>
+      </div>
+${questionBoard("love", "O co chcesz zapytać karty w sprawie miłości?", ["Czego potrzebuje nasz związek?", "Co czuje do mnie ta osoba?", "Co blokuje mnie w miłości?"])}
+      <div class="table-area">
+        <p class="table-question empty" data-spread="love">Twoje pytanie pojawi się tutaj, nad kartami</p>
+        <div class="layout-area">
+          <div class="layout-row gap-md">${slot("love", "you", "Karta 1<br>Ty w tej relacji")}${slot("love", "rel", "Karta 3<br>Wasza relacja")}${slot("love", "them", "Karta 2<br>Druga osoba")}
+          </div>
+        </div>
+      </div>
+${toolbar("love")}
+    </section>
+
+    <div class="generate-row"><button class="btn-main" id="generateBtn-love" disabled>Odczytaj karty miłości</button></div>
+
+    <section class="results-block" id="results-love">
+      <h2><span class="num">2</span> Interpretacja miłosna</h2>
+      <div id="questionEcho-love" class="question-echo" style="display:none;"></div>
+      <div id="spreadLove"></div>
+      <div class="note">Odczyt opisuje energie i możliwości, a nie cudze myśli czy wyroki losu. Najlepiej traktować go jako punkt wyjścia do rozmowy i refleksji.</div>
+${saveRow("love")}
+    </section>
+  </div>`;
+
 const PANEL_SAVED = `
   <div class="panel active" id="panel-saved">
     <section>
@@ -192,6 +223,7 @@ const PANEL_SAVED = `
 
 export const TOOLS = [
   { href: "/rozklad-3-karty/", name: "Rozkład na 3 karty", desc: "Przeszłość, teraźniejszość i przyszłość w jednym odczycie." },
+  { href: "/tarot-milosny/", name: "Tarot miłosny", desc: "Ty, druga osoba i wasza relacja: co karty mówią o uczuciach." },
   { href: "/rozklad-5-kart/", name: "Krzyż z 5 kart", desc: "Sytuacja, przyczyna, cel i kierunek, w którym zmierza sprawa." },
   { href: "/tarot-tak-nie/", name: "Tarot tak / nie", desc: "Szybka odpowiedź na konkretne pytanie z jednej karty." },
   { href: "/karta-dnia/", name: "Karta dnia", desc: "Krótka wskazówka i energia na dzisiejszy dzień." },
@@ -235,6 +267,43 @@ export const TAROT_PAGES = [
       ["Jak zadać dobre pytanie do tarota?", "Najlepiej działają pytania otwarte i dotyczące Ciebie: „Na co zwrócić uwagę…”, „Co pomoże mi…”, „Czego potrzebuję…”. Pytania typu tak/nie lepiej zadać w odczycie z jednej karty."],
       ["Co oznacza karta odwrócona?", "Karta odwrócona zwykle opisuje energię zablokowaną, osłabioną albo skierowaną do wewnątrz. Jeśli nie chcesz ich używać, odznacz opcję „także karty odwrócone” przed losowaniem."],
       ["Czy mogę używać własnej talii?", "Tak. Potasuj swoją talię, wyciągnij karty i kliknij w puste miejsca, aby wybrać je z listy. Interpretacja pojawi się tak samo jak przy losowaniu."],
+    ],
+  },
+  {
+    path: "/tarot-milosny/",
+    spread: "love",
+    tabLabel: "Tarot miłosny",
+    scripts: ["/data.js", "/love.js", "/app.js"],
+    title: "Tarot miłosny online – darmowy rozkład na miłość i związek | Moontasia",
+    description: "Tarot miłosny online za darmo: wylosuj 3 karty i sprawdź, co mówią o Tobie, drugiej osobie i waszej relacji. Wersja dla par i dla singli, bez rejestracji.",
+    h1: "Tarot miłosny online – rozkład na miłość",
+    lead: "Trzy karty o uczuciach: co wnosisz Ty, co wnosi druga osoba i dokąd zmierza wasza relacja. Szukasz miłości? Przełącz na wersję dla singli.",
+    panel: PANEL_LOVE,
+    content: `
+      <h2>Jak działa tarot miłosny?</h2>
+      <p>Tarot miłosny to rozkład, w którym każda karta odpowiada na inne pytanie o uczucia. Interpretacje opierają się na znaczeniach kart w miłości i związkach, a nie tylko ich ogólnym sensie. Dlatego <a href="/znaczenie-kart/kochankowie/">Kochankowie</a> czy <a href="/znaczenie-kart/dwojka-kielichow/">Dwójka Kielichów</a> mówią tu o wzajemności, a <a href="/znaczenie-kart/wieza/">Wieża</a> o nagłym zwrocie w relacji.</p>
+      <h2>Pozycje kart w rozkładzie miłosnym</h2>
+      <h3>Jeśli jesteś w związku lub relacji</h3>
+      <ul>
+        <li><strong>Karta 1, Ty:</strong> co wnosisz do relacji, czego potrzebujesz i jak się w niej czujesz.</li>
+        <li><strong>Karta 2, druga osoba:</strong> energia, z jaką druga strona wchodzi w ten związek.</li>
+        <li><strong>Karta 3, wasza relacja:</strong> czym jest związek i w jakim kierunku zmierza.</li>
+      </ul>
+      <h3>Jeśli szukasz miłości</h3>
+      <ul>
+        <li><strong>Karta 1, Ty teraz:</strong> Twój obecny stan serca i gotowość na uczucie.</li>
+        <li><strong>Karta 2, czego naprawdę szukasz:</strong> potrzeba, która kryje się pod marzeniem o miłości.</li>
+        <li><strong>Karta 3, co nadchodzi:</strong> energia, która zbliża się w życiu uczuciowym.</li>
+      </ul>
+      <h2>Jak pytać tarot o miłość?</h2>
+      <p>Najwięcej daje pytanie o Ciebie i o relację, a nie o cudze myśli: „Czego potrzebuje nasz związek?” zamiast „Czy on mnie kocha?”. Szybkie pytania zamknięte, np. „Czy to dobry moment na rozmowę?”, zadaj w <a href="/tarot-tak-nie/">tarocie tak/nie</a>. Więcej rozkładów na miłość znajdziesz w poradniku <a href="/blog/tarot-milosny/">rozkłady tarota na miłość i związek</a>, a zgodność pary sprawdzisz w <a href="/matryca-partnerska/">matrycy partnerskiej</a>.</p>
+      <h2>Inne odczyty i narzędzia</h2>
+      ${"{{TOOL_LINKS}}"}`,
+    faq: [
+      ["Czy tarot miłosny online jest darmowy?", "Tak. Rozkład miłosny jest bezpłatny i nie wymaga rejestracji. Pytanie i wynik zostają w Twojej przeglądarce."],
+      ["Czy tarot powie, co ktoś do mnie czuje?", "Tarot nie czyta w myślach. Karta drugiej osoby pokazuje energię, z jaką wchodzi w relację, i to, co warto zauważyć. O uczucia najlepiej zapytać wprost."],
+      ["Które karty tarota oznaczają miłość?", "Najbardziej miłosne karty to Kochankowie, Dwójka Kielichów, As Kielichów, Dziesiątka Kielichów, Cesarzowa i Słońce. Opis każdej karty w miłości znajdziesz w <a href=\"/znaczenie-kart/\">znaczeniu kart</a>."],
+      ["Czy mogę zrobić rozkład miłosny, jeśli jestem singielką lub singlem?", "Tak. Wybierz opcję „Szukam miłości”, a karty opiszą Twój stan serca, to, czego naprawdę szukasz, i to, co nadchodzi w uczuciach."],
     ],
   },
   {
