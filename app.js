@@ -5,6 +5,19 @@
 const IMG_DIR = "/";
 
 // lekkie obrazki WebP: "s" miniatury (okno wyboru), "m" karty w rozkładzie
+// link do strony karty, np. /znaczenie-kart/as-kielichow/ (ten sam adres, co generuje tools/build.mjs)
+function cardUrl(card) {
+  const slug = card.pl.toLowerCase()
+    .replace(/ą/g, "a").replace(/ć/g, "c").replace(/ę/g, "e").replace(/ł/g, "l").replace(/ń/g, "n")
+    .replace(/ó/g, "o").replace(/ś/g, "s").replace(/[źż]/g, "z")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `/znaczenie-kart/${slug}/`;
+}
+
+function moreLink(card, anchor = "") {
+  return `<a class="ci-more" href="${cardUrl(card)}${anchor}" target="_blank" rel="noopener">Czytaj więcej o karcie ${card.pl} →</a>`;
+}
+
 function cardImg(file, size) {
   return IMG_DIR + file.replace("karty/", `karty/${size}/`).replace(/\.svg$/, ".webp");
 }
@@ -307,6 +320,7 @@ function renderSpreadThree(containerId, labels, paragraphFn) {
         <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
       </div>
       <p>${capitalize(paragraphFn(pos, m))}</p>
+      ${moreLink(card)}
     `;
     container.appendChild(div);
   });
@@ -418,6 +432,7 @@ on("generateBtn-five", "click", () => {
         <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
       </div>
       <p>${capitalize(buildParagraph5(pos, m))}</p>
+      ${moreLink(card)}
     `;
     container.appendChild(div);
   });
@@ -469,6 +484,7 @@ on("generateBtn-one", "click", () => {
     <div class="card-interp">
       <div class="ci-title">${card.pl} <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span></div>
       <p>${m.meaning}</p>
+      ${moreLink(card)}
     </div>
     <div class="synthesis">
       <div class="ci-title">Co to oznacza</div>
@@ -515,6 +531,7 @@ on("generateBtn-day", "click", () => {
         <span class="ori-tag">— ${keyword}</span>
       </div>
       <p>${d.message}</p>
+      ${moreLink(card)}
     </div>
     <div class="synthesis">
       <div class="ci-title">Warto dziś</div>
@@ -605,7 +622,8 @@ on("generateBtn-love", "click", () => {
       <div class="ci-title">Karta ${idx + 1}: ${labels[pos]} — ${card.pl}
         <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
       </div>
-      <p>${loveMeaning(pos)}</p>`;
+      <p>${loveMeaning(pos)}</p>
+      ${moreLink(card, "#w-milosci")}`;
     container.appendChild(div);
   });
   const synth = document.createElement("div");

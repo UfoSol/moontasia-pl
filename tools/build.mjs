@@ -334,7 +334,7 @@ for (const c of CARDS) {
       <h3>Rada karty</h3>
       <p>${cap(m.reversed.solution)}</p>
 
-      <h2>${c.pl} w miłości i związku</h2>
+      <h2 id="w-milosci">${c.pl} w miłości i związku</h2>
       <p>${LOVE[c.en].upright}</p>
       <h3>${c.pl} odwrócona w miłości</h3>
       <p>${LOVE[c.en].reversed}</p>
