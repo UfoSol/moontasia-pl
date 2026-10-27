@@ -15,7 +15,7 @@ function cardUrl(card) {
 }
 
 function moreLink(card, anchor = "") {
-  return `<a class="ci-more" href="${cardUrl(card)}${anchor}" target="_blank" rel="noopener">Czytaj więcej o karcie ${card.pl} →</a>`;
+  return `<a class="ci-more" href="${cardUrl(card)}${anchor}" target="_blank" rel="noopener">Czytaj więcej o karcie ${card.pl} <span class="arr">→</span></a>`;
 }
 
 function cardImg(file, size) {
