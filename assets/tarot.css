@@ -313,3 +313,6 @@ textarea::placeholder, input::placeholder{color:#9a8a99;}
 .card-interp .ci-more .arr{display:inline-block;transition:transform .15s}
 .card-interp .ci-more:hover .arr{transform:translateX(3px)}
 #w-milosci{scroll-margin-top:84px}
+
+/* ---- etykiety nad kartami o stałej wysokości: karty w rzędzie zawsze na jednej linii ---- */
+.layout-row .slot .label{min-height:3.9em;display:flex;align-items:flex-end;justify-content:center}

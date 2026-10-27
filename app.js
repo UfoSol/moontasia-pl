@@ -553,8 +553,8 @@ on("generateBtn-day", "click", () => {
 // ============================================================
 
 const LOVE_POSITIONS = {
-  couple: { you: "Ty w tej relacji", them: "Druga osoba", rel: "Wasza relacja" },
-  single: { you: "Ty teraz", them: "Czego naprawdę szukasz", rel: "Co nadchodzi w miłości" },
+  couple: { you: "Ty", them: "Druga osoba", rel: "Wasza relacja" },
+  single: { you: "Ty teraz", them: "Czego szukasz", rel: "Co nadchodzi" },
 };
 const LOVE_ORDER = ["you", "them", "rel"];
 

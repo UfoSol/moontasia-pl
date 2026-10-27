@@ -185,7 +185,7 @@ ${questionBoard("love", "O co chcesz zapytać karty w sprawie miłości?", ["Cze
       <div class="table-area">
         <p class="table-question empty" data-spread="love">Twoje pytanie pojawi się tutaj, nad kartami</p>
         <div class="layout-area">
-          <div class="layout-row gap-md">${slot("love", "you", "Karta 1<br>Ty w tej relacji")}${slot("love", "rel", "Karta 3<br>Wasza relacja")}${slot("love", "them", "Karta 2<br>Druga osoba")}
+          <div class="layout-row gap-md">${slot("love", "you", "Karta 1<br>Ty")}${slot("love", "them", "Karta 2<br>Druga osoba")}${slot("love", "rel", "Karta 3<br>Wasza relacja")}
           </div>
         </div>
       </div>
