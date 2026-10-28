@@ -72,8 +72,8 @@ function renderSlot(spread, pos) {
   const val = state[spread][pos];
 
   if (!val) {
-    frame.classList.remove("filled");
-    frame.innerHTML = `<span class="placeholder">Kliknij, aby wybrać kartę</span>`;
+    frame.classList.remove("filled", "face-down");
+    frame.innerHTML = `<span class="placeholder"><i aria-hidden="true">☾</i>Wybierz kartę</span>`;
     nameEl.innerHTML = "";
     toggle.checked = false;
     toggle.disabled = true;
@@ -83,7 +83,20 @@ function renderSlot(spread, pos) {
     return;
   }
 
+  if (val.hidden) {
+    frame.classList.add("filled", "face-down");
+    frame.innerHTML = `<span class="cback" aria-hidden="true"></span><span class="tap">Dotknij, aby odkryć</span>`;
+    nameEl.innerHTML = `<span class="ori">karta zakryta</span>`;
+    toggle.checked = false;
+    toggle.disabled = true;
+    toggleLabel.classList.add("disabled");
+    clearBtn.style.display = "inline-block";
+    updateGenerateButton(spread);
+    return;
+  }
+
   const card = cardByEn(val.en);
+  frame.classList.remove("face-down");
   frame.classList.add("filled");
   frame.innerHTML = `<img src="${cardImg(card.file, "m")}" alt="${card.pl}" class="${val.reversed ? 'reversed' : ''}" style="background:url(${cardImg(card.file, "s")}) center/contain no-repeat" decoding="async">`;
   nameEl.innerHTML = `${card.pl} ${val.reversed ? '<span class="ori">(odwrócona)</span>' : ''}`;
@@ -105,12 +118,24 @@ function updateGenerateButton(spread) {
   const btn = document.getElementById(`generateBtn-${spread}`);
   const values = Object.values(state[spread]);
   const filled = values.filter(v => v !== null).length;
-  btn.disabled = filled < values.length;
+  const hidden = values.filter(v => v && v.hidden).length;
+  const ready = filled === values.length && hidden === 0;
+  const wasDisabled = btn.disabled;
+  btn.disabled = !ready;
+  if (ready && wasDisabled) {
+    btn.classList.remove("ready"); void btn.offsetWidth; btn.classList.add("ready");
+  }
   const progress = document.getElementById(`progress-${spread}`);
   if (progress) {
-    progress.textContent = filled === values.length
-      ? "Wszystkie karty wybrane. Możesz odczytać rozkład."
-      : values.length > 1 ? `Wybrane karty: ${filled} z ${values.length}` : "";
+    if (hidden > 0) {
+      progress.innerHTML = values.length > 1
+        ? `✦ Odkryte karty: ${filled - hidden} z ${values.length} · <button type="button" class="link-btn" data-reveal-all="${spread}">odkryj wszystkie</button>`
+        : `✦ Dotknij karty, aby ją odkryć`;
+    } else {
+      progress.textContent = ready
+        ? (values.length > 1 ? "✦ Wszystkie karty odkryte. Możesz odczytać rozkład." : "✦ Karta odkryta. Możesz ją odczytać.")
+        : values.length > 1 ? `Wybrane karty: ${filled} z ${values.length}` : "";
+    }
   }
 }
 
@@ -152,17 +177,60 @@ function drawCards(spread) {
     const j = Math.floor(Math.random() * (i + 1));
     [deck[i], deck[j]] = [deck[j], deck[i]];
   }
+  const table = document.querySelector(`#panel-${spread} .table-area`);
+  const tc = table ? table.getBoundingClientRect() : null;
   Object.keys(state[spread]).forEach((pos, idx) => {
-    state[spread][pos] = { en: deck[idx], reversed: reversedOk && Math.random() < 0.3 };
+    state[spread][pos] = { en: deck[idx], reversed: reversedOk && Math.random() < 0.3, hidden: true };
     renderSlot(spread, pos);
     const frame = document.querySelector(`.card-frame[data-spread="${spread}"][data-pos="${pos}"]`);
-    frame.classList.remove("dealt");
-    void frame.offsetWidth;
-    frame.style.animationDelay = `${idx * 0.12}s`;
-    frame.classList.add("dealt");
+    if (tc && !REDUCED_MOTION && frame.animate) {
+      const fr = frame.getBoundingClientRect();
+      const dx = tc.left + tc.width / 2 - (fr.left + fr.width / 2);
+      const dy = tc.top + tc.height / 2 - (fr.top + fr.height / 2);
+      const rot = (Math.random() * 30 - 15).toFixed(1);
+      frame.animate([
+        { transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(.6)`, opacity: 0 },
+        { transform: `translate(${dx * 0.2}px, ${dy * 0.2}px) rotate(${rot / 3}deg) scale(1.05)`, opacity: 1, offset: 0.7 },
+        { transform: "none", opacity: 1 },
+      ], { duration: 650, delay: idx * 160, easing: "cubic-bezier(.2,.8,.2,1)", fill: "backwards" });
+    }
   });
   hideResults(spread);
 }
+
+// odkrywanie zakrytej karty z animacją obrotu
+const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function revealCard(spread, pos) {
+  const val = state[spread][pos];
+  if (!val || !val.hidden) return;
+  const frame = document.querySelector(`.card-frame[data-spread="${spread}"][data-pos="${pos}"]`);
+  if (REDUCED_MOTION || !frame.animate) {
+    val.hidden = false;
+    renderSlot(spread, pos);
+    return;
+  }
+  val.revealing = true;
+  frame.animate([{ transform: "rotateY(0)" }, { transform: "rotateY(90deg) scale(1.04)" }], { duration: 200, easing: "ease-in" })
+    .onfinish = () => {
+      val.hidden = false;
+      val.revealing = false;
+      renderSlot(spread, pos);
+      frame.animate([
+        { transform: "rotateY(-90deg) scale(1.04)", boxShadow: "0 0 0 rgba(217,184,218,0)" },
+        { transform: "rotateY(0) scale(1.04)", boxShadow: "0 0 34px rgba(217,184,218,.75)", offset: 0.6 },
+        { transform: "none", boxShadow: "0 4px 18px rgba(0,0,0,.45)" },
+      ], { duration: 520, easing: "ease-out" });
+    };
+}
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest("[data-reveal-all]");
+  if (!btn) return;
+  const spread = btn.dataset.revealAll;
+  Object.keys(state[spread]).filter(p => state[spread][p] && state[spread][p].hidden)
+    .forEach((p, i) => setTimeout(() => revealCard(spread, p), i * 260));
+});
 
 function hideResults(spread) {
   const results = document.getElementById(`results-${spread}`);
@@ -248,7 +316,11 @@ function selectCard(en) {
 // ---------- event listeners: sloty ----------
 
 document.querySelectorAll(".card-frame").forEach(frame => {
-  frame.addEventListener("click", () => openModal(frame.dataset.spread, frame.dataset.pos));
+  frame.addEventListener("click", () => {
+    const val = state[frame.dataset.spread][frame.dataset.pos];
+    if (val && val.hidden) { if (!val.revealing) revealCard(frame.dataset.spread, frame.dataset.pos); }
+    else openModal(frame.dataset.spread, frame.dataset.pos);
+  });
 });
 
 document.querySelectorAll(".reverse-toggle input").forEach(inp => {
@@ -316,6 +388,7 @@ function renderSpreadThree(containerId, labels, paragraphFn) {
     const div = document.createElement("div");
     div.className = "card-interp";
     div.innerHTML = `
+      <img class="ci-thumb${val.reversed ? " rev" : ""}" src="${cardImg(card.file, "s")}" alt="${card.pl}" width="64" height="112" loading="lazy">
       <div class="ci-title">Karta ${idx + 1}: ${labels[pos]} — ${card.pl}
         <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
       </div>
@@ -428,6 +501,7 @@ on("generateBtn-five", "click", () => {
     const div = document.createElement("div");
     div.className = "card-interp";
     div.innerHTML = `
+      <img class="ci-thumb${val.reversed ? " rev" : ""}" src="${cardImg(card.file, "s")}" alt="${card.pl}" width="64" height="112" loading="lazy">
       <div class="ci-title">Karta ${idx + 1}: ${POSITION_LABELS_5[pos]} — ${card.pl}
         <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
       </div>
@@ -482,6 +556,7 @@ on("generateBtn-one", "click", () => {
   const container = document.getElementById("spreadOne");
   container.innerHTML = `
     <div class="card-interp">
+      <img class="ci-thumb${val.reversed ? " rev" : ""}" src="${cardImg(card.file, "s")}" alt="${card.pl}" width="64" height="112" loading="lazy">
       <div class="ci-title">${card.pl} <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span></div>
       <p>${m.meaning}</p>
       ${moreLink(card)}
@@ -527,6 +602,7 @@ on("generateBtn-day", "click", () => {
   const container = document.getElementById("spreadDay");
   container.innerHTML = `
     <div class="card-interp">
+      <img class="ci-thumb${val.reversed ? " rev" : ""}" src="${cardImg(card.file, "s")}" alt="${card.pl}" width="64" height="112" loading="lazy">
       <div class="ci-title">${card.pl} <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
         <span class="ori-tag">— ${keyword}</span>
       </div>
@@ -619,6 +695,7 @@ on("generateBtn-love", "click", () => {
     const div = document.createElement("div");
     div.className = "card-interp";
     div.innerHTML = `
+      <img class="ci-thumb${val.reversed ? " rev" : ""}" src="${cardImg(card.file, "s")}" alt="${card.pl}" width="64" height="112" loading="lazy">
       <div class="ci-title">Karta ${idx + 1}: ${labels[pos]} — ${card.pl}
         <span class="ori-tag">${val.reversed ? "(odwrócona)" : "(prosta)"}</span>
       </div>

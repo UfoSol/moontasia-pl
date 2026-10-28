@@ -316,3 +316,72 @@ textarea::placeholder, input::placeholder{color:#9a8a99;}
 
 /* ---- etykiety nad kartami o stałej wysokości: karty w rzędzie zawsze na jednej linii ---- */
 .layout-row .slot .label{min-height:3.9em;display:flex;align-items:flex-end;justify-content:center}
+
+/* ============================================================
+   Rytuał losowania: stół, puste miejsca, karty zakryte, wyniki
+   ============================================================ */
+/* stół: poświata, koło zodiaku i gwiazdy pod kartami */
+.table-area{position:relative;isolation:isolate;overflow:hidden;padding:22px 8px 14px;border-radius:18px;
+  background:
+    radial-gradient(1.4px 1.4px at 12% 22%,#fff 50%,transparent 51%),radial-gradient(1.2px 1.2px at 82% 18%,#f3dff3 50%,transparent 51%),
+    radial-gradient(1.6px 1.6px at 88% 70%,#fff 50%,transparent 51%),radial-gradient(1.1px 1.1px at 8% 76%,#fff 50%,transparent 51%),
+    radial-gradient(1.2px 1.2px at 30% 92%,#f3dff3 50%,transparent 51%),radial-gradient(1.3px 1.3px at 64% 8%,#fff 50%,transparent 51%),
+    radial-gradient(ellipse at 50% 55%, rgba(148,70,149,.30), transparent 65%),
+    rgba(20,15,20,.35);
+  border:1px solid rgba(217,184,218,.12)}
+.table-area::before{content:"";position:absolute;left:50%;top:55%;width:min(560px,92%);aspect-ratio:1;transform:translate(-50%,-50%);z-index:-1;
+  border-radius:50%;border:1px solid rgba(217,184,218,.16);box-shadow:inset 0 0 0 18px rgba(20,15,20,0),inset 0 0 0 19px rgba(217,184,218,.08);
+  animation:tableSpin 120s linear infinite}
+.table-area::after{content:"✦";position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);z-index:-1;font-size:180px;line-height:1;
+  color:rgba(217,184,218,.05);pointer-events:none}
+@keyframes tableSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* puste miejsce: świecąca sylwetka karty */
+.card-frame:not(.filled){border:1.5px dashed rgba(217,184,218,.45);
+  background:radial-gradient(ellipse at 50% 40%, rgba(148,70,149,.35), rgba(46,36,46,.85) 70%);
+  box-shadow:inset 0 0 22px rgba(148,70,149,.25);animation:slotGlow 3.2s ease-in-out infinite}
+.card-frame:not(.filled):hover{border-style:solid;border-color:var(--accent-soft);box-shadow:inset 0 0 26px rgba(148,70,149,.45),0 0 22px rgba(148,70,149,.4)}
+.card-frame .placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--accent-soft);
+  font-family:'Palatino Linotype',Georgia,serif;font-size:.86rem;letter-spacing:.5px}
+.card-frame .placeholder i{font-style:normal;font-size:2rem;line-height:1;color:#efdcef;text-shadow:0 0 14px rgba(217,184,218,.7)}
+@keyframes slotGlow{50%{box-shadow:inset 0 0 30px rgba(148,70,149,.42),0 0 16px rgba(148,70,149,.22)}}
+
+/* karta zakryta: rewers, delikatne „oddychanie”, zachęta do kliknięcia */
+.card-frame.face-down{background:none;border:2px solid var(--accent);cursor:pointer;
+  animation:faceDown 2.4s ease-in-out infinite}
+.card-frame.face-down .cback{position:absolute;inset:0;background:url(/assets/card-back.svg) center/cover}
+.card-frame.face-down .tap{position:absolute;left:6px;right:6px;bottom:8px;text-align:center;font-size:.66rem;letter-spacing:.8px;
+  color:#fff;background:rgba(20,15,20,.72);border-radius:10px;padding:3px 4px;text-transform:uppercase}
+.card-frame.face-down:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 12px 30px rgba(148,70,149,.55)}
+@keyframes faceDown{50%{box-shadow:0 0 22px rgba(217,184,218,.45),0 6px 20px rgba(0,0,0,.5)}}
+.link-btn{background:none;border:none;color:var(--accent-soft);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+.link-btn:hover{color:#fff}
+
+/* przycisk odczytu „budzi się”, gdy wszystkie karty są odkryte */
+.btn-main.ready{animation:readyPulse 1.4s ease-in-out 2}
+@keyframes readyPulse{50%{transform:translateY(-3px) scale(1.04);box-shadow:0 0 0 6px rgba(148,70,149,.25),0 10px 30px rgba(148,70,149,.6)}}
+
+/* wyniki: miniatura karty obok opisu, kolejne karty pojawiają się po sobie */
+.card-interp{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:start}
+.card-interp>*:not(.ci-thumb){grid-column:2}
+.card-interp .ci-thumb{grid-column:1;grid-row:1 / span 3;width:64px;height:auto;border-radius:6px;background:#f4ecd9;padding:2px;
+  border:2px solid rgba(217,184,218,.6);box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.card-interp .ci-thumb.rev{transform:rotate(180deg)}
+.card-interp .ci-more{justify-self:start}
+@media (max-width:480px){.card-interp{column-gap:12px}.card-interp .ci-thumb{width:52px}}
+.results-block .card-interp,.results-block .synthesis{animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+.results-block .card-interp:nth-child(2){animation-delay:.18s}
+.results-block .card-interp:nth-child(3){animation-delay:.36s}
+.results-block .card-interp:nth-child(4){animation-delay:.54s}
+.results-block .card-interp:nth-child(5){animation-delay:.72s}
+.results-block .synthesis{animation-delay:.6s}
+.results-block .synthesis{position:relative;border-left:none;border:1px solid rgba(217,184,218,.35);
+  background:radial-gradient(ellipse at 0% 0%, rgba(148,70,149,.3), transparent 60%),#231a24;padding:18px 20px}
+.results-block .synthesis .ci-title::before{content:"☾ ";color:var(--accent-soft)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  .table-area::before,.card-frame:not(.filled),.card-frame.face-down,.btn-main.ready,
+  .results-block .card-interp,.results-block .synthesis{animation:none}
+}
+@media (max-width:480px){.layout-row.gap-md .card-frame.face-down .tap{font-size:.52rem;letter-spacing:.3px;bottom:5px}}
