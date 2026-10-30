@@ -62,9 +62,10 @@ export const ASTRO_PAGES = [
     lead: "Twoja data urodzenia kryje jedną, dwie, a czasem trzy karty Wielkich Arkanów. Opisują Twoją osobowość i głębsze zadanie duszy. Do tego karta roku podpowie, jaka energia towarzyszy Ci od ostatnich urodzin.",
     form: `<div class="frm">
         <div class="fld"><label for="b-date">Data urodzenia</label><input type="date" id="b-date"></div>
-        <div class="fld"><label for="b-year">Karta roku – wybierz rok</label><input type="number" id="b-year" min="1900" max="2100" style="width:110px"></div>
+        <div class="fld"><label for="b-year">Karta roku na rok (np. 2026)</label><input type="number" id="b-year" min="1900" max="2100" style="width:110px"></div>
         <button class="go" id="b-go">Pokaż moje karty</button>
       </div>
+      <p class="hint" style="text-align:center"><b>Karta roku</b> to karta tarota, która opisuje energię danego roku w Twoim życiu. W polu jest już wpisany bieżący rok. Możesz go zostawić albo wpisać inny, np. przyszły.</p>
       <div class="err" id="b-err"></div>`,
     result: `<div id="b-result" style="display:none"><div class="panel"><div class="bc-cards" id="b-cards"></div><div id="b-desc"></div></div></div>`,
     article: `
@@ -100,9 +101,10 @@ export const ASTRO_PAGES = [
     lead: "Liczba drogi życia to najważniejsza liczba w numerologii. Opisuje Twoje talenty, wyzwania i kierunek, w którym prowadzi Cię życie. Rok osobisty podpowie, jaki etap dziewięcioletniego cyklu przeżywasz teraz.",
     form: `<div class="frm">
         <div class="fld"><label for="l-date">Data urodzenia</label><input type="date" id="l-date"></div>
-        <div class="fld"><label for="l-year">Rok osobisty – wybierz rok</label><input type="number" id="l-year" min="1900" max="2100" style="width:110px"></div>
+        <div class="fld"><label for="l-year">Na który rok? (np. 2026)</label><input type="number" id="l-year" min="1900" max="2100" style="width:110px"></div>
         <button class="go" id="l-go">Oblicz</button>
       </div>
+      <p class="hint" style="text-align:center"><b>Rok osobisty</b> to w numerologii liczba od 1 do 9, która opisuje, jaki to będzie dla Ciebie rok, np. czas nowych początków, miłości albo domykania spraw.<br>W polu „Na który rok?” jest już wpisany bieżący rok. Możesz go zostawić albo wpisać inny, np. przyszły, żeby sprawdzić, co Cię czeka.</p>
       <div class="err" id="l-err"></div>`,
     result: `<div id="l-result" style="display:none"><div class="ascres" id="l-cards"></div><div class="panel" id="l-desc" style="margin-top:14px"></div></div>`,
     article: `
