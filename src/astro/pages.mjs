@@ -62,7 +62,7 @@ export const ASTRO_PAGES = [
     lead: "Twoja data urodzenia kryje jedną, dwie, a czasem trzy karty Wielkich Arkanów. Opisują Twoją osobowość i głębsze zadanie duszy. Do tego karta roku podpowie, jaka energia towarzyszy Ci od ostatnich urodzin.",
     form: `<div class="frm">
         <div class="fld"><label for="b-date">Data urodzenia</label><input type="date" id="b-date"></div>
-        <div class="fld"><label for="b-year">Karta roku dla roku</label><input type="number" id="b-year" min="1900" max="2100" style="width:110px"></div>
+        <div class="fld"><label for="b-year">Karta roku – wybierz rok</label><input type="number" id="b-year" min="1900" max="2100" style="width:110px"></div>
         <button class="go" id="b-go">Pokaż moje karty</button>
       </div>
       <div class="err" id="b-err"></div>`,
@@ -100,7 +100,7 @@ export const ASTRO_PAGES = [
     lead: "Liczba drogi życia to najważniejsza liczba w numerologii. Opisuje Twoje talenty, wyzwania i kierunek, w którym prowadzi Cię życie. Rok osobisty podpowie, jaki etap dziewięcioletniego cyklu przeżywasz teraz.",
     form: `<div class="frm">
         <div class="fld"><label for="l-date">Data urodzenia</label><input type="date" id="l-date"></div>
-        <div class="fld"><label for="l-year">Rok osobisty dla roku</label><input type="number" id="l-year" min="1900" max="2100" style="width:110px"></div>
+        <div class="fld"><label for="l-year">Rok osobisty – wybierz rok</label><input type="number" id="l-year" min="1900" max="2100" style="width:110px"></div>
         <button class="go" id="l-go">Oblicz</button>
       </div>
       <div class="err" id="l-err"></div>`,
