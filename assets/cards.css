@@ -8,6 +8,7 @@
 .card-hero h1{font-size:2rem;color:var(--accent-soft);margin:4px 0 10px;line-height:1.2}
 @media (max-width:560px){.card-hero h1{font-size:1.6rem}}
 .card-lead{line-height:1.7;margin:0 0 16px;color:var(--text)}
+.card-aka{margin:-6px 0 16px;font-size:.9rem;color:var(--muted,#8a7b89)}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:8px;margin:0;text-align:left}
 .facts div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
 .facts dt{font-size:.7rem;letter-spacing:1.3px;text-transform:uppercase;color:var(--text-dim)}

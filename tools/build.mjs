@@ -295,14 +295,32 @@ const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 const webp = (file, size) => "/" + file.replace("karty/", `karty/${size}/`).replace(/\.svg$/, ".webp");
 const imgTag = (c, w, h, extra = "") => `<img src="${webp(c.file, w > 130 ? "m" : "s")}" alt="Karta tarota ${c.pl}" width="${w}" height="${h}" decoding="async"${extra}>`;
 
+// Alternatywne nazwy kart (tak też ludzie wpisują je w Google: „5 buław”, „tarot umiarkowanie”)
+const NUM_WORDS = { "Dwójka": 2, "Trójka": 3, "Czwórka": 4, "Piątka": 5, "Szóstka": 6, "Siódemka": 7, "Ósemka": 8, "Dziewiątka": 9, "Dziesiątka": 10 };
+const SUIT_ALT = { wands: ["Różdżek", "Kijów"], cups: ["Pucharów"], pentacles: ["Denarów", "Monet"], swords: [] };
+const SUIT_GUIDE = {
+  wands: ["/blog/bulawy-w-tarocie/", "Buławy w tarocie – znaczenie wszystkich 14 kart"],
+  swords: ["/blog/miecze-w-tarocie/", "Miecze w tarocie – znaczenie wszystkich 14 kart"],
+  major: ["/blog/wielkie-i-male-arkana/", "Wielkie i Małe Arkana – czym się różnią"],
+};
+function cardAliases(c) {
+  const [first, ...rest] = c.pl.split(" ");
+  const suitWord = rest.join(" ");
+  const short = NUM_WORDS[first] ? `${NUM_WORDS[first]} ${suitWord}` : (c.suit === "major" ? `karta ${c.number}` : null);
+  const other = c.suit === "major" ? [] : SUIT_ALT[c.suit].map(w => `${first} ${w}`);
+  return { short, all: [short, ...other, c.en].filter(Boolean) };
+}
+
 for (const c of CARDS) {
   const m = MEANINGS[c.en], yn = YES_NO[c.en], day = DAY_MEANINGS[c.en];
   const suit = SUITS[c.suit];
   const same = CARDS.filter(o => o.suit === c.suit && o !== c);
   const prev = CARDS[(c.index + CARDS.length - 1) % CARDS.length];
   const next = CARDS[(c.index + 1) % CARDS.length];
-  const title = `${c.pl} – znaczenie karty tarota, w miłości, prosta i odwrócona | Moontasia`;
-  const description = `${c.pl} w tarocie: ${m.upright.keyword}. Znaczenie karty prostej i odwróconej, w miłości i związku, odpowiedź tak/nie i wskazówka na dziś.`;
+  const al = cardAliases(c);
+  const named = c.suit === "major" ? `${c.pl} (${c.number})` : (NUM_WORDS[c.pl.split(" ")[0]] ? `${c.pl} (${al.short})` : c.pl);
+  const title = `${named} – znaczenie karty tarota, w miłości i odwrócona | Moontasia`;
+  const description = `${c.pl}${NUM_WORDS[c.pl.split(" ")[0]] ? ` (${al.short})` : ""} w tarocie: ${m.upright.keyword}. Znaczenie karty prostej i odwróconej, w miłości i związku, odpowiedź tak/nie i wskazówka na dziś.`;
   const bc = breadcrumbs([["Strona główna", "/"], ["Znaczenie kart", "/znaczenie-kart/"], [suit.name, `/znaczenie-kart/#${suit.anchor}`], [c.pl, c.url]]);
   const faq = faqBlock([
     [`Co oznacza karta ${c.pl} w tarocie?`, `${c.pl} w pozycji prostej oznacza: ${m.upright.keyword}. ${m.upright.meaning}`],
@@ -325,8 +343,9 @@ for (const c of CARDS) {
     <div class="card-hero">
       <div class="card-img">${imgTag(c, 220, 386, ' fetchpriority="high"')}</div>
       <div>
-        <h1>${c.pl} – znaczenie karty tarota</h1>
+        <h1>${named} – znaczenie karty tarota</h1>
         <p class="card-lead">${cap(m.upright.keyword)}. ${m.upright.meaning}</p>
+        <p class="card-aka">Inne nazwy: ${al.all.join(", ")}</p>
         <dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
       </div>
     </div>
@@ -373,6 +392,7 @@ for (const c of CARDS) {
 
       ${faq.html}
 
+      ${SUIT_GUIDE[c.suit] ? `<p>Przewodnik po całym kolorze: <a href="${SUIT_GUIDE[c.suit][0]}">${SUIT_GUIDE[c.suit][1]}</a>.</p>` : ""}
       <h2>${c.suit === "major" ? "Pozostałe Wielkie Arkana" : `Pozostałe karty: ${suit.name}`}</h2>
       <div class="mini-grid">${same.map(o => `<a href="${o.url}">${imgTag(o, 80, 140, ' loading="lazy"')}<span>${o.pl}</span></a>`).join("")}</div>
 
@@ -420,7 +440,7 @@ for (const c of CARDS) {
   const body = `<main class="page">
   ${bc.html}
   <div class="page-hero">
-    <h1>Znaczenie kart tarota – wszystkie 78 kart</h1>
+    <h1>Karty tarota – znaczenie wszystkich 78 kart</h1>
     <p>Opis każdej karty tarota: znaczenie w pozycji prostej i odwróconej, odpowiedź tak/nie, rada i wskazówka na dziś.</p>
   </div>
   <nav class="suit-jump" aria-label="Kolory kart">${SUIT_ORDER.map(s => `<a class="btn-ghost" href="#${SUITS[s].anchor}">${SUITS[s].name}</a>`).join("")}</nav>
@@ -437,7 +457,7 @@ for (const c of CARDS) {
   };
   write("znaczenie-kart/index.html", page({
     path: "/znaczenie-kart/",
-    title: "Znaczenie kart tarota – opis wszystkich 78 kart | Moontasia",
+    title: "Karty tarota – znaczenie wszystkich 78 kart z opisami | Moontasia",
     description: "Znaczenie wszystkich 78 kart tarota: Wielkie Arkana, Kielichy, Miecze, Buławy i Pentakle. Karta prosta i odwrócona, tak/nie, rada i karta dnia.",
     css: ["/assets/cards.css"], ld: [bc.ld, listLd, faq.ld], body,
   }));

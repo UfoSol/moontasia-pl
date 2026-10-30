@@ -84,6 +84,7 @@ a:hover{color:#fff}
 .page-hero{text-align:center;margin:6px 0 22px}
 .page-hero h1{font-size:2.1rem;color:var(--accent-soft);margin:0 0 8px;letter-spacing:.5px;line-height:1.2}
 .page-hero p{color:var(--text-dim);margin:0 auto;max-width:680px;line-height:1.6}
+.page-hero p.hero-aka{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin:-4px auto 12px;opacity:.8}
 @media (max-width:560px){.page-hero h1{font-size:1.65rem}}
 .sparkle{color:var(--accent-soft)}
 
