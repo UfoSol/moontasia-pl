@@ -134,6 +134,12 @@ const PHASE_TXT = {
 };
 
 // ================= KARTA URODZENIA I KARTA ROKU (metoda M. K. Greer) =================
+// kroki redukcji do pokazania: 2010 → 2 + 0 + 1 + 0 = 3
+function reduceSteps(n, limit){
+  const out=[];
+  while(n>limit){ const d=String(n).split(""), r=d.reduce((a,x)=>a+ +x,0); out.push(`${d.join(" + ")} = ${r}`); n=r; }
+  return out.map(t=>" → "+t).join("");
+}
 function birthCardChain(n){
   while(n>21) n = digitSum(n);
   const chain=[n];
@@ -206,14 +212,15 @@ document.getElementById("b-go")?.addEventListener("click",()=>{
   const names=bc.map(n=>majorCard(n).pl);
   document.getElementById("b-cards").innerHTML = bc.map((n,i)=>cardTile(n, bc.length===1?"osobowość i dusza":i===0?"karta osobowości":(i===bc.length-1?"karta duszy":"karta pośrednia"))).join("");
   document.getElementById("b-desc").innerHTML =
-    `<p class="calc-line">${dt.d} + ${dt.m} + ${dt.y} = ${sum} → ${bc.join(" → ")}</p>
+    `<p class="calc-line">${dt.d} + ${dt.m} + ${dt.y} = ${sum}${reduceSteps(sum,9)}</p>
+     <p class="hint" style="margin-top:-6px;margin-bottom:14px">Dodajemy dzień, miesiąc i cały rok urodzenia, a potem sumujemy cyfry wyniku, aż wyjdzie liczba od 1 do 21, czyli numer karty z Wielkich Arkanów. Jeśli ta liczba jest dwucyfrowa, sumujemy dalej, żeby poznać kartę duszy.</p>
      ${bc.length===1
        ? `<p>Twoja karta urodzenia to <b>${names[0]}</b>. Jest jednocześnie kartą osobowości i duszy, więc jej energia działa u Ciebie bardzo wyraźnie.</p>`
        : `<p>Twoje karty urodzenia to <b>${names.join(", ")}</b>. Pierwsza opisuje osobowość, czyli to, jak działasz w świecie. Ostatnia to karta duszy: głębsze zadanie, do którego wracasz przez całe życie.</p>`}
      ${bc.map(n=>`<div class="infocard bc-info"><h3>${n} · ${majorCard(n).pl}</h3><p>${cap1(BIRTH_DESC[n].replace(/^[^:]+: /,""))}</p><p><a href="${majorCard(n).url}">Pełne znaczenie karty ${majorCard(n).pl} →</a></p></div>`).join("")}
      <h2 class="sec">Twoja karta roku ${year}</h2>
      <div class="bc-row">${cardTile(yc,"karta roku "+year)}
-       <div class="infocard bc-info"><p class="calc-line">${dt.d} + ${dt.m} + ${year} = ${ysum} → ${yc}</p><p><b>${majorCard(yc).pl}</b>: ${YEAR_DESC[yc]}</p>
+       <div class="infocard bc-info"><p class="calc-line">${dt.d} + ${dt.m} + ${year} = ${ysum}${reduceSteps(ysum,21)}</p><p><b>${majorCard(yc).pl}</b>: ${YEAR_DESC[yc]}</p>
        <p style="color:var(--text-dim);font-size:.9rem">Karta roku obowiązuje od Twoich urodzin w ${year} r. do kolejnych urodzin.</p></div></div>`;
   document.getElementById("b-result").style.display="block";
   document.getElementById("b-result").scrollIntoView({behavior:"smooth"});
