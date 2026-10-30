@@ -745,6 +745,11 @@ document.getElementById("a-go")?.addEventListener("click",()=>{
       <div class="zodiac-big">${zS.sym}</div><div class="big">${zS.name}</div>
       <p class="kw">${degTxt(zS)}</p>
       <p class="meaning">Twój rdzeń: ${S.core}. ${S.d}</p></div>
+     ${typeof moonLongitudeDeg==="function" ? (()=>{ const zL=zodiacOf(moonLongitudeDeg(res.jd));
+       return `<div class="infocard"><h3>☽ Księżyc</h3>
+      <div class="zodiac-big">${zL.sym}</div><div class="big">${zL.name}</div>
+      <p class="kw">${degTxt(zL)}</p>
+      <p class="meaning">Twoje emocje: potrzebujesz ${MOON_DESC[zL.name].need}. <a href="/znak-ksiezyca/">Więcej o Księżycu →</a></p></div>`; })() : ""}
      <div class="infocard"><h3>MC · Medium Coeli</h3>
       <div class="zodiac-big">${zM.sym}</div><div class="big">${zM.name}</div>
       <p class="kw">${degTxt(zM)}</p>

@@ -16,6 +16,7 @@ import vm from "node:vm";
 import { TAROT_PAGES, toolLinks } from "../src/tarot/pages.mjs";
 import { POSTS } from "../src/blog/posts.mjs";
 import { NEWSLETTER } from "../src/newsletter.mjs";
+import { ASTRO_PAGES } from "../src/astro/pages.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const SITE = "https://moontasia.pl";
@@ -567,6 +568,49 @@ if (NL_ON) {
   addToSitemap("/polityka-prywatnosci/", "0.3");
 }
 
+// ---------- kalkulatory astrologii i numerologii ----------
+{
+  const MAJOR = CARDS.slice(0, 22).map(c => ({ pl: c.pl, url: c.url, img: webp(c.file, "m") }));
+  const ALL_TOOLS = [
+    ["/matryca/", "Matryca przeznaczenia", "22 energie z daty urodzenia"],
+    ["/matryca-partnerska/", "Matryca partnerska", "energia Waszej relacji"],
+    ["/ascendent/", "Kalkulator ascendentu", "znak wschodzący, Słońce i MC"],
+    ...ASTRO_PAGES.map(t => [t.path, t.menu[0], t.menu[1]]),
+  ];
+  for (const t of ASTRO_PAGES) {
+    const bc = breadcrumbs([["Strona główna", "/"], [t.crumb, t.path]]);
+    const faq = faqBlock(t.faq);
+    const others = ALL_TOOLS.filter(o => o[0] !== t.path);
+    const body = `<main class="page">
+  ${bc.html}
+  <div class="page-hero">
+    <h1>${t.h1}</h1>
+    <p class="hero-aka">${t.aka}</p>
+    <p>${t.lead}</p>
+  </div>
+  <div class="panel">
+      ${t.form}
+  </div>
+  ${t.result}
+  <div class="disclaimer">Obliczenia wykonywane są w Twojej przeglądarce, a dane nie są nigdzie wysyłane. Astrologia i numerologia to narzędzia do refleksji i samopoznania, a nie nauka ani przepowiednia.</div>
+  <article class="prose">
+    ${t.article}
+    <h2>Inne kalkulatory</h2>
+    <div class="tool-links">${others.map(([u, n, d]) => `<a href="${u}"><b>${n}</b><small>${d}</small></a>`).join("")}</div>
+    ${faq.html}
+  </article>
+</main>
+<div id="tooltip"></div>
+${t.major ? `<script>window.MAJOR=${JSON.stringify(MAJOR)};</script>` : ""}`;
+    const appLd = { "@context": "https://schema.org", "@type": "WebApplication", name: t.appName, url: SITE + t.path, applicationCategory: "LifestyleApplication", operatingSystem: "Wszystkie", inLanguage: "pl-PL", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "PLN" } };
+    write(t.path.slice(1) + "index.html", page({
+      path: t.path, title: t.title, description: t.description, css: ["/assets/matryca.css"],
+      scripts: ["/assets/matryca.js", "/assets/astro.js"], ld: [appLd, bc.ld, faq.ld], body,
+    }));
+    addToSitemap(t.path, "0.9");
+  }
+}
+
 // ---------- wspólne menu i stopka w stronach pisanych ręcznie ----------
 const MANUAL_PAGES = ["matryca/index.html", "matryca-partnerska/index.html", "ascendent/index.html", "404.html"];
 for (const p of MANUAL_PAGES) {
@@ -580,7 +624,7 @@ for (const p of MANUAL_PAGES) {
 
 // ---------- wersje plików CSS/JS (żeby przeglądarki nie trzymały starych stylów) ----------
 import crypto from "node:crypto";
-const ASSETS = ["love.js", "assets/newsletter.js", "assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "blog/blog.css", "app.js", "data.js"];
+const ASSETS = ["love.js", "assets/newsletter.js", "assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "assets/astro.js", "blog/blog.css", "app.js", "data.js"];
 const version = f => crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8);
 const VERSIONS = Object.fromEntries(ASSETS.map(f => [f, version(f)]));
 function allHtml(dir) {

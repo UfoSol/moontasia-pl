@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" href="/logo/favicon.png">
 <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css?v=a62d380d">
-<link rel="stylesheet" href="/assets/matryca.css?v=63f16651">
+<link rel="stylesheet" href="/assets/matryca.css?v=50d94c41">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Kalkulator ascendentu", "url": "https://moontasia.pl/ascendent/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Wszystkie", "inLanguage": "pl-PL", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "PLN"}, "description": "Oblicz ascendent za darmo: wpisz datę, godzinę i miejsce urodzenia, a kalkulator ascendentu pokaże Twój znak wschodzący, MC i znak Słońca z opisem. Dokładne obliczenia astronomiczne."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://moontasia.pl/"}, {"@type": "ListItem", "position": 2, "name": "Ascendent", "item": "https://moontasia.pl/ascendent/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Jak obliczyć ascendent?", "acceptedAnswer": {"@type": "Answer", "text": "Potrzebujesz daty, godziny i miejsca urodzenia. Kalkulator na tej stronie liczy ascendent astronomicznie: z czasu gwiazdowego, nachylenia ekliptyki i szerokości geograficznej, z uwzględnieniem strefy czasowej i czasu letniego."}}, {"@type": "Question", "name": "Czym różni się ascendent od znaku zodiaku?", "acceptedAnswer": {"@type": "Answer", "text": "Znak zodiaku (znak Słońca) zależy od daty urodzenia i opisuje Twoją tożsamość. Ascendent zależy od godziny i miejsca urodzenia i opisuje, jak pokazujesz się światu i jak widzą Cię inni."}}, {"@type": "Question", "name": "Co jeśli nie znam dokładnej godziny urodzenia?", "acceptedAnswer": {"@type": "Answer", "text": "Ascendent zmienia znak średnio co 2 godziny, więc przy niepewnej godzinie wynik może być błędny. Godzinę urodzenia znajdziesz w odpisie zupełnym aktu urodzenia. Jeśli kalkulator pokaże ostrzeżenie o granicy znaków, przeczytaj opis obu znaków."}}, {"@type": "Question", "name": "Czy ascendent wpływa na wygląd?", "acceptedAnswer": {"@type": "Answer", "text": "W astrologii ascendent wiąże się z ciałem, sposobem poruszania się i pierwszym wrażeniem, dlatego często opisuje się go jako „maskę” albo „wizytówkę”."}}, {"@type": "Question", "name": "Co to jest MC (Medium Coeli)?", "acceptedAnswer": {"@type": "Answer", "text": "To najwyższy punkt nieba w chwili narodzin. W astrologii opisuje powołanie, karierę i to, z czego chcesz być znany. Kalkulator podaje go razem z ascendentem."}}, {"@type": "Question", "name": "Czy kalkulator ascendentu jest darmowy?", "acceptedAnswer": {"@type": "Answer", "text": "Tak. Ascendent obliczysz tutaj za darmo, bez rejestracji i bez podawania e-maila. Obliczenia odbywają się w Twojej przeglądarce."}}, {"@type": "Question", "name": "Jak obliczyć ascendent bez godziny urodzenia?", "acceptedAnswer": {"@type": "Answer", "text": "Bez godziny urodzenia nie da się wiarygodnie obliczyć ascendentu, bo zmienia on znak średnio co 2 godziny. Możesz sprawdzić wynik dla kilku możliwych godzin i porównać opisy. Więcej w poradniku Jak obliczyć ascendent."}}]}</script>
@@ -47,12 +47,18 @@
           </div>
         </li>
         <li class="has-drop">
-          <button class="drop-btn" type="button" aria-expanded="false">Matryca i ascendent</button>
-          <span class="drop-label">Matryca i ascendent</span>
+          <button class="drop-btn" type="button" aria-expanded="false">Astrologia i numerologia</button>
+          <span class="drop-label">Astrologia i numerologia</span>
           <div class="dropdown">
+            <span class="drop-head">Numerologia</span>
             <a href="/matryca/">Matryca przeznaczenia<small>Twoje energie z daty urodzenia</small></a>
             <a href="/matryca-partnerska/">Matryca partnerska<small>zgodność i energia pary</small></a>
+            <a href="/karta-urodzenia/">Karta urodzenia w tarocie<small>karta duszy i karta roku</small></a>
+            <a href="/liczba-drogi-zycia/">Liczba drogi życia<small>numerologia i rok osobisty</small></a>
+            <span class="drop-head">Astrologia</span>
             <a href="/ascendent/">Kalkulator ascendentu<small>znak wschodzący, Słońce i MC</small></a>
+            <a href="/znak-ksiezyca/">Znak Księżyca<small>Twoje emocje i potrzeby</small></a>
+            <a href="/zgodnosc-znakow/">Zgodność znaków zodiaku<small>czy pasujecie do siebie?</small></a>
           </div>
         </li>
         <li><a href="/blog/">Blog</a></li>
@@ -65,7 +71,7 @@
   <nav class="breadcrumbs" aria-label="Okruszki"><ol><li><a href="/">Strona główna</a></li><li aria-current="page">Ascendent</li></ol></nav>
   <div class="page-hero">
     <h1>Kalkulator ascendentu – oblicz ascendent online</h1>
-    <p>Podaj datę, godzinę i miejsce urodzenia. Poznasz swój ascendent, znak Słońca i MC razem z opisem, co oznaczają dla Ciebie.</p>
+    <p>Podaj datę, godzinę i miejsce urodzenia. Poznasz swoją wielką trójkę: ascendent, znak Słońca i znak Księżyca, a do tego MC, razem z opisem, co oznaczają dla Ciebie.</p>
   </div>
 
   <!-- ============ TAB 3: ASCENDENT ============ -->
@@ -124,6 +130,7 @@
       <li>Przeczytaj opis swojego ascendentu i połącz go ze znakiem Słońca.</li>
     </ol>
     <p>Więcej o tym, jak liczy się ascendent ręcznie i co zrobić bez godziny urodzenia, przeczytasz w poradniku <a href="/blog/jak-obliczyc-ascendent/">Jak obliczyć ascendent</a>. Opisy wszystkich dwunastu ascendentów znajdziesz w artykule <a href="/blog/ascendent-w-znakach-zodiaku/">Ascendent w znakach zodiaku</a>.</p>
+    <p>Sprawdź też swój <a href="/znak-ksiezyca/">znak Księżyca</a> (emocje i potrzeby) oraz <a href="/zgodnosc-znakow/">zgodność znaków zodiaku</a> z partnerem.</p>
     <p>Ciekawi Cię, jak ascendent łączy się z numerologią? Oblicz swoją <a href="/matryca/">matrycę przeznaczenia</a> i porównaj ją z ascendentem.</p>
     <h2>Najczęstsze pytania</h2>
     <div class="faq">
@@ -191,6 +198,10 @@
         <li><a href="/matryca/">Matryca przeznaczenia</a></li>
         <li><a href="/matryca-partnerska/">Matryca partnerska</a></li>
         <li><a href="/ascendent/">Kalkulator ascendentu</a></li>
+        <li><a href="/znak-ksiezyca/">Znak Księżyca</a></li>
+        <li><a href="/karta-urodzenia/">Karta urodzenia</a></li>
+        <li><a href="/liczba-drogi-zycia/">Liczba drogi życia</a></li>
+        <li><a href="/zgodnosc-znakow/">Zgodność znaków</a></li>
       </ul>
     </div>
     <div>
@@ -208,6 +219,7 @@
 </footer>
 <script src="/assets/nav.js?v=f6e85c17" defer></script>
 <!--/FOOTER-->
-<script src="/assets/matryca.js?v=6ffb2bff"></script>
+<script src="/assets/matryca.js?v=279bf33a"></script>
+<script src="/assets/astro.js?v=b6415b92"></script>
 </body>
 </html>
