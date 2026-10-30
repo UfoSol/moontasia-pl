@@ -265,7 +265,7 @@ document.getElementById("l-go")?.addEventListener("click",()=>{
   const L=LP_DESC[lp];
   document.getElementById("l-cards").innerHTML =
     `<div class="infocard sun-card"><span class="sun-badge">Liczba drogi życia</span><div class="lp-num">${lp}</div><div class="big">${L.t}</div></div>
-     <div class="infocard"><h3>Rok osobisty ${year}</h3><div class="lp-num" style="font-size:3rem">${py}</div><p class="meaning">${PY_DESC[py].replace(/^Rok osobisty \d: /,"")}</p></div>`;
+     <div class="infocard"><h3>Rok osobisty ${year}</h3><div class="lp-num" style="font-size:3rem">${py}</div><p class="meaning">${cap1(PY_DESC[py].replace(/^Rok osobisty \d: /,""))}</p></div>`;
   document.getElementById("l-desc").innerHTML =
     `<p class="calc-line">Dzień ${dt.d} → ${rd} · miesiąc ${dt.m} → ${rm} · rok ${dt.y} → ${ry} · ${rd} + ${rm} + ${ry} → <b>${lp}</b></p>
      <h2 class="sec" style="margin-top:8px">Liczba drogi życia ${lp}: ${L.t}</h2>
@@ -330,4 +330,5 @@ document.getElementById("z-go")?.addEventListener("click",()=>{
      </div>
      <p style="color:var(--text-dim);font-size:.9rem">Zgodność znaków Słońca to tylko pierwszy krok. Pełniejszy obraz dają <a href="/znak-ksiezyca/">znak Księżyca</a> (emocje), <a href="/ascendent/">ascendent</a> i <a href="/matryca-partnerska/">matryca partnerska</a>. A jeśli chcesz zapytać karty o tę relację, zrób <a href="/tarot-milosny/">rozkład tarota miłosnego</a>.</p>`;
   document.getElementById("z-res").style.display="block";
+  document.getElementById("z-res").scrollIntoView({behavior:"smooth"});
 });

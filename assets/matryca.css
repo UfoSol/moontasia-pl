@@ -145,3 +145,5 @@ details.tech p{margin-top:6px}
 .tool-links b{display:block;color:var(--plum);font-weight:normal;font-family:'Palatino Linotype',Georgia,serif;font-size:1.05rem}
 .tool-links small{color:var(--text-dim);font-size:.85rem}
 @media (max-width:520px){.compat-score{width:104px;height:104px}.compat-score b{font-size:1.4rem}.compat-sign span{font-size:2rem}}
+/* wyniki nie chowają się pod przyklejonym menu po przewinięciu */
+#s-result,#c-result,#a-result,#m-result,#b-result,#l-result,#z-res{scroll-margin-top:96px}
