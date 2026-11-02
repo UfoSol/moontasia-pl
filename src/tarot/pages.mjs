@@ -297,6 +297,7 @@ export const TAROT_PAGES = [
       </ul>
       <h2>Jak pytać tarot o miłość?</h2>
       <p>Najwięcej daje pytanie o Ciebie i o relację, a nie o cudze myśli: „Czego potrzebuje nasz związek?” zamiast „Czy on mnie kocha?”. Szybkie pytania zamknięte, np. „Czy to dobry moment na rozmowę?”, zadaj w <a href="/tarot-tak-nie/">tarocie tak/nie</a>. Więcej rozkładów na miłość znajdziesz w poradniku <a href="/blog/tarot-milosny/">rozkłady tarota na miłość i związek</a>, a zgodność pary sprawdzisz w <a href="/matryca-partnerska/">matrycy partnerskiej</a>.</p>
+      <p>Zbliżają się andrzejki? Zobacz nasze <a href="/blog/wrozby-andrzejkowe/">wróżby andrzejkowe i miłosne</a>, w tym wróżby na kartce, i połącz je z rozkładem miłosnym.</p>
       <h2>Inne odczyty i narzędzia</h2>
       ${"{{TOOL_LINKS}}"}`,
     faq: [
@@ -328,6 +329,7 @@ export const TAROT_PAGES = [
         <li><strong>Karta 4, góra:</strong> cel, świadomy lub nie, do którego dążysz.</li>
         <li><strong>Karta 5, dół:</strong> przyczyna, czyli korzeń sytuacji.</li>
       </ul>
+      <p>Przykładowy odczyt krok po kroku znajdziesz w artykule <a href="/blog/rozklad-tarota-na-5-kart/">Rozkład tarota na 5 kart: jak go czytać</a>, a wskazówki do łączenia kart w <a href="/blog/kombinacje-kart-tarota/">kombinacjach kart tarota</a>.</p>
       <h2>Inne odczyty i narzędzia</h2>
       ${"{{TOOL_LINKS}}"}`,
     faq: [
@@ -388,7 +390,7 @@ export const TAROT_PAGES = [
         <li>Przeczytaj wskazówkę i zapamiętaj jedno zdanie, które najbardziej do Ciebie trafia.</li>
         <li>Zapisz odczyt i porównuj karty z kolejnych dni. Powtarzające się karty to temat, który wraca.</li>
       </ol>
-      <p>Chcesz wiedzieć więcej o karcie, która Ci wypadła? Zajrzyj do opisu <a href="/znaczenie-kart/">znaczenia wszystkich kart tarota</a>.</p>
+      <p>Chcesz wiedzieć więcej o karcie, która Ci wypadła? Zajrzyj do opisu <a href="/znaczenie-kart/">znaczenia wszystkich kart tarota</a>. Jak prowadzić dziennik i czytać odwróconą kartę dnia, opisujemy w poradniku <a href="/blog/karta-dnia-jak-czytac/">Karta dnia: jak ją losować i czytać</a>.</p>
       <h2>Inne odczyty i narzędzia</h2>
       ${"{{TOOL_LINKS}}"}`,
     faq: [

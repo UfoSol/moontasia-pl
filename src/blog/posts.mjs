@@ -10,6 +10,254 @@ import { LEGACY_POSTS } from "./legacy.mjs";
 
 const NEW_POSTS = [
   {
+    slug: "wrozby-andrzejkowe",
+    title: "Wróżby andrzejkowe i miłosne: wróżby na kartce, wosk i tarot",
+    seoTitle: "Wróżby andrzejkowe 2026 – wróżby miłosne na kartce, lanie wosku, tarot | Moontasia",
+    description: "Najlepsze wróżby andrzejkowe i miłosne: karteczki z imionami pod poduszką, lanie wosku, buty do drzwi, obierki jabłka i tarot miłosny. Jak je zrobić krok po kroku.",
+    category: "Miłość",
+    date: "2026-11-02",
+    lead: "Noc z 29 na 30 listopada to w Polsce czas wróżb. Tradycyjnie pytano w andrzejki o miłość i przyszłego męża, dziś bawimy się nimi wszyscy. Oto najpopularniejsze wróżby miłosne, w tym te na kartce, i podpowiedź, jak dołożyć do nich tarot.",
+    cta: ["/tarot-milosny/", "Zrób andrzejkowy rozkład miłosny"],
+    body: `
+    <h2>Kiedy są andrzejki?</h2>
+    <p>Andrzejki obchodzimy w wieczór przed dniem świętego Andrzeja, czyli <strong>29 listopada</strong>. W 2026 roku to niedziela. Dawniej wróżyły głównie panny, które chciały wiedzieć, kiedy i za kogo wyjdą za mąż. Dziś to po prostu wieczór zabawy z przyjaciółmi i odrobiny magii.</p>
+
+    <h2>Wróżby miłosne na kartce</h2>
+    <h3>1. Karteczki z imionami pod poduszką</h3>
+    <p>Na małych karteczkach zapisz imiona (męskie, żeńskie albo konkretnych osób, które chodzą Ci po głowie). Złóż je i włóż pod poduszkę. Rano, zaraz po przebudzeniu, wyciągnij jedną bez patrzenia. Imię na karteczce to podobno imię przyszłej miłości.</p>
+    <h3>2. Karteczki z wróżbami</h3>
+    <p>Przygotuj kilkanaście karteczek z krótkimi wróżbami, np. „ślub w ciągu roku”, „miłość przyjdzie z daleka”, „spotkasz kogoś w podróży”, „ktoś już o Tobie myśli”. Każdy gość losuje jedną z miski albo z kapelusza. Działa świetnie na imprezie.</p>
+    <h3>3. Karteczki pod filiżankami</h3>
+    <p>Pod kilkoma odwróconymi filiżankami ukryj symbole zapisane na kartkach: obrączkę (ślub), serce (miłość), monetę (bogactwo), listek (nadzieja), pustą kartkę (jeszcze nie teraz). Kto co odkryje, to go czeka w przyszłym roku.</p>
+    <h3>4. Imiona przy drzwiach</h3>
+    <p>Napisz na kartce kilka imion i przymocuj je w różnych miejscach przy drzwiach. Kto pierwszy wejdzie do domu po północy albo kogo imię zobaczysz pierwsze rano, ten ma zdradzić imię ukochanej osoby.</p>
+
+    <h2>Klasyczne wróżby andrzejkowe</h2>
+    <h3>Lanie wosku</h3>
+    <p>Najbardziej znana wróżba. Roztopiony wosk wlewa się przez ucho klucza do zimnej wody. Zastygły kształt ogląda się pod światło: cień na ścianie podpowiada przyszłość. Serce oznacza miłość, obrączka lub koło ślub, ptak podróż, a drzewo stabilizację.</p>
+    <h3>Buty do drzwi</h3>
+    <p>Uczestnicy stawiają lewe buty jeden za drugim od ściany w stronę drzwi, przekładając ostatni na przód. Czyj but pierwszy przekroczy próg, ta osoba pierwsza wyjdzie za mąż lub się ożeni.</p>
+    <h3>Obierka z jabłka</h3>
+    <p>Obierz jabłko tak, by skórka była jednym długim paskiem, i rzuć ją za siebie przez lewe ramię. Litera, którą przypomina, to pierwsza litera imienia przyszłej miłości.</p>
+    <h3>Igły w wodzie</h3>
+    <p>Do miski z wodą wrzuca się dwie igły. Jeśli się do siebie przybliżą, para będzie razem. Jeśli odpłyną, czeka ich rozstanie albo jeszcze nie ten czas.</p>
+
+    <h2>Andrzejki z tarotem</h2>
+    <p>Tarot to świetne uzupełnienie andrzejkowych zabaw, bo zamiast „tak albo nie” daje odpowiedź z opisem. Kilka pomysłów:</p>
+    <ul>
+      <li><strong>Jedna karta dla każdego gościa</strong>: niech każdy pomyśli o swoim sercu i wylosuje <a href="/karta-dnia/">kartę</a> na nadchodzący rok.</li>
+      <li><strong>Pytanie „czy w przyszłym roku spotkam miłość?”</strong> zadaj w <a href="/tarot-tak-nie/">tarocie tak/nie</a>.</li>
+      <li><strong>Rozkład miłosny dla par lub singli</strong>: <a href="/tarot-milosny/">tarot miłosny</a> pokaże, co Was łączy, a singlom podpowie, co blokuje, a co przyciąga miłość.</li>
+    </ul>
+    <p>Szczególnie ucieszą Cię w andrzejkową noc <a href="/blog/karty-milosci-w-tarocie/">karty miłości</a>: Kochankowie, Dwójka Kielichów albo As Kielichów.</p>
+
+    <div class="callout"><p>Pamiętaj, że andrzejkowe wróżby to przede wszystkim zabawa i tradycja. Najlepsza przepowiednia to dobry wieczór w gronie bliskich osób.</p></div>`,
+  },
+  {
+    slug: "kombinacje-kart-tarota",
+    title: "Kombinacje kart tarota: jak czytać pary kart (z przykładami)",
+    seoTitle: "Kombinacje kart tarota – jak czytać pary kart, 20 przykładów | Moontasia",
+    description: "Jak łączyć karty tarota w odczycie? Zasady czytania par i kombinacji kart oraz 20 przykładów: Śmierć i Pustelnik, Cesarzowa i Cesarz, Wieża i Gwiazda, Kochankowie i Diabeł.",
+    category: "Znaczenie kart",
+    date: "2026-11-02",
+    lead: "Pojedyncza karta to słowo, a kilka kart to zdanie. Najwięcej sensu odczyt nabiera wtedy, gdy zaczniesz czytać karty razem. Pokazujemy, jak to robić, i rozkładamy na części 20 popularnych kombinacji.",
+    cta: ["/rozklad-3-karty/", "Wylosuj 3 karty i połącz je w historię"],
+    body: `
+    <h2>Pięć zasad łączenia kart</h2>
+    <ol>
+      <li><strong>Pierwsza karta to temat, druga to przymiotnik.</strong> Druga karta mówi, „jaka” jest sprawa z pierwszej karty albo w którą stronę zmierza.</li>
+      <li><strong>Wielkie Arkana ważą więcej.</strong> Para Wielkich Arkanów to ważna lekcja lub punkt zwrotny. Wielki Arkan z Małym oznacza, że duży temat przejawia się w konkretnej sprawie.</li>
+      <li><strong>Kolor podpowiada obszar.</strong> Kielichy to uczucia, Miecze myśli i konflikty, Buławy działanie, a Pentakle pieniądze i ciało.</li>
+      <li><strong>Szukaj wspólnego mianownika.</strong> Dwie karty o podobnej energii wzmacniają się. Dwie przeciwne pokazują napięcie albo przejście z jednego stanu w drugi.</li>
+      <li><strong>Pytanie ma znaczenie.</strong> Ta sama para inaczej brzmi w pytaniu o miłość, a inaczej w pytaniu o pracę.</li>
+    </ol>
+
+    <h2>Kombinacje Wielkich Arkanów</h2>
+    <h3>Śmierć i Pustelnik</h3>
+    <p>Koniec etapu, po którym przychodzi czas wyciszenia. <a href="/znaczenie-kart/smierc/">Śmierć</a> zamyka rozdział, a <a href="/znaczenie-kart/pustelnik/">Pustelnik</a> zaprasza, by nie wskakiwać od razu w nowe, tylko pobyć chwilę ze sobą. W miłości: rozstanie i potrzeba samotności. W pracy: odejście i czas na przemyślenie kierunku.</p>
+    <h3>Cesarzowa i Cesarz</h3>
+    <p>Para idealnie uzupełniających się energii: troska i struktura, serce i plan. <a href="/znaczenie-kart/cesarzowa/">Cesarzowa</a> z <a href="/znaczenie-kart/cesarz/">Cesarzem</a> to stabilny związek, rodzina, wspólny dom albo dobrze prowadzony biznes, który rośnie.</p>
+    <h3>Wieża i Gwiazda</h3>
+    <p>Burza, po której wychodzi słońce. Coś się wali, ale właśnie dzięki temu wraca nadzieja i możliwość zbudowania czegoś prawdziwego. To jedna z najbardziej pocieszających par w tarocie.</p>
+    <h3>Kochankowie i Diabeł</h3>
+    <p>Silne przyciąganie z ryzykiem uzależnienia. Namiętność, która może zamienić się w toksyczną więź. Pytanie brzmi: czy to wybór, czy przymus?</p>
+    <h3>Mag i Koło Fortuny</h3>
+    <p>Szansa, którą możesz wykorzystać. Los otwiera drzwi, a Ty masz narzędzia, by przez nie przejść. Świetna para dla nowych projektów.</p>
+    <h3>Księżyc i Słońce</h3>
+    <p>Od niepewności do jasności. Iluzje się rozwiewają, prawda wychodzi na światło dzienne. Jeśli Słońce jest drugie, zakończenie jest pomyślne.</p>
+    <h3>Kapłanka i Hierofant</h3>
+    <p>Wiedza wewnętrzna i zewnętrzna. Intuicja spotyka tradycję. Często pojawia się przy nauce, studiach, rozwoju duchowym albo pytaniach o to, komu ufać: sobie czy autorytetom.</p>
+    <h3>Rydwan i Świat</h3>
+    <p>Zwycięstwo i spełnienie. Cel zostanie osiągnięty, możliwa ważna podróż lub przeprowadzka za granicę.</p>
+    <h3>Wisielec i Sąd Ostateczny</h3>
+    <p>Długie oczekiwanie kończy się przebudzeniem. Pauza miała sens: przychodzi decyzja, powołanie albo druga szansa.</p>
+    <h3>Głupiec i Śmierć</h3>
+    <p>Nowy początek po wielkim zakończeniu. Skok w nieznane, który właśnie stał się możliwy, bo stare drzwi się zamknęły.</p>
+
+    <h2>Kombinacje Wielkich i Małych Arkanów</h2>
+    <h3>Cesarzowa i Dziesiątka Pentakli</h3>
+    <p>Dostatek, rodzina, dom. Bardzo dobra para w pytaniach o finanse i o przyszłość związku.</p>
+    <h3>Kochankowie i Dwójka Kielichów</h3>
+    <p>Wzajemna miłość. Jedna z najsilniejszych kombinacji „tak” w pytaniach o uczucia.</p>
+    <h3>Śmierć i Szóstka Mieczy</h3>
+    <p>Odejście od trudnej sytuacji i przejście na spokojniejsze wody. Przeprowadzka, zmiana pracy albo wyjście z relacji, które przynosi ulgę.</p>
+    <h3>Wieża i Trójka Mieczy</h3>
+    <p>Bolesna prawda, rozstanie lub zdrada. Trudna para, ale też oczyszczająca: lepiej znać prawdę niż żyć w iluzji.</p>
+    <h3>Słońce i As Buław</h3>
+    <p>Radosny nowy projekt, sukces na starcie, czasem ciąża. Energia, zapał i dobre perspektywy.</p>
+
+    <h2>Kombinacje Małych Arkanów</h2>
+    <h3>As Kielichów i As Pentakli</h3>
+    <p>Nowe uczucie i nowe możliwości finansowe naraz. Często nowa praca, która daje satysfakcję.</p>
+    <h3>Piątka Buław i Siódemka Buław</h3>
+    <p>Konflikt, w którym musisz bronić swojego zdania. Nie wycofuj się, ale wybieraj bitwy rozsądnie.</p>
+    <h3>Dziewiątka Mieczy i Gwiazda</h3>
+    <p>Lęki, które się rozwiewają. Bezsenne noce mijają, wraca spokój i nadzieja.</p>
+    <h3>Czwórka Kielichów i Ósemka Kielichów</h3>
+    <p>Znużenie, które prowadzi do odejścia. Coś przestało Cię cieszyć, a teraz zaczynasz szukać czegoś głębszego.</p>
+    <h3>Królowa i Król tego samego koloru</h3>
+    <p>Dojrzała para lub partnerstwo, w którym obie strony mówią tym samym językiem: w Kielichach uczuć, w Pentaklach spraw materialnych.</p>
+
+    <div class="callout"><p>Ćwiczenie na start: wylosuj dwie karty w <a href="/rozklad-3-karty/">rozkładzie na 3 karty</a>, przeczytaj ich znaczenia w <a href="/znaczenie-kart/">przewodniku po kartach</a> i spróbuj ułożyć z nich jedno zdanie. Po kilku dniach takiej praktyki zaczniesz widzieć w rozkładach historie, a nie listy definicji.</p></div>`,
+  },
+  {
+    slug: "rozklad-tarota-na-5-kart",
+    title: "Rozkład tarota na 5 kart: jak go zrobić i czytać krok po kroku",
+    seoTitle: "Rozkład tarota na 5 kart – krzyż, pozycje i przykład odczytu | Moontasia",
+    description: "Tarot online z 5 kart: jak ułożyć krzyż z 5 kart, co oznacza każda pozycja (sytuacja, przeszłość, przyszłość, cel, przyczyna) i jak czytać karty razem. Z przykładem.",
+    category: "Rozkłady",
+    date: "2026-11-02",
+    lead: "Pięć kart to złoty środek między szybkim rozkładem na 3 karty a rozbudowanym krzyżem celtyckim. Pokazuje sedno sprawy, jej przeszłość, przyszłość, cel i ukrytą przyczynę.",
+    cta: ["/rozklad-5-kart/", "Zrób darmowy rozkład na 5 kart"],
+    body: `
+    <h2>Jak wygląda krzyż z 5 kart?</h2>
+    <p>Karty układa się w kształt krzyża: jedna pośrodku, po jednej z lewej, z prawej, u góry i na dole. W Moontasii rozkład <a href="/rozklad-5-kart/">tarot online z 5 kart</a> robisz za darmo, bez rejestracji. Wystarczy wpisać pytanie i wylosować karty.</p>
+
+    <h2>Co oznaczają pozycje?</h2>
+    <ol>
+      <li><strong>Środek: sytuacja.</strong> Sedno sprawy, to, co dzieje się teraz. Od tej karty zawsze zaczynaj.</li>
+      <li><strong>Lewo: przeszłość.</strong> Wydarzenia lub decyzje, które doprowadziły do obecnego momentu i wciąż mają wpływ.</li>
+      <li><strong>Prawo: przyszłość.</strong> Kierunek, w którym zmierza sprawa, jeśli nic się nie zmieni. To nie wyrok, tylko prognoza.</li>
+      <li><strong>Góra: cel.</strong> Do czego dążysz, świadomie lub nie. Czasem pokazuje też najlepszy możliwy wynik.</li>
+      <li><strong>Dół: przyczyna.</strong> Korzeń sytuacji, często ukryty: przekonanie, lęk, potrzeba albo stary wzorzec.</li>
+    </ol>
+
+    <h2>Jak czytać rozkład krok po kroku?</h2>
+    <ol>
+      <li><strong>Sformułuj pytanie otwarte</strong>, np. „Co powinnam wiedzieć o mojej sytuacji w pracy?”. Gotowe przykłady znajdziesz w artykule <a href="/blog/pytania-do-tarota/">Pytania do tarota</a>.</li>
+      <li><strong>Przeczytaj środek</strong> i zapisz jedno zdanie: „Teraz chodzi o…”.</li>
+      <li><strong>Dodaj oś czasu</strong>: przeszłość → teraźniejszość → przyszłość. Czy przyszłość wynika z przeszłości, czy jest jej przeciwieństwem?</li>
+      <li><strong>Sprawdź oś pionową</strong>: przyczyna (dół) → cel (góra). To odpowiedź na pytanie „dlaczego” i „po co”.</li>
+      <li><strong>Połącz wszystko w historię.</strong> Pomogą Ci wskazówki z artykułu <a href="/blog/kombinacje-kart-tarota/">Kombinacje kart tarota</a>.</li>
+    </ol>
+
+    <h2>Przykład odczytu</h2>
+    <p>Pytanie: „Co powinnam wiedzieć o moim związku?”</p>
+    <ul>
+      <li>Sytuacja: <a href="/znaczenie-kart/czworka-kielichow/">Czwórka Kielichów</a>: znużenie, rutyna.</li>
+      <li>Przeszłość: <a href="/znaczenie-kart/dwojka-kielichow/">Dwójka Kielichów</a>: piękny, wzajemny początek.</li>
+      <li>Przyszłość: <a href="/znaczenie-kart/as-kielichow/">As Kielichów</a>: odnowienie uczuć.</li>
+      <li>Cel: <a href="/znaczenie-kart/dziesiatka-kielichow/">Dziesiątka Kielichów</a>: szczęśliwy dom.</li>
+      <li>Przyczyna: <a href="/znaczenie-kart/czworka-pentakli/">Czwórka Pentakli</a>: kontrola i trzymanie się bezpieczeństwa.</li>
+    </ul>
+    <p>Historia: związek zaczął się pięknie, ale teraz wkradła się rutyna. Jej przyczyną jest przywiązanie do tego, co bezpieczne i znane. Oboje chcecie stworzyć ciepły dom, a karta przyszłości zapowiada odnowienie uczuć, jeśli wpuścicie do relacji trochę nowości.</p>
+
+    <h2>Kiedy wybrać 5 kart, a kiedy 3?</h2>
+    <p><a href="/rozklad-3-karty/">Rozkład na 3 karty</a> wystarczy na proste pytania i codzienną praktykę. Krzyż z 5 kart wybierz, gdy sprawa jest złożona i chcesz zrozumieć jej przyczynę. A gdy potrzebujesz bardzo szczegółowego odczytu, sięgnij po <a href="/blog/krzyz-celtycki/">krzyż celtycki</a> z 10 kart.</p>`,
+  },
+  {
+    slug: "ogon-karmiczny",
+    title: "Ogon karmiczny w matrycy przeznaczenia: jak go obliczyć i odczytać",
+    seoTitle: "Ogon karmiczny – kalkulator i znaczenie w matrycy przeznaczenia | Moontasia",
+    description: "Czym jest ogon karmiczny w matrycy przeznaczenia? Jak go obliczyć z daty urodzenia, jak czytać trzy liczby ogona i jak przepracować karmiczną lekcję. Z darmowym kalkulatorem.",
+    category: "Numerologia",
+    date: "2026-11-02",
+    lead: "Ogon karmiczny to jedna z najbardziej intrygujących części matrycy przeznaczenia. Trzy liczby u dołu matrycy opisują wzorce, które przynosisz z przeszłości, i lekcję, którą masz domknąć w tym życiu.",
+    cta: ["/matryca/", "Oblicz swój ogon karmiczny"],
+    body: `
+    <h2>Gdzie jest ogon karmiczny?</h2>
+    <p>W <a href="/matryca/">matrycy przeznaczenia</a> ogon karmiczny to trzy punkty u dołu figury: róg kwadratu po lewej (punkt I), punkt pośredni i dolny wierzchołek rombu (punkt D). Kalkulator na Moontasii wylicza je automatycznie i pokazuje w osobnej sekcji „Ogon karmiczny”.</p>
+
+    <h2>Jak obliczyć ogon karmiczny?</h2>
+    <ol>
+      <li>Policz trzy energie bazowe: <strong>A</strong> = dzień urodzenia, <strong>B</strong> = miesiąc, <strong>C</strong> = suma cyfr roku. Każdą liczbę większą niż 22 redukujesz, sumując jej cyfry.</li>
+      <li><strong>D</strong> = A + B + C (zredukowane do 1–22).</li>
+      <li><strong>I</strong> = A + D (zredukowane).</li>
+      <li>Środek ogona = I + D (zredukowane).</li>
+    </ol>
+    <p><strong>Przykład:</strong> 14.03.1992 → A = 14, B = 3, C = 1 + 9 + 9 + 2 = 21. D = 14 + 3 + 21 = 38 → 3 + 8 = 11. I = 14 + 11 = 25 → 7. Środek = 7 + 11 = 18. Ogon karmiczny: <strong>7 – 18 – 11</strong>.</p>
+    <p>Nie chcesz liczyć ręcznie? <a href="/matryca/">Kalkulator matrycy</a> zrobi to za Ciebie w sekundę.</p>
+
+    <h2>Jak czytać trzy liczby ogona?</h2>
+    <ul>
+      <li><strong>Pierwsza (I)</strong>: źródło wzorca. Skąd się wziął, często z rodu lub wcześniejszych doświadczeń.</li>
+      <li><strong>Środkowa</strong>: jak ten wzorzec przejawia się w codziennym życiu.</li>
+      <li><strong>Ostatnia (D)</strong>: lekcja do domknięcia. Gdy ją przepracujesz, ta energia staje się Twoją siłą.</li>
+    </ul>
+    <p>Każda liczba to jeden z 22 Wielkich Arkanów. Ich znaczenia, w plusie i w minusie, znajdziesz w artykule <a href="/blog/arkana-w-matrycy-przeznaczenia/">Energie w matrycy przeznaczenia 1–22</a>.</p>
+
+    <h2>Przykładowe ogony karmiczne</h2>
+    <ul>
+      <li><strong>6 – 18 – 12</strong>: lekcja związków: iluzje w miłości, poświęcanie się, uczenie się zdrowych granic.</li>
+      <li><strong>9 – 15 – 6</strong>: samotność i pokusy, uczenie się miłości bez uzależnienia.</li>
+      <li><strong>3 – 22 – 19</strong>: wolność i dzieciństwo: lekcja odpowiedzialności, beztroski i radości bez ucieczki.</li>
+      <li><strong>18 – 6 – 15</strong>: lęki i iluzje wokół relacji, potrzeba trzeźwego spojrzenia na miłość.</li>
+      <li><strong>12 – 19 – 7</strong>: poświęcanie się zamiast działania, lekcja wyjścia z roli ofiary.</li>
+    </ul>
+
+    <h2>Jak przepracować ogon karmiczny?</h2>
+    <ol>
+      <li>Przeczytaj opisy trzech arkanów i zaznacz cechy „w minusie”, które rozpoznajesz u siebie.</li>
+      <li>Zastanów się, gdzie ten wzorzec powtarza się w Twoim życiu i w rodzinie.</li>
+      <li>Świadomie ćwicz cechy „w plusie” tych samych arkanów. To one są kierunkiem przemiany.</li>
+    </ol>
+
+    <div class="callout"><p>Ogon karmiczny to narzędzie do refleksji, a nie wyrok. Pokazuje tematy, którym warto się przyjrzeć, a nie to, co musi Ci się przydarzyć. Pełną instrukcję czytania matrycy znajdziesz w poradniku <a href="/blog/matryca-przeznaczenia-jak-czytac/">Jak czytać matrycę przeznaczenia</a>.</p></div>`,
+  },
+  {
+    slug: "karta-dnia-jak-czytac",
+    title: "Karta dnia w tarocie: jak ją losować i czytać",
+    seoTitle: "Karta dnia tarot – jak losować kartę dnia i ją interpretować | Moontasia",
+    description: "Jak losować kartę dnia w tarocie i co z nią zrobić? Rytuał poranny, jak interpretować kartę dnia, co oznacza karta odwrócona i jak prowadzić dziennik tarota.",
+    category: "Podstawy",
+    date: "2026-11-02",
+    lead: "Jedna karta każdego ranka to najprostszy sposób, by poznać tarot i lepiej rozumieć siebie. Zajmuje dwie minuty, a po miesiącu znasz już większość talii.",
+    cta: ["/karta-dnia/", "Wylosuj kartę dnia"],
+    body: `
+    <h2>Jak losować kartę dnia?</h2>
+    <ol>
+      <li><strong>Znajdź chwilę ciszy</strong> rano, zanim sięgniesz po telefon i wiadomości.</li>
+      <li><strong>Weź trzy oddechy</strong> i zadaj pytanie, np. „Na co mam dziś zwrócić uwagę?” albo „Jaka energia mi dziś towarzyszy?”.</li>
+      <li><strong>Wylosuj jedną kartę</strong>: z własnej talii albo online w <a href="/karta-dnia/">karcie dnia na Moontasii</a>.</li>
+      <li><strong>Zanim przeczytasz opis</strong>, popatrz na obrazek przez kilka sekund. Co pierwsze rzuca Ci się w oczy?</li>
+    </ol>
+
+    <h2>Jak interpretować kartę dnia?</h2>
+    <p>Karta dnia to nie przepowiednia, tylko <strong>temat dnia</strong>. Podpowiada, na co zwrócić uwagę, czego unikać i jaką postawę przyjąć. W Moontasii każda karta ma trzy elementy: przesłanie, „warto dziś” i „unikaj”.</p>
+    <ul>
+      <li><strong>Wielki Arkan</strong> to dzień z ważniejszą lekcją albo decyzją.</li>
+      <li><strong>Kielichy</strong>: dzień emocji i relacji.</li>
+      <li><strong>Miecze</strong>: dzień rozmów, decyzji, czasem napięć.</li>
+      <li><strong>Buławy</strong>: dzień działania i energii.</li>
+      <li><strong>Pentakle</strong>: dzień pracy, pieniędzy i ciała.</li>
+    </ul>
+
+    <h2>Karta dnia odwrócona</h2>
+    <p>Odwrócona karta nie oznacza złego dnia. Zwykle mówi, że energia karty jest zablokowana albo skierowana do wewnątrz. Odwrócona <a href="/znaczenie-kart/slonce/">karta Słońce</a> nie odbiera radości, tylko przypomina, by poszukać jej w małych rzeczach. Więcej przeczytasz w artykule <a href="/blog/karty-odwrocone-w-tarocie/">Karty odwrócone w tarocie</a>.</p>
+
+    <h2>Dziennik karty dnia</h2>
+    <p>Najszybciej uczysz się tarota, gdy wieczorem wracasz do porannej karty. Zapisz:</p>
+    <ul>
+      <li>datę i wylosowaną kartę,</li>
+      <li>pierwsze skojarzenie rano,</li>
+      <li>wieczorem: gdzie ta karta „pojawiła się” w Twoim dniu.</li>
+    </ul>
+    <p>Odczyty z Moontasii możesz zapisywać w przeglądarce, w zakładce <a href="/zapisane-odczyty/">Zapisane odczyty</a>.</p>
+
+    <h2>Czy można losować kilka kart dziennie?</h2>
+    <p>Lepiej nie. Losowanie do skutku, aż wypadnie „lepsza” karta, odbiera odczytowi sens. Przyjmij pierwszą kartę i potraktuj ją jak towarzysza dnia. Jeśli masz konkretne pytanie, zadaj je osobno w <a href="/tarot-tak-nie/">tarocie tak/nie</a> albo w <a href="/rozklad-3-karty/">rozkładzie na 3 karty</a>.</p>`,
+  },
+  {
     slug: "jak-obliczyc-ascendent",
     title: "Jak obliczyć ascendent? Kalkulator i obliczenia krok po kroku",
     seoTitle: "Jak obliczyć ascendent – kalkulator ascendentu online i instrukcja | Moontasia",

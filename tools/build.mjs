@@ -320,13 +320,15 @@ for (const c of CARDS) {
   const next = CARDS[(c.index + 1) % CARDS.length];
   const al = cardAliases(c);
   const named = c.suit === "major" ? `${c.pl} (${c.number})` : (NUM_WORDS[c.pl.split(" ")[0]] ? `${c.pl} (${al.short})` : c.pl);
-  const title = `${named} – znaczenie karty tarota, w miłości i odwrócona | Moontasia`;
-  const description = `${c.pl}${NUM_WORDS[c.pl.split(" ")[0]] ? ` (${al.short})` : ""} w tarocie: ${m.upright.keyword}. Znaczenie karty prostej i odwróconej, w miłości i związku, odpowiedź tak/nie i wskazówka na dziś.`;
+  const title = `${named} – znaczenie karty tarota: miłość, przyszłość, rada | Moontasia`;
+  const description = `${c.pl}${NUM_WORDS[c.pl.split(" ")[0]] ? ` (${al.short})` : ""} w tarocie: ${m.upright.keyword}. Znaczenie karty prostej i odwróconej, w miłości, jako przyszłość i rada, odpowiedź tak/nie.`;
   const bc = breadcrumbs([["Strona główna", "/"], ["Znaczenie kart", "/znaczenie-kart/"], [suit.name, `/znaczenie-kart/#${suit.anchor}`], [c.pl, c.url]]);
   const faq = faqBlock([
     [`Co oznacza karta ${c.pl} w tarocie?`, `${c.pl} w pozycji prostej oznacza: ${m.upright.keyword}. ${m.upright.meaning}`],
     [`Co oznacza odwrócona karta ${c.pl}?`, `Odwrócona karta ${c.pl} oznacza: ${m.reversed.keyword}. ${m.reversed.meaning}`],
     [`Co oznacza ${c.pl} w miłości?`, `${LOVE[c.en].upright} Odwrócona: ${LOVE[c.en].reversed}`],
+    [`Co oznacza ${c.pl} jako przyszłość?`, `W pozycji przyszłości ${c.pl} zapowiada: ${m.upright.keyword}. Odwrócona ostrzega: ${m.reversed.keyword}.`],
+    [`Jaką radę daje karta ${c.pl}?`, `${cap(m.upright.solution)} Gdy jest odwrócona: ${m.reversed.solution}`],
     [`Czy ${c.pl} to karta „tak” czy „nie”?`, `W pozycji prostej: ${yn.upright.toLowerCase()}. W pozycji odwróconej: ${yn.reversed.toLowerCase()}.`],
   ]);
   const facts = [
@@ -357,15 +359,19 @@ for (const c of CARDS) {
       <p>${m.upright.meaning}</p>
       <h3>Na co uważać</h3>
       <p>${cap(m.upright.obstacle)}</p>
-      <h3>Rada karty</h3>
+      <h3>${c.pl} jako rada</h3>
       <p>${cap(m.upright.solution)}</p>
+
+      <h2 id="przyszlosc">${c.pl} jako przyszłość</h2>
+      <p>Gdy ${c.pl} wypada na pozycji przyszłości (np. jako trzecia karta w <a href="/rozklad-3-karty/">rozkładzie na 3 karty</a> albo po prawej stronie <a href="/rozklad-5-kart/">krzyża z 5 kart</a>), zapowiada: <strong>${m.upright.keyword}</strong>. Tak najpewniej potoczy się sprawa, jeśli nic nie zmienisz. Żeby wykorzystać tę energię: ${m.upright.solution}</p>
+      <p>Odwrócona karta ${c.pl} w pozycji przyszłości to sygnał ostrzegawczy: ${m.reversed.keyword}. Przeszkoda, na którą warto uważać: ${m.reversed.obstacle.replace(/\.$/, "")}. Pamiętaj, że to nie wyrok: przyszłość możesz jeszcze zmienić.</p>
 
       <h2>${c.pl} odwrócona – znaczenie</h2>
       <p><strong>Słowa kluczowe:</strong> ${m.reversed.keyword}.</p>
       <p>${m.reversed.meaning}</p>
       <h3>Na co uważać</h3>
       <p>${cap(m.reversed.obstacle)}</p>
-      <h3>Rada karty</h3>
+      <h3>${c.pl} odwrócona jako rada</h3>
       <p>${cap(m.reversed.solution)}</p>
 
       <h2 id="w-milosci">${c.pl} w miłości i związku</h2>
