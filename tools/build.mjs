@@ -555,6 +555,14 @@ if (NL_ON) {
     <h1 style="color:var(--accent-soft);font-size:1.9rem;margin-top:0">Polityka prywatności</h1>
     <h2>Odczyty, matryca i ascendent</h2>
     <p>Odczyty tarota, matryca przeznaczenia i kalkulator ascendentu działają w całości w Twojej przeglądarce. Pytania, daty urodzenia i wyniki nie są wysyłane na żaden serwer. Zapisane odczyty są przechowywane wyłącznie w pamięci tej przeglądarki (localStorage) i możesz je w każdej chwili usunąć.</p>
+    <h2 id="cookies">Pliki cookies i Meta Pixel</h2>
+    <p>Za Twoją zgodą korzystamy z narzędzia Meta Pixel firmy Meta Platforms Ireland Ltd. (Facebook, Instagram). Pozwala ono mierzyć skuteczność naszych reklam i docierać z nimi do osób, które odwiedziły stronę. Meta Pixel zapisuje pliki cookies i przekazuje do Meta informacje o odwiedzonych stronach, adres IP i dane o przeglądarce. Nie przekazuje treści Twoich pytań, dat urodzenia ani wyników odczytów.</p>
+    <ul>
+      <li><strong>Podstawa:</strong> Twoja zgoda wyrażona w banerze (art. 6 ust. 1 lit. a RODO). Bez zgody piksel się nie uruchamia.</li>
+      <li><strong>Odbiorca danych:</strong> Meta Platforms Ireland Ltd. Dane mogą być przekazywane do USA na podstawie standardowych klauzul umownych i programu EU-US Data Privacy Framework.</li>
+      <li><strong>Zmiana decyzji:</strong> zgodę możesz w każdej chwili cofnąć lub udzielić jej ponownie w <a href="#" data-cookie-settings>ustawieniach cookies</a> albo usuwając pliki cookies w przeglądarce.</li>
+    </ul>
+    <p>Twoja decyzja o zgodzie jest zapisywana w pamięci przeglądarki (localStorage), żeby baner nie pojawiał się przy każdej wizycie.</p>
     <h2>Newsletter</h2>
     <p>Administratorem danych osobowych osób zapisanych do newslettera jest ${NEWSLETTER.adminName ? esc(NEWSLETTER.adminName) : "właściciel serwisu moontasia.pl"}, kontakt: <a href="mailto:${esc(NEWSLETTER.adminEmail)}">${esc(NEWSLETTER.adminEmail)}</a>.</p>
     <ul>
@@ -569,7 +577,7 @@ if (NL_ON) {
 </main>`;
   write("polityka-prywatnosci/index.html", page({
     path: "/polityka-prywatnosci/", title: "Polityka prywatności | Moontasia",
-    description: "Polityka prywatności Moontasii: odczyty w przeglądarce, newsletter i Twoje prawa.", ld: [bc.ld], body,
+    description: "Polityka prywatności Moontasii: odczyty w przeglądarce, pliki cookies i Meta Pixel, newsletter i Twoje prawa.", ld: [bc.ld], body,
   }));
   addToSitemap("/polityka-prywatnosci/", "0.3");
 }
@@ -630,7 +638,7 @@ for (const p of MANUAL_PAGES) {
 
 // ---------- wersje plików CSS/JS (żeby przeglądarki nie trzymały starych stylów) ----------
 import crypto from "node:crypto";
-const ASSETS = ["love.js", "assets/newsletter.js", "assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/matryca.js", "assets/astro.js", "blog/blog.css", "app.js", "data.js"];
+const ASSETS = ["love.js", "assets/newsletter.js", "assets/home.css", "assets/home.js", "assets/site.css", "assets/tarot.css", "assets/cards.css", "assets/matryca.css", "assets/nav.js", "assets/consent.js", "assets/matryca.js", "assets/astro.js", "blog/blog.css", "app.js", "data.js"];
 const version = f => crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8);
 const VERSIONS = Object.fromEntries(ASSETS.map(f => [f, version(f)]));
 function allHtml(dir) {
