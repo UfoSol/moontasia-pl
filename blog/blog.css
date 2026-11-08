@@ -57,3 +57,8 @@ article .lead{font-size:1.1rem;color:var(--text-dim);font-style:italic;}
 .related{margin-top:30px}
 .related h2{color:var(--accent-soft);font-size:1.3rem;margin:0 0 12px}
 .post-card h3{margin:0 0 6px;font-size:1.1rem;color:var(--accent-soft);font-weight:normal}
+
+/* obrazki wpisów */
+.post-hero{margin:14px 0 18px}
+.post-hero img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
+.post-card .post-thumb{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:10px;margin-bottom:12px}

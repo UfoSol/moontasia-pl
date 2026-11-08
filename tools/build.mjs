@@ -17,6 +17,7 @@ import { TAROT_PAGES, toolLinks } from "../src/tarot/pages.mjs";
 import { POSTS } from "../src/blog/posts.mjs";
 import { NEWSLETTER } from "../src/newsletter.mjs";
 import { ASTRO_PAGES } from "../src/astro/pages.mjs";
+import { IMAGE_ALT } from "../src/blog/images.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const SITE = "https://moontasia.pl";
@@ -303,6 +304,8 @@ const SUIT_GUIDE = {
   wands: ["/blog/bulawy-w-tarocie/", "Buławy w tarocie – znaczenie wszystkich 14 kart"],
   swords: ["/blog/miecze-w-tarocie/", "Miecze w tarocie – znaczenie wszystkich 14 kart"],
   major: ["/blog/wielkie-i-male-arkana/", "Wielkie i Małe Arkana – czym się różnią"],
+  cups: ["/blog/kielichy-w-tarocie/", "Kielichy w tarocie – znaczenie wszystkich 14 kart"],
+  pentacles: ["/blog/pentakle-w-tarocie/", "Pentakle w tarocie – znaczenie wszystkich 14 kart"],
 };
 function cardAliases(c) {
   const [first, ...rest] = c.pl.split(" ");
@@ -472,6 +475,35 @@ for (const c of CARDS) {
 }
 
 // ---------- blog ----------
+// Obrazek wpisu: blog/obrazy/<slug>.webp (albo .jpg/.png). Opis alt: src/blog/images.mjs
+function imageSize(file) {
+  const b = fs.readFileSync(file);
+  if (b.toString("ascii", 1, 4) === "PNG") return [b.readUInt32BE(16), b.readUInt32BE(20)];
+  if (b.toString("ascii", 8, 12) === "WEBP") {
+    const t = b.toString("ascii", 12, 16);
+    if (t === "VP8X") return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
+    if (t === "VP8L") { const n = b.readUInt32LE(21); return [1 + (n & 0x3fff), 1 + ((n >> 14) & 0x3fff)]; }
+    return [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
+  }
+  for (let i = 2; i < b.length;) { // JPEG: szukamy znacznika SOF
+    const m = b[i + 1], len = b.readUInt16BE(i + 2);
+    if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) return [b.readUInt16BE(i + 7), b.readUInt16BE(i + 5)];
+    i += 2 + len;
+  }
+  return [1200, 800];
+}
+function postImage(slug) {
+  for (const ext of ["webp", "jpg", "jpeg", "png"]) {
+    const rel = `blog/obrazy/${slug}.${ext}`;
+    if (fs.existsSync(path.join(ROOT, rel))) {
+      const [w, h] = imageSize(path.join(ROOT, rel));
+      return { url: "/" + rel, w, h, alt: IMAGE_ALT[slug] || "" };
+    }
+  }
+  return null;
+}
+for (const post of POSTS) post.img = postImage(post.slug);
+
 for (const post of POSTS_SORTED) {
   const url = `/blog/${post.slug}/`;
   const bc = breadcrumbs([["Strona główna", "/"], ["Blog", "/blog/"], [post.title, url]]);
@@ -484,6 +516,7 @@ for (const post of POSTS_SORTED) {
   <article>
     <div class="post-meta">${plDate(post.date)} · ${post.category}</div>
     <h1>${post.title}</h1>
+    ${post.img ? `<figure class="post-hero"><img src="${post.img.url}" alt="${esc(post.img.alt || post.title)}" width="${post.img.w}" height="${post.img.h}" fetchpriority="high"></figure>` : ""}
     <p class="lead">${post.lead}</p>
     ${post.body.trim()}
     <div class="cta"><a class="btn-main" href="${post.cta[0]}">${post.cta[1]}</a></div>
@@ -498,12 +531,13 @@ for (const post of POSTS_SORTED) {
   const ld = {
     "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.description,
     datePublished: post.date, dateModified: post.date, inLanguage: "pl-PL", mainEntityOfPage: SITE + url,
-    image: SITE + "/logo/og-image.png",
+    image: SITE + (post.img ? post.img.url : "/logo/og-image.png"),
     author: { "@type": "Organization", name: "Moontasia", url: SITE + "/" },
     publisher: { "@type": "Organization", name: "Moontasia", logo: { "@type": "ImageObject", url: SITE + "/logo/moontasia-purple.png" } },
   };
   write(url.slice(1) + "index.html", page({
     path: url, title: post.seoTitle, description: post.description, css: ["/blog/blog.css"], ld: [ld, bc.ld], body, ogType: "article",
+    ogImage: post.img ? SITE + post.img.url : undefined,
   }));
   addToSitemap(url, "0.7");
 }
@@ -521,7 +555,8 @@ for (const post of POSTS_SORTED) {
     ${cats.map(c => `<button type="button" data-cat="${c}">${c}</button>`).join("")}
   </nav>
   <main>
-    ${POSTS_SORTED.map(p => `<a class="post-card" href="/blog/${p.slug}/" data-cat="${p.category}">
+    ${POSTS_SORTED.map(p => `<a class="post-card${p.img ? " has-img" : ""}" href="/blog/${p.slug}/" data-cat="${p.category}">
+      ${p.img ? `<img class="post-thumb" src="${p.img.url}" alt="" width="${p.img.w}" height="${p.img.h}" loading="lazy">` : ""}
       <div class="post-meta">${plDate(p.date)} · ${p.category}</div>
       <h2>${p.title}</h2>
       <p>${p.description}</p>

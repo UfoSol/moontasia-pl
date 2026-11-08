@@ -42,7 +42,8 @@ export const ASTRO_PAGES = [
       <li><strong>Księżyc w znakach ziemi</strong> (Byk, Panna, Koziorożec): potrzeba stabilności, konkretu i spokoju.</li>
       <li><strong>Księżyc w znakach powietrza</strong> (Bliźnięta, Waga, Wodnik): emocje przepracowywane przez rozmowę i myślenie.</li>
       <li><strong>Księżyc w znakach wody</strong> (Rak, Skorpion, Ryby): głęboka wrażliwość, intuicja i empatia.</li>
-    </ul>`,
+    </ul>
+    <p>Opisy Księżyca we wszystkich znakach znajdziesz też w artykule <a href="/blog/ksiezyc-w-znakach-zodiaku/">Księżyc w znakach zodiaku</a>.</p>`,
     faq: [
       ["Jak obliczyć znak Księżyca?", "Potrzebujesz daty urodzenia, a najlepiej także godziny i miejsca. Kalkulator liczy położenie Księżyca astronomicznie (metodą Meeusa, z dokładnością do setnych części stopnia) i podaje znak zodiaku, w którym się znajdował."],
       ["Czy do obliczenia Księżyca potrzebna jest godzina urodzenia?", "Nie zawsze. Księżyc zmienia znak co około 2,5 dnia, więc w większości dni wystarczy sama data. Jeśli tego dnia Księżyc przechodził do kolejnego znaku, kalkulator to pokaże i poprosi o godzinę."],
@@ -80,7 +81,8 @@ export const ASTRO_PAGES = [
     </ul>
     <h2>Karta roku</h2>
     <p>Kartę roku liczy się tak samo, ale zamiast roku urodzenia dodajesz bieżący rok. Obowiązuje od urodzin do urodzin i pokazuje główny temat tego okresu. Możesz sprawdzić także kartę na przyszły rok.</p>
-    <p>Chcesz poznać więcej energii z daty urodzenia? Oblicz <a href="/matryca/">matrycę przeznaczenia</a>, w której każdy punkt to także jeden z Wielkich Arkanów.</p>`,
+    <p>Chcesz poznać więcej energii z daty urodzenia? Oblicz <a href="/matryca/">matrycę przeznaczenia</a>, w której każdy punkt to także jeden z Wielkich Arkanów.</p>
+    <p>Opisy wszystkich 21 kart urodzenia znajdziesz w artykule <a href="/blog/karta-urodzenia-tarot/">Karta urodzenia w tarocie: znaczenie kart od 1 do 21</a>.</p>`,
     faq: [
       ["Jak obliczyć kartę urodzenia w tarocie?", "Dodaj dzień, miesiąc i rok urodzenia (np. 15 + 7 + 1990 = 2012), a potem sumuj cyfry, aż otrzymasz liczbę od 1 do 21. To numer Twojej karty z Wielkich Arkanów. Jeśli liczba jest dwucyfrowa, zsumuj jej cyfry jeszcze raz, by poznać kartę duszy."],
       ["Czy karta urodzenia zmienia się w ciągu życia?", "Nie. Karty urodzenia są stałe, bo wynikają z daty urodzenia. Co roku zmienia się natomiast karta roku."],
@@ -115,7 +117,8 @@ export const ASTRO_PAGES = [
     <p>Liczb 11, 22 i 33 nie redukuje się dalej. To wzmocnione wersje liczb 2, 4 i 6: dają większy potencjał, ale też większą presję i odpowiedzialność.</p>
     <h2>Rok osobisty</h2>
     <p>Rok osobisty liczy się z dnia i miesiąca urodzenia oraz bieżącego roku. Numerologia dzieli życie na dziewięcioletnie cykle: rok 1 to czas siania, rok 9 to czas domykania. Wiedząc, w którym roku jesteś, łatwiej zaplanować ważne decyzje.</p>
-    <p>Numerologia łączy się też z tarotem: każdej liczbie odpowiada karta Wielkich Arkanów. Sprawdź swoją <a href="/karta-urodzenia/">kartę urodzenia</a> i <a href="/matryca/">matrycę przeznaczenia</a>.</p>`,
+    <p>Numerologia łączy się też z tarotem: każdej liczbie odpowiada karta Wielkich Arkanów. Sprawdź swoją <a href="/karta-urodzenia/">kartę urodzenia</a> i <a href="/matryca/">matrycę przeznaczenia</a>.</p>
+    <p>Pełne opisy wszystkich liczb znajdziesz w artykule <a href="/blog/liczba-drogi-zycia-znaczenie/">Liczba drogi życia: znaczenie liczb</a>.</p>`,
     faq: [
       ["Jak obliczyć liczbę drogi życia?", "Zredukuj osobno dzień, miesiąc i rok urodzenia do jednej cyfry (zostawiając 11, 22 i 33), dodaj wyniki i zredukuj jeszcze raz. Kalkulator pokazuje każdy krok obliczeń."],
       ["Co to jest liczba mistrzowska?", "To liczby 11, 22 i 33, których w numerologii się nie redukuje. Oznaczają wzmocnioną energię liczb 2, 4 i 6: duży potencjał, ale też wymagające lekcje."],
@@ -157,7 +160,8 @@ export const ASTRO_PAGES = [
       <li><strong>Powietrze</strong> (Bliźnięta, Waga, Wodnik) z powietrzem i ogniem.</li>
       <li><strong>Woda</strong> (Rak, Skorpion, Ryby) z wodą i ziemią.</li>
     </ul>
-    <div class="callout"><p>Pamiętaj: zgodność znaków Słońca to uproszczenie. Każda para może stworzyć udany związek, a pełniejszy obraz dają Księżyc, ascendent i <a href="/matryca-partnerska/">matryca partnerska</a>.</p></div>`,
+    <div class="callout"><p>Pamiętaj: zgodność znaków Słońca to uproszczenie. Każda para może stworzyć udany związek, a pełniejszy obraz dają Księżyc, ascendent i <a href="/matryca-partnerska/">matryca partnerska</a>.</p></div>
+    <p>Więcej o najlepszych i najtrudniejszych parach przeczytasz w artykule <a href="/blog/zgodnosc-znakow-zodiaku/">Zgodność znaków zodiaku: które znaki do siebie pasują?</a></p>`,
     faq: [
       ["Które znaki zodiaku najlepiej do siebie pasują?", "Najwięcej harmonii dają pary z tego samego żywiołu (trygon), np. Baran i Strzelec, Byk i Koziorożec, Bliźnięta i Wodnik, Rak i Ryby. Dobrze dobrane są też pary ogień–powietrze i ziemia–woda."],
       ["Czy znaki o niskiej zgodności nie mogą być razem?", "Mogą. Niska zgodność oznacza po prostu więcej różnic, które wymagają rozmowy i kompromisu. Wiele trwałych związków to pary „trudnych” znaków."],

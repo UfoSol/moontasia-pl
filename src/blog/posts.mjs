@@ -10,6 +10,670 @@ import { LEGACY_POSTS } from "./legacy.mjs";
 
 const NEW_POSTS = [
   {
+    slug: "kielichy-w-tarocie",
+    title: "Kielichy w tarocie: znaczenie wszystkich 14 kart",
+    seoTitle: "Kielichy w tarocie – znaczenie kart od Asa do Króla, w miłości i tak/nie | Moontasia",
+    description: "Znaczenie wszystkich kart Kielichów (Pucharów) w tarocie: As, 2–10 Kielichów, Paź, Rycerz, Królowa i Król. Karta prosta, odwrócona, w miłości i odpowiedź tak/nie.",
+    category: "Znaczenie kart",
+    date: "2026-11-08",
+    lead: "Kielichy (zwane też Pucharami) to kolor uczuć: miłości, przyjaźni, intuicji i wszystkiego, co dzieje się w sercu. Gdy w rozkładzie dominują Kielichy, odpowiedź leży w emocjach. Oto przewodnik po wszystkich 14 kartach.",
+    cta: ["/tarot-milosny/", "Zrób darmowy rozkład miłosny"],
+    body: `
+    <h2>Co oznaczają Kielichy w tarocie?</h2>
+    <p>Żywioł Kielichów to <strong>Woda</strong>: emocje, relacje, intuicja, marzenia i twórczość. W astrologii odpowiadają im znaki wody: Rak, Skorpion i Ryby. Kielichy to najczęstsze karty w odczytach o miłości. Odwrócone zwykle mówią o zablokowanych lub stłumionych uczuciach, rozczarowaniu albo życiu w świecie marzeń.</p>
+    <p>Przejdź do karty: <a href="#as-kielichow">As</a> · <a href="#dwojka-kielichow">2</a> · <a href="#trojka-kielichow">3</a> · <a href="#czworka-kielichow">4</a> · <a href="#piatka-kielichow">5</a> · <a href="#szostka-kielichow">6</a> · <a href="#siodemka-kielichow">7</a> · <a href="#osemka-kielichow">8</a> · <a href="#dziewiatka-kielichow">9</a> · <a href="#dziesiatka-kielichow">10</a> · <a href="#paz-kielichow">Paź</a> · <a href="#rycerz-kielichow">Rycerz</a> · <a href="#krolowa-kielichow">Królowa</a> · <a href="#krol-kielichow">Król</a></p>
+
+    <h2 id="as-kielichow">As Kielichów</h2>
+    <p><strong>Nowe uczucia, otwarcie serca.</strong> Nowy początek emocjonalny — może to być miłość, głęboka więź albo odnowione połączenie z własnymi uczuciami. Serce otwiera się na coś nowego.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> zablokowane emocje, rozczarowanie.</li>
+      <li><strong>W miłości:</strong> Nowa miłość, otwarcie serca i przypływ uczuć. Jedna z najpiękniejszych kart dla relacji.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/as-kielichow/">As Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="dwojka-kielichow">Dwójka Kielichów (2 Kielichów)</h2>
+    <p><strong>Wzajemność, więź, partnerstwo.</strong> Karta wzajemnej, zrównoważonej więzi — emocjonalnej lub partnerskiej. Dwie strony spotykają się na równych zasadach, w prawdziwym porozumieniu.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> brak równowagi, rozdźwięk.</li>
+      <li><strong>W miłości:</strong> Wzajemność, partnerstwo i głęboka więź dwojga ludzi. Klasyczna karta zakochania i dopasowania.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/dwojka-kielichow/">Dwójka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="trojka-kielichow">Trójka Kielichów (3 Kielichów)</h2>
+    <p><strong>Przyjaźń, wspólne świętowanie.</strong> Karta radości płynącej ze wspólnoty — przyjaźni, wsparcia bliskich, wspólnego świętowania dobrych chwil.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> konflikty w grupie, izolacja.</li>
+      <li><strong>W miłości:</strong> Radość, przyjaźń i świętowanie. Dobry czas na spotkania, randki i lekkość w uczuciach.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/trojka-kielichow/">Trójka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="czworka-kielichow">Czwórka Kielichów (4 Kielichów)</h2>
+    <p><strong>Znudzenie, apatia, przeoczone możliwości.</strong> Poczucie znudzenia, stagnacji lub emocjonalnego wycofania — coś dobrego może być tuż obok, ale trudno to teraz dostrzec przez apatię.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> wychodzenie z apatii, nowa otwartość.</li>
+      <li><strong>W miłości:</strong> Znużenie i obojętność. Możesz przeoczyć uczucie, które jest tuż obok.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/czworka-kielichow/">Czwórka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="piatka-kielichow">Piątka Kielichów (5 Kielichów)</h2>
+    <p><strong>Żal, strata, skupienie na tym, co złe.</strong> Karta żalu i skupienia się na stracie, przy jednoczesnym niedostrzeganiu tego, co wciąż zostało. Warto pozwolić sobie na żałobę, ale nie zapominać o pozostałych zasobach.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> akceptacja, wychodzenie z żalu.</li>
+      <li><strong>W miłości:</strong> Żal, smutek po stracie lub rozczarowaniu. Skupiasz się na tym, co się rozlało, a nie na tym, co zostało.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/piatka-kielichow/">Piątka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="szostka-kielichow">Szóstka Kielichów (6 Kielichów)</h2>
+    <p><strong>Nostalgia, przeszłość, niewinność.</strong> Karta nostalgii, wspomnień i powrotu do czegoś dobrego z przeszłości — czasem dosłownie, czasem jako emocjonalny powrót do prostszych czasów.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> utykanie w przeszłości, idealizacja.</li>
+      <li><strong>W miłości:</strong> Nostalgia, czułość i powroty. Ktoś z przeszłości albo wspomnienia, które ocieplają relację.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/szostka-kielichow/">Szóstka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="siodemka-kielichow">Siódemka Kielichów (7 Kielichów)</h2>
+    <p><strong>Wybór, marzenia, iluzje.</strong> Wiele opcji, wiele marzeń — ale nie wszystkie są równie realne. Karta zachęca do trzeźwego przyjrzenia się, które z możliwości naprawdę warto realizować.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> jasność wyboru, koniec złudzeń.</li>
+      <li><strong>W miłości:</strong> Wiele możliwości i fantazje. Trudno wybrać, a marzenia mogą przesłaniać rzeczywistość.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/siodemka-kielichow/">Siódemka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="osemka-kielichow">Ósemka Kielichów (8 Kielichów)</h2>
+    <p><strong>Odejście, poszukiwanie głębszego sensu.</strong> Karta świadomego odejścia od czegoś, co przestało dawać spełnienie, w poszukiwaniu głębszego sensu. Czasem trzeba zostawić coś dobrego, by znaleźć coś ważniejszego.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> lęk przed odejściem, powrót do starego.</li>
+      <li><strong>W miłości:</strong> Odejście od relacji, która nie daje spełnienia. Szukasz czegoś głębszego.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/osemka-kielichow/">Ósemka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="dziewiatka-kielichow">Dziewiątka Kielichów (9 Kielichów)</h2>
+    <p><strong>Spełnienie, satysfakcja, zadowolenie.</strong> Karta emocjonalnego spełnienia i satysfakcji — to, czego pragnęłaś/eś, jest w zasięgu ręki lub już się spełniło. Czas cieszyć się tym w pełni.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> niedosyt, powierzchowna satysfakcja.</li>
+      <li><strong>W miłości:</strong> Spełnione życzenie i zadowolenie w miłości. Karta „tak” dla uczuciowych marzeń.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/dziewiatka-kielichow/">Dziewiątka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="dziesiatka-kielichow">Dziesiątka Kielichów (10 Kielichów)</h2>
+    <p><strong>Harmonia rodzinna, emocjonalne spełnienie.</strong> Karta głębokiej harmonii emocjonalnej — w rodzinie, relacji czy w sobie samej/samym. To poczucie, że życie emocjonalne jest w dobrym, trwałym miejscu.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> rozdźwięk rodzinny, niespełnione oczekiwania.</li>
+      <li><strong>W miłości:</strong> Szczęśliwy związek, harmonia rodzinna i emocjonalne spełnienie. Miłość, o jakiej się marzy.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/dziesiatka-kielichow/">Dziesiątka Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="paz-kielichow">Paź Kielichów</h2>
+    <p><strong>Wrażliwość, marzycielstwo, nowa wiadomość emocjonalna.</strong> Karta wrażliwości, marzycielstwa i otwartości na nowe uczucia — czasem zapowiada dobrą, emocjonalną wiadomość albo powrót do kontaktu z własną intuicją.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> przewrażliwienie, niedojrzałość emocjonalna, idealizacja.</li>
+      <li><strong>W miłości:</strong> Romantyczna wiadomość, nieśmiałe wyznanie albo nowe, delikatne uczucie.</li>
+      <li><strong>Tak czy nie:</strong> raczej tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/paz-kielichow/">Paź Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="rycerz-kielichow">Rycerz Kielichów</h2>
+    <p><strong>Romantyzm, podążanie za sercem.</strong> Karta romantycznego podejścia i podążania za sercem — działasz z wrażliwością, proponujesz coś drugiej osobie w duchu emocji, nie kalkulacji.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> nastrojowość, niespełnione obietnice.</li>
+      <li><strong>W miłości:</strong> Romantyk z sercem na dłoni: propozycja, wyznanie, randka jak z filmu.</li>
+      <li><strong>Tak czy nie:</strong> raczej tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/rycerz-kielichow/">Rycerz Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="krolowa-kielichow">Królowa Kielichów</h2>
+    <p><strong>Empatia, intuicja, emocjonalna dojrzałość.</strong> Karta głębokiej empatii i emocjonalnej dojrzałości — potrafisz współodczuwać z innymi, jednocześnie zachowując własne wewnętrzne centrum.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> przytłoczenie emocjami, brak granic.</li>
+      <li><strong>W miłości:</strong> Empatia, czułość i głębokie zrozumienie. Miłość pełna troski i intuicji.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/krolowa-kielichow/">Królowa Kielichów – pełne znaczenie karty →</a></p>
+
+    <h2 id="krol-kielichow">Król Kielichów</h2>
+    <p><strong>Równowaga emocjonalna, dojrzałe wsparcie.</strong> Karta emocjonalnej równowagi i dojrzałości — potrafisz zarządzać silnymi uczuciami spokojnie i mądrze, będąc oparciem dla siebie i innych.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> tłumienie emocji, chwiejność nastroju.</li>
+      <li><strong>W miłości:</strong> Dojrzała, spokojna miłość i emocjonalna stabilność. Ktoś, kto wspiera i nie traci równowagi.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/krol-kielichow/">Król Kielichów – pełne znaczenie karty →</a></p>
+
+    <div class="callout"><p>Najpiękniejsze karty miłości w tym kolorze to As, Dwójka i Dziesiątka Kielichów. Więcej o nich w artykule <a href="/blog/karty-milosci-w-tarocie/">Karty miłości w tarocie</a>. Pozostałe kolory: <a href="/blog/bulawy-w-tarocie/">Buławy</a>, <a href="/blog/miecze-w-tarocie/">Miecze</a> i <a href="/blog/pentakle-w-tarocie/">Pentakle</a>.</p></div>`,
+  },
+  {
+    slug: "pentakle-w-tarocie",
+    title: "Pentakle w tarocie: znaczenie wszystkich 14 kart",
+    seoTitle: "Pentakle w tarocie – znaczenie kart od Asa do Króla (Denary, Monety) | Moontasia",
+    description: "Znaczenie wszystkich kart Pentakli (Denarów, Monet) w tarocie: As, 2–10 Pentakli, Paź, Rycerz, Królowa i Król. O pieniądzach, pracy i miłości, prosta, odwrócona i tak/nie.",
+    category: "Znaczenie kart",
+    date: "2026-11-08",
+    lead: "Pentakle (Denary, Monety) to kolor ziemi: pieniędzy, pracy, zdrowia, domu i wszystkiego, co namacalne. Jeśli pytasz tarot o finanse albo karierę, to właśnie te karty powiedzą najwięcej.",
+    cta: ["/rozklad-3-karty/", "Zapytaj karty o pracę i finanse"],
+    body: `
+    <h2>Co oznaczają Pentakle w tarocie?</h2>
+    <p>Żywioł Pentakli to <strong>Ziemia</strong>: materia, ciało, praca, pieniądze i stabilność. Odpowiadają im znaki ziemi: Byk, Panna i Koziorożec. Pentakle mówią o tym, co budujemy krok po kroku i co da się policzyć albo dotknąć. Odwrócone wskazują na kłopoty finansowe, zastój w pracy, zaniedbanie zdrowia albo zbyt mocne przywiązanie do rzeczy.</p>
+    <p>Przejdź do karty: <a href="#as-pentakli">As</a> · <a href="#dwojka-pentakli">2</a> · <a href="#trojka-pentakli">3</a> · <a href="#czworka-pentakli">4</a> · <a href="#piatka-pentakli">5</a> · <a href="#szostka-pentakli">6</a> · <a href="#siodemka-pentakli">7</a> · <a href="#osemka-pentakli">8</a> · <a href="#dziewiatka-pentakli">9</a> · <a href="#dziesiatka-pentakli">10</a> · <a href="#paz-pentakli">Paź</a> · <a href="#rycerz-pentakli">Rycerz</a> · <a href="#krolowa-pentakli">Królowa</a> · <a href="#krol-pentakli">Król</a></p>
+
+    <h2 id="as-pentakli">As Pentakli</h2>
+    <p><strong>Nowa szansa materialna.</strong> Nowa szansa związana z pieniędzmi, pracą lub zdrowiem — konkretny, namacalny początek. To dobry moment, by zasiać ziarno, z którego coś realnie wyrośnie.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> przegapiona szansa, brak stabilności.</li>
+      <li><strong>W miłości:</strong> Początek stabilnej, realnej relacji. Uczucie z potencjałem na coś trwałego, budowanego krok po kroku.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/as-pentakli/">As Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="dwojka-pentakli">Dwójka Pentakli (2 Pentakli)</h2>
+    <p><strong>Równoważenie priorytetów.</strong> Żonglowanie kilkoma sprawami naraz — finansami, obowiązkami, priorytetami. Radzisz sobie z tym nieźle, choć wymaga to elastyczności i dobrej organizacji czasu.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> przeciążenie, chaos organizacyjny.</li>
+      <li><strong>W miłości:</strong> Żonglowanie uczuciami i codziennymi obowiązkami. Relacja wymaga elastyczności i znalezienia czasu dla siebie.</li>
+      <li><strong>Tak czy nie:</strong> raczej tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/dwojka-pentakli/">Dwójka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="trojka-pentakli">Trójka Pentakli (3 Pentakli)</h2>
+    <p><strong>Współpraca, budowanie zespołowe.</strong> Karta dobrej współpracy, wspólnego budowania czegoś trwałego z innymi ludźmi. Twoje umiejętności są dostrzegane i doceniane, a efekty pracy zespołowej przewyższają to, co osiągnęłabyś/łbyś sama/sam.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> brak koordynacji, konflikt kompetencji.</li>
+      <li><strong>W miłości:</strong> Wspólna praca nad związkiem. Dobrze się uzupełniacie i razem budujecie coś wartościowego.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/trojka-pentakli/">Trójka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="czworka-pentakli">Czwórka Pentakli (4 Pentakli)</h2>
+    <p><strong>Bezpieczeństwo, kontrola, oszczędność.</strong> Potrzeba bezpieczeństwa materialnego i kontroli nad tym, co masz. To karta ostrożności i oszczędzania, choć w nadmiarze może przerodzić się w lęk przed puszczeniem czegokolwiek z rąk.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> chciwość lub rozrzutność.</li>
+      <li><strong>W miłości:</strong> Potrzeba bezpieczeństwa i stabilności w związku, ale też skłonność do kontroli i trzymania uczuć na wodzy.</li>
+      <li><strong>Tak czy nie:</strong> raczej nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/czworka-pentakli/">Czwórka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="piatka-pentakli">Piątka Pentakli (5 Pentakli)</h2>
+    <p><strong>Trudności finansowe, poczucie wykluczenia.</strong> Trudny okres materialny, zdrowotny lub emocjonalny, w którym możesz czuć się osamotniona/y w problemie. Ważne, by pamiętać, że pomoc jest bliżej, niż się wydaje.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> wychodzenie z kryzysu.</li>
+      <li><strong>W miłości:</strong> Poczucie osamotnienia lub odrzucenia w relacji. Trudny czas, w którym łatwo przeoczyć pomocną dłoń.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/piatka-pentakli/">Piątka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="szostka-pentakli">Szóstka Pentakli (6 Pentakli)</h2>
+    <p><strong>Dzielenie się, wsparcie.</strong> Karta wymiany — dawania i otrzymywania wsparcia, często materialnego. Może dotyczyć sprawiedliwego podziału zasobów albo pomocy, którą otrzymujesz lub oferujesz innym.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> nierówność, dług, kontrola.</li>
+      <li><strong>W miłości:</strong> Hojność i wzajemne wsparcie. Relacja, w której obie strony dają i przyjmują troskę.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/szostka-pentakli/">Szóstka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="siodemka-pentakli">Siódemka Pentakli (7 Pentakli)</h2>
+    <p><strong>Cierpliwość, ocena postępów.</strong> Moment zatrzymania się i oceny, czy dotychczasowy wysiłek przynosi efekty. To karta cierpliwości — plony jeszcze nie dojrzały, ale są w drodze.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> zniechęcenie, brak efektów.</li>
+      <li><strong>W miłości:</strong> Cierpliwość i ocena tego, co już zbudowaliście. Związek rośnie powoli, ale w dobrym kierunku.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/siodemka-pentakli/">Siódemka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="osemka-pentakli">Ósemka Pentakli (8 Pentakli)</h2>
+    <p><strong>Nauka, doskonalenie rzemiosła.</strong> Karta pracowitości, doskonalenia umiejętności i dbałości o detale. Inwestujesz czas w naukę i rozwój kompetencji, co z czasem przyniesie realne efekty.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> brak motywacji, niedbałość.</li>
+      <li><strong>W miłości:</strong> Praca nad związkiem i sobą. Zaangażowanie w codzienne gesty, które budują trwałą bliskość.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/osemka-pentakli/">Ósemka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="dziewiatka-pentakli">Dziewiątka Pentakli (9 Pentakli)</h2>
+    <p><strong>Niezależność, satysfakcja z osiągnięć.</strong> Karta niezależności — materialnej i emocjonalnej — oraz satysfakcji z tego, co udało się osiągnąć własną pracą. Możesz teraz cieszyć się owocami swojego wysiłku.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> przepracowanie, zależność.</li>
+      <li><strong>W miłości:</strong> Niezależność i pewność siebie. Dobrze Ci ze sobą, dlatego wchodzisz w relacje z wyboru, nie z potrzeby.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/dziewiatka-pentakli/">Dziewiątka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="dziesiatka-pentakli">Dziesiątka Pentakli (10 Pentakli)</h2>
+    <p><strong>Trwałość, dziedzictwo, rodzina.</strong> Karta długoterminowej stabilności, dziedzictwa i solidnych fundamentów budowanych z myślą o przyszłości — swojej i bliskich. Sprawy materialne układają się trwale.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> niestabilność rodzinna, spory o zasoby.</li>
+      <li><strong>W miłości:</strong> Trwały związek, rodzina i wspólny dom. Karta długofalowego bezpieczeństwa i więzi na lata.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/dziesiatka-pentakli/">Dziesiątka Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="paz-pentakli">Paź Pentakli</h2>
+    <p><strong>Nauka, nowa okazja materialna.</strong> Świeże podejście do nauki i rozwoju — nowa okazja zawodowa lub finansowa, która wymaga jeszcze zdobycia doświadczenia. Warto podejść do niej z ciekawością i sumiennością.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> brak zaangażowania, nierealistyczne plany.</li>
+      <li><strong>W miłości:</strong> Powolne, rozważne poznawanie się. Ktoś podchodzi do uczuć poważnie i stawia małe, pewne kroki.</li>
+      <li><strong>Tak czy nie:</strong> raczej tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/paz-pentakli/">Paź Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="rycerz-pentakli">Rycerz Pentakli</h2>
+    <p><strong>Wytrwałość, metodyczność.</strong> Karta powolnego, ale pewnego postępu — wytrwałości, rzetelności i metodycznego dążenia do celu, nawet jeśli nie jest to ekscytujące. Powolne tempo tu popłaca.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> stagnacja, upór, rutyna.</li>
+      <li><strong>W miłości:</strong> Lojalny, stały partner lub partnerka. Relacja może rozwijać się wolno, ale jest godna zaufania.</li>
+      <li><strong>Tak czy nie:</strong> raczej tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/rycerz-pentakli/">Rycerz Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="krolowa-pentakli">Królowa Pentakli</h2>
+    <p><strong>Praktyczność, troska, obfitość.</strong> Karta praktycznej troski o siebie i innych — łączy zmysł do zarządzania zasobami z ciepłem i dbałością o komfort. Umiesz stworzyć bezpieczne, stabilne otoczenie.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> zaniedbanie siebie, przeciążenie obowiązkami.</li>
+      <li><strong>W miłości:</strong> Troskliwa, ciepła miłość i dbanie o dom. Bliskość wyrażana konkretnymi gestami i opieką.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/krolowa-pentakli/">Królowa Pentakli – pełne znaczenie karty →</a></p>
+
+    <h2 id="krol-pentakli">Król Pentakli</h2>
+    <p><strong>Stabilność finansowa, dojrzałość.</strong> Karta dojrzałej, spokojnej pewności w sprawach materialnych — umiesz zarządzać zasobami i budować trwały dobrobyt, swój i tych, za których czujesz odpowiedzialność.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> materializm, sztywność, chciwość.</li>
+      <li><strong>W miłości:</strong> Dojrzała, stabilna relacja z kimś, kto zapewnia bezpieczeństwo. Miłość oparta na zaufaniu i odpowiedzialności.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/krol-pentakli/">Król Pentakli – pełne znaczenie karty →</a></p>
+
+    <div class="callout"><p>Chcesz sprawdzić, jaki masz „kanał pieniędzy” według numerologii? Zobacz linię pieniędzy w <a href="/matryca/">matrycy przeznaczenia</a>. Pozostałe kolory tarota: <a href="/blog/kielichy-w-tarocie/">Kielichy</a>, <a href="/blog/bulawy-w-tarocie/">Buławy</a> i <a href="/blog/miecze-w-tarocie/">Miecze</a>.</p></div>`,
+  },
+  {
+    slug: "ksiezyc-w-znakach-zodiaku",
+    title: "Księżyc w znakach zodiaku: co mówi o Twoich emocjach?",
+    seoTitle: "Księżyc w znakach zodiaku – znaczenie Księżyca w Baranie, Byku i innych | Moontasia",
+    description: "Księżyc w Baranie, Byku, Bliźniętach i pozostałych znakach: jak przeżywasz emocje, czego potrzebujesz, by czuć się bezpiecznie, i wskazówka dla każdego znaku Księżyca.",
+    category: "Astrologia",
+    date: "2026-11-08",
+    lead: "Znak zodiaku mówi, kim jesteś. Znak Księżyca mówi, co czujesz, czego potrzebujesz i jak reagujesz, gdy nikt nie patrzy. Oto opisy Księżyca we wszystkich dwunastu znakach.",
+    cta: ["/znak-ksiezyca/", "Oblicz swój znak Księżyca"],
+    body: `
+    <h2>Czym jest znak Księżyca?</h2>
+    <p>To znak zodiaku, w którym był Księżyc w chwili Twoich narodzin. Księżyc zmienia znak co około 2,5 dnia, dlatego osoby urodzone w tym samym miesiącu często mają różne Księżyce. W astrologii opisuje on emocje, intuicję, nawyki, potrzebę bezpieczeństwa i to, jak okazujesz i przyjmujesz troskę.</p>
+    <p>Nie znasz swojego? Sprawdź go w <a href="/znak-ksiezyca/">kalkulatorze znaku Księżyca</a>. Zwykle wystarczy sama data urodzenia.</p>
+    <p>Przejdź do znaku: <a href="#ksiezyc-baran">Baran</a> · <a href="#ksiezyc-byk">Byk</a> · <a href="#ksiezyc-bliznieta">Bliźnięta</a> · <a href="#ksiezyc-rak">Rak</a> · <a href="#ksiezyc-lew">Lew</a> · <a href="#ksiezyc-panna">Panna</a> · <a href="#ksiezyc-waga">Waga</a> · <a href="#ksiezyc-skorpion">Skorpion</a> · <a href="#ksiezyc-strzelec">Strzelec</a> · <a href="#ksiezyc-koziorozec">Koziorożec</a> · <a href="#ksiezyc-wodnik">Wodnik</a> · <a href="#ksiezyc-ryby">Ryby</a></p>
+
+    <h2 id="ksiezyc-baran">Księżyc w Baranie</h2>
+    <p>Twoje emocje są szybkie, gorące i szczere. Złość wybucha i równie szybko mija. Czujesz się dobrze, gdy możesz działać, a bezczynność wywołuje w Tobie niepokój.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> niezależności, ruchu i poczucia, że możesz działać od razu.</li>
+      <li><strong>Wskazówka:</strong> Zanim zareagujesz, policz do trzech. Twoje uczucia są ważne, ale nie zawsze muszą być wyrażone natychmiast.</li>
+    </ul>
+
+    <h2 id="ksiezyc-byk">Księżyc w Byku</h2>
+    <p>Potrzebujesz spokoju, stabilności i zmysłowych przyjemności. Emocje dojrzewają w Tobie powoli, za to są trwałe. Bezpieczeństwo daje Ci dom, dobre jedzenie, natura i bliskość.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> przewidywalności, czułości i komfortu.</li>
+      <li><strong>Wskazówka:</strong> Zmiany nie muszą odbierać Ci bezpieczeństwa. Szukaj go w sobie, nie tylko w rzeczach i rutynie.</li>
+    </ul>
+
+    <h2 id="ksiezyc-bliznieta">Księżyc w Bliźniętach</h2>
+    <p>Uczucia przepracowujesz, rozmawiając o nich. Potrzebujesz bodźców, nowości i wymiany myśli. Gdy coś Cię gryzie, analizujesz to w głowie albo w długich rozmowach.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> rozmowy, ciekawości i swobody.</li>
+      <li><strong>Wskazówka:</strong> Nie każdą emocję trzeba zrozumieć. Czasem wystarczy ją po prostu poczuć.</li>
+    </ul>
+
+    <h2 id="ksiezyc-rak">Księżyc w Raku</h2>
+    <p>Księżyc jest tu u siebie: masz głęboką wrażliwość, intuicję i silną potrzebę bliskości. Rodzina i dom są dla Ciebie emocjonalną bazą. Łatwo wyczuwasz nastroje innych.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> przynależności, opieki i bezpiecznego gniazda.</li>
+      <li><strong>Wskazówka:</strong> Troszcz się o siebie tak samo, jak o innych. Mów wprost, czego potrzebujesz.</li>
+    </ul>
+
+    <h2 id="ksiezyc-lew">Księżyc w Lwie</h2>
+    <p>Twoje serce jest hojne, ciepłe i dumne. Potrzebujesz być zauważanym(ą) i docenianym(ą). Emocje wyrażasz z rozmachem, a radość dawania jest dla Ciebie naturalna.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> uznania, zabawy i możliwości tworzenia.</li>
+      <li><strong>Wskazówka:</strong> Twoja wartość nie zależy od braw. Doceniaj się także w ciche dni.</li>
+    </ul>
+
+    <h2 id="ksiezyc-panna">Księżyc w Pannie</h2>
+    <p>Uczucia porządkujesz rozumem i działaniem. Pomagając innym, okazujesz miłość. Bywasz krytyczny(a) wobec siebie, a stres odbija się na Twoim ciele.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> porządku, sensu i poczucia, że jesteś przydatny(a).</li>
+      <li><strong>Wskazówka:</strong> Nie musisz zasłużyć na odpoczynek. Bądź dla siebie łagodniejszy(a).</li>
+    </ul>
+
+    <h2 id="ksiezyc-waga">Księżyc w Wadze</h2>
+    <p>Potrzebujesz harmonii, piękna i partnerstwa. Konflikty Cię wyczerpują, dlatego często łagodzisz napięcia. Emocjonalnie rozkwitasz w relacjach opartych na równowadze.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> harmonii, bliskości i sprawiedliwości.</li>
+      <li><strong>Wskazówka:</strong> Zgoda za wszelką cenę bywa za droga. Twoje zdanie też się liczy.</li>
+    </ul>
+
+    <h2 id="ksiezyc-skorpion">Księżyc w Skorpionie</h2>
+    <p>Twoje emocje są intensywne i głębokie, choć rzadko pokazujesz je na zewnątrz. Kochasz całym sobą i trudno Ci zapomnieć zranienie. Masz wielką siłę odradzania się.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> zaufania, głębi i prawdy.</li>
+      <li><strong>Wskazówka:</strong> Kontrola nie zawsze chroni. Pozwól sobie czasem odpuścić i zaufać.</li>
+    </ul>
+
+    <h2 id="ksiezyc-strzelec">Księżyc w Strzelcu</h2>
+    <p>Emocjonalnie potrzebujesz wolności, przygody i sensu. Optymizm pomaga Ci przetrwać trudne chwile. Dusisz się w rutynie i ciasnych ramach.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> przestrzeni, podróży i nadziei.</li>
+      <li><strong>Wskazówka:</strong> Nie uciekaj od trudnych uczuć w kolejne plany. Czasem trzeba w nich chwilę pobyć.</li>
+    </ul>
+
+    <h2 id="ksiezyc-koziorozec">Księżyc w Koziorożcu</h2>
+    <p>Uczucia trzymasz pod kontrolą i okazujesz je raczej czynami niż słowami. Poczucie bezpieczeństwa daje Ci odpowiedzialność, plan i osiągnięcia.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> stabilności, szacunku i jasnej struktury.</li>
+      <li><strong>Wskazówka:</strong> Okazywanie słabości to nie porażka. Bliscy chcą znać też Twoje miękkie strony.</li>
+    </ul>
+
+    <h2 id="ksiezyc-wodnik">Księżyc w Wodniku</h2>
+    <p>Do emocji podchodzisz z dystansem i potrzebujesz przestrzeni. Cenisz przyjaźń, wolność i niezależność. Czujesz się dobrze wśród ludzi, którzy akceptują Twoją oryginalność.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> wolności, przyjaźni i akceptacji.</li>
+      <li><strong>Wskazówka:</strong> Analizowanie uczuć to nie to samo, co ich przeżywanie. Pozwól sobie na bliskość.</li>
+    </ul>
+
+    <h2 id="ksiezyc-ryby">Księżyc w Rybach</h2>
+    <p>Masz ogromną empatię i wrażliwość. Chłoniesz emocje otoczenia jak gąbka. Potrzebujesz ciszy, sztuki, muzyki i czasu na marzenia, żeby się zregenerować.</p>
+    <ul>
+      <li><strong>Potrzebujesz:</strong> spokoju, duchowości i współodczuwania.</li>
+      <li><strong>Wskazówka:</strong> Stawiaj granice. Nie wszystkie emocje, które czujesz, są Twoje.</li>
+    </ul>
+
+    <div class="callout"><p>Pełny obraz daje dopiero „wielka trójka”: Słońce, Księżyc i ascendent. Ascendent obliczysz w <a href="/ascendent/">kalkulatorze ascendentu</a>, a jego opis znajdziesz w artykule <a href="/blog/ascendent-w-znakach-zodiaku/">Ascendent w znakach zodiaku</a>.</p></div>`,
+  },
+  {
+    slug: "liczba-drogi-zycia-znaczenie",
+    title: "Liczba drogi życia: znaczenie liczb od 1 do 9 oraz 11, 22 i 33",
+    seoTitle: "Liczba drogi życia – znaczenie 1–9, 11, 22, 33 i jak ją obliczyć | Moontasia",
+    description: "Co oznacza Twoja liczba drogi życia? Opis liczb 1–9 i liczb mistrzowskich 11, 22, 33: mocne strony, wyzwania, miłość i praca. Do tego jak obliczyć liczbę i rok osobisty.",
+    category: "Numerologia",
+    date: "2026-11-08",
+    lead: "Liczba drogi życia to najważniejsza liczba w numerologii. Liczysz ją z daty urodzenia, a opisuje Twoje talenty, wyzwania i kierunek, w którym prowadzi Cię życie. Oto znaczenie wszystkich liczb.",
+    cta: ["/liczba-drogi-zycia/", "Oblicz swoją liczbę drogi życia"],
+    body: `
+    <h2>Jak obliczyć liczbę drogi życia?</h2>
+    <ol>
+      <li>Zredukuj dzień urodzenia do jednej cyfry (np. 29 → 2 + 9 = 11, a 11 zostawiasz, bo to liczba mistrzowska).</li>
+      <li>Tak samo zredukuj miesiąc i rok (np. 1987 → 1 + 9 + 8 + 7 = 25 → 7).</li>
+      <li>Dodaj wyniki i zredukuj jeszcze raz, zostawiając 11, 22 i 33.</li>
+    </ol>
+    <p>Wolisz nie liczyć? <a href="/liczba-drogi-zycia/">Kalkulator liczby drogi życia</a> pokaże wynik i wszystkie kroki obliczeń.</p>
+    <p>Przejdź do liczby: <a href="#liczba-1">1</a> · <a href="#liczba-2">2</a> · <a href="#liczba-3">3</a> · <a href="#liczba-4">4</a> · <a href="#liczba-5">5</a> · <a href="#liczba-6">6</a> · <a href="#liczba-7">7</a> · <a href="#liczba-8">8</a> · <a href="#liczba-9">9</a> · <a href="#liczba-11">11</a> · <a href="#liczba-22">22</a> · <a href="#liczba-33">33</a> · <a href="#rok-osobisty">rok osobisty</a></p>
+
+    <h2 id="liczba-1">Liczba drogi życia 1: Lider i pionier</h2>
+    <p>Jesteś tu, żeby zaczynać, prowadzić i iść własną drogą. Masz silną wolę, odwagę i potrzebę niezależności.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> inicjatywa, determinacja, oryginalność.</li>
+      <li><strong>Wyzwania:</strong> upór, niecierpliwość, trudność w proszeniu o pomoc.</li>
+      <li><strong>Miłość:</strong> Potrzebujesz partnera, który szanuje Twoją niezależność i nie próbuje Cię kontrolować.</li>
+      <li><strong>Praca:</strong> Własna firma, zarządzanie, praca, w której sama/sam decydujesz.</li>
+    </ul>
+
+    <h2 id="liczba-2">Liczba drogi życia 2: Dyplomata i partner</h2>
+    <p>Twoją siłą jest współpraca, wrażliwość i umiejętność łączenia ludzi. Wyczuwasz nastroje i potrzeby innych.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> empatia, cierpliwość, takt.</li>
+      <li><strong>Wyzwania:</strong> nadwrażliwość, uległość, unikanie konfliktów.</li>
+      <li><strong>Miłość:</strong> Związek jest dla Ciebie bardzo ważny; potrzebujesz bliskości i harmonii.</li>
+      <li><strong>Praca:</strong> Mediacje, terapia, HR, praca w zespole, doradztwo.</li>
+    </ul>
+
+    <h2 id="liczba-3">Liczba drogi życia 3: Twórca i komunikator</h2>
+    <p>Masz dar słowa, wyobraźni i radości życia. Inspirujesz innych i potrzebujesz wyrażać siebie.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> kreatywność, optymizm, urok.</li>
+      <li><strong>Wyzwania:</strong> rozproszenie, powierzchowność, wahania nastroju.</li>
+      <li><strong>Miłość:</strong> Szukasz lekkości, zabawy i partnera, z którym można się śmiać.</li>
+      <li><strong>Praca:</strong> Sztuka, media, marketing, pisanie, scena.</li>
+    </ul>
+
+    <h2 id="liczba-4">Liczba drogi życia 4: Budowniczy</h2>
+    <p>Jesteś tu, by tworzyć trwałe fundamenty. Cenisz porządek, rzetelność i ciężką pracę, która daje efekty.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> solidność, lojalność, wytrwałość.</li>
+      <li><strong>Wyzwania:</strong> sztywność, pracoholizm, opór przed zmianą.</li>
+      <li><strong>Miłość:</strong> Kochasz stabilnie i wiernie; potrzebujesz przewidywalności.</li>
+      <li><strong>Praca:</strong> Inżynieria, finanse, administracja, rzemiosło, nieruchomości.</li>
+    </ul>
+
+    <h2 id="liczba-5">Liczba drogi życia 5: Poszukiwacz wolności</h2>
+    <p>Kochasz zmianę, przygodę i nowe doświadczenia. Uczysz się przez przeżywanie i szybko się adaptujesz.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> elastyczność, ciekawość, odwaga.</li>
+      <li><strong>Wyzwania:</strong> niecierpliwość, nadmiar, trudność z zobowiązaniami.</li>
+      <li><strong>Miłość:</strong> Potrzebujesz partnera, który daje przestrzeń i nie zamyka Cię w rutynie.</li>
+      <li><strong>Praca:</strong> Podróże, sprzedaż, media, praca projektowa, przedsiębiorczość.</li>
+    </ul>
+
+    <h2 id="liczba-6">Liczba drogi życia 6: Opiekun</h2>
+    <p>Twoją drogą jest miłość, odpowiedzialność i troska. Tworzysz dom, wspólnotę i piękno wokół siebie.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> opiekuńczość, lojalność, poczucie estetyki.</li>
+      <li><strong>Wyzwania:</strong> perfekcjonizm, poświęcanie się, kontrola z troski.</li>
+      <li><strong>Miłość:</strong> Rodzina i związek są w centrum Twojego życia.</li>
+      <li><strong>Praca:</strong> Medycyna, edukacja, design, praca z ludźmi, gastronomia.</li>
+    </ul>
+
+    <h2 id="liczba-7">Liczba drogi życia 7: Mędrzec i poszukiwacz prawdy</h2>
+    <p>Potrzebujesz rozumieć świat do głębi. Masz analityczny umysł, intuicję i ciągnie Cię do wiedzy, także duchowej.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> mądrość, intuicja, dociekliwość.</li>
+      <li><strong>Wyzwania:</strong> zamknięcie się w sobie, nieufność, krytycyzm.</li>
+      <li><strong>Miłość:</strong> Potrzebujesz głębokiej więzi i przestrzeni na samotność.</li>
+      <li><strong>Praca:</strong> Nauka, badania, analiza, psychologia, ezoteryka.</li>
+    </ul>
+
+    <h2 id="liczba-8">Liczba drogi życia 8: Strateg i zdobywca</h2>
+    <p>Twoja droga prowadzi przez sukces materialny, władzę i odpowiedzialność. Uczysz się mądrze używać swojej siły.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> ambicja, organizacja, przedsiębiorczość.</li>
+      <li><strong>Wyzwania:</strong> materializm, kontrola, pracoholizm.</li>
+      <li><strong>Miłość:</strong> Szukasz partnera, który jest równie silny i ambitny.</li>
+      <li><strong>Praca:</strong> Biznes, finanse, zarządzanie, prawo.</li>
+    </ul>
+
+    <h2 id="liczba-9">Liczba drogi życia 9: Humanista</h2>
+    <p>Jesteś tu, by służyć czemuś większemu. Masz szerokie serce, idealizm i dar rozumienia ludzi.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> współczucie, mądrość, hojność.</li>
+      <li><strong>Wyzwania:</strong> poświęcanie się, trudność z puszczaniem przeszłości.</li>
+      <li><strong>Miłość:</strong> Kochasz bezwarunkowo, ale uczysz się też przyjmować.</li>
+      <li><strong>Praca:</strong> Działalność społeczna, sztuka, medycyna, nauczanie, wolontariat.</li>
+    </ul>
+
+    <h2 id="liczba-11">Liczba drogi życia 11: Liczba mistrzowska: inspirator</h2>
+    <p>11 to wzmocniona 2: wielka intuicja, wrażliwość i potencjał duchowego przewodnictwa. Inspirujesz innych samą obecnością.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> intuicja, wizja, charyzma.</li>
+      <li><strong>Wyzwania:</strong> napięcie nerwowe, lęki, wysokie oczekiwania wobec siebie.</li>
+      <li><strong>Miłość:</strong> Potrzebujesz głębokiej, duchowej więzi.</li>
+      <li><strong>Praca:</strong> Terapia, sztuka, duchowość, nauczanie, praca, która inspiruje.</li>
+    </ul>
+
+    <h2 id="liczba-22">Liczba drogi życia 22: Liczba mistrzowska: mistrz budowniczy</h2>
+    <p>22 to wzmocniona 4: potrafisz zamieniać wielkie wizje w rzeczywistość, która służy wielu ludziom.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> wizja i praktyczność naraz, organizacja, wytrwałość.</li>
+      <li><strong>Wyzwania:</strong> presja, przeciążenie, lęk przed porażką.</li>
+      <li><strong>Miłość:</strong> Szukasz partnera, który wspiera Twoje duże plany.</li>
+      <li><strong>Praca:</strong> Duże projekty, architektura, zarządzanie, organizacje.</li>
+    </ul>
+
+    <h2 id="liczba-33">Liczba drogi życia 33: Liczba mistrzowska: mistrz nauczyciel</h2>
+    <p>33 to wzmocniona 6: bezwarunkowa miłość, uzdrawianie i służba innym.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> współczucie, mądrość, siła uzdrawiania.</li>
+      <li><strong>Wyzwania:</strong> poświęcanie się ponad siły, brak granic.</li>
+      <li><strong>Miłość:</strong> Kochasz głęboko i opiekuńczo; ważne są dla Ciebie granice.</li>
+      <li><strong>Praca:</strong> Uzdrawianie, edukacja, opieka, sztuka, praca z sercem.</li>
+    </ul>
+
+    <h2 id="rok-osobisty">Rok osobisty od 1 do 9</h2>
+    <ul>
+      <li><strong>1:</strong> nowy, dziewięcioletni cykl się zaczyna. Czas siać: nowe projekty, decyzje i odwaga.</li>
+      <li><strong>2:</strong> cierpliwość, współpraca i relacje. Sprawy rosną powoli, nie przyspieszaj ich na siłę.</li>
+      <li><strong>3:</strong> radość, twórczość i kontakty z ludźmi. Wyrażaj siebie i korzystaj z życia.</li>
+      <li><strong>4:</strong> praca, porządek i fundamenty. Mniej fajerwerków, więcej konkretów.</li>
+      <li><strong>5:</strong> zmiany, wolność i niespodzianki. Dobry czas na podróże i nowe doświadczenia.</li>
+      <li><strong>6:</strong> dom, rodzina, miłość i odpowiedzialność. Relacje wychodzą na pierwszy plan.</li>
+      <li><strong>7:</strong> refleksja, nauka i rozwój duchowy. Zwolnij i posłuchaj siebie.</li>
+      <li><strong>8:</strong> sukces, pieniądze i kariera. Zbierasz owoce wcześniejszej pracy.</li>
+      <li><strong>9:</strong> domykanie cyklu. Czas pożegnać to, co się skończyło, i zrobić miejsce na nowe.</li>
+    </ul>
+
+    <div class="callout"><p>Numerologia łączy się z tarotem: każda liczba ma swoją kartę w Wielkich Arkanach. Sprawdź swoją <a href="/karta-urodzenia/">kartę urodzenia</a> i <a href="/matryca/">matrycę przeznaczenia</a>.</p></div>`,
+  },
+  {
+    slug: "karta-urodzenia-tarot",
+    title: "Karta urodzenia w tarocie: znaczenie kart od 1 do 21",
+    seoTitle: "Karta urodzenia tarot – jak obliczyć i znaczenie kart duszy 1–21 | Moontasia",
+    description: "Jak obliczyć kartę urodzenia w tarocie z daty urodzenia i co oznacza każda z 21 kart Wielkich Arkanów jako karta osobowości, karta duszy i karta roku.",
+    category: "Znaczenie kart",
+    date: "2026-11-08",
+    lead: "W Twojej dacie urodzenia kryje się jedna, dwie, a czasem trzy karty Wielkich Arkanów. Wyjaśniamy, jak je obliczyć, i opisujemy znaczenie każdej z 21 kart: jako karty urodzenia i jako karty roku.",
+    cta: ["/karta-urodzenia/", "Oblicz swoją kartę urodzenia"],
+    body: `
+    <h2>Jak obliczyć kartę urodzenia?</h2>
+    <p>Dodaj dzień, miesiąc i cały rok urodzenia, a potem sumuj cyfry wyniku, aż otrzymasz liczbę od 1 do 21. To numer Twojej karty z Wielkich Arkanów (metoda Mary K. Greer).</p>
+    <ul>
+      <li><strong>Przykład z jedną kartą:</strong> 7.06.1997 → 7 + 6 + 1997 = 2010 → 2 + 0 + 1 + 0 = <strong>3, Cesarzowa</strong>.</li>
+      <li><strong>Przykład z dwiema kartami:</strong> 19.11.1987 → 19 + 11 + 1987 = 2017 → 2 + 0 + 1 + 7 = <strong>10, Koło Fortuny</strong>. Liczba jest dwucyfrowa, więc sumujesz dalej: 1 + 0 = <strong>1, Mag</strong>. Koło Fortuny to karta osobowości, a Mag karta duszy.</li>
+      <li><strong>Trzy karty</strong> daje tylko suma 19: Słońce (19), Koło Fortuny (10) i Mag (1).</li>
+    </ul>
+    <p><strong>Kartę roku</strong> liczysz tak samo, tylko zamiast roku urodzenia dodajesz wybrany rok. Najszybciej sprawdzisz obie w <a href="/karta-urodzenia/">kalkulatorze karty urodzenia</a>.</p>
+
+    <h2>Znaczenie kart urodzenia od 1 do 21</h2>
+
+    <h3 id="karta-1">1. Mag</h3>
+    <p>Twórca i inicjator. Masz dar przekuwania pomysłów w czyn, słowo i wolę. Uczysz się używać swojej mocy uczciwie. <strong>Jako karta roku:</strong> Rok nowych początków, inicjatywy i działania. Dobry czas na start projektu i podejmowanie decyzji. <a href="/znaczenie-kart/mag/">Znaczenie karty Mag →</a></p>
+
+    <h3 id="karta-2">2. Kapłanka</h3>
+    <p>Intuicja i wewnętrzna mądrość. Wiesz więcej, niż mówisz, i potrzebujesz ciszy, by usłyszeć siebie. <strong>Jako karta roku:</strong> Rok intuicji, cierpliwości i wewnętrznej pracy. Sprawy dojrzewają po cichu, warto słuchać przeczuć. <a href="/znaczenie-kart/kaplanka/">Znaczenie karty Kapłanka →</a></p>
+
+    <h3 id="karta-3">3. Cesarzowa</h3>
+    <p>Twórczość, zmysłowość i troska. Wszystko, czego dotykasz, rozkwita, jeśli dbasz także o siebie. <strong>Jako karta roku:</strong> Rok wzrostu, twórczości i obfitości. Sprzyja miłości, rodzinie, kreatywnym projektom i dbaniu o ciało. <a href="/znaczenie-kart/cesarzowa/">Znaczenie karty Cesarzowa →</a></p>
+
+    <h3 id="karta-4">4. Cesarz</h3>
+    <p>Struktura, odpowiedzialność i przywództwo. Budujesz trwałe rzeczy i dajesz innym poczucie bezpieczeństwa. <strong>Jako karta roku:</strong> Rok porządku i budowania fundamentów. Czas na plan, dyscyplinę i stabilizację: dom, finanse, kariera. <a href="/znaczenie-kart/cesarz/">Znaczenie karty Cesarz →</a></p>
+
+    <h3 id="karta-5">5. Hierofant</h3>
+    <p>Nauczyciel i strażnik wartości. Szukasz sensu i przekazujesz wiedzę, ucząc się też własnej drogi poza tradycją. <strong>Jako karta roku:</strong> Rok nauki i wartości. Sprzyja kursom, mentorom, formalnościom i odnajdywaniu sensu. <a href="/znaczenie-kart/hierofant/">Znaczenie karty Hierofant →</a></p>
+
+    <h3 id="karta-6">6. Kochankowie</h3>
+    <p>Relacje i wybory serca. Twoją lekcją jest wybierać w zgodzie ze sobą i kochać bez zatracania się. <strong>Jako karta roku:</strong> Rok relacji i ważnych wyborów. Sprawy serca i partnerstwa wychodzą na pierwszy plan. <a href="/znaczenie-kart/kochankowie/">Znaczenie karty Kochankowie →</a></p>
+
+    <h3 id="karta-7">7. Rydwan</h3>
+    <p>Wola, ruch i zwycięstwo. Potrzebujesz celu i kierunku, a życie nagradza Cię, gdy przejmujesz stery. <strong>Jako karta roku:</strong> Rok ruchu i zwycięstw. Wyraźny cel i determinacja przynoszą sukces, możliwe podróże i przeprowadzki. <a href="/znaczenie-kart/rydwan/">Znaczenie karty Rydwan →</a></p>
+
+    <h3 id="karta-8">8. Siła</h3>
+    <p>Odwaga łagodności. Twoją mocą jest cierpliwość, serce i panowanie nad emocjami bez tłumienia ich. <strong>Jako karta roku:</strong> Rok wewnętrznej siły. Cierpliwość i łagodność dadzą więcej niż walka. <a href="/znaczenie-kart/sila/">Znaczenie karty Siła →</a></p>
+
+    <h3 id="karta-9">9. Pustelnik</h3>
+    <p>Poszukiwacz prawdy. Potrzebujesz samotności i refleksji, a z czasem stajesz się przewodnikiem dla innych. <strong>Jako karta roku:</strong> Rok refleksji i domykania. Dobry czas na podsumowania, samotność z wyboru i szukanie własnej drogi. <a href="/znaczenie-kart/pustelnik/">Znaczenie karty Pustelnik →</a></p>
+
+    <h3 id="karta-10">10. Koło Fortuny</h3>
+    <p>Cykle i zmiany. Uczysz się płynąć z życiem i rozpoznawać momenty, w których los daje szansę. <strong>Jako karta roku:</strong> Rok zmian i zwrotów akcji. Los przyspiesza: bądź gotowa/y na nowe szanse. <a href="/znaczenie-kart/kolo-fortuny/">Znaczenie karty Koło Fortuny →</a></p>
+
+    <h3 id="karta-11">11. Sprawiedliwość</h3>
+    <p>Prawda i równowaga. Masz silne poczucie uczciwości i uczysz się brać odpowiedzialność za swoje wybory. <strong>Jako karta roku:</strong> Rok równowagi i konsekwencji. Sprawy prawne, umowy i uczciwe rozliczenia; zbierasz to, co posiane. <a href="/znaczenie-kart/sprawiedliwosc/">Znaczenie karty Sprawiedliwość →</a></p>
+
+    <h3 id="karta-12">12. Wisielec</h3>
+    <p>Inna perspektywa. Widzisz to, czego nie widzą inni, a Twoją lekcją jest odpuszczanie i zaufanie. <strong>Jako karta roku:</strong> Rok pauzy i nowej perspektywy. Coś się zatrzymuje, żebyś mogła/mógł spojrzeć inaczej. <a href="/znaczenie-kart/wisielec/">Znaczenie karty Wisielec →</a></p>
+
+    <h3 id="karta-13">13. Śmierć</h3>
+    <p>Przemiana. Twoje życie to kolejne etapy i nowe początki, a Ty masz dar odradzania się. <strong>Jako karta roku:</strong> Rok przemiany. Jeden etap się kończy, robiąc miejsce na nowy. <a href="/znaczenie-kart/smierc/">Znaczenie karty Śmierć →</a></p>
+
+    <h3 id="karta-14">14. Umiarkowanie</h3>
+    <p>Równowaga i uzdrawianie. Łączysz przeciwieństwa i potrafisz godzić ludzi oraz światy. <strong>Jako karta roku:</strong> Rok równowagi i uzdrowienia. Umiar, cierpliwość i łączenie różnych obszarów życia. <a href="/znaczenie-kart/umiarkowanie/">Znaczenie karty Umiarkowanie →</a></p>
+
+    <h3 id="karta-15">15. Diabeł</h3>
+    <p>Siła, magnetyzm i namiętność. Twoją lekcją jest uwolnienie się od tego, co Cię zniewala, i świadome używanie swojej mocy. <strong>Jako karta roku:</strong> Rok pokus i mocy. Dobry czas, by przyjrzeć się nawykom i zależnościom oraz odzyskać wolność. <a href="/znaczenie-kart/diabel/">Znaczenie karty Diabeł →</a></p>
+
+    <h3 id="karta-16">16. Wieża</h3>
+    <p>Przełom i wyzwolenie. Burzysz to, co fałszywe, a z gruzów budujesz coś prawdziwego. <strong>Jako karta roku:</strong> Rok przełomu. Rzeczy zbudowane na słabych fundamentach mogą się rozpaść, by zrobić miejsce na prawdziwe. <a href="/znaczenie-kart/wieza/">Znaczenie karty Wieża →</a></p>
+
+    <h3 id="karta-17">17. Gwiazda</h3>
+    <p>Nadzieja i inspiracja. Masz w sobie światło, które dodaje innym otuchy, i talent do marzeń, które się spełniają. <strong>Jako karta roku:</strong> Rok nadziei i inspiracji. Marzenia nabierają realnych kształtów, a Ty odzyskujesz wiarę. <a href="/znaczenie-kart/gwiazda/">Znaczenie karty Gwiazda →</a></p>
+
+    <h3 id="karta-18">18. Księżyc</h3>
+    <p>Wyobraźnia i intuicja. Czujesz głębiej niż inni, a Twoją lekcją jest odróżniać prawdę od lęków. <strong>Jako karta roku:</strong> Rok intuicji i snów. Nie wszystko będzie jasne od razu, ufaj przeczuciom i nie działaj z lęku. <a href="/znaczenie-kart/ksiezyc/">Znaczenie karty Księżyc →</a></p>
+
+    <h3 id="karta-19">19. Słońce</h3>
+    <p>Radość, ciepło i sukces. Masz w sobie dziecięcą energię i dar rozświetlania życia innych. <strong>Jako karta roku:</strong> Rok radości i sukcesu. Jeden z najjaśniejszych lat: energia, widoczność i szczęście. <a href="/znaczenie-kart/slonce/">Znaczenie karty Słońce →</a></p>
+
+    <h3 id="karta-20">20. Sąd</h3>
+    <p>Przebudzenie i powołanie. Słyszysz głos, który wzywa Cię do czegoś większego, i umiesz zaczynać od nowa. <strong>Jako karta roku:</strong> Rok przebudzenia. Ważne decyzje, powołanie i drugie szanse. <a href="/znaczenie-kart/sad/">Znaczenie karty Sąd →</a></p>
+
+    <h3 id="karta-21">21. Świat</h3>
+    <p>Spełnienie i całość. Dążysz do pełni i masz dar domykania spraw oraz łączenia ludzi z różnych światów. <strong>Jako karta roku:</strong> Rok spełnienia. Domykasz duży cykl i zbierasz owoce, a przed Tobą otwiera się nowy rozdział. <a href="/znaczenie-kart/swiat/">Znaczenie karty Świat →</a></p>
+
+    <div class="callout"><p>Karta urodzenia to tylko jeden z wielu sposobów czytania daty urodzenia przez tarot. Jeśli chcesz zobaczyć więcej energii, oblicz <a href="/matryca/">matrycę przeznaczenia</a>, w której każdy punkt to również jeden z Wielkich Arkanów.</p></div>`,
+  },
+  {
+    slug: "zgodnosc-znakow-zodiaku",
+    title: "Zgodność znaków zodiaku: które znaki do siebie pasują?",
+    seoTitle: "Zgodność znaków zodiaku – które znaki pasują do siebie w miłości | Moontasia",
+    description: "Które znaki zodiaku najlepiej do siebie pasują? Zgodność według żywiołów i aspektów, najlepsze i najtrudniejsze pary oraz to, jak kocha każdy znak zodiaku.",
+    category: "Astrologia",
+    date: "2026-11-08",
+    lead: "Czy Baran dogada się z Rakiem? Dlaczego Byk i Koziorożec rozumieją się bez słów? Wyjaśniamy, jak astrologia ocenia zgodność znaków zodiaku, i podpowiadamy, które pary mają najłatwiej, a które najwięcej się od siebie uczą.",
+    cta: ["/zgodnosc-znakow/", "Sprawdź zgodność Waszych znaków"],
+    body: `
+    <h2>Żywioły: podstawa zgodności</h2>
+    <p>Każdy znak należy do jednego z czterech żywiołów. Znaki tego samego żywiołu mają podobny temperament, a niektóre żywioły naturalnie się wspierają:</p>
+    <ul>
+      <li><strong>Ogień</strong> (Baran, Lew, Strzelec): pasja, energia, spontaniczność. Najlepiej z ogniem i powietrzem.</li>
+      <li><strong>Ziemia</strong> (Byk, Panna, Koziorożec): stabilność, konkret, lojalność. Najlepiej z ziemią i wodą.</li>
+      <li><strong>Powietrze</strong> (Bliźnięta, Waga, Wodnik): rozmowa, idee, wolność. Najlepiej z powietrzem i ogniem.</li>
+      <li><strong>Woda</strong> (Rak, Skorpion, Ryby): emocje, intuicja, głębia. Najlepiej z wodą i ziemią.</li>
+    </ul>
+
+    <h2>Najlepiej dobrane pary</h2>
+    <ul>
+      <li><strong>Baran i Lew, Baran i Strzelec, Lew i Strzelec</strong>: ogień z ogniem, dużo energii i wspólnych przygód.</li>
+      <li><strong>Byk i Panna, Byk i Koziorożec, Panna i Koziorożec</strong>: ziemia z ziemią, spokój, plan i bezpieczeństwo.</li>
+      <li><strong>Bliźnięta i Waga, Bliźnięta i Wodnik, Waga i Wodnik</strong>: powietrze z powietrzem, rozmowy bez końca.</li>
+      <li><strong>Rak i Skorpion, Rak i Ryby, Skorpion i Ryby</strong>: woda z wodą, głębokie zrozumienie emocji.</li>
+    </ul>
+
+    <h2>Przeciwieństwa, które się przyciągają</h2>
+    <p>Znaki leżące naprzeciw siebie na kole zodiaku tworzą opozycję: <strong>Baran i Waga, Byk i Skorpion, Bliźnięta i Strzelec, Rak i Koziorożec, Lew i Wodnik, Panna i Ryby</strong>. To pary z silnym przyciąganiem, bo każde ma to, czego brakuje drugiemu. Gdy znajdą równowagę, uzupełniają się idealnie.</p>
+
+    <h2>Pary, które się od siebie uczą</h2>
+    <p>Znaki oddalone o trzy pozycje tworzą kwadraturę, np. <strong>Baran i Rak, Byk i Lew, Bliźnięta i Panna, Waga i Koziorożec</strong>. Mają inne potrzeby i tempo, więc iskrzy w obie strony. To nie wyklucza udanego związku, ale wymaga rozmów i kompromisów.</p>
+
+    <h2>Jak kocha każdy znak?</h2>
+    <ul>
+      <li><strong>Baran</strong> wnosi do związku zapał, spontaniczność i odwagę, ale potrzebuje wolności i szybko się nudzi.</li>
+      <li><strong>Byk</strong> daje stabilność, czułość i lojalność, ale bywa uparty i zazdrosny.</li>
+      <li><strong>Bliźnięta</strong> wnosi lekkość, humor i rozmowy do rana, ale potrzebuje różnorodności.</li>
+      <li><strong>Rak</strong> kocha opiekuńczo i głęboko, ale potrzebuje poczucia bezpieczeństwa.</li>
+      <li><strong>Lew</strong> jest hojny, romantyczny i ciepły, ale potrzebuje podziwu.</li>
+      <li><strong>Panna</strong> okazuje miłość troską i konkretem, ale bywa krytyczna.</li>
+      <li><strong>Waga</strong> wnosi romantyzm, harmonię i partnerstwo, ale unika konfliktów.</li>
+      <li><strong>Skorpion</strong> kocha intensywnie i namiętnie, ale potrzebuje pełnego zaufania.</li>
+      <li><strong>Strzelec</strong> wnosi przygodę, optymizm i szczerość, ale ceni wolność ponad wszystko.</li>
+      <li><strong>Koziorożec</strong> buduje związek na lata, odpowiedzialnie, choć emocje okazuje powściągliwie.</li>
+      <li><strong>Wodnik</strong> jest przyjacielem i partnerem, oryginalnym i niezależnym, ale potrzebuje przestrzeni.</li>
+      <li><strong>Ryby</strong> kocha marzycielsko, czule i z ogromną empatią, ale łatwo go zranić.</li>
+    </ul>
+
+    <div class="callout"><p>Zgodność znaków Słońca to uproszczenie. Na relację wpływają też Księżyc, ascendent i inne planety. Sprawdź swoją parę w <a href="/zgodnosc-znakow/">kalkulatorze zgodności znaków</a>, a potem porównajcie <a href="/blog/ksiezyc-w-znakach-zodiaku/">znaki Księżyca</a> i <a href="/matryca-partnerska/">matrycę partnerską</a>.</p></div>`,
+  },
+  {
     slug: "wrozby-andrzejkowe",
     title: "Wróżby andrzejkowe i miłosne: wróżby na kartce, wosk i tarot",
     seoTitle: "Wróżby andrzejkowe 2026 – wróżby miłosne na kartce, lanie wosku, tarot | Moontasia",
