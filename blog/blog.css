@@ -62,3 +62,6 @@ article .lead{font-size:1.1rem;color:var(--text-dim);font-style:italic;}
 .post-hero{margin:14px 0 18px}
 .post-hero img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
 .post-card .post-thumb{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:10px;margin-bottom:12px}
+article table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+article th,article td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}
+article th{color:var(--accent-soft);font-weight:normal}

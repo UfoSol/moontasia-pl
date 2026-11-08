@@ -10,6 +10,473 @@ import { LEGACY_POSTS } from "./legacy.mjs";
 
 const NEW_POSTS = [
   {
+    slug: "wielkie-arkana-znaczenie",
+    title: "Wielkie Arkana: znaczenie wszystkich 22 kart tarota",
+    seoTitle: "Wielkie Arkana tarota – znaczenie 22 kart od Głupca do Świata | Moontasia",
+    description: "Znaczenie wszystkich 22 kart Wielkich Arkanów: od Głupca (0) do Świata (XXI). Karta prosta i odwrócona, w miłości oraz odpowiedź tak/nie dla każdej karty.",
+    category: "Znaczenie kart",
+    date: "2026-11-08",
+    lead: "Wielkie Arkana to 22 najważniejsze karty tarota. Opowiadają o dużych lekcjach, punktach zwrotnych i archetypach, które każdy z nas spotyka w życiu. Oto przewodnik po wszystkich kartach, od Głupca do Świata.",
+    cta: ["/rozklad-3-karty/", "Wylosuj karty i sprawdź, co Ci powiedzą"],
+    body: `
+    <h2>Czym są Wielkie Arkana?</h2>
+    <p>Talia tarota ma 78 kart: 22 Wielkie Arkana i 56 Małych Arkanów. Wielkie Arkana numerowane są od 0 do XXI i często czyta się je jako „podróż Głupca”: od beztroskiego początku, przez kolejne lekcje, aż do spełnienia w karcie Świat. Gdy Wielki Arkan pojawia się w rozkładzie, sprawa ma większą wagę. Czym różnią się od Małych Arkanów, wyjaśniamy w artykule <a href="/blog/wielkie-i-male-arkana/">Wielkie i Małe Arkana</a>.</p>
+    <p>Przejdź do karty: <a href="#glupiec">0</a> · <a href="#mag">I</a> · <a href="#kaplanka">II</a> · <a href="#cesarzowa">III</a> · <a href="#cesarz">IV</a> · <a href="#hierofant">V</a> · <a href="#kochankowie">VI</a> · <a href="#rydwan">VII</a> · <a href="#sila">VIII</a> · <a href="#pustelnik">IX</a> · <a href="#kolo-fortuny">X</a> · <a href="#sprawiedliwosc">XI</a> · <a href="#wisielec">XII</a> · <a href="#smierc">XIII</a> · <a href="#umiarkowanie">XIV</a> · <a href="#diabel">XV</a> · <a href="#wieza">XVI</a> · <a href="#gwiazda">XVII</a> · <a href="#ksiezyc">XVIII</a> · <a href="#slonce">XIX</a> · <a href="#sad">XX</a> · <a href="#swiat">XXI</a></p>
+
+    <h2 id="glupiec">0. Głupiec</h2>
+    <p><strong>Nowy początek, spontaniczność.</strong> Stoisz na progu czegoś nowego — pojawia się chęć, by zaufać życiu i zrobić krok w nieznane, nawet bez pełnego planu. To karta świeżości, odwagi i otwartości na przygodę, choć wiąże się też z pewną naiwnością.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> lekkomyślność, wahanie.</li>
+      <li><strong>W miłości:</strong> Świeża, spontaniczna energia w uczuciach: nowa znajomość, flirt albo odważny krok w relacji. To czas, by otworzyć serce bez kalkulowania każdego ruchu.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/glupiec/">Głupiec – pełne znaczenie karty →</a></p>
+
+    <h2 id="mag">I. Mag</h2>
+    <p><strong>Sprawczość, umiejętności.</strong> Masz teraz wszystkie zasoby, wiedzę i narzędzia potrzebne do działania — pozostaje je świadomie wykorzystać. To karta inicjatywy, skupienia i przekuwania pomysłów w konkret.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> manipulacja, brak skupienia.</li>
+      <li><strong>W miłości:</strong> Silne przyciąganie i inicjatywa. Masz wpływ na to, jak potoczy się relacja: jasno mów, czego chcesz, a rzeczy zaczną się dziać.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/mag/">Mag – pełne znaczenie karty →</a></p>
+
+    <h2 id="kaplanka">II. Kapłanka</h2>
+    <p><strong>Intuicja, tajemnica.</strong> To karta ciszy, intuicji i wiedzy, która nie zawsze da się racjonalnie uzasadnić. Zachęca, by słuchać wewnętrznego głosu i nie spieszyć się z ujawnianiem wszystkiego na zewnątrz.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> odcięcie od intuicji, sekrety.</li>
+      <li><strong>W miłości:</strong> Głęboka, intuicyjna więź i tajemnica. Uczucie może być jeszcze nie wypowiedziane, ale czujesz je wyraźnie. Zaufaj przeczuciu.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/kaplanka/">Kapłanka – pełne znaczenie karty →</a></p>
+
+    <h2 id="cesarzowa">III. Cesarzowa</h2>
+    <p><strong>Obfitość, troska, twórczość.</strong> Karta płodności w szerokim sensie — twórczości, obfitości, troski o siebie i innych. Wskazuje na czas wzrostu, przyjemności zmysłowych i budowania czegoś z miłością.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> wypalenie, blokada twórcza.</li>
+      <li><strong>W miłości:</strong> Czułość, bliskość i rozkwit uczuć. Karta zmysłowości, troski i budowania ciepłego domu, czasem także zapowiedź rodzicielstwa.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/cesarzowa/">Cesarzowa – pełne znaczenie karty →</a></p>
+
+    <h2 id="cesarz">IV. Cesarz</h2>
+    <p><strong>Struktura, autorytet, stabilność.</strong> Karta porządku, struktury i konsekwentnego działania. Zachęca, by wziąć sprawy w swoje ręce, ustalić jasne zasady i budować stabilność krok po kroku.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> chaos, utrata kontroli.</li>
+      <li><strong>W miłości:</strong> Stabilność, poczucie bezpieczeństwa i poważne zamiary. Relacja z jasnymi zasadami, w której ktoś bierze odpowiedzialność.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/cesarz/">Cesarz – pełne znaczenie karty →</a></p>
+
+    <h2 id="hierofant">V. Hierofant</h2>
+    <p><strong>Tradycja, nauka, przekonania.</strong> Karta tradycji, autorytetów i utartych ścieżek — instytucji, mentorów, sprawdzonych metod. Może wskazywać na potrzebę nauki, poradzenia się kogoś doświadczonego albo trzymania się wartości, w które wierzysz.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> bunt, nieszablonowość.</li>
+      <li><strong>W miłości:</strong> Tradycyjny związek, deklaracje i wspólne wartości. Może zapowiadać zaręczyny, ślub albo wejście relacji na poważny etap.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/hierofant/">Hierofant – pełne znaczenie karty →</a></p>
+
+    <h2 id="kochankowie">VI. Kochankowie</h2>
+    <p><strong>Wybór, więź, wartości.</strong> Karta ważnego wyboru zgodnego z sercem oraz głębokiej więzi — z drugą osobą, ale też z własnymi wartościami. Zachęca, by decydować z autentyczności, nie z presji.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> brak harmonii, niezgodność wartości.</li>
+      <li><strong>W miłości:</strong> Prawdziwa więź, wzajemne przyciąganie i harmonia. Karta miłości z wyboru: oboje decydujecie się na siebie świadomie.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/kochankowie/">Kochankowie – pełne znaczenie karty →</a></p>
+
+    <h2 id="rydwan">VII. Rydwan</h2>
+    <p><strong>Determinacja, kontrola, zwycięstwo.</strong> Karta silnej woli i determinacji — udaje Ci się utrzymać kurs mimo sprzecznych sił działających w różne strony. To dobry moment na zdecydowane dążenie do celu.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> utrata kierunku, rozproszenie.</li>
+      <li><strong>W miłości:</strong> Determinacja, by relacja się udała. Wspólny cel daje siłę, a sprawy nabierają tempa.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/rydwan/">Rydwan – pełne znaczenie karty →</a></p>
+
+    <h2 id="sila">VIII. Siła</h2>
+    <p><strong>Odwaga, łagodność, opanowanie.</strong> To siła płynąca z łagodności, cierpliwości i współczucia dla siebie, nie z przymusu czy walki. Pokazuje, że możesz poradzić sobie z trudnością bez agresji, opierając się na wewnętrznym spokoju.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> zwątpienie, brak pewności siebie.</li>
+      <li><strong>W miłości:</strong> Cierpliwość, łagodność i odwaga w uczuciach. Związek przechodzi próby dzięki zrozumieniu, a nie sile.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/sila/">Siła – pełne znaczenie karty →</a></p>
+
+    <h2 id="pustelnik">IX. Pustelnik</h2>
+    <p><strong>Introspekcja, samotność, mądrość.</strong> Czas wycofania się i poszukiwania odpowiedzi w sobie, nie na zewnątrz. Pustelnik zachęca do refleksji w samotności, zanim podejmiesz kolejny krok.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> izolacja, unikanie.</li>
+      <li><strong>W miłości:</strong> Czas na refleksję i bycie ze sobą. W związku: potrzeba przestrzeni. Dla singli: najpierw relacja z samym sobą.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/pustelnik/">Pustelnik – pełne znaczenie karty →</a></p>
+
+    <h2 id="kolo-fortuny">X. Koło Fortuny</h2>
+    <p><strong>Zmiana, cykle, los.</strong> Karta zmiany, cykli i punktów zwrotnych, na które nie zawsze masz pełny wpływ. Coś, co wydawało się stałe, zaczyna się przesuwać — warto płynąć z tym nurtem.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> pech, opór wobec zmiany.</li>
+      <li><strong>W miłości:</strong> Zwrot losu w uczuciach: niespodziewane spotkanie albo nowy etap w związku. Sprawy ruszają z miejsca.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/kolo-fortuny/">Koło Fortuny – pełne znaczenie karty →</a></p>
+
+    <h2 id="sprawiedliwosc">XI. Sprawiedliwość</h2>
+    <p><strong>Równowaga, prawda, konsekwencje.</strong> Karta uczciwości, konsekwencji i patrzenia na sytuację obiektywnie. Zachęca do podjęcia decyzji w zgodzie z prawdą i do wzięcia odpowiedzialności za własne wybory.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> niesprawiedliwość, brak równowagi.</li>
+      <li><strong>W miłości:</strong> Uczciwość, równowaga i dojrzałe decyzje. Relacja oparta na partnerstwie, w której obie strony dają i biorą.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/sprawiedliwosc/">Sprawiedliwość – pełne znaczenie karty →</a></p>
+
+    <h2 id="wisielec">XII. Wisielec</h2>
+    <p><strong>Zawieszenie, nowa perspektywa.</strong> Karta zatrzymania i zmiany perspektywy — czasem trzeba przestać działać, by zobaczyć sytuację inaczej. To czas poddania się procesowi, a nie forsowania rozwiązań na siłę.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> utknięcie, opór przed poddaniem się.</li>
+      <li><strong>W miłości:</strong> Zawieszenie i czekanie. Relacja stoi w miejscu, ale to dobry moment, by spojrzeć na nią z innej perspektywy.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/wisielec/">Wisielec – pełne znaczenie karty →</a></p>
+
+    <h2 id="smierc">XIII. Śmierć</h2>
+    <p><strong>Zakończenie, transformacja.</strong> Karta zakończenia pewnego etapu, które otwiera drogę do czegoś nowego. Nie chodzi o dosłowną śmierć, lecz o konieczną transformację — coś musi się skończyć, by mogło zacząć się coś innego.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> opór wobec zmiany, stagnacja.</li>
+      <li><strong>W miłości:</strong> Koniec pewnego etapu i głęboka przemiana. Związek może się skończyć albo odrodzić w zupełnie nowej formie.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/smierc/">Śmierć – pełne znaczenie karty →</a></p>
+
+    <h2 id="umiarkowanie">XIV. Umiarkowanie</h2>
+    <p><strong>Równowaga, cierpliwość, łączenie.</strong> Karta harmonii, cierpliwości i łączenia przeciwstawnych elementów w spójną całość. Zachęca do umiaru i stopniowego, spokojnego dążenia do celu zamiast gwałtownych ruchów.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> brak równowagi, niecierpliwość.</li>
+      <li><strong>W miłości:</strong> Harmonia, cierpliwość i dobre dopasowanie. Związek, w którym łatwo znaleźć złoty środek i spokojnie budować bliskość.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/umiarkowanie/">Umiarkowanie – pełne znaczenie karty →</a></p>
+
+    <h2 id="diabel">XV. Diabeł</h2>
+    <p><strong>Uzależnienie, ograniczenie, pokusa.</strong> Karta pułapek, uzależnień i wzorców, w które wpadamy dobrowolnie, choć nas ograniczają — mogą to być nawyki, toksyczna relacja albo lęk trzymający Cię w miejscu. Warto zapytać, co Cię naprawdę wiąże.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> uwalnianie się, odzyskiwanie kontroli.</li>
+      <li><strong>W miłości:</strong> Silna namiętność i przyciąganie fizyczne, ale też ryzyko uzależnienia od relacji lub toksycznego schematu.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/diabel/">Diabeł – pełne znaczenie karty →</a></p>
+
+    <h2 id="wieza">XVI. Wieża</h2>
+    <p><strong>Nagła zmiana, przełom.</strong> Karta nagłego, często nieoczekiwanego zdarzenia, które burzy to, co było zbudowane na niepewnych fundamentach. Choć bolesna, taka zmiana zwykle odsłania prawdę i otwiera drogę do czegoś bardziej autentycznego.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> odwlekana zmiana, lęk przed katastrofą.</li>
+      <li><strong>W miłości:</strong> Nagły wstrząs: kłótnia, rozstanie albo prawda, która wychodzi na jaw. Bolesne, ale oczyszcza to, co było na niepewnych fundamentach.</li>
+      <li><strong>Tak czy nie:</strong> nie.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/wieza/">Wieża – pełne znaczenie karty →</a></p>
+
+    <h2 id="gwiazda">XVII. Gwiazda</h2>
+    <p><strong>Nadzieja, uzdrowienie, wiara.</strong> Karta nadziei, ukojenia po trudnym okresie i wiary, że sprawy zaczynają się układać. Zachęca, by zaufać procesowi i pozwolić sobie na optymizm, nawet po trudnych doświadczeniach.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> zwątpienie, utrata wiary.</li>
+      <li><strong>W miłości:</strong> Nadzieja, uzdrowienie i miłość po trudnym okresie. Karta szczerych uczuć i wiary, że to, co najlepsze, dopiero przed Tobą.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/gwiazda/">Gwiazda – pełne znaczenie karty →</a></p>
+
+    <h2 id="ksiezyc">XVIII. Księżyc</h2>
+    <p><strong>Niepewność, iluzje, podświadomość.</strong> Karta niejasności, lęków i spraw, które nie są jeszcze do końca widoczne. Rzeczy mogą wyglądać inaczej, niż są w rzeczywistości — warto nie podejmować teraz ostatecznych decyzji wyłącznie na podstawie emocji.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> wychodzenie z iluzji, odkrywanie prawdy.</li>
+      <li><strong>W miłości:</strong> Niepewność, iluzje i niejasne uczucia. Nie wszystko jest takie, jak się wydaje. Nie podejmuj decyzji pod wpływem lęku czy zazdrości.</li>
+      <li><strong>Tak czy nie:</strong> niejasne.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/ksiezyc/">Księżyc – pełne znaczenie karty →</a></p>
+
+    <h2 id="slonce">XIX. Słońce</h2>
+    <p><strong>Radość, sukces, jasność.</strong> Jedna z najbardziej pozytywnych kart talii — oznacza radość, jasność sytuacji i autentyczny sukces. To, co się dzieje lub nadchodzi, przynosi ulgę i potwierdzenie, że jesteś na dobrej drodze.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> przyćmiona radość, chwilowe zwątpienie.</li>
+      <li><strong>W miłości:</strong> Radość, szczęście i spełnienie w miłości. Jedna z najlepszych kart dla związku: ciepło, szczerość i wspólna lekkość.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/slonce/">Słońce – pełne znaczenie karty →</a></p>
+
+    <h2 id="sad">XX. Sąd</h2>
+    <p><strong>Przebudzenie, rozliczenie, powołanie.</strong> Karta wewnętrznego przebudzenia, podsumowania i wezwania do tego, by żyć bardziej zgodnie z prawdą o sobie. To moment na uczciwe rozliczenie z przeszłością i świadomy wybór dalszej drogi.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> samokrytycyzm, odkładanie decyzji.</li>
+      <li><strong>W miłości:</strong> Przebudzenie i druga szansa. Powrót do kogoś z przeszłości albo świadoma decyzja o nowym rozdziale w związku.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/sad/">Sąd – pełne znaczenie karty →</a></p>
+
+    <h2 id="swiat">XXI. Świat</h2>
+    <p><strong>Spełnienie, zakończenie cyklu.</strong> Karta zakończenia ważnego etapu z poczuciem spełnienia i integracji tego, czego się nauczyłaś/eś. Wskazuje na osiągnięcie celu i gotowość do rozpoczęcia nowego rozdziału.</p>
+    <ul>
+      <li><strong>Odwrócona:</strong> niedokończony etap, opóźnienie.</li>
+      <li><strong>W miłości:</strong> Spełnienie, dojrzały związek i poczucie, że wszystko jest na swoim miejscu. Zakończenie jednego etapu i radość z tego, co zbudowaliście.</li>
+      <li><strong>Tak czy nie:</strong> tak.</li>
+    </ul>
+    <p><a href="/znaczenie-kart/swiat/">Świat – pełne znaczenie karty →</a></p>
+
+    <div class="callout"><p>Każda z tych kart może być też Twoją <a href="/blog/karta-urodzenia-tarot/">kartą urodzenia</a>, a w <a href="/matryca/">matrycy przeznaczenia</a> to samo 22 arkany opisują różne obszary życia. Opisy Małych Arkanów znajdziesz w przewodnikach po kolorach: <a href="/blog/kielichy-w-tarocie/">Kielichy</a>, <a href="/blog/pentakle-w-tarocie/">Pentakle</a>, <a href="/blog/bulawy-w-tarocie/">Buławy</a> i <a href="/blog/miecze-w-tarocie/">Miecze</a>.</p></div>`,
+  },
+  {
+    slug: "znaki-zodiaku-daty",
+    title: "Znaki zodiaku: daty, żywioły i cechy wszystkich 12 znaków",
+    seoTitle: "Znaki zodiaku – daty, żywioły i cechy charakteru 12 znaków | Moontasia",
+    description: "Daty znaków zodiaku od Barana do Ryb, żywioły, planety władające oraz cechy charakteru, mocne strony i wyzwania każdego znaku. Sprawdź, jaki jesteś znak.",
+    category: "Astrologia",
+    date: "2026-11-08",
+    lead: "Jaki to znak zodiaku, jeśli urodziłaś/eś się 21 marca albo 22 grudnia? Poniżej znajdziesz daty wszystkich dwunastu znaków, ich żywioły i krótkie opisy charakteru.",
+    cta: ["/ascendent/", "Oblicz swój znak, ascendent i Księżyc"],
+    body: `
+    <h2>Daty znaków zodiaku</h2>
+    <table>
+      <thead><tr><th>Znak</th><th>Daty</th><th>Żywioł</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#baran">♈︎ Baran</a></td><td>21 marca – 19 kwietnia</td><td>Ogień</td></tr>
+        <tr><td><a href="#byk">♉︎ Byk</a></td><td>20 kwietnia – 20 maja</td><td>Ziemia</td></tr>
+        <tr><td><a href="#bliznieta">♊︎ Bliźnięta</a></td><td>21 maja – 20 czerwca</td><td>Powietrze</td></tr>
+        <tr><td><a href="#rak">♋︎ Rak</a></td><td>21 czerwca – 22 lipca</td><td>Woda</td></tr>
+        <tr><td><a href="#lew">♌︎ Lew</a></td><td>23 lipca – 22 sierpnia</td><td>Ogień</td></tr>
+        <tr><td><a href="#panna">♍︎ Panna</a></td><td>23 sierpnia – 22 września</td><td>Ziemia</td></tr>
+        <tr><td><a href="#waga">♎︎ Waga</a></td><td>23 września – 22 października</td><td>Powietrze</td></tr>
+        <tr><td><a href="#skorpion">♏︎ Skorpion</a></td><td>23 października – 21 listopada</td><td>Woda</td></tr>
+        <tr><td><a href="#strzelec">♐︎ Strzelec</a></td><td>22 listopada – 21 grudnia</td><td>Ogień</td></tr>
+        <tr><td><a href="#koziorozec">♑︎ Koziorożec</a></td><td>22 grudnia – 19 stycznia</td><td>Ziemia</td></tr>
+        <tr><td><a href="#wodnik">♒︎ Wodnik</a></td><td>20 stycznia – 18 lutego</td><td>Powietrze</td></tr>
+        <tr><td><a href="#ryby">♓︎ Ryby</a></td><td>19 lutego – 20 marca</td><td>Woda</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Urodziłaś/eś się na przełomie znaków?</strong> Słońce nie przechodzi do kolejnego znaku co roku dokładnie tego samego dnia, więc przy datach granicznych (np. 20–23 dnia miesiąca) znak może zależeć od roku, a nawet godziny urodzenia. Wtedy najpewniej sprawdzisz go w <a href="/ascendent/">kalkulatorze</a>, który liczy położenie Słońca astronomicznie.</p>
+
+    <h2>Cztery żywioły</h2>
+    <ul>
+      <li><strong>Ogień</strong> (Baran, Lew, Strzelec): energia, odwaga, entuzjazm.</li>
+      <li><strong>Ziemia</strong> (Byk, Panna, Koziorożec): praktyczność, stabilność, wytrwałość.</li>
+      <li><strong>Powietrze</strong> (Bliźnięta, Waga, Wodnik): myślenie, komunikacja, kontakty.</li>
+      <li><strong>Woda</strong> (Rak, Skorpion, Ryby): emocje, intuicja, empatia.</li>
+    </ul>
+
+    <h2 id="baran">♈︎ Baran (21 marca – 19 kwietnia)</h2>
+    <p><strong>Żywioł:</strong> Ogień · <strong>Władca:</strong> Mars. Pełen(na) zapału pionier(ka). Potrzebujesz wyzwań i niezależności; energii dodaje Ci działanie.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> odwaga, inicjatywa, szczerość, umiejętność rozkręcania spraw.</li>
+      <li><strong>Wyzwania:</strong> niecierpliwość, wybuchowość, porzucanie spraw, gdy minie pierwszy zapał.</li>
+    </ul>
+
+    <h2 id="byk">♉︎ Byk (20 kwietnia – 20 maja)</h2>
+    <p><strong>Żywioł:</strong> Ziemia · <strong>Władca:</strong> Wenus. Spokojny(a) budowniczy(a) stabilności. Cenisz bezpieczeństwo, przyjemności zmysłowe i trwałe wartości.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> cierpliwość, wytrwałość, zmysł estetyczny, praktyczność.</li>
+      <li><strong>Wyzwania:</strong> upór, opór przed zmianami, przywiązanie do komfortu i rzeczy.</li>
+    </ul>
+
+    <h2 id="bliznieta">♊︎ Bliźnięta (21 maja – 20 czerwca)</h2>
+    <p><strong>Żywioł:</strong> Powietrze · <strong>Władca:</strong> Merkury. Ciekawy(a) świata rozmówca. Potrzebujesz różnorodności, wymiany myśli i ciągłej nauki.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> komunikatywność, elastyczność, inteligencja, poczucie humoru.</li>
+      <li><strong>Wyzwania:</strong> rozproszenie, powierzchowność, nerwowość, trudność z dokończeniem rzeczy.</li>
+    </ul>
+
+    <h2 id="rak">♋︎ Rak (21 czerwca – 22 lipca)</h2>
+    <p><strong>Żywioł:</strong> Woda · <strong>Władca:</strong> Księżyc. Wrażliwy(a) opiekun(ka). Najważniejsze są dla Ciebie dom, bliscy i poczucie przynależności.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> empatia, troskliwość, pamięć, intuicja, lojalność.</li>
+      <li><strong>Wyzwania:</strong> nadwrażliwość, zmienność nastrojów, wycofywanie się „do skorupy”.</li>
+    </ul>
+
+    <h2 id="lew">♌︎ Lew (23 lipca – 22 sierpnia)</h2>
+    <p><strong>Żywioł:</strong> Ogień · <strong>Władca:</strong> Słońce. Twórczy(a) i ciepły(a) przywódca. Chcesz tworzyć, wyrażać siebie i być docenianym(ą).</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> charyzma, ciepło, kreatywność, wielkoduszność.</li>
+      <li><strong>Wyzwania:</strong> potrzeba podziwu, duma, trudność z przyjmowaniem krytyki.</li>
+    </ul>
+
+    <h2 id="panna">♍︎ Panna (23 sierpnia – 22 września)</h2>
+    <p><strong>Żywioł:</strong> Ziemia · <strong>Władca:</strong> Merkury. Uważny(a) i pomocny(a) praktyk. Spełniasz się, gdy coś ulepszasz, porządkujesz i jesteś pożyteczny(a).</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> precyzja, rzetelność, praktyczna inteligencja, chęć pomocy.</li>
+      <li><strong>Wyzwania:</strong> krytycyzm wobec siebie i innych, zamartwianie się, perfekcjonizm.</li>
+    </ul>
+
+    <h2 id="waga">♎︎ Waga (23 września – 22 października)</h2>
+    <p><strong>Żywioł:</strong> Powietrze · <strong>Władca:</strong> Wenus. Poszukiwacz(ka) harmonii. Potrzebujesz piękna, partnerstwa i sprawiedliwych relacji.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> takt, poczucie sprawiedliwości, zmysł estetyczny, umiejętność współpracy.</li>
+      <li><strong>Wyzwania:</strong> niezdecydowanie, zależność od opinii innych, ukrywanie własnego zdania.</li>
+    </ul>
+
+    <h2 id="skorpion">♏︎ Skorpion (23 października – 21 listopada)</h2>
+    <p><strong>Żywioł:</strong> Woda · <strong>Władca:</strong> Pluton i Mars. Intensywny(a) poszukiwacz(ka) prawdy. Pociąga Cię głębia, przemiana i to, co ukryte.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> głębia, odporność psychiczna, intuicja, lojalność.</li>
+      <li><strong>Wyzwania:</strong> nieufność, kontrola, zazdrość, trudność z przebaczaniem.</li>
+    </ul>
+
+    <h2 id="strzelec">♐︎ Strzelec (22 listopada – 21 grudnia)</h2>
+    <p><strong>Żywioł:</strong> Ogień · <strong>Władca:</strong> Jowisz. Wolny duch i odkrywca. Szukasz sensu, przygody i szerokich horyzontów.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> optymizm, szczerość, ciekawość świata, poczucie humoru.</li>
+      <li><strong>Wyzwania:</strong> brak taktu, obiecywanie zbyt wiele, niecierpliwość wobec szczegółów.</li>
+    </ul>
+
+    <h2 id="koziorozec">♑︎ Koziorożec (22 grudnia – 19 stycznia)</h2>
+    <p><strong>Żywioł:</strong> Ziemia · <strong>Władca:</strong> Saturn. Ambitny(a) strateg. Dążysz do osiągnięć, struktury i trwałego dorobku.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> dyscyplina, wytrwałość, odpowiedzialność, zmysł organizacyjny.</li>
+      <li><strong>Wyzwania:</strong> surowość wobec siebie, pesymizm, trudność z okazywaniem uczuć.</li>
+    </ul>
+
+    <h2 id="wodnik">♒︎ Wodnik (20 stycznia – 18 lutego)</h2>
+    <p><strong>Żywioł:</strong> Powietrze · <strong>Władca:</strong> Uran i Saturn. Niezależny(a) wizjoner(ka). Cenisz wolność, przyjaźń i idee, które zmieniają świat.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> innowacyjność, niezależność, otwartość, poczucie wspólnoty.</li>
+      <li><strong>Wyzwania:</strong> chłód emocjonalny, przekora, niechęć do kompromisu.</li>
+    </ul>
+
+    <h2 id="ryby">♓︎ Ryby (19 lutego – 20 marca)</h2>
+    <p><strong>Żywioł:</strong> Woda · <strong>Władca:</strong> Neptun i Jowisz. Wrażliwy(a) marzyciel(ka). Żyjesz intuicją, wyobraźnią i współodczuwaniem.</p>
+    <ul>
+      <li><strong>Mocne strony:</strong> wrażliwość, wyobraźnia, współczucie, artystyczne zdolności.</li>
+      <li><strong>Wyzwania:</strong> brak granic, ucieczka od rzeczywistości, uleganie innym.</li>
+    </ul>
+
+    <div class="callout"><p>Znak zodiaku to dopiero początek. Dowiedz się, w jakim znaku był <a href="/znak-ksiezyca/">Księżyc</a> w dniu Twoich narodzin, oblicz <a href="/ascendent/">ascendent</a> i sprawdź <a href="/zgodnosc-znakow/">zgodność znaków</a> z partnerem.</p></div>`,
+  },
+  {
+    slug: "karta-roku-2027",
+    title: "Karta roku 2027: jaka karta tarota czeka Cię w nowym roku?",
+    seoTitle: "Karta roku 2027 w tarocie – jak ją obliczyć i co oznacza | Moontasia",
+    description: "Oblicz swoją kartę roku 2027 z daty urodzenia i sprawdź, co zapowiada: znaczenie wszystkich 21 kart roku, przykład obliczeń i jak pracować z kartą przez cały rok.",
+    category: "Znaczenie kart",
+    date: "2026-11-08",
+    lead: "Zanim zaczniesz planować 2027 rok, sprawdź, jaka karta tarota będzie Ci w nim towarzyszyć. Karta roku to jeden z Wielkich Arkanów obliczony z Twojej daty urodzenia i bieżącego roku.",
+    cta: ["/karta-urodzenia/", "Oblicz swoją kartę roku 2027"],
+    body: `
+    <h2>Jak obliczyć kartę roku 2027?</h2>
+    <ol>
+      <li>Dodaj dzień i miesiąc swoich urodzin do liczby 2027.</li>
+      <li>Sumuj cyfry wyniku, aż otrzymasz liczbę od 1 do 21.</li>
+      <li>To numer Twojej karty roku z Wielkich Arkanów.</li>
+    </ol>
+    <p><strong>Przykład:</strong> urodziny 14 maja → 14 + 5 + 2027 = 2046 → 2 + 0 + 4 + 6 = <strong>12, Wisielec</strong>.</p>
+    <p>Najszybciej policzysz to w <a href="/karta-urodzenia/">kalkulatorze karty urodzenia</a>: wpisz datę urodzenia, a w polu „Na który rok?” wpisz 2027.</p>
+    <div class="callout"><p>Karta roku obowiązuje od Twoich urodzin w 2027 roku do kolejnych urodzin. Jeśli masz urodziny w grudniu, przez większą część 2027 roku działa jeszcze karta roku 2026.</p></div>
+
+    <h2>Co oznacza Twoja karta roku?</h2>
+    <ul>
+      <li><strong>1. Mag:</strong> Rok nowych początków, inicjatywy i działania. Dobry czas na start projektu i podejmowanie decyzji.</li>
+      <li><strong>2. Kapłanka:</strong> Rok intuicji, cierpliwości i wewnętrznej pracy. Sprawy dojrzewają po cichu, warto słuchać przeczuć.</li>
+      <li><strong>3. Cesarzowa:</strong> Rok wzrostu, twórczości i obfitości. Sprzyja miłości, rodzinie, kreatywnym projektom i dbaniu o ciało.</li>
+      <li><strong>4. Cesarz:</strong> Rok porządku i budowania fundamentów. Czas na plan, dyscyplinę i stabilizację: dom, finanse, kariera.</li>
+      <li><strong>5. Hierofant:</strong> Rok nauki i wartości. Sprzyja kursom, mentorom, formalnościom i odnajdywaniu sensu.</li>
+      <li><strong>6. Kochankowie:</strong> Rok relacji i ważnych wyborów. Sprawy serca i partnerstwa wychodzą na pierwszy plan.</li>
+      <li><strong>7. Rydwan:</strong> Rok ruchu i zwycięstw. Wyraźny cel i determinacja przynoszą sukces, możliwe podróże i przeprowadzki.</li>
+      <li><strong>8. Siła:</strong> Rok wewnętrznej siły. Cierpliwość i łagodność dadzą więcej niż walka.</li>
+      <li><strong>9. Pustelnik:</strong> Rok refleksji i domykania. Dobry czas na podsumowania, samotność z wyboru i szukanie własnej drogi.</li>
+      <li><strong>10. Koło Fortuny:</strong> Rok zmian i zwrotów akcji. Los przyspiesza: bądź gotowa/y na nowe szanse.</li>
+      <li><strong>11. Sprawiedliwość:</strong> Rok równowagi i konsekwencji. Sprawy prawne, umowy i uczciwe rozliczenia; zbierasz to, co posiane.</li>
+      <li><strong>12. Wisielec:</strong> Rok pauzy i nowej perspektywy. Coś się zatrzymuje, żebyś mogła/mógł spojrzeć inaczej.</li>
+      <li><strong>13. Śmierć:</strong> Rok przemiany. Jeden etap się kończy, robiąc miejsce na nowy.</li>
+      <li><strong>14. Umiarkowanie:</strong> Rok równowagi i uzdrowienia. Umiar, cierpliwość i łączenie różnych obszarów życia.</li>
+      <li><strong>15. Diabeł:</strong> Rok pokus i mocy. Dobry czas, by przyjrzeć się nawykom i zależnościom oraz odzyskać wolność.</li>
+      <li><strong>16. Wieża:</strong> Rok przełomu. Rzeczy zbudowane na słabych fundamentach mogą się rozpaść, by zrobić miejsce na prawdziwe.</li>
+      <li><strong>17. Gwiazda:</strong> Rok nadziei i inspiracji. Marzenia nabierają realnych kształtów, a Ty odzyskujesz wiarę.</li>
+      <li><strong>18. Księżyc:</strong> Rok intuicji i snów. Nie wszystko będzie jasne od razu, ufaj przeczuciom i nie działaj z lęku.</li>
+      <li><strong>19. Słońce:</strong> Rok radości i sukcesu. Jeden z najjaśniejszych lat: energia, widoczność i szczęście.</li>
+      <li><strong>20. Sąd:</strong> Rok przebudzenia. Ważne decyzje, powołanie i drugie szanse.</li>
+      <li><strong>21. Świat:</strong> Rok spełnienia. Domykasz duży cykl i zbierasz owoce, a przed Tobą otwiera się nowy rozdział.</li>
+    </ul>
+
+    <h2>Jak pracować z kartą roku?</h2>
+    <ul>
+      <li><strong>Postaw ją w widocznym miejscu.</strong> Jeśli masz talię, wyjmij kartę i postaw ją na biurku albo zrób jej zdjęcie na tapetę telefonu.</li>
+      <li><strong>Zapisz trzy intencje</strong> związane z tematem karty, np. przy Cesarzowej: „zadbam o siebie, rozwinę projekt twórczy, więcej czasu spędzę w naturze”.</li>
+      <li><strong>Wracaj do niej co miesiąc</strong>, najlepiej w pełni Księżyca, i sprawdzaj, gdzie jej energia pojawiła się w Twoim życiu.</li>
+      <li><strong>Przeczytaj pełny opis karty</strong> w <a href="/znaczenie-kart/#wielkie-arkana">przewodniku po Wielkich Arkanach</a>, zwłaszcza sekcje „jako rada” i „jako przyszłość”.</li>
+    </ul>
+    <p>Chcesz poznać też swoje stałe karty, które towarzyszą Ci przez całe życie? Przeczytaj artykuł <a href="/blog/karta-urodzenia-tarot/">Karta urodzenia w tarocie</a>.</p>`,
+  },
+  {
+    slug: "matryca-partnerska-jak-czytac",
+    title: "Matryca partnerska: jak czytać zgodność pary z dat urodzenia",
+    seoTitle: "Matryca partnerska – jak obliczyć i czytać zgodność pary | Moontasia",
+    description: "Matryca partnerska (matryca przeznaczenia dla par) krok po kroku: jak powstaje z dwóch dat urodzenia, co oznacza centrum pary, linia miłości i pieniędzy oraz wspólne arkany.",
+    category: "Numerologia",
+    date: "2026-11-08",
+    lead: "Matryca partnerska pokazuje związek jak osobną „istotę”: z własnym charakterem, zadaniami i lekcjami. Wyjaśniamy, jak powstaje z dwóch dat urodzenia i jak ją czytać, żeby lepiej zrozumieć Waszą relację.",
+    cta: ["/matryca-partnerska/", "Oblicz matrycę partnerską"],
+    body: `
+    <h2>Jak powstaje matryca partnerska?</h2>
+    <p>Najpierw liczy się osobne <a href="/matryca/">matryce przeznaczenia</a> obu osób. Potem dodaje się do siebie ich energie bazowe: dni urodzenia (punkt A), miesiące (B) i lata (C), redukując wyniki do liczb od 1 do 22. Z tych trzech liczb powstaje nowa, wspólna matryca, czyli matryca pary.</p>
+    <p><strong>Przykład:</strong> osoba 1 ma A = 14, B = 3, C = 21, osoba 2 ma A = 8, B = 11, C = 6. Matryca pary: A = 14 + 8 = 22, B = 3 + 11 = 14, C = 21 + 6 = 27 → 2 + 7 = 9. Resztę punktów kalkulator liczy już tak samo jak w zwykłej matrycy.</p>
+
+    <h2>Co czytać w matrycy partnerskiej?</h2>
+    <h3>1. Centrum pary (punkt E)</h3>
+    <p>Najważniejsza energia związku: to, co Was łączy, w czym czujecie się razem najlepiej, i główny temat relacji. Jeśli w centrum jest np. 6 (Kochankowie), związek opiera się na wyborze serca i bliskości. Jeśli 4 (Cesarz), na wspólnym budowaniu i stabilności.</p>
+    <h3>2. Przeznaczenie pary</h3>
+    <p>Mówi, po co jesteście razem i czego macie się wspólnie nauczyć. To dobry punkt wyjścia do rozmowy o wspólnych celach.</p>
+    <h3>3. Linia miłości ♥</h3>
+    <p>Pokazuje, czego potrzebuje Wasze uczucie, żeby się rozwijało, i jakie wzorce relacji wnosicie z rodzin.</p>
+    <h3>4. Linia pieniędzy $</h3>
+    <p>Opisuje, jak razem zarabiacie, wydajecie i budujecie bezpieczeństwo. Bardzo przydatna przy wspólnych planach: domu, firmie, inwestycjach.</p>
+    <h3>5. Wspólne arkany</h3>
+    <p>Kalkulator pokazuje też arkany, które występują w obu Waszych osobnych matrycach. To obszary, w których rozumiecie się bez słów, ale też wspólne cienie do przepracowania. Szczególnym sygnałem jest sytuacja, gdy centrum jednej osoby pojawia się w matrycy drugiej.</p>
+
+    <h2>Jak rozmawiać o wyniku?</h2>
+    <ul>
+      <li>Czytajcie opisy razem i zaznaczcie, co się zgadza, a co nie.</li>
+      <li>Traktujcie energie „w minusie” jako tematy do rozmowy, a nie jako zarzuty.</li>
+      <li>Porównajcie też swoje osobne matryce: centra (E), ogony karmiczne i linie miłości.</li>
+    </ul>
+    <p>Znaczenie każdej liczby od 1 do 22 znajdziesz w artykule <a href="/blog/arkana-w-matrycy-przeznaczenia/">Energie w matrycy przeznaczenia</a>, a podstawy czytania matrycy w poradniku <a href="/blog/matryca-przeznaczenia-jak-czytac/">Jak czytać matrycę przeznaczenia</a>.</p>
+    <div class="callout"><p>Matryca partnerska nie mówi, czy związek „się uda”. Pokazuje, na czym się opiera i nad czym warto pracować. Chcesz zobaczyć Waszą relację z innej strony? Sprawdźcie <a href="/zgodnosc-znakow/">zgodność znaków zodiaku</a> albo zróbcie <a href="/tarot-milosny/">rozkład tarota miłosnego</a>.</p></div>`,
+  },
+  {
+    slug: "pelnia-i-now-rytualy",
+    title: "Pełnia i nów: znaczenie faz Księżyca i proste rytuały",
+    seoTitle: "Pełnia i nów Księżyca – znaczenie faz i rytuały krok po kroku | Moontasia",
+    description: "Co oznacza pełnia, a co nów Księżyca? Znaczenie wszystkich faz Księżyca, proste rytuały na nów i pełnię oraz rozkład tarota na każdą fazę.",
+    category: "Astrologia",
+    date: "2026-11-08",
+    lead: "Księżyc co miesiąc przechodzi ten sam cykl: od nowiu, przez pierwszą kwadrę i pełnię, aż do ostatniej kwadry. Każda faza ma swoją energię. Oto, jak z niej korzystać, i dwa proste rytuały, które zajmą Ci kwadrans.",
+    cta: ["/#ksiezyc", "Sprawdź dzisiejszą fazę Księżyca"],
+    body: `
+    <h2>Fazy Księżyca i ich znaczenie</h2>
+    <p>Pełny cykl Księżyca trwa około 29,5 dnia. Jaka faza jest dziś i kiedy wypada najbliższa pełnia, zobaczysz na <a href="/#ksiezyc">stronie głównej Moontasii</a>.</p>
+    <ul>
+      <li><strong>Nów:</strong> początek cyklu. Czas na intencje, plany i nowe projekty.</li>
+      <li><strong>Księżyc przybywający (sierp i pierwsza kwadra):</strong> czas działania, budowania i pokonywania przeszkód.</li>
+      <li><strong>Pełnia:</strong> kulminacja. Emocje są silniejsze, sprawy wychodzą na jaw, przychodzą efekty. Dobry czas na wdzięczność i podsumowania.</li>
+      <li><strong>Księżyc ubywający (ostatnia kwadra i sierp):</strong> czas porządków, odpuszczania i odpoczynku przed nowym cyklem.</li>
+    </ul>
+
+    <h2>Rytuał na nów: intencje</h2>
+    <ol>
+      <li>Wieczorem w dniu nowiu zapal świecę i wycisz telefon.</li>
+      <li>Zapisz na kartce 3–5 intencji na najbliższy miesiąc, w czasie teraźniejszym, np. „Dbam o swój odpoczynek”.</li>
+      <li>Wylosuj jedną kartę tarota z pytaniem: „Co pomoże mi w tym cyklu?”. Możesz zrobić to w <a href="/karta-dnia/">karcie dnia</a>.</li>
+      <li>Schowaj kartkę i wróć do niej w pełni.</li>
+    </ol>
+
+    <h2>Rytuał na pełnię: wdzięczność i odpuszczanie</h2>
+    <ol>
+      <li>Przeczytaj intencje z nowiu. Zapisz, co się udało i za co jesteś wdzięczna/y.</li>
+      <li>Na osobnej kartce zapisz, co chcesz puścić: nawyk, lęk, urazę.</li>
+      <li>Zrób rozkład na 3 karty: co się wypełniło, co odpuścić, co zabrać dalej. Skorzystaj z <a href="/rozklad-3-karty/">rozkładu na 3 karty</a>.</li>
+      <li>Kartkę z tym, co puszczasz, podrzyj albo bezpiecznie spal.</li>
+    </ol>
+
+    <h2>Pełnia w znakach zodiaku</h2>
+    <p>Każda pełnia wypada w innym znaku zodiaku, co nadaje jej inny nastrój: pełnia w Raku jest bardziej rodzinna i emocjonalna, w Koziorożcu dotyczy pracy i obowiązków. Z przymrużeniem oka opisujemy to w naszych postach na Instagramie, a na poważnie o znaczeniu znaków przeczytasz w artykule <a href="/blog/ksiezyc-w-znakach-zodiaku/">Księżyc w znakach zodiaku</a>.</p>
+
+    <div class="callout"><p>Chcesz dostawać przypomnienia o pełni i nowiu z krótkim rytuałem? Zapisz się do newslettera Moontasii poniżej.</p></div>`,
+  },
+  {
     slug: "kielichy-w-tarocie",
     title: "Kielichy w tarocie: znaczenie wszystkich 14 kart",
     seoTitle: "Kielichy w tarocie – znaczenie kart od Asa do Króla, w miłości i tak/nie | Moontasia",

@@ -16,4 +16,12 @@ export const IMAGE_ALT = {
   "zgodnosc-znakow-zodiaku": "Dwa połączone symbole zodiaku na tle gwiazd – zgodność znaków zodiaku",
   "liczba-drogi-zycia-znaczenie": "Świecące liczby na ścieżce prowadzącej w gwiazdy – liczba drogi życia w numerologii",
   "tarot-dla-poczatkujacych": "Talia tarota, świeca i zeszyt do nauki na drewnianym stole – tarot dla początkujących",
+  "kielichy-w-tarocie": "Złote kielichy wypełnione światłem na tle nocnego nieba – Kielichy w tarocie",
+  "pentakle-w-tarocie": "Świecące monety z pentagramem na ciemnym stole – Pentakle w tarocie",
+  "karta-urodzenia-tarot": "Karta tarota unosząca się nad tortem urodzinowym ze świeczką – karta urodzenia w tarocie",
+  "wielkie-arkana-znaczenie": "Dwadzieścia dwie karty tarota ułożone w łuk pod rozgwieżdżonym niebem – Wielkie Arkana",
+  "znaki-zodiaku-daty": "Koło dwunastu znaków zodiaku z symbolami czterech żywiołów – znaki zodiaku i ich daty",
+  "karta-roku-2027": "Karta tarota w świetle noworocznych fajerwerków – karta roku 2027",
+  "matryca-partnerska-jak-czytac": "Dwie splecione geometryczne figury matrycy przeznaczenia tworzące jedną – matryca partnerska",
+  "pelnia-i-now-rytualy": "Księżyc w pełni nad stołem ze świecą, kryształami i kartką z intencjami – rytuały pełni i nowiu",
 };
